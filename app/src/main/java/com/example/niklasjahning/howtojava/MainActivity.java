@@ -5,11 +5,6 @@ import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
 
-
-    String test = "test succesful?";
-    boolean succesful = true;
-    int integer = 4;
-    String test2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
