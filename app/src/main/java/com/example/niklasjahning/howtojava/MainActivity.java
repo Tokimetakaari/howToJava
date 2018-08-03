@@ -7,6 +7,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     String test = "test succesful?";
+    boolean succesful = true;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
