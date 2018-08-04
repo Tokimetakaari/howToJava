@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">howToJava</string>
+    <string name="theorie_button1">Lektion 1</string>
+    <string name="theorie_button2">Lektion 2</string>
+    <string name="theorie_button3">Lektion 3</string>
+    <string name="theorie_button4">Lektion 4</string>
+    <string name="theorie_button5">Lektion 5</string>
+    <string name="theorie_button6">Lektion 6</string>
+    <string name="theorie_button7">Lektion 7</string>
+    <string name="theorie_button8">Lektion 8</string>
+    <string name="theorie_button9">Lektion 9</string>
+    <string name="theorie_button10">Lektion 10</string>
+    <string name="main_menu_theorie_button">Theorie</string>
+    <string name="main_menu_play_button">Play</string>
+    <string name="main_menu_setting_button">Einstellungen</string>
 </resources>
