@@ -39,31 +39,31 @@ public class Theory extends AppCompatActivity implements View.OnClickListener
         StringBuffer buf = new StringBuffer();
         switch (res)
         {
-            case 1: is = this.getResources().openRawResource(R.raw.Lektion1);
+            case 1: is = this.getResources().openRawResource(R.raw.lektion1);
                 break;
-            case 2: is = this.getResources().openRawResource(R.raw.Lektion1);
+            case 2: is = this.getResources().openRawResource(R.raw.lektion2);
                 break;
-            case 3: is = this.getResources().openRawResource(R.raw.Lektion1);
+            case 3: is = this.getResources().openRawResource(R.raw.lektion3);
                 break;
-            case 4: is = this.getResources().openRawResource(R.raw.Lektion1);
+            case 4: is = this.getResources().openRawResource(R.raw.lektion4);
                 break;
-            case 5: is = this.getResources().openRawResource(R.raw.Lektion1);
+            case 5: is = this.getResources().openRawResource(R.raw.lektion5);
                 break;
-            case 6: is = this.getResources().openRawResource(R.raw.Lektion1);
+            case 6: is = this.getResources().openRawResource(R.raw.lektion6);
                 break;
-            case 7: is = this.getResources().openRawResource(R.raw.Lektion1);
+            case 7: is = this.getResources().openRawResource(R.raw.lektion7);
                 break;
-            case 8: is = this.getResources().openRawResource(R.raw.Lektion1);
+            case 8: is = this.getResources().openRawResource(R.raw.lektion8);
                 break;
-            case 9: is = this.getResources().openRawResource(R.raw.Lektion1);
+            case 9: is = this.getResources().openRawResource(R.raw.lektion9);
                 break;
-            case 10: is = this.getResources().openRawResource(R.raw.Lektion1);
+            case 10: is = this.getResources().openRawResource(R.raw.lektion10);
                 break;
         }
         BufferedReader reader = new BufferedReader(new InputStreamReader(is));
         if(is!=null)
         {while ((string = reader.readLine()) != null)
-        {buf.append(string+ "/n");}
+        {buf.append(string+ "");}
         }
         is.close();
         textView.setText(buf.toString());
