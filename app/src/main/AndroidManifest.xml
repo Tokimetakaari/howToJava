@@ -20,6 +20,7 @@
         <activity android:name=".PlayMenu" />
         <activity android:name=".TheoryMenu" />
         <activity android:name=".Theory" />
+        <activity android:name=".PlayLesson" />
     </application>
 
 </manifest>
