@@ -39,15 +39,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (view.getId())
         {
             case R.id.theory_button:
-                            i = new Intent(this, TheoryMenu.class);
+                            i = new Intent(MainActivity.this, TheoryMenu.class);
                             startActivity(i);
                             break;
             case R.id.play_button:
-                            i = new Intent(this, PlayMenu.class);
+                            i = new Intent(MainActivity.this, PlayMenu.class);
                             startActivity(i);
                             break;
             case R.id.settings_button:
-                            i = new Intent(this,SettingsMenu.class);
+                            i = new Intent(MainActivity.this,SettingsMenu.class);
                             startActivity(i);
                             break;
         }
