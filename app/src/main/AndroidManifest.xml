@@ -19,6 +19,7 @@
         <activity android:name=".SettingsMenu" />
         <activity android:name=".PlayMenu" />
         <activity android:name=".TheoryMenu" />
+        <activity android:name=".Theory" />
     </application>
 
 </manifest>
