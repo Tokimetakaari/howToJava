@@ -8,7 +8,7 @@ import android.widget.Button;
 
 public class PlayMenu extends AppCompatActivity implements View.OnClickListener {
 
-    Button b1, b2, b3, b4, b5, b6, b7, b8, b9, b10;
+    Button b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +30,7 @@ public class PlayMenu extends AppCompatActivity implements View.OnClickListener 
         b8 = findViewById(R.id.lektion_8);
         b9 = findViewById(R.id.lektion_9);
         b10 = findViewById(R.id.lektion_10);
+        b11 = findViewById(R.id.lektion_11);
     }
 
     private void setupListener()
@@ -44,6 +45,7 @@ public class PlayMenu extends AppCompatActivity implements View.OnClickListener 
         b8.setOnClickListener(this);
         b9.setOnClickListener(this);
         b10.setOnClickListener(this);
+        b11.setOnClickListener(this);
     }
 
     @Override
@@ -72,6 +74,8 @@ public class PlayMenu extends AppCompatActivity implements View.OnClickListener 
             case R.id.lektion_9: i.putExtra("layout_num",9);
                 break;
             case R.id.lektion_10: i.putExtra("layout_num",10);
+                break;
+            case R.id.lektion_11: i.putExtra("layout_num",11);
                 break;
         }
         startActivity(i);

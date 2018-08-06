@@ -73,6 +73,7 @@ public class TheoryMenu extends AppCompatActivity implements View.OnClickListene
                 break;
             case R.id.lektion_10: i.putExtra("txt_num",10);
                 break;
+
         }
         startActivity(i);
     }
