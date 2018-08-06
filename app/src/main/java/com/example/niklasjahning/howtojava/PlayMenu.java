@@ -13,7 +13,7 @@ public class PlayMenu extends AppCompatActivity implements View.OnClickListener 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.play_menu);
+        setContentView(R.layout.menu);
         setupButtons();
         setupListener();
     }

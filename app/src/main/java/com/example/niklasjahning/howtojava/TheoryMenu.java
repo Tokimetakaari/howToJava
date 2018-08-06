@@ -13,7 +13,7 @@ public class TheoryMenu extends AppCompatActivity implements View.OnClickListene
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.theory_menu);
+        setContentView(R.layout.menu);
         setupButtons();
         setupListener();
     }
