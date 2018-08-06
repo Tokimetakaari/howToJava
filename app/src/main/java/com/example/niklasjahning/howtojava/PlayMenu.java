@@ -75,7 +75,7 @@ public class PlayMenu extends AppCompatActivity implements View.OnClickListener 
                 break;
             case R.id.lektion_10: i.putExtra("layout_num",10);
                 break;
-            case R.id.lektion_11: i.putExtra("layout_num",11);
+            case R.id.lektion_11:  i.putExtra("layout_num", 11);
                 break;
         }
         startActivity(i);
