@@ -4,6 +4,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <!--Boolean Aufgabetypen (Vorgabe von Text) Antwort true/false-->
+
     <TextView
         android:id="@+id/checkbox_layout_2_question"
         android:layout_width="match_parent"
