@@ -14,6 +14,11 @@ Um eine Variable nutzen zu können muss diese vorher deklariert werden. Dazu über
 z.B: Deklaration einer int Variable mit dem Namen "x":
 	int x ;
 Nach jeder Deklaration steht ein ";", damit das Programm erkennt, dass der Befehl zu Ende ist.
+Jeder Datentyp in Java hat einen DEFAULT-Wert. Dieser wird angenommen, wenn die Variable keinen konkreten Wert zugewiesen bekommt.
+Default-Werte:
+	- 'false' für boolean	
+	- 0 für die numerischen Datentypen (int, double,...)
+	- \u000 für char
 
 Will man der Variable bei der Deklaration einen Wert geben, so schreibt man:
 	int x = 10;
