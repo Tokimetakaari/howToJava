@@ -35,5 +35,11 @@
         android:id="@+id/checkbox_layout_4_checkbox4"
         android:gravity="top"/>
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/submit_button"
+        android:id="@+id/checkbox_submit_button"/>
+
 
 </LinearLayout>
