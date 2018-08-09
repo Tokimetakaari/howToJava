@@ -9,7 +9,7 @@ import android.view.View;
 public class PlayLesson extends AppCompatActivity implements View.OnClickListener {
 
     int layoutNumber;
-
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
