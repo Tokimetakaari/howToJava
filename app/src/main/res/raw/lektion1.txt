@@ -1,1 +1,29 @@
-1
+1. Primitive Datentypen
+DATEN sind Objekte, mit denen ein Programm umgehen soll. Dabei gibt es verschiedene Sorten von Daten, wie  Wahrheitswerte, Zahlen, Texte, Bilder etc. Alle diese Daten sind von verschiedenem TYP. Sie verbrauchen unterschiedlich viel Speicher und es sind verschiedene Operationen mit ihnen durchführbar. So lassen sich zum Beispiel Texte und Zahlen nicht addieren.
+In jeder Programmiersprache gibt es eine Sammlung von DATENTYPEN. Dabei unterscheidet man zwischen einfachen (primitiven) und strukturierten (komplexen) Datentypen.
+Einfache Datentypen in JAVA sind boolean, char, int, long, flaot und double.
+- boolean: Booleans sind Wahrheitswerte und können immer nur mit einen von Zwei Werten belegt sein. Entweder "true" (wahr) oder "false" (falsch)
+- char: Char oder Character repräsentiert jeweils ein einzelnes Zeichen
+- int: Int oder Integer ist ein Datentyp, der ganzzahlige Werte speichert. Berechnungen mit Integern sind in der Regel exakt, aber da der Wertebereich endlich ist, kann es bei Überschreiten des Wertebereichs zu einem Überlauf kommen.
+- long: ist die erwiterte Form eines int-Wertes. Im Gegensatz zum int hat dieser Datentyp einen größeren Wertebereich.
+- float: Eine Variable vom Typ float speichert eine Gleitkommazahl mit einer Genauigkeit von 7 signifikanten Stellen, auch 'einfache Genauigkeit' genannt. 
+- double: Double speichert ebenfalls Gleitkommazahlen, aber anders wie float speichert double mit doppelter Genauigkeit, dass heißt mit 15 signifikanten Stellen.
+
+Wird ein Wert eines Datentyps gespeichert werden, so benötigt man eine VARIABLE. Eine Variable ist ein Behälter für den Wert eines Datentyps.
+Um eine Variable nutzen zu können muss diese vorher deklariert werden. Dazu übergibt man der Variable den entsprechenden Datentyp und einen Namen.
+z.B: Deklaration einer int Variable mit dem Namen "x":
+	int x ;
+Nach jeder Deklaration steht ein ";", damit das Programm erkennt, dass der Befehl zu Ende ist.
+
+Will man der Variable bei der Deklaration einen Wert geben, so schreibt man:
+	int x = 10;
+Damit wird der Wert 10 in die Variable 'geschrieben'. Den ersten schreibenden Zugriff auf eine Variable nennt man "Initialisierung".
+Nach der Initialisierung kann die Variable gelesen werden. 
+Bsp: 	int x = 4;
+	int y = 5;
+	x = x + y;
+Die beiden Variablen vom Typ 'int' werden deklariert und initialisiert. Danach erfolgt ein lesender Zugriff auf beide Variablen. Die Werte der Variablen werden ausgelesen und danach addiert. Der schreibende Zugriff erfolgt durch das '=' und legt den Wert der Variable x neu fest.
+
+Zusammenfassung:
+Primitive Datentypen speichern unterschiedliche Werte und können für unterschiedliche Aktionen verwendet werden.
+Um einen Wert zu speichern benötigt man eine Variable. Die Deklaration einer Variablen setzt sich aus dem 'DATENTYP' und dem 'VARIABLENNAMEN' zusammen. Die Festlegung auf einen Wert erfolgt durch die Initialisierung mit einem '=' nach dem Variablennamen und dem gewünschten 'WERT'
