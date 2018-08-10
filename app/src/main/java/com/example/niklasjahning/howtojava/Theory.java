@@ -10,6 +10,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.StringWriter;
 
 public class Theory extends AppCompatActivity implements View.OnClickListener
 {
@@ -65,10 +66,11 @@ public class Theory extends AppCompatActivity implements View.OnClickListener
         BufferedReader reader = new BufferedReader(new InputStreamReader(is));
         if(is!=null)
         {while ((string = reader.readLine()) != null)
-        {buf.append(string+ "");}
+        {buf.append(string+ "\n");}
         }
         is.close();
-        textView.setText(buf.toString());
+
+     textView.setText(buf.toString());
     }
 
     @Override
