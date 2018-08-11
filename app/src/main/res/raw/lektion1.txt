@@ -1,7 +1,7 @@
 ﻿1. Primitive Datentypen 
 
 DATEN sind Objekte, mit denen ein Programm umgehen soll. Dabei gibt es verschiedene Sorten von Daten, wie  Wahrheitswerte, Zahlen, Texte, Bilder etc. Alle diese Daten sind von verschiedenem TYP. Sie verbrauchen unterschiedlich viel Speicher und es sind verschiedene Operationen mit ihnen durchführbar. So lassen sich zum Beispiel Texte und Zahlen nicht addieren. 
-In jeder Programmiersprache gibt es eine Sammlung von DATENTYPEN. Dabei unterscheidet man zwischen einfachen (primitiven) und strukturierten (komplexen) Datentypen.
+In jeder Programmiersprache gibt es eine Sammlung von DATENTYPEN. Dabei unterscheidet man zwischen einfachen (primitiven) und strukturierten Datentypen.
 Einfache Datentypen in JAVA sind boolean, char, int, long, flaot und double. 
 
 Booleans (boolean) sind Wahrheitswerte und können immer nur mit einen von Zwei Werten belegt sein. Entweder "true" (wahr) oder "false" (falsch) 
@@ -23,8 +23,19 @@ Default-Werte:
           - \u000 für char
 
 Will man der Variable bei der Deklaration einen Wert geben, so schreibt man:
-          int x = 10;
-Damit wird der Wert 10 in die Variable 'geschrieben'. Den ersten schreibenden Zugriff auf eine Variable nennt man "Initialisierung".
+          - int x = 10;
+          - char letter = 'c';
+          - boolean genderIsMale = false;
+          - double value = 6.9;
+Damit wird der Wert in die Variable 'geschrieben'. Den ersten schreibenden Zugriff auf eine Variable nennt man "Initialisierung".
+
+Booleans (boolean) sind Wahrheitswerte und können immer nur mit einen von Zwei Werten belegt sein. Entweder "true" (wahr) oder "false" (falsch) 
+Char oder Character (char) repräsentiert jeweils ein einzelnes Zeichen 
+Int oder Integer (int) ist ein Datentyp, der ganzzahlige Werte speichert. Berechnungen mit Integern sind in der Regel exakt, aber da der Wertebereich endlich ist, kann es bei Überschreiten des Wertebereichs zu einem Überlauf kommen. 
+Long (long) ist die erweiterte Form eines int-Wertes. Im Gegensatz zum int hat dieser Datentyp einen größeren Wertebereich. 
+Eine Variable vom Typ Float (float) speichert eine Gleitkommazahl mit einer Genauigkeit von 7 signifikanten Stellen, auch 'einfache Genauigkeit' genannt. 
+Double (double) speichert ebenfalls Gleitkommazahlen, aber anders wie float speichert double mit doppelter Genauigkeit, dass heißt mit 15 signifikanten Stellen. 
+
 Nach der Initialisierung kann die Variable gelesen werden. 
 Bsp:
           int x = 4;
