@@ -1,1 +1,34 @@
-3
+Logische Ausdrücke werden dazu verwendet Bedingungen innerhalb deines Codes zustellen. Diese finden
+meist Gebrauch in If-else-Bedingungen welche später noch genauer erklärt werden. Operatoren werden auch
+in Berechnungen von mathematischen Formel verwendet.
+Man unterscheidet zwischen mehreren logischen Ausdrücken/Operatoren:
+
+Arithmetische Operatoren:
+"+" wird zur Addition verwendet --> int lösung = a + b
+"-" wird zur Subtraktion verwendet --> int lösung = a - b
+"*" wird zur Multiplikation verwendet --> int lösung = a * b
+"/" wird zur Division verwendet --> int lösung = a / b
+"%" ist ein Modolu-Operator, welcher zum Rechnen mit Rest verwendet wird --> int lösung = a % b
+
+Inkremmentierung/Dekremmentierung:
+Bei einer Inkremmentierung wird zu der Zahl automatisch +1 addiert.
+Bei einer Dekremmentierung wird von der Zahl automatisch -1 subtrahiert
+Beispiel:
+int i = 3 --> i ++ --> i = 4
+int i = 3 --> i -- --> i = 2
+
+Vergleichsoperatoren:
+"==" --> gleich --> 3 == 3
+"!=" --> ungleich --> 3 != 2
+">" --> größer --> 3 > 2
+"<" --> kleiner --> 2 < 3
+">=" --> größer/gleich --> 2 >= 2
+"<=" --> kleiner/gleich --> 3 <= 3
+
+Boolesche Operatoren:
+"!" --> Negation --> boolean lüge = !wahrheit
+"&&" --> "und", wenn beide Operanden wahr sind --> boolean student = faul && müde
+"||" --> "oder", wenn mindestens ein Operand der beiden wahr ist --> boolean himmel = blau || wolkig
+"^" --> "oder", wenn exakt ein Operand wahr ist --> boolean standort = zuhause ^ uni
+
+
