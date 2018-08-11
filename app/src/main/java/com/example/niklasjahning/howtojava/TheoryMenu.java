@@ -9,6 +9,7 @@ import android.widget.Button;
 public class TheoryMenu extends AppCompatActivity implements View.OnClickListener {
 
     Button b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11;
+    Intent i ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,31 +52,29 @@ public class TheoryMenu extends AppCompatActivity implements View.OnClickListene
     @Override
     public void onClick(View view)
     {
-        Intent i = new Intent(TheoryMenu.this, Theory.class);
-
         switch (view.getId())
         {
-            case R.id.lektion_1: i.putExtra("txt_num",1);
+            case R.id.lektion_1: i = new Intent(TheoryMenu.class, DataTypes.class);
                 break;
-            case R.id.lektion_2: i.putExtra("txt_num",2);
+            case R.id.lektion_2: i = new Intent(TheoryMenu.class, DataTypes.class);
                 break;
-            case R.id.lektion_3: i.putExtra("txt_num",3);
+            case R.id.lektion_3: i = new Intent(TheoryMenu.class, DataTypes.class);
                 break;
-            case R.id.lektion_4: i.putExtra("txt_num",4);
+            case R.id.lektion_4: i = new Intent(TheoryMenu.class, DataTypes.class);
                 break;
-            case R.id.lektion_5: i.putExtra("txt_num",5);
+            case R.id.lektion_5: i = new Intent(TheoryMenu.class, DataTypes.class);
                 break;
-            case R.id.lektion_6: i.putExtra("txt_num",6);
+            case R.id.lektion_6: i = new Intent(TheoryMenu.class, DataTypes.class);
                 break;
-            case R.id.lektion_7: i.putExtra("txt_num",7);
+            case R.id.lektion_7: i = new Intent(TheoryMenu.class, DataTypes.class);
                 break;
-            case R.id.lektion_8: i.putExtra("txt_num",8);
+            case R.id.lektion_8: i = new Intent(TheoryMenu.class, DataTypes.class);
                 break;
-            case R.id.lektion_9: i.putExtra("txt_num",9);
+            case R.id.lektion_9: i = new Intent(TheoryMenu.class, DataTypes.class);
                 break;
-            case R.id.lektion_10: i.putExtra("txt_num",10);
+            case R.id.lektion_10: i = new Intent(TheoryMenu.class, DataTypes.class);
                 break;
-            case R.id.lektion_11: i.putExtra("txt_num",11);
+            case R.id.lektion_11:i = new Intent(TheoryMenu.class, DataTypes.class);
                 break;
         }
         startActivity(i);

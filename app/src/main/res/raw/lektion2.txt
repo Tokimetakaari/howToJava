@@ -1,1 +1,2 @@
-2
+2. Zusammengesetzte Datentypen - Strings 
+Strings sind Zeichenkette, die aus einzelnen Zeichen (chars) bestehen. Das heißt, Strings können in kleinere Bestandteile zerlegt werden.
