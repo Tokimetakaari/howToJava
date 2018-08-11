@@ -1,0 +1,6 @@
+Inkremmentierung/Dekremmentierung:
+Bei einer Inkremmentierung wird zu der Zahl automatisch +1 addiert.
+Bei einer Dekremmentierung wird von der Zahl automatisch -1 subtrahiert
+Beispiel:
+int i = 3 --> i ++ --> i = 4
+int i = 3 --> i -- --> i = 2

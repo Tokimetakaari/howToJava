@@ -1,0 +1,6 @@
+Arithmetische Operatoren:
+"+" wird zur Addition verwendet --> int lösung = a + b
+"-" wird zur Subtraktion verwendet --> int lösung = a - b
+"*" wird zur Multiplikation verwendet --> int lösung = a * b
+"/" wird zur Division verwendet --> int lösung = a / b
+"%" ist ein Modolu-Operator, welcher zum Rechnen mit Rest verwendet wird --> int lösung = a % b

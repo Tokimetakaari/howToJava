@@ -1,0 +1,7 @@
+Vergleichsoperatoren:
+"==" --> gleich --> 3 == 3
+"!=" --> ungleich --> 3 != 2
+">" --> größer --> 3 > 2
+"<" --> kleiner --> 2 < 3
+">=" --> größer/gleich --> 2 >= 2
+"<=" --> kleiner/gleich --> 3 <= 3
