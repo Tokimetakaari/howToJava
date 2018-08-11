@@ -41,15 +41,15 @@ public class Theory extends AppCompatActivity implements View.OnClickListener
         StringBuffer buf = new StringBuffer();
         switch (res)
         {
-            case 1: is = this.getResources().openRawResource(R.raw.lektion1);
+            case 1: is = this.getResources().openRawResource(R.raw.lektion_1_1);
                 break;
-            case 2: is = this.getResources().openRawResource(R.raw.lektion2);
+            case 2: is = this.getResources().openRawResource(R.raw.lektion_1_2);
                 break;
-            case 3: is = this.getResources().openRawResource(R.raw.lektion3);
+            case 3: is = this.getResources().openRawResource(R.raw.lektion_1_3);
                 break;
-            case 4: is = this.getResources().openRawResource(R.raw.lektion4);
+            case 4: is = this.getResources().openRawResource(R.raw.lektion_1_4);
                 break;
-            case 5: is = this.getResources().openRawResource(R.raw.lektion5);
+           /* case 5: is = this.getResources().openRawResource(R.raw.lektion5);
                 break;
             case 6: is = this.getResources().openRawResource(R.raw.lektion6);
                 break;
@@ -62,7 +62,7 @@ public class Theory extends AppCompatActivity implements View.OnClickListener
             case 10: is = this.getResources().openRawResource(R.raw.lektion10);
                 break;
             case 11: is = this.getResources().openRawResource(R.raw.lektion11);
-                break;
+                break;*/
         }
         BufferedReader reader = new BufferedReader(new InputStreamReader(is));
         if(is!=null)

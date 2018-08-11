@@ -1,0 +1,17 @@
+1.2 Zusammengesetzte Datentypen - Strings
+
+Strings sind Zeichenketten, sie bestehen aus einzelnen Charactern (chars) und können auch wieder in solche zerlegt werden.
+Strings werden konstuiert, indem man eine beliebige Folge von Zeichen, also Buchstaben, Zahlen, Symbolen, etc , in besondere Begrenzungszeichen einschließt. In Java sind das die doppelten Anführungszeichen.
+Bsp: String: "Hallo"
+
+Mit Stings können verschiedene Operationen durchgeführt werden. Sie können durch eine einfache Verkettung ( + ) aneinander gehängt werden.
+Bsp: String1: "Hallo"
+     String2: " Welt"
+     String1 + String2 = "Hallo" + " Welt" = "Hallo Welt"
+
+Eine andere mögliche Operation ist der Zugriff auf einzelne Zeichen. Unter Angabe der Position kann man mit der Funktion charAt() auf das entsprechende Zeichen zugegriffen werden.
+Bsp: Zugriff auf das fünfte Zeichen des Strings "Hallo Welt"
+          "Hallo Welt".charAt(5) = 'o'
+Es ist auch möglich die Länge eines Strings mithilfe einer Funktion zu bestimmen. Diese Funktion heißt length() und gibt einen int-Wert als Ergebnis zurück.
+Bsp: Länge des Strings "Hallo"
+      "Hallo".length() = 5

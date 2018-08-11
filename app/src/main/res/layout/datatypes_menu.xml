@@ -8,10 +8,22 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="@string/datatypes_menu_button1"
         android:id="@+id/datatypes_menu_1"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="@string/datatypes_menu_button2"
         android:id="@+id/datatypes_menu_2"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/datatypes_menu_button3"
+        android:id="@+id/datatypes_menu_3"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/datatypes_menu_button4"
+        android:id="@+id/datatypes_menu_4"/>
 
 </LinearLayout>
