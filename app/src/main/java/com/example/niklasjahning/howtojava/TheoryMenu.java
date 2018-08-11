@@ -54,27 +54,27 @@ public class TheoryMenu extends AppCompatActivity implements View.OnClickListene
     {
         switch (view.getId())
         {
-            case R.id.lektion_1: i = new Intent(TheoryMenu.class, DataTypes.class);
+            case R.id.lektion_1: i = new Intent(TheoryMenu.this, DataTypes.class);
                 break;
-            case R.id.lektion_2: i = new Intent(TheoryMenu.class, DataTypes.class);
+            case R.id.lektion_2: i = new Intent(TheoryMenu.this, DataTypes.class);
                 break;
-            case R.id.lektion_3: i = new Intent(TheoryMenu.class, DataTypes.class);
+            case R.id.lektion_3: i = new Intent(TheoryMenu.this, DataTypes.class);
                 break;
-            case R.id.lektion_4: i = new Intent(TheoryMenu.class, DataTypes.class);
+            case R.id.lektion_4: i = new Intent(TheoryMenu.this, DataTypes.class);
                 break;
-            case R.id.lektion_5: i = new Intent(TheoryMenu.class, DataTypes.class);
+            case R.id.lektion_5: i = new Intent(TheoryMenu.this, DataTypes.class);
                 break;
-            case R.id.lektion_6: i = new Intent(TheoryMenu.class, DataTypes.class);
+            case R.id.lektion_6: i = new Intent(TheoryMenu.this, DataTypes.class);
                 break;
-            case R.id.lektion_7: i = new Intent(TheoryMenu.class, DataTypes.class);
+            case R.id.lektion_7: i = new Intent(TheoryMenu.this, DataTypes.class);
                 break;
-            case R.id.lektion_8: i = new Intent(TheoryMenu.class, DataTypes.class);
+            case R.id.lektion_8: i = new Intent(TheoryMenu.this, DataTypes.class);
                 break;
-            case R.id.lektion_9: i = new Intent(TheoryMenu.class, DataTypes.class);
+            case R.id.lektion_9: i = new Intent(TheoryMenu.this, DataTypes.class);
                 break;
-            case R.id.lektion_10: i = new Intent(TheoryMenu.class, DataTypes.class);
+            case R.id.lektion_10: i = new Intent(TheoryMenu.this, DataTypes.class);
                 break;
-            case R.id.lektion_11:i = new Intent(TheoryMenu.class, DataTypes.class);
+            case R.id.lektion_11:i = new Intent(TheoryMenu.this, DataTypes.class);
                 break;
         }
         startActivity(i);
