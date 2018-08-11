@@ -6,8 +6,8 @@ Bsp: String: "Hallo"
 
 Mit Stings können verschiedene Operationen durchgeführt werden. Sie können durch eine einfache Verkettung ( + ) aneinander gehängt werden.
 Bsp: String1: "Hallo"
-     String2: " Welt"
-     String1 + String2 = "Hallo" + " Welt" = "Hallo Welt"
+         String2: " Welt"
+         String1 + String2 = "Hallo" + " Welt" = "Hallo Welt"
 
 Eine andere mögliche Operation ist der Zugriff auf einzelne Zeichen. Unter Angabe der Position kann man mit der Funktion charAt() auf das entsprechende Zeichen zugegriffen werden.
 Bsp: Zugriff auf das fünfte Zeichen des Strings "Hallo Welt"
