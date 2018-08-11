@@ -1,0 +1,17 @@
+2.1 Klassen und Objekte
+
+In Java enthält jedes Programm oder Projekt immer mindestens eine KLASSE. Klassen dienen als Vorlage für Objekte und sind die zentralen Elemente.
+Wichtig ist, dass Klassen nur Konzepte sind, aus welchen später Objekte instanziiert werden können.
+Klassenname werden immer groß geschrieben:
+public class Dog {}
+
+OBJEKTE sind immer INSTANZEN einer Klasse. Also ein Objekt ist ein Repräsentant, welcher alle in der Klasse festgelegten Eigenschaften innehat.
+Man muss nun, um ein Objekt einer Klasse zu erzeugen, zuerst eine Variable des Klassen-Dantentyps deklarieren und mit Hilfe des new-Operators eine Instanz erzeugen:
+Dog rex = new Dog();
+
+Beispiel: Die Klasse Hund beschreibt alle Eigenschaften, die ein Hund hat. Er kann zum Beispiel bellen, hat eine Fellfarbe und holt das Stöckchen.
+Eine Instanz/ Objekt dieser Klasse Hund erhält nun alle Eigenschaften dieser Klasse und zum Beispiel die Fellfarbe "grau".
+
+Klassenname werden immer groß geschrieben, während Objektbezeichnungen immer klein geschrieben werde.
+class Dog {}
+Dog rex = new Dog();

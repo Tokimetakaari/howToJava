@@ -1,0 +1,11 @@
+2.2 Sichtbarkeit
+
+Objekte/ Variablen/ Klassen haben Sichtbarkeitsattribute, welche angeben, in welchem Bereich des Projekts diese sichtbar sind.
+private: nur in der aktuellen Klasse sichtbar.
+public: sind überall im gesamten Programm sichtbar;
+protected: nur die aktuellen und die sich im selben Paket befindenden Klassen können auf diese Variablen zugreifen
+
+static: Instanziierung ist nicht erforderlich, Variablen o.ä. die static sind, können ohne weitere Vorraussetzungen in jeder Klasse verwendet werden
+final: Objekte und Variablen können nach Erstellung nicht mehr verändert werden, um diese zu Verwenden, muss eine Kopie erstellt werden
+
+zum Beispiel: private static final int number;
