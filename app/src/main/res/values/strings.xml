@@ -20,7 +20,7 @@
     <string name="logische_ausdruecke_menu_3">3.3 Inkremmentierung/Dekremmentierung</string>
     <string name="logische_ausdruecke_menu_4">3.4 Vergleichsoperatoren</string>
     <string name="logische_ausdruecke_menu_5">3.5 Boolesche Operatoren</string>
-    <string name="datatypes_menu_button1">1.1 Einfache Datentypen</string>
+   <string name="datatypes_menu_button1">1.1 Einfache Datentypen</string>
     <string name="datatypes_menu_button2">1.2 Zusammengesetzte Datentypen</string>
     <string name="datatypes_menu_button3">1.3 Variablen</string>
     <string name="datatypes_menu_button4">1.4 Zusammenfassung</string>

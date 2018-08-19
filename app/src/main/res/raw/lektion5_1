@@ -1,0 +1,41 @@
+5.1 Die for-Schleife
+Generell sind Schleifen eine Möglichkeit, eine Anweisung oder Methode zu Wiederholen. Dabei gibt es verschiedene Schleifen.
+          - do-Schleife
+          - while-Schleife
+          - for-Schleife
+Die do- und die while-Schleife arbeiten beide mit den in Lektion 3 erwähnten Bedingungen.
+Die for-Schleife hat eine feste Anzahl an Wiederholungen.
+Ein gutes Beispiel für den Nutzen von for-Schleifen sind Arrays.
+Nehmen wir ein int-Array mit 5 Feldern.
+          int array[] = new int[5];
+In diesem Array sollen die Werte 1 bis 5 gespeichert werden. Man könnte jedem Feld die Zahl einzeln zuweisen.
+          int array[0] = 1;
+          int array[1] = 2;
+          und so weiter...
+Bei kurzen Arrays ist das kein Problem. Sollte ein Array größer sein, so ist dies ein langwieriger Prozess. Die for-Schleife erleichtert dies. Sie kann genau auf die Länge des Arrays angepasst werden.
+Die for-Schleife besteht im Grunde aus 3 Teilen:
+          - der Deklaration der Schleife 'for',
+          - der Klammer, die die Anzahl der Wiederholungen definiert
+          - und dem zugehörigen Block, indem die zu wiederholenden Anweisungen stehen.
+Zum Beispiel:
+          for( int i = 0 ; i < 5 ; i++)
+          - int i = 0 : legt einen int-Wert mit dem Wert 0 fest.
+          - i < 5 : ist eine Bedingung, wird sie gebrochen ( false ), endet die Schleife
+            wird der Wert i größer als 4, also gleich 5, so wird der Inhalt der Schleife nicht mehr wiederholt.
+          - i++ : nach jeder Wiederholung der Schleife wird der Wert i um 1 erhöht.
+Wie hoch der Wert ist, ist relativ egal, solange das Verhältnis von der Größe und der Abbruchbedingung passt.
+Eine for-Schleife: for(int i = 0; i < 5; i++) hat ebenso viele Wiederholungen wie die for-Schleife: for(int i = 10; i < 15; i++).
+
+Zurück zu dem Beispiel der Wertzuweisung in einem Array
+Mit der for-Schleife sieht die Zuweisung wie folgt aus.
+          for( int i = 0; i < 5; i++)
+          {
+               array[i] = i + 1;
+          }
+Die Schleife wird genau 5 mal wiederholt. Bei jeder Wiederholung wird auf eine Arrayposition i zugegriffen.
+In dem ersten Durchgang ist dies die erste Position, da i = 0;
+Danach wird der Wert festgelegt, der 1 sein soll. Darum wird der Wert i mit 1 addiert und dann dem Array zugewiesen. Anschließend wird i automatisch von der for-Schleife erhöht ( i++ )
+Im zweiten Durchgang beträgt i = 1, wodurch die Zweite Position mit dem Wert 2 belegt wird.
+Dieser Ablauf wiederholt sich solange i kleiner als 5 ist.
+
+
