@@ -1,0 +1,18 @@
+Vererbung
+Man unterscheidet zwischen zwei Klassen, der Subklasse und der Superklasse.
+Die Superklasse kennt ihre Subklassen nicht.
+Die Subklasse erbt von der Superklasse und kann dessen Methoden und Variablen verwenden. Dies wird
+durch das Schlüsselwort  "extends" ausgeführt
+Beispiel:
+
+public class Bird extends Animals[
+}
+
+Ein Tier hat die Eigenschaft zu "atmen". Aber nicht jedes Tier hat die Eigenschaft zu fliegen.
+Deshalb erbt die Klasse Bird von der Klasse Animals um dessen grundlegenden Eigenschaften der Tiere zu nutzen und
+durch das die Bird Klasse wird die Eigenschaft fliegen hinzugefügt.
+
+Mehtoden der Superklassen werden verwendet, indem man super.mehtodenname() benutzt.
+Es werden nur Methoden gesehen deren Sichtbarkeit  public oder protected ist.
+
+
