@@ -37,9 +37,9 @@ public class ClassesAndObjects extends AppCompatActivity implements View.OnClick
         Intent i = new Intent(ClassesAndObjects.this, Theory.class);
         switch (view.getId())
         {
-            case R.id.classes_objects_menu_1: i.putExtra("txt_num",5);
+            case R.id.classes_objects_menu_1: i.putExtra("txt_num",21);
                 break;
-            case R.id.classes_objects_menu_2: i.putExtra("txt_num", 6);
+            case R.id.classes_objects_menu_2: i.putExtra("txt_num", 22);
                 break;
         }
         startActivity(i);

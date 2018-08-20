@@ -6,14 +6,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
-public class DataTypes extends AppCompatActivity implements View.OnClickListener {
-
+public class Loops extends AppCompatActivity implements View.OnClickListener {
     Button b1, b2, b3, b4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.datatypes_menu);
+        setContentView(R.layout.loops_menu);
         setupButtons();
         setupListener();
     }
@@ -37,16 +36,16 @@ public class DataTypes extends AppCompatActivity implements View.OnClickListener
     @Override
     public void onClick(View view)
     {
-        Intent i = new Intent(DataTypes.this, Theory.class);
+        Intent i = new Intent(Loops.this, Theory.class);
         switch (view.getId())
         {
-            case R.id.datatypes_menu_1: i.putExtra("txt_num",11);
+            case R.id.datatypes_menu_1: i.putExtra("txt_num",51);
                 break;
-            case R.id.datatypes_menu_2: i.putExtra("txt_num", 12);
+            case R.id.datatypes_menu_2: i.putExtra("txt_num", 52);
                 break;
-            case R.id.datatypes_menu_3: i.putExtra("txt_num",13);
+            case R.id.datatypes_menu_3: i.putExtra("txt_num",53);
                 break;
-            case R.id.datatypes_menu_4: i.putExtra("txt_num",14);
+            case R.id.datatypes_menu_4: i.putExtra("txt_num",54);
                 break;
         }
         startActivity(i);
