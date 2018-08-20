@@ -1,0 +1,20 @@
+4.2 Arrays - Length und Iterationsbeispiel
+
+Array Length:
+
+Auf die Länge eines Arrays lässt sich mit Hilfe der "length"-Methode zugreifen.
+System.out.println(grades.length);
+// outputs 6
+
+Iterieren durch einen Array:
+
+Mit Hilfe der for-Schleife und der Länge des Arrays kann man zum Beispiel die Summe aller Elemente des Arrays berechnen:
+int[] numbers = {8, 55, 7, 3};
+int sum = 0; //Deklaration einer Variablen, in welcher die Summe gespeichert werden kann, vorerst mit dem Wert "0" belegt
+for (int i = 0; i < numbers.length; i++) {
+    sum += numbers[i];
+}
+System.out.println(sum);
+// outputs 73
+In der for-Schleife wird durch jedes einzelne Element aus dem Array iteriert und dieses zu der Variable "sum" hinzuaddiert und in dieser gespeichert
+x < numbers.length, da der Index der Element immer bei 0 beginnt.

@@ -1,0 +1,22 @@
+4.1 Arrays - Definition und Deklaration/ Indizialisierung
+
+Ein Array ist eine Ansammlung von Variablen/ Objekten desselben Datentypen. Man kann einen Array deklarieren, um eine Liste von Werten zu speichern und nicht für jeden einzelnen Wert eine einzelne Variable zu deklarieren.
+
+Deklaration:
+TYP[] NAME = new TYP[LENGTH];
+
+int[] grades = new int[6];
+Der Name des Arrays ist "grades" und der Datentyp der gespeicherten Variablen ist "int". Mit dem Codeword "new" wird der Array schließlich mit 6 Elementen deklariert.
+
+Die einzelnen Elemente in einem Array sind geordnet und jedes hat einen Index, welcher eine feste Position beschreibt.
+
+Um einem einzelnen Element einen Wert zuzuordnen, schreibt man den Namen des Arrays gefolgt von dem erwünschten Index in den []:
+grades[0] = 1;
+grades[1] = 2;
+Die Indexnummerierung beginnt immer bei 0. Der Array grades mit der Länge 6 hat also die Indizes: 0, 1, 2, 3, 4, 5.
+
+Bei der Inizialisierung eines Arrays kann man auch schreiben:
+int[] grades = {"1", "2", "3", "4", "5", "6"};
+Die durch das Komma abgetrennten Integers in den geschweiften Klammern werden automatisch als Array gespeichert und in dieser Reihenfolge den Indizes zugeordnet.
+System.out.println(grades[4]);
+// outputs "5"

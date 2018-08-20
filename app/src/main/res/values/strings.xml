@@ -27,4 +27,9 @@
     <string name="classes_objects_menu_button1">2.1 Klassen und Objekte</string>
     <string name="classes_objects_menu_button2">2.2 Sichtbarkeiten</string>
     <string name="klassen_objekte_menu_button1">Klassen und Objekte</string>
+    <string name="array_menu_button1">4.1 Arrays - Definition und Deklaration</string>
+    <string name="array_menu_button2">4.2 Arrays - Length und Iteration</string>
+    <string name="array_menu_button3">4.3 Multidimensionale Arrays</string>
+    <string name="array_menu_button4">4.4 ArrayLists - Definition und Deklaration</string>
+    <string name="array_menu_button5">4.5 ArrayLists - Methoden</string>
 </resources>
