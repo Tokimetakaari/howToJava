@@ -10,7 +10,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.StringWriter;
 
 public class Theory extends AppCompatActivity implements View.OnClickListener
 {
@@ -41,32 +40,32 @@ public class Theory extends AppCompatActivity implements View.OnClickListener
         StringBuffer buf = new StringBuffer();
         switch (res)
         {
-            case 11: is = this.getResources().openRawResource(R.raw.lektion_1_1);
+            case 11: is = this.getResources().openRawResource(R.raw.lektion1_1);
                 break;
-            case 12: is = this.getResources().openRawResource(R.raw.lektion_1_2);
+            case 12: is = this.getResources().openRawResource(R.raw.lektion1_2);
                 break;
-            case 13: is = this.getResources().openRawResource(R.raw.lektion_1_3);
+            case 13: is = this.getResources().openRawResource(R.raw.lektion1_3);
                 break;
-            case 14: is = this.getResources().openRawResource(R.raw.lektion_1_4);
+            case 14: is = this.getResources().openRawResource(R.raw.lektion1_4);
                 break;
-            case 21: is = this.getResources().openRawResource(R.raw.lektion_2_1);
+            case 21: is = this.getResources().openRawResource(R.raw.lektion2_1);
                 break;
-            case 22: is = this.getResources().openRawResource(R.raw.lektion_2_2);
+            case 22: is = this.getResources().openRawResource(R.raw.lektion2_2);
                 break;
 
 
 
 
 
-            case 41: is = this.getResources().openRawResource(R.raw.lektion_4_1);
+            case 41: is = this.getResources().openRawResource(R.raw.lektion4_1);
                 break;
-            case 42: is = this.getResources().openRawResource(R.raw.lektion_4_2);
+            case 42: is = this.getResources().openRawResource(R.raw.lektion4_2);
                 break;
-            case 43: is = this.getResources().openRawResource(R.raw.lektion_4_3);
+            case 43: is = this.getResources().openRawResource(R.raw.lektion4_3);
                 break;
-            case 44: is = this.getResources().openRawResource(R.raw.lektion_4_4);
+            case 44: is = this.getResources().openRawResource(R.raw.lektion4_4);
                 break;
-            case 45: is = this.getResources().openRawResource(R.raw.lektion_4_5);
+            case 45: is = this.getResources().openRawResource(R.raw.lektion4_5);
                 break;
         }
         BufferedReader reader = new BufferedReader(new InputStreamReader(is));
