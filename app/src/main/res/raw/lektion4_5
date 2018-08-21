@@ -5,5 +5,5 @@ products.remove("Joghurt"); //entfernt das Joghurt aus dem Bestand/ der ArrayLis
 products.add("GojiBeeren"); //fügt GojiBeeren zur ArrayList hinzu
 products.contains("Schokolade"); //gibt true zurück, falls die ArrayList das Produkt enthält (sonst false)
 products.get("145"); //gibt das Element an der 145. Stelle in der ArrayList zurück
-products.size(); //gibt die Größe der ArryList zurück. (ACHTUNG: vgl.: array.length();)
+products.size(); //gibt die Größe der ArryList zurück. (ACHTUNG: vgl.: array.length;)
 products.clear(); //leert die ArrayList komplett

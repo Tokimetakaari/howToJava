@@ -2,7 +2,7 @@
 
 Array Length:
 
-Auf die Länge eines Arrays lässt sich mit Hilfe der "length"-Methode zugreifen.
+Auf die Länge eines Arrays lässt sich mit Hilfe der "length"-Eigenschaft zugreifen.
 System.out.println(grades.length);
 // outputs 6
 
