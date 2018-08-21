@@ -1,7 +1,14 @@
-Vergleichsoperatoren:
+3.4 Operatoren
+3.4.1 Vergleichsoperatoren:
 "==" --> gleich --> 3 == 3
 "!=" --> ungleich --> 3 != 2
 ">" --> größer --> 3 > 2
 "<" --> kleiner --> 2 < 3
 ">=" --> größer/gleich --> 2 >= 2
 "<=" --> kleiner/gleich --> 3 <= 3
+
+3.4.2 Boolesche Operatoren:
+"!" --> Negation --> boolean lüge = !wahrheit
+"&&" --> "und", wenn beide Operanden wahr sind --> boolean student = faul && müde
+"||" --> "oder", wenn mindestens ein Operand der beiden wahr ist --> boolean himmel = blau || wolkig
+"^" --> "oder", wenn exakt ein Operand wahr ist --> boolean standort = zuhause ^ uni

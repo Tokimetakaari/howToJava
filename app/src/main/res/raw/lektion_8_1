@@ -1,7 +1,7 @@
 Vererbung:
 Man unterscheidet zwischen zwei Klassen, der Subklasse und der Superklasse. Diese werden auch als Kindsklassen oder Elternklassen bezeichnet.
 Die Superklasse kennt ihre Subklassen nicht.
-Die Subklasse erbt von der Superklasse und kann dessen Methoden und Variablen verwenden. Dies wird
+Die Subklasse erbt von der Superklasse und kann deren Methoden und Variablen verwenden. Dies wird
 durch das Schlüsselwort  "extends" ausgeführt. Dies wird im Class-Header definiert.
 
 Beispiel:
