@@ -1,1 +1,39 @@
-jvknkjhv
+3.5
+If-else Statements:
+Die If-else Statements sind sehr wichtig und finden sich so gut wie in jedem Code wieder.
+If-else Statements sind einfach übersetzt nichts anderes als "Wenn das eintritt macht dies, wenn nicht mach das!".
+Angefangen wird das If-else-Statement mit "if()"" in den "() Klammern wird die Bedingung festgelegt welche erfüllt sein muss.
+Dannach folgt eine "{}" dort wird festgelegt was passieren soll wenn die Bedingung erfüllt ist.
+
+Beispiel:
+if(hungry = true){
+goEatSomething();
+}
+
+In diesem fall ist das else Statement nicht vorhanden und wird somit automatisch zu "tu nichts".
+Das else-Statement wird hinzugefügt wenn eine spezielle Handlung ausgeführt werden soll sollte die Bedingung im if-Statement nicht erfüllt sein.
+
+Beispiel:
+
+if(hungry = true){
+goEatSmoething();
+} else {
+goLearn();
+}
+
+Sollte die Person nicht hungrig sein wird Sie auch nichts essen und somit das else-Statement ausführen und lernen gehen.
+
+Man kann auch if-Statements verschachteln indem man ein "else if()" verwendet.
+
+Beispiel:
+
+if(hungry = true){
+goEatSmoething();
+} else if(thristy = true) {
+goDrinkSomething()
+} else {
+goLearn();
+}
+
+Dies kann beliebig oft wiederholt werden.
+If-else-Statements helfen eine Kontrollstruktur im Code aufzubauen.
