@@ -5,23 +5,23 @@ Beispiel:
 int i = 3;
 switch(i){
 case 0:
-    println("Die Zahl ist 2")
+    println("Die Zahl ist 0")
     break;
 
 case 1:
-    println("Die Zahl ist 3")
+    println("Die Zahl ist 1")
     break;
 
 case 2:
-    println("Die Zahl ist 4")
+    println("Die Zahl ist 2")
     break;
 
 case 3:
-    println("Die Zahl ist 5")
+    println("Die Zahl ist 3")
     break;
 
 case 4:
-    println("Die Zahl ist 6")
+    println("Die Zahl ist 4")
     break;
 
 default:
