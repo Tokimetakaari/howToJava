@@ -32,4 +32,6 @@
     <string name="array_menu_button3">4.3 Multidimensionale Arrays</string>
     <string name="array_menu_button4">4.4 ArrayLists - Definition und Deklaration</string>
     <string name="array_menu_button5">4.5 ArrayLists - Methoden</string>
+    <string name="interfaces_events_menu_button1">10.1 Interfaces</string>
+    <string name="interfaces_events_menu_button2">10.2 UI Events</string>
 </resources>

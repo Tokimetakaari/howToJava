@@ -1,4 +1,5 @@
 3.4 Operatoren
+
 3.4.1 Vergleichsoperatoren:
 "==" --> gleich --> 3 == 3
 "!=" --> ungleich --> 3 != 2
@@ -11,4 +12,4 @@
 "!" --> Negation --> boolean lüge = !wahrheit
 "&&" --> "und", wenn beide Operanden wahr sind --> boolean student = faul && müde
 "||" --> "oder", wenn mindestens ein Operand der beiden wahr ist --> boolean himmel = blau || wolkig
-"^" --> "oder", wenn exakt ein Operand wahr ist --> boolean standort = zuhause ^ uni
+"^" --> "oder", = "Exklusive Or"; wenn exakt einer der beiden Operanden wahr ist --> boolean standort = zuhause ^ uni

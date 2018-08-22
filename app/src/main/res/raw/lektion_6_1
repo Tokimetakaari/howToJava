@@ -1,15 +1,17 @@
-Konstruktoren:
+6. Konstruktoren:
+
 - sind methodenähnlich
 - tragen immer den Namen der Klasse
 - können keine anderen Konstruktoren aufrufen
 - dienen dazu Objekte in ihren Anfangszustand zu versetzen
 
 Beispiel:
+
 public class Child {
     public Child(int a, int h) {
-    height = h;
-    age = a;
+        height = h;
+        age = a;
     }
-
 }
 
+Man bezeichnet alles innerhalb der geschweiften Klammern eines Konstruktors oder einer Methode als "Block".

@@ -1,0 +1,28 @@
+10.2 UI Events
+
+Die am häufigsten verwendeten UI Events sind KeyEvents und MouseEvents. Die Events werden von dem Nutzer ausgelöst, wenn dieser innerhalb des Anwendungsfenster zum Beispiel einen Key oder eine Maustaste klickt.
+Die Events, also die "Klicks" müssen von dem Programm abgefangen und korrekt interpretiert werden. Dieses Objekt, welches auf Events "lauscht", nennt man Observer oder Listener.
+Im Code müssen die Ereignisse abgefangen werden:
+
+@Override
+public void mousePressed(MouseEvent e) {
+    moveEllipse(e.getX(), e.getY());
+}
+
+Das Observer-Pattern:
+
+Ein Pattern ist eine Art "Vorgehensmuster", welches sich durchgesetzt hat.
+
+Das Prinzip des Observer-Patterns besagt, dass ein einzelner "Erzähler", also das Subjekt, eine Nachricht an eine beliebig große Anzahl an "Listener", die Objekte, sendet.
+Das Subjekt, welches alle Observer kennt, welches erlaubt diese hinzuzufügen oder zu entfernen, informiert alle Observer, welche beim Subjekt angemeldet sind über Statusänderungen.
+Die Klassen kommunizieren untereinander über öffentliche Methoden, es braucht also jede Listenerklasse passende Methoden um die Events zu empfangen.
+mouseClicked
+mouseDragged
+mouseMoved
+keyPressed
+...
+
+-> die Observer-Klasse MUSS diese Methode(n) enthalten, um reagieren zu können
+-> INTERFACE implementieren!
+
+

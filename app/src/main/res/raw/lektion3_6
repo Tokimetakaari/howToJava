@@ -1,0 +1,36 @@
+3.6 Switch-case:
+
+Die switch-case-Verzweigung ist ähnlich einer if-else-Verzweigung. Es wird ein Wert übergeben, dieser wird geprüft, und je nach Ergebnis folgt dann eine
+bestimmte Aktion, die festgelegt wurde.
+Beispiel:
+
+int i = 3;
+switch(i){
+case 0:
+    println("Die Zahl ist 0");
+    break;
+
+case 1:
+    println("Die Zahl ist 1");
+    break;
+
+case 2:
+    println("Die Zahl ist 2");
+    break;
+
+case 3:
+    println("Die Zahl ist 3");
+    break;
+
+case 4:
+    println("Die Zahl ist 4");
+    break;
+
+default:
+    println("Die Zahl ist nicht im Spektrum vorhanden");
+}
+
+Bei eben genannten Beispiel, wird ein Integer mit dem Wert 3 übergeben, dieser wird dann mit den unterschiedlichen Fällen (cases) abgeglichen.
+In diesem Beispiel wird im Programm "Die Zahl ist 3" ausgegeben, da dieser Fall eingetreten ist. Sollte der int-Wert z.B "7" sein, wird kein passender
+case gefunden und der switch case führt den default-case aus, welcher in diesem Fall "Die Zahl ist nicht im Spektrum vorhanden" lauten würde.
+
