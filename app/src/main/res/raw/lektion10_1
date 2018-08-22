@@ -1,0 +1,26 @@
+10.1 Interfaces
+
+Ein Interface ist ein Referenztyp, ähnlich zu einer Klasse, welcher nur Konstanten, Methoden, bzw. Methodensignaturen enthält.
+Interfaces können nicht instanziiert werden, das heißt, sie haben keinen Konstruktor; sie müssen immer von einer Klasse mithilfe des Schlüsselworts "implements" implementiert werden.
+Im Gegensatz zur Vererbung durch eine Superklasse, kann man nicht nur von einer Klasse erben, sondern mehrere Interfaces (und somit alle ihre Methoden) implementieren; Interfaces sind also eine Schnittstelle, um Objekten unterschiedlicher Klassen gleiche Eigenschaften zuzuschreiben und diese gleich zu behandeln.
+Methoden in einem Interface sind NICHT definiert! Das heißt man vererbt nur abstrakte Funktionalitäten, welche dann in der jeweiligen Klasse unterschiedlich ausgeführt und mit Werten belegt werden können.
+
+Interfaces werden wie Klassen nur mit dem Keyword "Interface" definiert:
+
+public interface Movable {
+    public void move();
+}
+
+Implementiert eine Klasse ein Interface, schreibt man:
+
+public class Ball implements Movable{
+    public void hold() {
+        //hold ball
+    }
+    @Override
+    public void move() {
+        //move ball
+    }
+}
+
+-> WICHTIG: Implementiert eine Klasse ein Interface, MUSS diese Klasse ALLE Methoden des Interfaces mit deren konkreten Signatur überschreiben; die Methodenrümpfe können frei definiert werden.
