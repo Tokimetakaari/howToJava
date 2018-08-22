@@ -3,3 +3,16 @@ Bedingte Schleifen sind Schleifen, die eine oder mehrere Aktionen und Methoden w
 Es gibt zwei bedingte Schleifen, die do-Schleife und die while-Schleife.
 Der Unterschied zwischen den beiden Schleifen ist, dass bei einer do-Schleife die Bedingung am Ende steht und nicht wie bei einer while-Schleife am Anfang.
 Man könnte also sagen, dass eine do-Schleife ihren Inhalt mindestens einmal ausführt, während es bei einer while-Schleife passieren kann, dass ihr Inhalt gar nicht ausgeführt wird.
+Beispiel: while-Schleife
+while ( a == b )
+{
+ // do something
+}
+
+Beispiel: do-Schleife
+do
+{
+ //do something
+}
+while ( a == b )
+Eine do-Schleife wird mindestens einmal ausgeführt. Ein gutes Anwendungsbeispiel ist eine Passworteingabe. Die Eingabe ist solange möglich, bis das korrekte Passwort eingegeben wurde.
