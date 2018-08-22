@@ -14,5 +14,7 @@ do
 {
  //do something
 }
-while ( a == b )
+while ( a == b );
 Eine do-Schleife wird mindestens einmal ausgeführt. Ein gutes Anwendungsbeispiel ist eine Passworteingabe. Die Eingabe ist solange möglich, bis das korrekte Passwort eingegeben wurde.
+
+do-Schleifen werden in Java selten benutzt, da sie syntaktisch verunglückt sind. Es ist zum Beispiel unklar, wofür die geschweiften Klammern notwendig sind, wenn doch die Schlüsselworte 'do' und 'while' die Schleife begrenzen.
