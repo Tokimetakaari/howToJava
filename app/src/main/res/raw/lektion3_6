@@ -32,5 +32,5 @@ default:
 
 Bei eben genannten Beispiel, wird ein Integer mit dem Wert 3 übergeben, dieser wird dann mit den unterschiedlichen Fällen (cases) abgeglichen.
 In diesem Beispiel wird im Programm "Die Zahl ist 3" ausgegeben, da dieser Fall eingetreten ist. Sollte der int-Wert z.B "7" sein, wird kein passender
-case gefunden und der switch case führt den default-case aus,w elcher in diesem Fall "Die Zahl ist nicht im Spektrum vorhanden" lauten würde.
+case gefunden und der switch case führt den default-case aus, welcher in diesem Fall "Die Zahl ist nicht im Spektrum vorhanden" lauten würde.
 
