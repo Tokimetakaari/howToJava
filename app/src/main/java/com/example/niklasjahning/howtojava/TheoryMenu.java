@@ -56,13 +56,13 @@ public class TheoryMenu extends AppCompatActivity implements View.OnClickListene
         {
             case R.id.lektion_1: i = new Intent(TheoryMenu.this, DataTypes.class);
                 break;
-            case R.id.lektion_2: i = new Intent(TheoryMenu.this, DataTypes.class);
+            case R.id.lektion_2: i = new Intent(TheoryMenu.this, ClassesAndObjects.class);
                 break;
-            case R.id.lektion_3: i = new Intent(TheoryMenu.this, DataTypes.class);
+            case R.id.lektion_3: i = new Intent(TheoryMenu.this, LogicAndConditions.class);
                 break;
-            case R.id.lektion_4: i = new Intent(TheoryMenu.this, DataTypes.class);
+            case R.id.lektion_4: i = new Intent(TheoryMenu.this, Arrays.class);
                 break;
-            case R.id.lektion_5: i = new Intent(TheoryMenu.this, DataTypes.class);
+            case R.id.lektion_5: i = new Intent(TheoryMenu.this, Loops.class);
                 break;
             case R.id.lektion_6: i = new Intent(TheoryMenu.this, DataTypes.class);
                 break;
@@ -72,10 +72,7 @@ public class TheoryMenu extends AppCompatActivity implements View.OnClickListene
                 break;
             case R.id.lektion_9: i = new Intent(TheoryMenu.this, DataTypes.class);
                 break;
-            case R.id.lektion_10: i = new Intent(TheoryMenu.this, DataTypes.class);
-                break;
-            case R.id.lektion_11:i = new Intent(TheoryMenu.this, DataTypes.class);
-                break;
+
         }
         startActivity(i);
     }

@@ -24,6 +24,8 @@
         <activity android:name=".DataTypes" />
         <activity android:name=".Arrays" />
         <activity android:name=".ClassesAndObjects" />
+        <activity android:name=".Loops" />
+        <activity android:name=".LogicAndConditions" />
     </application>
 
 </manifest>

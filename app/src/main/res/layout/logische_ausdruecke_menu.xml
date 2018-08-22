@@ -34,5 +34,10 @@
         android:layout_height="wrap_content"
         android:text="@string/logische_ausdruecke_menu_5"
         android:id="@+id/logische_ausdruecke_menu_5"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/logische_ausdruecke_menu_6"
+        android:id="@+id/logische_ausdruecke_menu_6"/>
 
 </LinearLayout>
