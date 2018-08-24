@@ -1,3 +1,4 @@
 1.4 Zusammenfassung
+
 Primitive Datentypen speichern unterschiedliche Werte und können für unterschiedliche Aktionen verwendet werden.
 Um einen Wert zu speichern benötigt man eine Variable. Die Deklaration einer Variablen setzt sich aus dem 'DATENTYP' und dem 'VARIABLENNAMEN' zusammen. Die Festlegung auf einen Wert erfolgt durch die Initialisierung mit einem '=' nach dem Variablennamen und dem gewünschten 'WERT'.

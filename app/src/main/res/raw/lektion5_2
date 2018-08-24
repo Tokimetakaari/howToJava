@@ -1,4 +1,5 @@
-5.2 Bedingte Schleifen
+5.2 Bedingte Schleifen:
+
 Bedingte Schleifen sind Schleifen, die eine oder mehrere Aktionen und Methoden wiederholt bis eine Bedingung erfüllt ist.
 Es gibt zwei bedingte Schleifen, die do-Schleife und die while-Schleife.
 Der Unterschied zwischen den beiden Schleifen ist, dass bei einer do-Schleife die Bedingung am Ende steht und nicht wie bei einer while-Schleife am Anfang.
