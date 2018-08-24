@@ -1,0 +1,68 @@
+Überschrift:
+In Java lassen sich verschiedene Dateitypen laden, solche wie Bilder, Musik oder Textdateien etc.
+
+
+Bei dem einlesen von Dateien - im folgenden Beispiel sind es Bilder - muss man einen Dateipfad im Code angeben. Dieser kann auf zwei verschiedene Varianten angegeben werden
+1 Absoluter Dateipfad:
+Hierbei wird ein Dateipfad angegeben der von Wurzel der Festplatte bis hin zum Speicherort des Bildes reicht.
+Beispiel:
+C:\Users\YourName\Bilder\cat.jpg
+Sollte das Bild aufgerufen werden wird vom Programm exakt der Dateipfad befolgt sollte er dort nichts finden, wird auch kein Bild angezeigt.
+Diese Methode is auch eher unpraktiabel. Sollte das Programm auf einen anderen Computer verwendet werden kann es sein das dort nicht das Bild im selben Dateipfad vorhanden ist.
+
+2 Relativer Dateipfad:
+Hierbei wird nur das letzte Stück des Dateipfads angegeben und ist somit nich vollständig und wird mit dem aktuellen dateipfad kombiniert.
+Beispiel:
+Bilder\cat.jpg
+Diese Methode ist sehr weit verbreitet um eine Bild innerhalb deines Programms aufzurufen. Dadurch ist das Programm auch unabhängig von äußeren Dateien.
+
+Anwendungsbeispiel in Java:
+Image image1 = getImage(getCodeBase(),"Bilder\cat.jpg");  <-- Relativer Dateipfad
+Image image2 = getImage(getCodeBase(),"C:\Users\YourName\Bilder\cat.jpg");  <-- Absoluter Dateipfad
+
+public void paint(Graphics g) {
+      super.paint(g);
+      if(image != null) {
+         g.drawImage(image1, 0, 0, this);
+
+
+Es kann auch sein das eine Fehlermeldung "geworfen" wird (throw). Diese muss mit einer try-catch-phrase "abgefangen" werden.
+Diese besteht aus zwei Komponenten die man den Namen entnehmen kann.
+1 try:
+Im try-Teil enthält die Aktion die ausgeführt werden sollte. Dies wird versucht sollte dies erfolgreich sein wird die catch-phrase überflüssig und das Programm
+fährt normal fort. Sollte aber eine Fehlermeldung kommen, wird die catch-phrase verwendet welche die Fehlermeldung "abfängt". Dannach folgt eine Befehl welcher ausgeführt werden sollte wenn der
+Fehler abgefangen wurde.
+
+Beispiel:
+try {
+  Image cat = ImageIO.read("cat.jpg");
+  icon = new ImageIcon(cat);
+}
+catch(IOException e) {
+  System.out.println("Fail")
+}
+
+Hier wird versucht das Katzenbild als Icon zu setzen. Sollte dies nicht funktionieren wird eine Fehlermeldung geworfen welche durch "IOException e" "abgefangen" wird
+und damit einen Absturz des Programmes verhindert und der Befehl der im Code deklariert wurde ausgeführt.
+
+Beim Hochladen von Textdateien wird ein Buffered Reader benötigt, sowie ein InputStream.
+Beispiel:
+
+        InputStream is;
+        String string = "";
+        StringBuffer buf = new StringBuffer();
+
+            is = this.getResources().openRawResource(text.txt); //??????????????
+
+        BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+        if(is!=null)
+        {while ((string = reader.readLine()) != null)
+        {buf.append(string+ "\n");}
+        }
+        is.close();
+
+     println(buf.toString());
+
+Bei obigen Beispiel wird ein InputStream, ein leerer String und ein Stringbuffer erstellt. Dannach wird dem InputStream eine Textdatei zugewiesen welche ausgelesen werden sollte
+dies wird durch die while-Schleife solange ausgeführt bis kein Text mehr vorhanden ist. Ein InputStream der geöffnet wurde muss immer geschlossen werden. Hier durch is.close()
+Dannach wird nur noch der Text angezeigt.
