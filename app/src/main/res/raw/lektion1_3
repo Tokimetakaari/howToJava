@@ -4,7 +4,7 @@ Wird ein Wert eines Datentyps gespeichert werden, so benötigt man eine VARIABLE
 Um eine Variable nutzen zu können muss diese vorher deklariert werden. Dazu übergibt man der Variable den entsprechenden Datentyp und einen Namen.
 z.B: Deklaration einer int Variable mit dem Namen "x":
           int x ;
-Nach jeder Deklaration steht ein ";", damit das Programm erkennt, dass der Befehl zu Ende ist.
+Nach jeder Deklaration und jedem anderen Befehl steht ein ";", damit das Programm erkennt, dass der Befehl zu Ende ist.
 Jeder Datentyp in Java hat einen DEFAULT-Wert. Dieser wird angenommen, wenn die Variable keinen konkreten Wert zugewiesen bekommt.
 Default-Werte:
           - 'false' für boolean
