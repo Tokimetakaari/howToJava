@@ -1,4 +1,4 @@
-4.3 Multidimenisonale/ Verschachtelte Arrays
+4.3 Multidimenisonale/ Verschachtelte Arrays:
 
 Multidimensionale Arrays sind Arrays, welche weitere Arrays enthalten.
 Der bekannteste ist der zweidimensionale Array, welcher zum Beispiel für das Zeichnen eines Schachbretts verwendet werden kann.

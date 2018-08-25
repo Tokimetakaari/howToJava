@@ -1,0 +1,20 @@
+10.2 try-catch-Phrase:
+
+Es ist möglich, dass eine Fehlermeldung "geworfen" wird (throw). Diese muss mit einem try-catch-Phrase "abgefangen" werden.
+Diese besteht aus zwei Komponenten, welche man den Bezeichnungen entnehmen kann.
+1 try:
+Der try-Teil enthält die auszuführende Aktion. Dies wird versucht - sollte dies erfolgreich sein - wird der catch-phrase überflüssig und das Programm
+fährt normal fort. Sollte aber ein Fehler "geworfen" werden, wird der catch-Phrase verwendet, welcher die Fehlermeldung "abfängt". Im catch-Phrase folgt ein Befehl, welcher ausgeführt werden soll, wenn der
+Fehler abgefangen wurde.
+
+Beispiel:
+try {
+  Image cat = ImageIO.read("cat.jpg");
+  icon = new ImageIcon(cat);
+}
+catch(IOException e) {
+  System.out.println("Fail")
+}
+
+Hier wird versucht das Katzenbild als Icon zu setzen. Sollte dies nicht funktionieren, wird eine Fehlermeldung geworfen, welche durch "IOException e" "abgefangen" wird.
+Damit soll ein Absturz des Programmes verhindert werden und der Befehl, der im Code deklariert wurde, ausgeführt werden.

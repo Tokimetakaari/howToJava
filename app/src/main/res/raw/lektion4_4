@@ -1,4 +1,4 @@
-4.4 ArrayLists - Definition und Deklaration/ Indizialisierung
+4.4 ArrayLists - Definition und Deklaration/ Indizialisierung:
 
 Ein anderer Weg um mehrere zusammengehörige Objekte zu speichern ist die ArrayList. Die ArrayList ist eine Klasse, welche es, ähnlich wie der soeben behandelte Array, erlaubt, ganze Gruppn von Objekten zu speichern.
 Der Unterschied und häufig auch Vorteil ist, dass man zur ArrayList jederzeit Elemente hinzufügen oder löschen kann und sich die Größe (entspricht der Länge) automatisch anpasst.

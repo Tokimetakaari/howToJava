@@ -1,4 +1,4 @@
-10.1 Interfaces
+9.1 Interfaces:
 
 Ein Interface ist ein Referenztyp, ähnlich zu einer Klasse, welcher nur Konstanten, Methoden, bzw. Methodensignaturen enthält.
 Interfaces können nicht instanziiert werden, das heißt, sie haben keinen Konstruktor; sie müssen immer von einer Klasse mithilfe des Schlüsselworts "implements" implementiert werden.
