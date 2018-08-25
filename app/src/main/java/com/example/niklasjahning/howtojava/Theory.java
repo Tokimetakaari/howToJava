@@ -136,63 +136,63 @@ public class Theory extends AppCompatActivity implements View.OnClickListener
     {
         switch (res)
         {
-            case 11:  res = 12;
+            case 11: backButton.setClickable(false);
                 break;
-            case 12: res = 13;
+            case 12: res = 11;
                 break;
-            case 13:
+            case 13: res = 12;
                 break;
-            case 14:
+            case 14: res = 13;
                 break;
-            case 21:
+            case 21: res = 14;
                 break;
-            case 22:
+            case 22: res = 21;
                 break;
-            case 31:
+            case 31: res = 22;
                 break;
-            case 32:
+            case 32: res = 31;
                 break;
-            case 33:
+            case 33: res = 32;
                 break;
-            case 34:
+            case 34: res = 33;
                 break;
-            case 35:
+            case 35: res = 34;
                 break;
-            case 36:
+            case 36: res = 35;
                 break;
-            case 41:
+            case 41: res = 36;
                 break;
-            case 42:
+            case 42: res = 41;
                 break;
-            case 43:
+            case 43: res = 42;
                 break;
-            case 44:
+            case 44: res = 43;
                 break;
-            case 45:
+            case 45: res = 44;
                 break;
-            case 51:
+            case 51: res = 45;
                 break;
-            case 52:
+            case 52: res = 51;
                 break;
-            case 61:
+            case 61: res = 52;
                 break;
-            case 71:
+            case 71: res = 61;
                 break;
-            case 72:
+            case 72: res = 71;
                 break;
-            case 73:
+            case 73: res = 72;
                 break;
-            case 81:
+            case 81: res = 73;
                 break;
-            case 91:
+            case 91: res = 81;
                 break;
-            case 92:
+            case 92: res = 91;
                 break;
-            case 101:
+            case 101: res = 92;
                 break;
-            case 102:
+            case 102: res = 101;
                 break;
-            case 103:
+            case 103: res = 102;
                 break;
         }
         try {
@@ -206,62 +206,63 @@ public class Theory extends AppCompatActivity implements View.OnClickListener
     {
         switch (res)
         {
-            case 11:  res = 11;
+            case 11:  res = 12;
                 break;
-            case 12: res = 11;
+            case 12: res = 13;
                 break;
-            case 13:
+            case 13: res = 14;
                 break;
-            case 14:
+            case 14: res = 21;
                 break;
-            case 21:
+            case 21: res = 22;
                 break;
-            case 22:
+            case 22: res = 31;
                 break;
-            case 31:
+            case 31: res = 32;
                 break;
-            case 32:
+            case 32: res = 33;
                 break;
-            case 33:
+            case 33: res = 34;
                 break;
-            case 34:
+            case 34: res = 35;
                 break;
-            case 35:
+            case 35: res = 36;
                 break;
-            case 36:
+            case 36: res = 41;
                 break;
-            case 41:
+            case 41: res = 42;
                 break;
-            case 42:
+            case 42: res = 43;
                 break;
-            case 43:
+            case 43: res = 44;
                 break;
-            case 44:
+            case 44: res = 45;
                 break;
-            case 45:
+            case 45: res = 51;
                 break;
-            case 51:
+            case 51: res = 52;
                 break;
-            case 52:
+            case 52: res = 61;
                 break;
-            case 61:
+            case 61: res = 71;
                 break;
-            case 71:
+            case 71: res = 72;
                 break;
-            case 72:
+            case 72: res = 73;
                 break;
-            case 73:
+            case 73: res = 81;
                 break;
-            case 81:
+            case 81: res = 91;
                 break;
-            case 91:
+            case 91: res = 92;
                 break;
-            case 92:
+            case 92: res = 101;
                 break;
-            case 101:
+            case 101: res = 102;
                 break;
-            case 102:
-                break;
+            case 102: res = 103;
+                      forwardButton.setClickable(false);
+                      break;
             case 103:
                 break;
         }
