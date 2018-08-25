@@ -1,23 +1,24 @@
-11.3 Buffered Reader und InputStream
+11.3 Buffered Reader und InputStream:
 
-Beim Hochladen von Textdateien wird ein Buffered Reader benötigt, sowie ein InputStream.
+Beim Hochladen von Textdateien wird ein Buffered Reader sowie ein InputStream benötigt.
 Beispiel:
 
         InputStream is;
         String string = "";
         StringBuffer buf = new StringBuffer();
 
-            is = this.getResources().openRawResource(text.txt); //??????????????
+        is = this.getResources().openRawResource(R.raw.text.txt); //??????????????
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(is));
-        if(is!=null)
-        {while ((string = reader.readLine()) != null)
-        {buf.append(string+ "\n");}
+        if(is!=null) {
+            while ((string = reader.readLine()) != null) {
+                buf.append(string+ "\n");
+            }
         }
         is.close();
 
-     println(buf.toString());
+        println(buf.toString());
 
-Bei obigen Beispiel wird ein InputStream, ein leerer String und ein Stringbuffer erstellt. Dannach wird dem InputStream eine Textdatei zugewiesen welche ausgelesen werden sollte
-dies wird durch die while-Schleife solange ausgeführt bis kein Text mehr vorhanden ist. Ein InputStream der geöffnet wurde muss immer geschlossen werden. Hier durch is.close()
+Bei obigem Beispiel wird ein InputStream, ein leerer String und ein Stringbuffer erstellt. Dannach wird dem InputStream eine Textdatei zugewiesen, welche ausgelesen werden sollte.
+Dies wird durch die while-Schleife solange ausgeführt, bis kein Text mehr vorhanden ist. Ein InputStream der geöffnet wurde, muss immer geschlossen werden (hier durch is.close();).
 Dannach wird nur noch der Text angezeigt.
