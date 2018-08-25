@@ -1,3 +1,10 @@
 1.4 Zusammenfassung
 Primitive Datentypen speichern unterschiedliche Werte und können für unterschiedliche Aktionen verwendet werden.
 Um einen Wert zu speichern benötigt man eine Variable. Die Deklaration einer Variablen setzt sich aus dem 'DATENTYP' und dem 'VARIABLENNAMEN' zusammen. Die Festlegung auf einen Wert erfolgt durch die Initialisierung mit einem '=' nach dem Variablennamen und dem gewünschten 'WERT'.
+
+1.5 Ergänzungen
+Es gibt verschiedene vorgefertigte Methoden und Befehle, die im späteren Verlauf immer wieder nützlich sind.
+Zum Beispiel:
+System.out.println(); : Eine Möglichkeit über das System Daten auszugeben. In die runden Klammern können alle Variablen, Werte oder sonstige Texte ausgegeben werden. Variablen, Methoden oder Klassen werden einfach über ihren Namen ausgegeben. Selbstverfasste Texte müssen in doppelten Anführungszeichen stehen (" "). Möchte man mehrere Werte oder Texte aneinander Reihen benötigt man ein '+' zwischen den einzelnen Elementen.
+  Bsp: int value = 5; ausgeben
+  System.out.println("Der zu berechnende Wert beträgt: " + value);
