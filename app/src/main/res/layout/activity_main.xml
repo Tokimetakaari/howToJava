@@ -6,13 +6,15 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity"
-    android:background="@android:color/black">
+    android:background="@android:color/white"
+    >
     <!--Das schwarze wird n Image das wir dahinterlegen die Buttonfarbe is auch optional-->
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/main_menu_theorie_button"
-        android:background="@android:color/holo_orange_dark"
+        android:background="@color/colorAccent1"
+        android:textColorHint="@android:color/white"
         android:id="@+id/theory_button"/>
 
     <Button
@@ -20,15 +22,17 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:hint="@string/main_menu_play_button"
-        android:background="@android:color/holo_orange_dark"
+        android:textColorHint="@android:color/white"
+        android:background="@color/colorAccent1"
         android:id="@+id/play_button"/>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="@android:color/holo_orange_dark"
+        android:background="@color/colorAccent1"
         android:hint="@string/main_menu_setting_button"
+        android:textColorHint="@android:color/white"
         android:id="@+id/settings_button"/>
 
 

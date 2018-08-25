@@ -65,10 +65,6 @@
         android:layout_height="wrap_content"
         android:text="@string/theorie_button10"
         android:id="@+id/lektion_10"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/theorie_button11"
-        android:id="@+id/lektion_11"/>
+
 
 </LinearLayout>

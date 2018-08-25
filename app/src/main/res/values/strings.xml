@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">howToJava</string>
+    <string name="app_name">howToJava()</string>
     <string name="theorie_button1">1. Primitive Datentypen</string>
     <string name="theorie_button2">2. Komplexe Datentypen</string>
     <string name="theorie_button3">3. Bedingungen und logische Ausdrücke</string>

@@ -2,7 +2,7 @@
 
 DATEN sind Objekte, mit denen ein Programm umgehen soll. Dabei gibt es verschiedene Sorten von Daten, wie  Wahrheitswerte, Zahlen, Texte, Bilder etc. Alle diese Daten sind von verschiedenem TYP. Sie verbrauchen unterschiedlich viel Speicher und es sind verschiedene Operationen mit ihnen durchführbar. So lassen sich zum Beispiel Texte und Zahlen nicht addieren.
 In jeder Programmiersprache gibt es eine Sammlung von DATENTYPEN. Dabei unterscheidet man zwischen einfachen und strukturierten Datentypen.
-Datentypen in JAVA sind zum Beispiel boolean, String, char, int, long, flaot und double.
+Datentypen in JAVA sind zum Beispiel boolean, String, char, int, long, float und double.
 
 Booleans (boolean) sind Wahrheitswerte und können immer nur mit einen von Zwei Werten belegt sein. Entweder "true" (wahr) oder "false" (falsch)
 Char oder Character (char) repräsentiert jeweils ein einzelnes Zeichen
