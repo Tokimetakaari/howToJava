@@ -1,4 +1,4 @@
-10.2 UI Events:
+9.2 UI Events:
 
 Die am häufigsten verwendeten UI Events sind KeyEvents und MouseEvents. Die Events werden von dem Nutzer ausgelöst, wenn dieser innerhalb des Anwendungsfenster zum Beispiel einen Key oder eine Maustaste klickt.
 Die Events, also die "Klicks" müssen von dem Programm abgefangen und korrekt interpretiert werden. Dieses Objekt, welches auf Events "lauscht", nennt man Observer oder Listener.
