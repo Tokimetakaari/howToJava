@@ -93,30 +93,10 @@ public class PlayMenu extends AppCompatActivity implements View.OnClickListener 
     {
         Intent i = new Intent(PlayMenu.this, Theory.class);
 
-        switch (view.getId())
+      /*  switch (view.getId())
         {
-            case R.id.lektion_1: i.putExtra("txt_num",11);
-                break;
-            case R.id.lektion_2: i.putExtra("txt_num",12);
-                break;
-            case R.id.lektion_3: i.putExtra("txt_num",13);
-                break;
-            case R.id.lektion_4: i.putExtra("txt_num",14);
-                break;
-            case R.id.lektion_5: i.putExtra("txt_num",21);
-                break;
-            case R.id.lektion_6: i.putExtra("txt_num",22);
-                break;
-            case R.id.lektion_7: i.putExtra("txt_num",31);
-                break;
-            case R.id.lektion_8: i.putExtra("txt_num",32);
-                break;
-            case R.id.lektion_9: i.putExtra("txt_num",41);
-                break;
-            case R.id.lektion_10: i.putExtra("txt_num",51);
-                break;
 
-        }
+        }*/
         startActivity(i);
     }
 }
