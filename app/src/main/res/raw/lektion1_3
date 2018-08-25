@@ -20,4 +20,10 @@ Bsp:
           int y = 5;
           x = x + y;
 Die beiden Variablen vom Typ 'int' werden deklariert und initialisiert. Danach erfolgt ein lesender Zugriff auf beide Variablen. Die Werte der Variablen werden ausgelesen und danach addiert. Der schreibende Zugriff erfolgt durch das '=' und legt den Wert der Variable x neu fest.
+Will man nach der Deklaration auf Variablen zugreifen, so genügt der Variablenname.
+Man kann Variablen auch deklarieren und ihnen erst später konkrete Werte zuweisen. Die Deklaration erfolgt dann wie im ersten Beispiel, die Initialisierung erfolgt dann später durch einen erneuten Aufruf der Variable über ihren Namen und einer Wertzuweisung.
+Bsp:
+          int x;   <-- Deklaration
+          .....
+          x = 5;   <-- Initialisierung
 

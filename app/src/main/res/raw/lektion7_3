@@ -1,0 +1,15 @@
+7.3 Werte an Methoden Übergeben
+Wie in den beiden vorherigen Lektionen erwähnt, können Werte an Methoden übergeben werden. Um dies zu ermöglichen, müssen Variablen in den runden Klammern definiert werden.
+Zum Beispiel:
+     public int zahlenAddieren(int a, int b) {}
+Wird die Methode nun aufgerufen, so müssen ihr zwei int-Werte übergeben werden, ansonsten ist der Methodenaufruf unzulässig. Es ist auch möglich, andere Variablen zu übergebn, solange der Datentyp übereinstimmt.
+
+     zahlenAddieren(5,6);
+
+
+ --> public int zahlenAddieren ( int a, int b)
+     {
+          int loesung = a + b;
+          return loesung;
+     }
+Die oben aufgeführte Methode erhält zwei Werte 5 und 6, wenn sie aufgerufen wird und gibt die Summe der beiden Werte zurück.
