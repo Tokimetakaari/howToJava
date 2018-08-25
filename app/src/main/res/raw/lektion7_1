@@ -1,0 +1,50 @@
+7.1 Methoden erstellen
+Methoden sind eine Möglichkeit zur Manipulation von Daten und Objekten. Alle relevante Anweisungen, die ein Programm ausführt, stehen in Methoden. Theoretisch könnten alle Anweisungen in einer einzelnen Methoden stehen. Dies wird allerdings vermieden, da es unübersichtlich ist und es schwer ist Fehler zu finden. Durch mehrere Methoden wird ein Programm übersichtlicher und es ist leichter gewisse Anwendungsschritte zu wiederholen. Eine Methode braucht genau wie ein Datentyp einen Namen. Methodennamen werden grundsätzlich klein geschrieben. Werden mehrere Wörter für einen Methodennamen verwendet, wird das erste Wort komplett klein geschrieben und alle darauffolgenden am Anfang groß.
+Hinter dem Methodennamen stehen runde Klammern '( )'. Mithilfe dieser kann man den Methoden Werte übergeben. Dazu kommen wir aber später noch.
+Methoden werden ähnlich deklariert wie Konstruktoren, allerdings besitzen Methoden im Gegensatz zu Konstruktoren einen sogenannten Ergebnistyp. Dieser legt fest, was für eine Art von Wert die Methode am Ende zurück gibt. Ereignistypen können grundsätzlich alle Datentypen und auch Objekte sein. Methoden, die keinen Ergebnistyp haben, leifern auch kein Ergebnis. Es ist also nötig sie mit einem leeren Ergebnistypen ('void') zu versehen. Jede Methode, die nicht vom Typ 'void' ist, hat deshalb einen return-Wert. Dieser return-Wert besitzt den selben Datentypen wie der zuvor deklarierte Ergebnistyp.
+
+Zum Beispiel:
+     public int zahlenAddieren ()
+     {
+          //do something
+          return ;
+     }
+
+Diese Methode gibt nach der Ausführung einen int-Wert zurück.
+
+Die Anweisungen in einer Methode stehen innerhalb von geschweiften Klammer '{ }'. Alles was innerhalb dieser Klammern steht, kann als Methodenblock bezeichnet werden.
+Wird innerhalb eines Methodenblocks eine Variable deklariert, so existiert diese nur solange wie die Methode ausgeführt wird. Diese Variable wird als lokale Variable bezeichnet. Eine Variable, die außerhalb einer Methode deklariert wurde, wird dabei als globale Variable bezeichnet. Auf lokale Variablen kann man nicht von außerhalb der Methode zugreifen.
+Allerdings kann eine Methode auf alle globalen Methoden zugreifen.
+
+Ein weiteres Beispiel:
+
+public class Rechnen
+{
+     int a = 10; <- globale Variable
+
+     public int zahlenAddieren()
+     {
+          int b = 5; <- lokale Variable
+          int c = 6; <- lokale Variable
+          return  c + b;
+     }
+}
+Die Methode erstellt zwei Variablen und gibt die Summe der einzelnen Variablen zurück.
+
+Es gibt mehrere Möglichkeiten Werte, die von einer Methode berechnet wurden, auszugeben.
+Eine davon ist der oben genannte return-Wert. Eine zweite ist das berechnete Ergebnis in eine globale Variable zu speichern. Diese globale Variable kann dann wiederum von anderen Methoden ausgelesen werden.
+
+Beispiel:
+public class Rechnen
+{
+     int a;
+
+     public void zahlenAddieren()
+     {
+          int b = 5;
+          int c = 6;
+          a = b + c;
+     }
+}
+
+Hier wird kein Wert ausgegeben, aber der Wert einer Variable überschrieben, um das Ergebnis zu speichern.

@@ -1,0 +1,15 @@
+7.2 Methoden aufrufen
+Nachdem eine Methode erstellt wurde, muss man sie aufrufen, damit sie auch ausgeführt wird. Eine Methode aufzurufen funktioniert genauso, wie eine Variable aufzurufen. Man schreibt einfach den Methodennamen und die Runden Klammern, dahinter wie bei jedem Befehl ein ';'
+Ein Beispiel aus der vorherigen Lektion:
+     public int zahlenAddieren ()
+     {
+          int a = 5;
+          int b = 6;
+          return  a + b;
+     }
+
+Um diese Methode aufzurufen schreibt man:
+          zahlenAddieren();
+
+Es ist auch möglich, Methoden aufzurufen, die in anderen Klassen definiert wurden. Dazu benötigt man den Klassennamen und den Methodennamen. Man schreibt: 'Klassennamen.Methodennamen();'
+
