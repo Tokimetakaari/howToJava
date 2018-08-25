@@ -78,9 +78,25 @@ public class Theory extends AppCompatActivity implements View.OnClickListener
                 break;
             case 52: is = this.getResources().openRawResource(R.raw.lektion5_2);
                 break;
-            case 71: is = this.getResources().openRawResource(R.raw.lektion5_1);
+            case 61: is = this.getResources().openRawResource(R.raw.lektion6_1);
                 break;
-            case 72: is = this.getResources().openRawResource(R.raw.lektion3_3);
+            case 71: is = this.getResources().openRawResource(R.raw.lektion7_1);
+                break;
+            case 72: is = this.getResources().openRawResource(R.raw.lektion7_2);
+                break;
+            case 73: is = this.getResources().openRawResource(R.raw.lektion7_3);
+                break;
+            case 81: is = this.getResources().openRawResource(R.raw.lektion8_1);
+                break;
+            case 91: is = this.getResources().openRawResource(R.raw.lektion9_1);
+                break;
+            case 92: is = this.getResources().openRawResource(R.raw.lektion9_2);
+                break;
+            case 101: is = this.getResources().openRawResource(R.raw.lektion11_1);
+                break;
+            case 102: is = this.getResources().openRawResource(R.raw.lektion11_2);
+                break;
+            case 103: is = this.getResources().openRawResource(R.raw.lektion11_3);
                 break;
         }
         BufferedReader reader = new BufferedReader(new InputStreamReader(is));
