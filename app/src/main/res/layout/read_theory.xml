@@ -17,24 +17,28 @@
             android:layout_height="wrap_content"
             android:id="@+id/textview"
             android:scrollbarAlwaysDrawVerticalTrack="true"
-            android:scrollbars="vertical"
+            android:scrollbars="horizontal"
             android:textColor="@color/colorPrimaryDark"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_alignParentBottom="true"
+            >
 
             <Button
                 android:id="@+id/zurückButton"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:text="Zurück" />
 
             <Button
                 android:id="@+id/weiterButton"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:text="Weiter" />
 
         </LinearLayout>
