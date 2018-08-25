@@ -9,6 +9,7 @@ import android.widget.Button;
 public class PlayMenu extends AppCompatActivity implements View.OnClickListener {
 
     Button b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15, b16, b17, b18, b19, b20, b21, b22, b23, b24, b25, b26, b27, b28, b29, b30;
+    Intent i ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,12 +92,10 @@ public class PlayMenu extends AppCompatActivity implements View.OnClickListener 
     @Override
     public void onClick(View view)
     {
-        Intent i = new Intent(PlayMenu.this, Theory.class);
-
-      /*  switch (view.getId())
+        switch (view.getId())
         {
-
-        }*/
+            case R.id.play_lektion_1: i = new Intent(PlayMenu.this, ExerciseSelectDatatypes.class);
+        }
         startActivity(i);
     }
 }

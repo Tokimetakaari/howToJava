@@ -137,6 +137,7 @@ public class Theory extends AppCompatActivity implements View.OnClickListener
         switch (res)
         {
             case 11: backButton.setClickable(false);
+                     backButton.setEnabled(false);
                 break;
             case 12: res = 11;
                 break;
@@ -262,6 +263,7 @@ public class Theory extends AppCompatActivity implements View.OnClickListener
                 break;
             case 102: res = 103;
                       forwardButton.setClickable(false);
+                      forwardButton.setEnabled(false);
                       break;
             case 103:
                 break;
