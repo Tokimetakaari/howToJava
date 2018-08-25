@@ -17,6 +17,8 @@ public class Theory extends AppCompatActivity implements View.OnClickListener
     int res;
     TextView textView;
     InputStream is;
+    Button weiterButton;
+    Button zurückButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -112,6 +114,7 @@ public class Theory extends AppCompatActivity implements View.OnClickListener
 
     @Override
     public void onClick(View view) {}
+
 
 
 
