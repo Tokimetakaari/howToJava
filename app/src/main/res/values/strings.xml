@@ -14,7 +14,7 @@
     <string name="main_menu_theorie_button">Theorie</string>
     <string name="main_menu_play_button">Play</string>
     <string name="main_menu_setting_button">Einstellungen</string>
-    <string name="submit_button">Submit</string>
+    <string name="submit_button">Weiter</string>
     <string name="datatypes_menu_button1">1.1 Einfache Datentypen</string>
     <string name="datatypes_menu_button2">1.2 Zusammengesetzte Datentypen</string>
     <string name="datatypes_menu_button3">1.3 Variablen</string>

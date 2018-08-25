@@ -17,8 +17,7 @@ public class Theory extends AppCompatActivity implements View.OnClickListener
     int res;
     TextView textView;
     InputStream is;
-    Button weiterButton;
-    Button zurückButton;
+    Button forwardButton, backButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -26,6 +25,7 @@ public class Theory extends AppCompatActivity implements View.OnClickListener
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.read_theory);
+        setupButtons();
         Intent i = getIntent();
         Bundle data = i.getExtras();
         assert data != null;
@@ -35,6 +35,14 @@ public class Theory extends AppCompatActivity implements View.OnClickListener
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    private void setupButtons()
+    {
+        backButton = findViewById(R.id.weiterButton);
+        forwardButton = findViewById(R.id.zurückButton);
+        backButton.setOnClickListener(this);
+        forwardButton.setOnClickListener(this);
     }
 
     private void setText() throws IOException {
@@ -113,8 +121,156 @@ public class Theory extends AppCompatActivity implements View.OnClickListener
     }
 
     @Override
-    public void onClick(View view) {}
+    public void onClick(View view)
+    {
+        switch (view.getId())
+        {
+            case R.id.zurückButton: goBackwards();
+                break;
+            case R.id.weiterButton: goForward();
+                break;
+        }
+    }
 
+    private void goBackwards ()
+    {
+        switch (res)
+        {
+            case 11:  res = 12;
+                break;
+            case 12: res = 13;
+                break;
+            case 13:
+                break;
+            case 14:
+                break;
+            case 21:
+                break;
+            case 22:
+                break;
+            case 31:
+                break;
+            case 32:
+                break;
+            case 33:
+                break;
+            case 34:
+                break;
+            case 35:
+                break;
+            case 36:
+                break;
+            case 41:
+                break;
+            case 42:
+                break;
+            case 43:
+                break;
+            case 44:
+                break;
+            case 45:
+                break;
+            case 51:
+                break;
+            case 52:
+                break;
+            case 61:
+                break;
+            case 71:
+                break;
+            case 72:
+                break;
+            case 73:
+                break;
+            case 81:
+                break;
+            case 91:
+                break;
+            case 92:
+                break;
+            case 101:
+                break;
+            case 102:
+                break;
+            case 103:
+                break;
+        }
+        try {
+            setText();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void goForward()
+    {
+        switch (res)
+        {
+            case 11:  res = 11;
+                break;
+            case 12: res = 11;
+                break;
+            case 13:
+                break;
+            case 14:
+                break;
+            case 21:
+                break;
+            case 22:
+                break;
+            case 31:
+                break;
+            case 32:
+                break;
+            case 33:
+                break;
+            case 34:
+                break;
+            case 35:
+                break;
+            case 36:
+                break;
+            case 41:
+                break;
+            case 42:
+                break;
+            case 43:
+                break;
+            case 44:
+                break;
+            case 45:
+                break;
+            case 51:
+                break;
+            case 52:
+                break;
+            case 61:
+                break;
+            case 71:
+                break;
+            case 72:
+                break;
+            case 73:
+                break;
+            case 81:
+                break;
+            case 91:
+                break;
+            case 92:
+                break;
+            case 101:
+                break;
+            case 102:
+                break;
+            case 103:
+                break;
+        }
+        try {
+            setText();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
 
 

@@ -20,13 +20,13 @@
         <activity android:name=".PlayMenu" />
         <activity android:name=".TheoryMenu" />
         <activity android:name=".Theory" />
-        <activity android:name=".PlayLesson" />
         <activity android:name=".DataTypes" />
         <activity android:name=".Arrays" />
         <activity android:name=".ClassesAndObjects" />
         <activity android:name=".Loops" />
         <activity android:name=".LogicAndConditions" />
         <activity android:name=".Methods" />
+        <activity android:name=".ExerciseSelectDatatypes" />
     </application>
 
 </manifest>
