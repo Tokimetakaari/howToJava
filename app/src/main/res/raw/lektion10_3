@@ -1,4 +1,4 @@
-11.3 Buffered Reader und InputStream:
+10.3 Buffered Reader und InputStream:
 
 Beim Hochladen von Textdateien wird ein Buffered Reader sowie ein InputStream benötigt.
 Beispiel:

@@ -1,4 +1,4 @@
-11.2 try-catch-Phrase:
+10.2 try-catch-Phrase:
 
 Es ist möglich, dass eine Fehlermeldung "geworfen" wird (throw). Diese muss mit einem try-catch-Phrase "abgefangen" werden.
 Diese besteht aus zwei Komponenten, welche man den Bezeichnungen entnehmen kann.
