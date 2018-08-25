@@ -15,25 +15,32 @@
     <string name="main_menu_play_button">Play</string>
     <string name="main_menu_setting_button">Einstellungen</string>
     <string name="submit_button">Submit</string>
-    <string name="logische_ausdruecke_menu_1">3.1 Definition</string>
-    <string name="logische_ausdruecke_menu_2">3.2 Arithmetische Operatoren</string>
-    <string name="logische_ausdruecke_menu_3">3.3 Inkremmentierung/Dekremmentierung</string>
-    <string name="logische_ausdruecke_menu_4">3.4 Operatoren</string>
-    <string name="logische_ausdruecke_menu_5">3.5 If-else Statements</string>
-    <string name="logische_ausdruecke_menu_6">3.6 Switch-case</string>
     <string name="datatypes_menu_button1">1.1 Einfache Datentypen</string>
     <string name="datatypes_menu_button2">1.2 Zusammengesetzte Datentypen</string>
     <string name="datatypes_menu_button3">1.3 Variablen</string>
     <string name="datatypes_menu_button4">1.4 Zusammenfassung</string>
     <string name="classes_objects_menu_button1">2.1 Klassen und Objekte</string>
     <string name="classes_objects_menu_button2">2.2 Sichtbarkeiten</string>
+    <string name="logische_ausdruecke_menu_1">3.1 Definition</string>
+    <string name="logische_ausdruecke_menu_2">3.2 Arithmetische Operatoren</string>
+    <string name="logische_ausdruecke_menu_3">3.3 Inkremmentierung/Dekremmentierung</string>
+    <string name="logische_ausdruecke_menu_4">3.4 Operatoren</string>
+    <string name="logische_ausdruecke_menu_5">3.5 If-else Statements</string>
+    <string name="logische_ausdruecke_menu_6">3.6 Switch-case</string>
     <string name="array_menu_button1">4.1 Arrays - Definition und Deklaration</string>
     <string name="array_menu_button2">4.2 Arrays - Length und Iteration</string>
     <string name="array_menu_button3">4.3 Multidimensionale Arrays</string>
     <string name="array_menu_button4">4.4 ArrayLists - Definition und Deklaration</string>
     <string name="array_menu_button5">4.5 ArrayLists - Methoden</string>
-    <string name="interfaces_events_menu_button1">10.1 Interfaces</string>
-    <string name="interfaces_events_menu_button2">10.2 UI Events</string>
     <string name="loops_menu_button2">5.2 Bedingte Schleifen</string>
     <string name="loops_menu_button1">5.1 Schleifen</string>
+
+
+    <string name="methods_menu_button1">7.1 Methoden erstellen</string>
+    <string name="methods_menu_button2">7.2 Methoden aufrufen</string>
+    <string name="methods_menu_button3">7.3 Werte an Methoden Übergeben</string>
+
+
+    <string name="interfaces_events_menu_button1">10.1 Interfaces</string>
+    <string name="interfaces_events_menu_button2">10.2 UI Events</string>
 </resources>

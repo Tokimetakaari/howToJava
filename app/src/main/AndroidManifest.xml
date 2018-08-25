@@ -26,6 +26,7 @@
         <activity android:name=".ClassesAndObjects" />
         <activity android:name=".Loops" />
         <activity android:name=".LogicAndConditions" />
+        <activity android:name=".Methods" />
     </application>
 
 </manifest>
