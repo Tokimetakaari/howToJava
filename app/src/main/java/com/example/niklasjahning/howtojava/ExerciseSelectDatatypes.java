@@ -116,7 +116,7 @@ public class ExerciseSelectDatatypes extends AppCompatActivity implements View.O
                 break;
 
                 default:
-                    nextLevel();
+
                     break;
         }
             resetCheckbox();
@@ -166,15 +166,5 @@ public class ExerciseSelectDatatypes extends AppCompatActivity implements View.O
                 break;
         }
     }
-
-    private void nextLevel()
-    {
-        if (i >= 5)
-        {
-
-            Intent intent = new Intent( this, PlayMenu.class);
-            startActivity(intent);
-            finish();
-        }
-    }
+    
 }
