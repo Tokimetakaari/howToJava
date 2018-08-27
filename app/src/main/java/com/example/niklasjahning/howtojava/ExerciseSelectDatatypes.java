@@ -25,7 +25,7 @@ public class ExerciseSelectDatatypes extends AppCompatActivity implements View.O
         setContentView(R.layout.checkbox_layout_default);
         setupItems();
         setText();
-        nextLevel();
+
 
     }
 
@@ -46,15 +46,18 @@ public class ExerciseSelectDatatypes extends AppCompatActivity implements View.O
     {
         if(view.getId() == R.id.checkbox_submit_button)
         {
-            if ( (box1.isChecked()|| box2.isChecked() || box3.isChecked() || box4.isChecked()) ^ (i >=5))
+            if ( (box1.isChecked()|| box2.isChecked() || box3.isChecked() || box4.isChecked()) && (i <=5))
             {
                 checkCorrectAnswers();
                 answered[i] = true;
                 i++;
                 setText();
-            }
-        }
 
+            } else if (i>=5) {
+               finish();
+
+        }
+    }
     }
 
     private void setText() {
@@ -111,10 +114,13 @@ public class ExerciseSelectDatatypes extends AppCompatActivity implements View.O
                 box4.setClickable(false);
                 i++;
                 break;
+
+                default:
+                    nextLevel();
+                    break;
         }
             resetCheckbox();
     }
-
 
 
     private void resetCheckbox ()
@@ -124,6 +130,7 @@ public class ExerciseSelectDatatypes extends AppCompatActivity implements View.O
         box3.setChecked(false);
         box4.setChecked(false);
     }
+
 
     private void checkCorrectAnswers()
     {
@@ -153,7 +160,9 @@ public class ExerciseSelectDatatypes extends AppCompatActivity implements View.O
                         answerCorrect[i] = true;
                     }
                     break;
+
             default:
+
                 break;
         }
     }
@@ -162,8 +171,10 @@ public class ExerciseSelectDatatypes extends AppCompatActivity implements View.O
     {
         if (i >= 5)
         {
-            Intent intent = new Intent( this, ExerciseSelectDatatypes.class);
+
+            Intent intent = new Intent( this, PlayMenu.class);
             startActivity(intent);
+            finish();
         }
     }
 }
