@@ -166,5 +166,5 @@ public class ExerciseSelectDatatypes extends AppCompatActivity implements View.O
                 break;
         }
     }
-    
+
 }

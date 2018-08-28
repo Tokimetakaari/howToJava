@@ -1,19 +1,25 @@
 package com.example.niklasjahning.howtojava;
 
+import android.view.MotionEvent;
+
 import android.content.Intent;
+import android.support.v4.view.GestureDetectorCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.GestureDetector;
 import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     Button theory, play, settings;
+    private GestureDetectorCompat gestureObject;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        gestureObject = new GestureDetectorCompat(this, new LearnGesture());
         setupButtons();
         setupListener();
     }
@@ -50,6 +56,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             i = new Intent(MainActivity.this,SettingsMenu.class);
                             startActivity(i);
                             break;
+        }
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        this.gestureObject.onTouchEvent(event);
+        return super.onTouchEvent(event);
+    }
+
+    class LearnGesture extends GestureDetector.SimpleOnGestureListener {
+        @Override
+        public boolean onFling(MotionEvent event1, MotionEvent event2, float velocityX, float velocityY) {
+            if (event2.getX() > event1.getX()) {
+                Intent intent1 =  new Intent(MainActivity.this, TheoryMenu.class);
+                startActivity(intent1);
+            }
+            else if (event2.getX() < event1.getX()){
+                Intent intent2 = new Intent (MainActivity.this,PlayMenu.class);
+                startActivity(intent2);
+            }
+            return true;
         }
     }
 }
