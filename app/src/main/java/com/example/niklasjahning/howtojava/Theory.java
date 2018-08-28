@@ -2,7 +2,10 @@ package com.example.niklasjahning.howtojava;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.view.GestureDetectorCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -18,11 +21,12 @@ public class Theory extends AppCompatActivity implements View.OnClickListener
     TextView textView;
     InputStream is;
     Button forwardButton, backButton;
+    private GestureDetectorCompat gestureObject;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
-
+        gestureObject = new GestureDetectorCompat(this, new Theory.LearnGesture());
         super.onCreate(savedInstanceState);
         setContentView(R.layout.read_theory);
         setupButtons();
@@ -130,6 +134,12 @@ public class Theory extends AppCompatActivity implements View.OnClickListener
             case R.id.weiterButton: goForward();
                 break;
         }
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        this.gestureObject.onTouchEvent(event);
+        return super.onTouchEvent(event);
     }
 
     private void goBackwards ()
@@ -275,6 +285,17 @@ public class Theory extends AppCompatActivity implements View.OnClickListener
         }
     }
 
-
+    class LearnGesture extends GestureDetector.SimpleOnGestureListener {
+        @Override
+        public boolean onFling(MotionEvent event1, MotionEvent event2, float velocityX, float velocityY) {
+            if (event2.getX() > event1.getX()) {
+                goForward();
+            }
+            else if (event2.getX() < event1.getX()){
+                goBackwards();
+            }
+            return true;
+        }
+    }
 
 }
