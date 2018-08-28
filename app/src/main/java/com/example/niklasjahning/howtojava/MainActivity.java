@@ -69,11 +69,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         @Override
         public boolean onFling(MotionEvent event1, MotionEvent event2, float velocityX, float velocityY) {
             if (event2.getX() > event1.getX()) {
-                Intent intent1 =  new Intent(MainActivity.this, TheoryMenu.class);
+                Intent intent1 =  new Intent(MainActivity.this, PlayMenu.class);
                 startActivity(intent1);
             }
             else if (event2.getX() < event1.getX()){
-                Intent intent2 = new Intent (MainActivity.this,PlayMenu.class);
+                Intent intent2 = new Intent (MainActivity.this,TheoryMenu.class);
                 startActivity(intent2);
             }
             return true;
