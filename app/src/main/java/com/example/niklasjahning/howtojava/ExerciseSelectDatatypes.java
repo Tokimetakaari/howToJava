@@ -51,7 +51,7 @@ public class ExerciseSelectDatatypes extends AppCompatActivity implements View.O
                 i++;
                 setText();
             }
-            else if (i>=5)
+            else if (i>5)
             {finish();}
         }
     }

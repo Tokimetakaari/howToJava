@@ -96,9 +96,9 @@ public class PlayMenu extends AppCompatActivity implements View.OnClickListener 
         {
             case R.id.play_lektion_1: i = new Intent(PlayMenu.this, ExerciseSelectDatatypes.class);
                 break;
-            case R.id.play_lektion_2: i = new Intent(PlayMenu.this, ExerciseOperators.class);
+            case R.id.play_lektion_2: i = new Intent(PlayMenu.this, ExerciseSelectDatatypes2.class);
                break;
-            case R.id.play_lektion_3: i = new Intent(PlayMenu.this, ExerciseSelectDatatypes.class);
+            case R.id.play_lektion_3: i = new Intent(PlayMenu.this, ExerciseOperators.class);
                 break;
             case R.id.play_lektion_4: i = new Intent(PlayMenu.this, ExerciseOperators.class);
                 break;

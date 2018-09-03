@@ -30,6 +30,7 @@
         <activity android:name=".ExerciseOperators" />
         <activity android:name=".ExerciseForStrings" />
         <activity android:name=".Constuctors" />
+        <activity android:name=".ExerciseSelectDatatypes2" />
     </application>
 
 </manifest>

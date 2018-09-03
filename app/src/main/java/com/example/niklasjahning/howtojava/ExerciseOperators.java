@@ -18,7 +18,6 @@ public class ExerciseOperators extends AppCompatActivity implements View.OnClick
     boolean[] answerCorrect = new boolean[7];
     boolean[] answered = new boolean[7];
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -115,7 +114,7 @@ public class ExerciseOperators extends AppCompatActivity implements View.OnClick
                 box4.setText("70 % 65 = ?");
                 break;
             case 7:
-                for (int j = 0; j < 5; j++)
+                for (int j = 0; j < 7; j++)
                 {
                     if (answerCorrect[j])
                     {numOfCorrectAnswers ++;}
