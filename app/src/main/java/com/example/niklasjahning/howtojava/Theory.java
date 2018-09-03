@@ -22,13 +22,11 @@ public class Theory extends AppCompatActivity implements View.OnClickListener
     TextView textView;
     InputStream is;
     Button forwardButton, backButton;
-    private GestureDetectorCompat gestureObject;
     ScrollView scrollView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
-        gestureObject = new GestureDetectorCompat(this, new Theory.LearnGesture());
         super.onCreate(savedInstanceState);
         setContentView(R.layout.read_theory);
         setupButtons();
@@ -138,11 +136,6 @@ public class Theory extends AppCompatActivity implements View.OnClickListener
         }
     }
 
-    @Override
-    public boolean onTouchEvent(MotionEvent event) {
-        this.gestureObject.onTouchEvent(event);
-        return super.onTouchEvent(event);
-    }
 
     private void goBackwards ()
     {
@@ -288,19 +281,8 @@ public class Theory extends AppCompatActivity implements View.OnClickListener
     }
 
 
-    class LearnGesture extends GestureDetector.SimpleOnGestureListener {
-        @Override
-        public boolean onFling(MotionEvent event1, MotionEvent event2, float velocityX, float velocityY) {
-            if (event2.getX() > event1.getX()) {
-                goForward();
-            }
-            else if (event2.getX() < event1.getX()){
-                goBackwards();
-            }
-            return true;
-        }
     }
 
 
 
-}
+
