@@ -8,6 +8,7 @@ import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import java.io.BufferedReader;
@@ -22,6 +23,7 @@ public class Theory extends AppCompatActivity implements View.OnClickListener
     InputStream is;
     Button forwardButton, backButton;
     private GestureDetectorCompat gestureObject;
+    ScrollView scrollView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -285,6 +287,7 @@ public class Theory extends AppCompatActivity implements View.OnClickListener
         }
     }
 
+
     class LearnGesture extends GestureDetector.SimpleOnGestureListener {
         @Override
         public boolean onFling(MotionEvent event1, MotionEvent event2, float velocityX, float velocityY) {
@@ -297,5 +300,7 @@ public class Theory extends AppCompatActivity implements View.OnClickListener
             return true;
         }
     }
+
+
 
 }
