@@ -1,5 +1,6 @@
 package com.example.niklasjahning.howtojava;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -19,13 +20,12 @@ public class ExerciseSelectDatatypes extends AppCompatActivity implements View.O
     boolean[] answered = new boolean[5];
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.checkbox_layout_default);
         setupItems();
         setText();
-
-
     }
 
     private void setupItems()
@@ -39,7 +39,6 @@ public class ExerciseSelectDatatypes extends AppCompatActivity implements View.O
         submit.setOnClickListener(this);
     }
 
-
     @Override
     public void onClick(View view)
     {
@@ -51,15 +50,14 @@ public class ExerciseSelectDatatypes extends AppCompatActivity implements View.O
                 answered[i] = true;
                 i++;
                 setText();
-
-            } else if (i>=5) {
-               finish();
-
+            }
+            else if (i>=5)
+            {finish();}
         }
     }
-    }
 
-    private void setText() {
+    private void setText()
+    {
         switch (i) {
             case 0:
                 textView.setText("Welchen Datentyp würden Sie verwenden um den Wert 5 zu speichern?");
@@ -102,21 +100,21 @@ public class ExerciseSelectDatatypes extends AppCompatActivity implements View.O
                     if (answerCorrect[j])
                     {numOfCorrectAnswers ++;}
                 }
-                textView.setText("Sie haben " + numOfCorrectAnswers +" richtig beantwortet");
-                box1.setVisibility(View.INVISIBLE);
+                textView.setText("Sie haben " + numOfCorrectAnswers + " Fragen richtig beantwortet.");
                 box1.setClickable(false);
-                box2.setVisibility(View.INVISIBLE);
+                box1.setVisibility(View.INVISIBLE);
                 box2.setClickable(false);
-                box3.setVisibility(View.INVISIBLE);
+                box2.setVisibility(View.INVISIBLE);
                 box3.setClickable(false);
-                box4.setVisibility(View.INVISIBLE);
+                box3.setVisibility(View.INVISIBLE);
                 box4.setClickable(false);
+                box4.setVisibility(View.INVISIBLE);
+                submit.setText("Zurück zum Hauptmenü");
                 i++;
+
                 break;
-
-                default:
-
-                    break;
+            default:
+                break;
         }
             resetCheckbox();
     }
@@ -139,6 +137,7 @@ public class ExerciseSelectDatatypes extends AppCompatActivity implements View.O
                     {
                         answerCorrect[i] = true;
                     }
+                    break;
             case 1: if (!box1.isChecked() && !box2.isChecked() && box3.isChecked() && !box4.isChecked())
                     {
                         answerCorrect[i] = true;
@@ -159,10 +158,8 @@ public class ExerciseSelectDatatypes extends AppCompatActivity implements View.O
                         answerCorrect[i] = true;
                     }
                     break;
-
             default:
-
-                break;
+                    break;
         }
     }
 

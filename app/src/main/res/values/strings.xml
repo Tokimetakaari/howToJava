@@ -1,16 +1,15 @@
 <resources>
     <string name="app_name">howToJava()</string>
     <string name="theorie_button1">1. Primitive Datentypen</string>
-    <string name="theorie_button2">2. Komplexe Datentypen</string>
+    <string name="theorie_button2">2. Klassen und Objekte</string>
     <string name="theorie_button3">3. Bedingungen und logische Ausdrücke</string>
     <string name="theorie_button4">4. Arrays und Arraylists</string>
     <string name="theorie_button5">5. Schleifen</string>
-    <string name="theorie_button6">6. Klassen und Objekte</string>
-    <string name="theorie_button7">7. Konstruktoren</string>
-    <string name="theorie_button8">8. Methoden und Rekursionen</string>
-    <string name="theorie_button9">9. Sichtbarkeit und Vererbungen</string>
-    <string name="theorie_button10">10. Events und Interfaces</string>
-    <string name="theorie_button11">11. Dateien in Java und Exceptions</string>
+    <string name="theorie_button6">6. Konstruktoren</string>
+    <string name="theorie_button7">7. Methoden</string>
+    <string name="theorie_button8">8. Vererbung</string>
+    <string name="theorie_button9">9. Interfaces und Events</string>
+    <string name="theorie_button10">10. Dateien in Java</string>
     <string name="main_menu_theorie_button">Theorie</string>
     <string name="main_menu_play_button">Play</string>
     <string name="main_menu_setting_button">Einstellungen</string>
@@ -43,4 +42,5 @@
 
     <string name="interfaces_events_menu_button1">10.1 Interfaces</string>
     <string name="interfaces_events_menu_button2">10.2 UI Events</string>
+    <string name="constructors_menu_button1">Konstruktoren</string>
 </resources>

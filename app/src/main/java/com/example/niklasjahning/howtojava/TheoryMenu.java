@@ -62,7 +62,7 @@ public class TheoryMenu extends AppCompatActivity implements View.OnClickListene
                 break;
             case R.id.lektion_5: i = new Intent(TheoryMenu.this, Loops.class);
                 break;
-            case R.id.lektion_6: i = new Intent(TheoryMenu.this, DataTypes.class);
+            case R.id.lektion_6: i = new Intent(TheoryMenu.this, Constuctors.class);
                 break;
             case R.id.lektion_7: i = new Intent(TheoryMenu.this, Methods.class);
                 break;

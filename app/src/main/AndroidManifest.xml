@@ -28,6 +28,8 @@
         <activity android:name=".Methods" />
         <activity android:name=".ExerciseSelectDatatypes" />
         <activity android:name=".ExerciseOperators" />
+        <activity android:name=".ExerciseForStrings" />
+        <activity android:name=".Constuctors" />
     </application>
 
 </manifest>
