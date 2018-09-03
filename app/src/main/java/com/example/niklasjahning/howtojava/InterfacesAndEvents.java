@@ -33,9 +33,9 @@ public class InterfacesAndEvents extends AppCompatActivity implements View.OnCli
         Intent i = new Intent(InterfacesAndEvents.this, Theory.class);
         switch (view.getId())
         {
-            case R.id.interfaces_menu1: i.putExtra("txt_num",101);
+            case R.id.interfaces_menu1: i.putExtra("txt_num",91);
                 break;
-            case R.id.interfaces_menu2: i.putExtra("txt_num", 102);
+            case R.id.interfaces_menu2: i.putExtra("txt_num", 92);
                 break;
         }
         startActivity(i);

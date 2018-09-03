@@ -29,6 +29,8 @@
         <activity android:name=".ExerciseSelectDatatypes" />
         <activity android:name=".ExerciseOperators" />
         <activity android:name=".ExerciseForStrings" />
+        <activity android:name=".InterfacesAndEvents" />
+        <activity android:name=".DataInJava" />
     </application>
 
 </manifest>
