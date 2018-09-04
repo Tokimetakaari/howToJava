@@ -36,7 +36,7 @@ public class ExerciseClassesAndObjects extends AppCompatActivity implements View
 
 
 
-    boolean[] answerCorrect = new boolean[2];
+    boolean[] answerCorrect = new boolean[4];
     boolean[] answered = new boolean[4];
 
     @Override
@@ -66,13 +66,14 @@ public class ExerciseClassesAndObjects extends AppCompatActivity implements View
     @Override
     public void onClick(View view) {
         if(view.getId() == R.id.cloze_submit_button) {
-            if ((!answer1.getText().toString().isEmpty()) && (!answer2.getText().toString().isEmpty()) && (i <=3)) {
+            if ((!answer1.getText().toString().isEmpty()) && (!answer2.getText().toString().isEmpty()) && (i <=4)) {
                 checkCorrectAnswers();
                 answered[i] = true;
                 i++;
                 setText();
 
-            } else if (i > 3) {
+            } else if (i > 4) {
+                PlayMenu.positionOfNewLevel = 3;
                 finish();
 
             }
