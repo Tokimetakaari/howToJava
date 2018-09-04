@@ -9,11 +9,12 @@ import android.widget.Button;
 
 import java.util.List;
 
-public class PlayMenu extends AppCompatActivity implements View.OnClickListener , BooleanDao {
+public class PlayMenu extends AppCompatActivity implements View.OnClickListener {
 
     Button b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15, b16, b17, b18, b19, b20, b21, b22, b23, b24, b25, b26, b27, b28, b29, b30;
     Intent i ;
     MyDatabaseAdapter database;
+    AppDatabase appDatabase;
     int numOfButtons = 30;
     static int positionOfNewLevel = 0;
 
@@ -24,16 +25,16 @@ public class PlayMenu extends AppCompatActivity implements View.OnClickListener 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.play_menu);
         setupButtons();
-        test();
+//        test();
         setupListener();
-        setupDataBase();
-        setupDataEntries();
-        unlockLevel();
+//        setupDataBase();
+//        setupDataEntries();
+//        unlockLevel();
     }
 
-    private void setupDataBase()
+ /*   private void setupDataBase()
     {
-        //database = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "appDataBase").build();
+        appDatabase = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "appDataBase").build();
         database = new MyDatabaseAdapter(this);
         database.open();
     }
@@ -42,25 +43,23 @@ public class PlayMenu extends AppCompatActivity implements View.OnClickListener 
     {
         for (int j = 0; j < numOfButtons; j++)
         {
-            insertBooleanField(new BooleanField(j, false));
+            database.insertMyObject(new BooleanField(0,false));
+            //insertBooleanField(new BooleanField(j, false));
             database.notify();
             if (j == 0)
             {
-                insertBooleanField(new BooleanField(0, true));
+                database.insertMyObject(new BooleanField(0,true));
+                //insertBooleanField(new BooleanField(0, true));
                 database.notify();
             }
         }
-    }
+    } */
 
     private void setupButtons()
     {
         b1 = findViewById(R.id.play_lektion_1);
         b2 = findViewById(R.id.play_lektion_2);
-        b2.setVisibility(View.INVISIBLE);
-        b2.setClickable(false);
         b3 = findViewById(R.id.play_lektion_3);
-        b3.setVisibility(View.INVISIBLE);
-        b3.setClickable(false);
         b4 = findViewById(R.id.play_lektion_4);
         b5 = findViewById(R.id.play_lektion_5);
         b6 = findViewById(R.id.play_lektion_6);
@@ -150,17 +149,7 @@ public class PlayMenu extends AppCompatActivity implements View.OnClickListener 
         }
         startActivity(i);
     }
-
-
-    @Override
-    public void insertBooleanField(BooleanField booleanField) {
-
-    }
-
-    @Override
-    public List<BooleanField> getBooleans(int search) {
-        return null;
-    }
+    /*
 
     private void test ()
     {
@@ -192,5 +181,5 @@ public class PlayMenu extends AppCompatActivity implements View.OnClickListener 
         BooleanField booleanOne = (BooleanField) getBooleans(positionOfNewLevel);
         booleanOne.setValue(true);
         database.notify();
-    }
+    } */
 }
