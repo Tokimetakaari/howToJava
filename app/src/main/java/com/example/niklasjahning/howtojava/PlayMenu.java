@@ -7,19 +7,27 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
-public class PlayMenu extends AppCompatActivity implements View.OnClickListener {
+import java.util.List;
+
+public class PlayMenu extends AppCompatActivity implements View.OnClickListener , BooleanDao {
 
     Button b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15, b16, b17, b18, b19, b20, b21, b22, b23, b24, b25, b26, b27, b28, b29, b30;
     Intent i ;
     AppDatabase database;
+    int numOfButtons = 30;
+    static int positionOfNewLevel = 0;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.play_menu);
         setupButtons();
+        test();
         setupListener();
         setupDataBase();
+        setupDataEntries();
+        unlockLevel();
     }
 
     private void setupDataBase()
@@ -27,11 +35,29 @@ public class PlayMenu extends AppCompatActivity implements View.OnClickListener 
         database = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "appDataBase").build();
     }
 
+    private void setupDataEntries()
+    {
+        for (int i = 0; i < numOfButtons; i++)
+        {
+            insertBooleanField(new BooleanField(i, false));
+            database.notify();
+            if (i == 0)
+            {
+                insertBooleanField(new BooleanField(0, true));
+                database.notify();
+            }
+        }
+    }
+
     private void setupButtons()
     {
         b1 = findViewById(R.id.play_lektion_1);
         b2 = findViewById(R.id.play_lektion_2);
+        b2.setVisibility(View.INVISIBLE);
+        b2.setClickable(false);
         b3 = findViewById(R.id.play_lektion_3);
+        b3.setVisibility(View.INVISIBLE);
+        b3.setClickable(false);
         b4 = findViewById(R.id.play_lektion_4);
         b5 = findViewById(R.id.play_lektion_5);
         b6 = findViewById(R.id.play_lektion_6);
@@ -123,5 +149,45 @@ public class PlayMenu extends AppCompatActivity implements View.OnClickListener 
     }
 
 
+    @Override
+    public void insertBooleanField(BooleanField booleanField) {
 
+    }
+
+    @Override
+    public List<BooleanField> getBooleans(int search) {
+        return null;
+    }
+
+    private void test ()
+    {
+        for (int i = 0 ; i < numOfButtons; i++)
+        {
+            BooleanField booleanOne = (BooleanField) getBooleans(i);
+            switch (i)
+            {
+                case 1: if ( booleanOne.getValue() )
+                        {
+                            b2.setClickable(true);
+                            b2.setVisibility(View.VISIBLE);
+                        }
+                        break;
+                case 2: if ( booleanOne.getValue() )
+                {
+                    b3.setClickable(true);
+                    b3.setVisibility(View.VISIBLE);
+                }
+                    break;
+
+            }
+        }
+
+    }
+
+    private void unlockLevel()
+    {
+        BooleanField booleanOne = (BooleanField) getBooleans(positionOfNewLevel);
+        booleanOne.setValue(true);
+        database.notify();
+    }
 }

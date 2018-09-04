@@ -14,7 +14,7 @@ public interface BooleanDao
     @Insert(onConflict = REPLACE)
     void insertBooleanField (BooleanField booleanField);
 
-    @Query("SELECT * FROM BooleanField")
-    List<BooleanField> getBooleans();
+    @Query("SELECT * FROM BooleanField WHERE fieldPosition LIKE :search")
+    List<BooleanField> getBooleans(int search);
 
 }

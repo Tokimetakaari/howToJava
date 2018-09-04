@@ -104,6 +104,7 @@ public class ExerciseSelectDatatypes2 extends AppCompatActivity implements View.
                 setText();
 
             } else if (i > 3) {
+                PlayMenu.positionOfNewLevel = 2;
                 finish();
 
             }

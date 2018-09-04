@@ -52,7 +52,10 @@ public class ExerciseSelectDatatypes extends AppCompatActivity implements View.O
                 setText();
             }
             else if (i>5)
-            {finish();}
+            {
+                PlayMenu.positionOfNewLevel = 1;
+                finish();
+            }
         }
     }
 
@@ -162,5 +165,4 @@ public class ExerciseSelectDatatypes extends AppCompatActivity implements View.O
                     break;
         }
     }
-
 }

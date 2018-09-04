@@ -1,8 +1,6 @@
 package com.example.niklasjahning.howtojava;
 
-import android.arch.persistence.room.Room;
 import android.view.MotionEvent;
-
 import android.content.Intent;
 import android.support.v4.view.GestureDetectorCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -15,6 +13,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     Button theory, play, settings;
     private GestureDetectorCompat gestureObject;
+    Intent i;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,22 +43,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view)
     {
-        Intent i;
         switch (view.getId())
         {
             case R.id.theory_button:
                             i = new Intent(MainActivity.this, TheoryMenu.class);
-                            startActivity(i);
                             break;
             case R.id.play_button:
                             i = new Intent(MainActivity.this, PlayMenu.class);
-                            startActivity(i);
                             break;
             case R.id.settings_button:
                             i = new Intent(MainActivity.this,SettingsMenu.class);
-                            startActivity(i);
                             break;
         }
+        startActivity(i);
     }
 
     @Override

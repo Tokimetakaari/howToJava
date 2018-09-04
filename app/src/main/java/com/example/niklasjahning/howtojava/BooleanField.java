@@ -17,6 +17,10 @@ public class BooleanField
     }
 
 
+    public void setValue(boolean newValue)
+    {
+        value = newValue;
+    }
     public int getFieldPosition()
     {
         return fieldPosition;
