@@ -2,14 +2,16 @@ package com.example.niklasjahning.howtojava;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.view.GestureDetectorCompat;
+import android.support.design.widget.NavigationView;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.GestureDetector;
-import android.view.MotionEvent;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -23,12 +25,18 @@ public class Theory extends AppCompatActivity implements View.OnClickListener
     InputStream is;
     Button forwardButton, backButton;
     ScrollView scrollView;
+    private DrawerLayout mDrawerLayout;
+    private ActionBarDrawerToggle mToggle;
+    NavigationView burger;
+    private Intent i;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.read_theory);
+        setupDrawer();
         setupButtons();
         Intent i = getIntent();
         Bundle data = i.getExtras();
@@ -41,12 +49,59 @@ public class Theory extends AppCompatActivity implements View.OnClickListener
         }
     }
 
+    private void setupDrawer() {
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.burgerLayout);
+        mToggle = new ActionBarDrawerToggle(this,mDrawerLayout, R.string.open, R.string.close);
+        mDrawerLayout.addDrawerListener(mToggle);
+        mToggle.syncState();
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
+
     private void setupButtons()
     {
         backButton = findViewById(R.id.weiterButton);
         forwardButton = findViewById(R.id.zurückButton);
         backButton.setOnClickListener(this);
         forwardButton.setOnClickListener(this);
+        connectBurger();
+    }
+
+    private void connectBurger() {
+        burger = findViewById(R.id.test);
+        burger.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.play_menu:
+
+                        i = new Intent(Theory.this, PlayMenu.class);
+                        startActivity(i);
+
+                    case R.id.theory_menu:
+                        i = new Intent(Theory.this, TheoryMenu.class);
+                        startActivity(i);
+                        break;
+                    case R.id.setting_menu:
+                        i = new Intent(Theory.this, SettingsMenu.class);
+                        startActivity(i);
+                    case R.id.credits:
+                        Toast.makeText(getApplicationContext(),"Thanks for playing!",Toast.LENGTH_SHORT).show();
+                }
+                return true;
+            }
+        });}
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        if(mToggle.onOptionsItemSelected(item)){
+            return true;
+        }
+
+
+
+
+        return super.onOptionsItemSelected(item);
     }
 
     private void setText() throws IOException {

@@ -50,7 +50,6 @@ public class ExerciseSelectDatatypes2 extends AppCompatActivity implements View.
                 editText6.setVisibility(View.GONE);
                 editText7.setVisibility(View.GONE);
                 editText8.setVisibility(View.GONE);
-
                 break;
             case 1:
                 textView.setText("Erstellen Sie einen Boolean mit dem Namen 'lazy' und den Wert 'true':");

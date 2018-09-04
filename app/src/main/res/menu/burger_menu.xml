@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item android:id="@+id/theory_menu"
+        android:title="@string/main_menu_theorie_button"
+        android:icon="@mipmap/sharp_class_black_18dp"/>
+
+    <item android:id="@+id/play_menu"
+        android:title="@string/main_menu_play_button"
+        android:icon="@mipmap/sharp_explore_black_18dp"/>
+
+
+    <item android:id="@+id/setting_menu"
+        android:title="@string/main_menu_setting_button"
+        android:icon="@mipmap/sharp_settings_black_18dp"/>
+
+
+    <item android:id="@+id/credits"
+        android:title="@string/credits"
+        android:icon="@mipmap/sharp_pregnant_woman_black_18dp"/>
+</menu>

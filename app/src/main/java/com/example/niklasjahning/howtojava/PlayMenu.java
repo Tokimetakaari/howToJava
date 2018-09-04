@@ -3,9 +3,14 @@ package com.example.niklasjahning.howtojava;
 import android.arch.persistence.room.Room;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.NavigationView;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -17,6 +22,10 @@ public class PlayMenu extends AppCompatActivity implements View.OnClickListener 
     AppDatabase appDatabase;
     int numOfButtons = 30;
     static int positionOfNewLevel = 0;
+    private DrawerLayout mDrawerLayout;
+    private ActionBarDrawerToggle mToggle;
+    NavigationView burger;
+
 
 
     @Override
@@ -25,6 +34,7 @@ public class PlayMenu extends AppCompatActivity implements View.OnClickListener 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.play_menu);
         setupButtons();
+        setupDrawer();
 //        test();
         setupListener();
 //        setupDataBase();
@@ -54,6 +64,26 @@ public class PlayMenu extends AppCompatActivity implements View.OnClickListener 
             }
         }
     } */
+    private void setupDrawer() {
+     mDrawerLayout = (DrawerLayout) findViewById(R.id.burgerLayout);
+     mToggle = new ActionBarDrawerToggle(this,mDrawerLayout, R.string.open, R.string.close);
+     mDrawerLayout.addDrawerListener(mToggle);
+     mToggle.syncState();
+     getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+ }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        if(mToggle.onOptionsItemSelected(item)){
+            return true;
+        }
+
+
+
+
+        return super.onOptionsItemSelected(item);
+    }
 
     private void setupButtons()
     {
@@ -87,8 +117,34 @@ public class PlayMenu extends AppCompatActivity implements View.OnClickListener 
         b28 = findViewById(R.id.play_lektion_28);
         b29 = findViewById(R.id.play_lektion_29);
         b30 = findViewById(R.id.play_lektion_30);
+        connectBurger();
 
 
+    }
+
+    private void connectBurger() {
+        burger = findViewById(R.id.test);
+        burger.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.play_menu:
+
+                        Toast.makeText(getApplicationContext(),"Du befindest dich bereits in Play",Toast.LENGTH_SHORT).show();
+
+                    case R.id.theory_menu:
+                        i = new Intent(PlayMenu.this, TheoryMenu.class);
+                        startActivity(i);
+                        break;
+                    case R.id.setting_menu:
+                        i = new Intent(PlayMenu.this, SettingsMenu.class);
+                        startActivity(i);
+                    case R.id.credits:
+                        Toast.makeText(getApplicationContext(),"Thanks for playing!",Toast.LENGTH_SHORT).show();
+                }
+                return true;
+            }
+        });
     }
 
     private void setupListener()
@@ -125,6 +181,8 @@ public class PlayMenu extends AppCompatActivity implements View.OnClickListener 
         b30.setOnClickListener(this);
     }
 
+
+
     @Override
     public void onClick(View view)
     {
@@ -136,7 +194,7 @@ public class PlayMenu extends AppCompatActivity implements View.OnClickListener 
                break;
             case R.id.play_lektion_3: i = new Intent(PlayMenu.this, ExerciseOperators.class);
                 break;
-            case R.id.play_lektion_4: i = new Intent(PlayMenu.this, ExerciseOperators.class);
+            case R.id.play_lektion_4: i = new Intent(PlayMenu.this, ExerciseClassesAndObjects.class);
                 break;
             case R.id.play_lektion_5: i = new Intent(PlayMenu.this, ExerciseSelectDatatypes.class);
                 break;

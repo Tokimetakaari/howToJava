@@ -45,4 +45,9 @@
     <string name="data_in_java_button3">10.3 Buffered Reader und InputStream</string>
 
 
+    <string name="open">"Open</string>
+    <string name="close">"Close</string>
+    <string name="credits"><![CDATA[NJK<3]]></string>
+
+
 </resources>
