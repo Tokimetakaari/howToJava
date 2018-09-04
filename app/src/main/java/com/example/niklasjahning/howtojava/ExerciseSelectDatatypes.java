@@ -132,8 +132,7 @@ public class ExerciseSelectDatatypes extends AppCompatActivity implements View.O
     }
 
 
-    private void checkCorrectAnswers()
-    {
+    private void checkCorrectAnswers() {
         switch (i)
         {
             case 0: if (box1.isChecked() && !box2.isChecked() && !box3.isChecked() && !box4.isChecked())
