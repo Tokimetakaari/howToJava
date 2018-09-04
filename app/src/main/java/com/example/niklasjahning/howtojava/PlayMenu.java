@@ -37,11 +37,11 @@ public class PlayMenu extends AppCompatActivity implements View.OnClickListener 
 
     private void setupDataEntries()
     {
-        for (int i = 0; i < numOfButtons; i++)
+        for (int j = 0; j < numOfButtons; j++)
         {
-            insertBooleanField(new BooleanField(i, false));
+            insertBooleanField(new BooleanField(j, false));
             database.notify();
-            if (i == 0)
+            if (j == 0)
             {
                 insertBooleanField(new BooleanField(0, true));
                 database.notify();
@@ -161,10 +161,10 @@ public class PlayMenu extends AppCompatActivity implements View.OnClickListener 
 
     private void test ()
     {
-        for (int i = 0 ; i < numOfButtons; i++)
+        for (int k = 0 ; k < numOfButtons; k++)
         {
-            BooleanField booleanOne = (BooleanField) getBooleans(i);
-            switch (i)
+            BooleanField booleanOne = (BooleanField) getBooleans(k);
+            switch (k)
             {
                 case 1: if ( booleanOne.getValue() )
                         {
