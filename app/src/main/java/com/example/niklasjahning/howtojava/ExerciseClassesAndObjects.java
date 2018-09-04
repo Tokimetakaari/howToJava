@@ -73,6 +73,7 @@ public class ExerciseClassesAndObjects extends AppCompatActivity implements View
                 setText();
 
             } else if (i > 4) {
+                PlayMenu.positionOfNewLevel = 3;
                 finish();
 
             }
