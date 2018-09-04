@@ -43,6 +43,8 @@ public class SettingsMenu extends AppCompatActivity implements View.OnClickListe
                     case R.id.setting_menu:
                         Toast.makeText(getApplicationContext(),"Du befindest dich bereits in den Einstellungen",Toast.LENGTH_SHORT).show();
                         startActivity(i);
+                    case R.id.moveToTheory:
+                        Toast.makeText(getApplicationContext(),"Du bist aktuell in keiner Übung",Toast.LENGTH_SHORT).show();
                     case R.id.credits:
                         Toast.makeText(getApplicationContext(),"Thanks for playing!",Toast.LENGTH_SHORT).show();
                 }

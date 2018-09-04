@@ -15,8 +15,14 @@
         android:title="@string/main_menu_setting_button"
         android:icon="@mipmap/sharp_settings_black_18dp"/>
 
+    <item android:id="@+id/moveToTheory"
+        android:title="@string/moveToTheory"
+        android:icon="@mipmap/baseline_help_outline_black_18dp"/>
+
 
     <item android:id="@+id/credits"
         android:title="@string/credits"
         android:icon="@mipmap/sharp_pregnant_woman_black_18dp"/>
+
+
 </menu>

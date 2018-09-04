@@ -68,6 +68,7 @@ public class Theory extends AppCompatActivity implements View.OnClickListener
 
     private void connectBurger() {
         burger = findViewById(R.id.test);
+
         burger.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(MenuItem item) {
@@ -84,6 +85,8 @@ public class Theory extends AppCompatActivity implements View.OnClickListener
                     case R.id.setting_menu:
                         i = new Intent(Theory.this, SettingsMenu.class);
                         startActivity(i);
+                    case R.id.moveToTheory:
+                        Toast.makeText(getApplicationContext(),"Du bist aktuell in keiner Übung",Toast.LENGTH_SHORT).show();
                     case R.id.credits:
                         Toast.makeText(getApplicationContext(),"Thanks for playing!",Toast.LENGTH_SHORT).show();
                 }

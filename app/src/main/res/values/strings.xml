@@ -48,6 +48,7 @@
     <string name="open">"Open</string>
     <string name="close">"Close</string>
     <string name="credits"><![CDATA[NJK<3]]></string>
+    <string name="moveToTheory">Aktuelle Theorie</string>
 
 
 </resources>
