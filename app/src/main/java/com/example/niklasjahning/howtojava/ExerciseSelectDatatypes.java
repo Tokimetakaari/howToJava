@@ -31,7 +31,7 @@ public class ExerciseSelectDatatypes extends AppCompatActivity implements View.O
     String title = "Congrats";
     String message = "Du hast Übung X bestanden";
     private NotificationHelper nHelper;
-
+    private int questionsQ = 5;
 
     boolean[] answerCorrect = new boolean[5];
     boolean[] answered = new boolean[5];
@@ -127,8 +127,10 @@ public class ExerciseSelectDatatypes extends AppCompatActivity implements View.O
             else if (i>5)
             {
                 PlayMenu.positionOfNewLevel = 1;
-                mySound.start();
-                sendNotification(title,message);
+                if (numOfCorrectAnswers >=  questionsQ /2) {
+                    mySound.start();
+                    sendNotification(title, message);
+                }
                 finish();
             }
         }
@@ -173,12 +175,8 @@ public class ExerciseSelectDatatypes extends AppCompatActivity implements View.O
                 box4.setText("float");
                 break;
             case 5:
-                for (int j = 0; j < 5; j++)
-                {
-                    if (answerCorrect[j])
-                    {numOfCorrectAnswers ++;}
-                }
-                textView.setText("Sie haben " + numOfCorrectAnswers + " Fragen richtig beantwortet.");
+                countCorrectAnswers();
+                textView.setText("Sie haben " + numOfCorrectAnswers + " Fragen von " + questionsQ + "richtig beantwortet.");
                 box1.setClickable(false);
                 box1.setVisibility(View.INVISIBLE);
                 box2.setClickable(false);
@@ -206,6 +204,14 @@ public class ExerciseSelectDatatypes extends AppCompatActivity implements View.O
         box4.setChecked(false);
     }
 
+    private int countCorrectAnswers() {
+        for (int j = 0; j < 5; j++)
+        {
+            if (answerCorrect[j])
+            {numOfCorrectAnswers ++;}
+        }
+        return numOfCorrectAnswers;
+    }
 
     private void checkCorrectAnswers() {
         switch (i)
