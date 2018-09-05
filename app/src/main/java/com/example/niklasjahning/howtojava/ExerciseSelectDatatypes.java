@@ -1,8 +1,10 @@
 package com.example.niklasjahning.howtojava;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.NotificationCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -15,6 +17,7 @@ import android.widget.Toast;
 
 public class ExerciseSelectDatatypes extends AppCompatActivity implements View.OnClickListener {
 
+    MediaPlayer mySound;
     TextView textView;
     CheckBox box1, box2, box3, box4;
     Button submit;
@@ -24,6 +27,10 @@ public class ExerciseSelectDatatypes extends AppCompatActivity implements View.O
     private ActionBarDrawerToggle mToggle;
     NavigationView burger;
     private Intent intent;
+    //Hier die Strings für die Notification festlegen
+    String title = "Congrats";
+    String message = "Du hast Übung X bestanden";
+    private NotificationHelper nHelper;
 
 
     boolean[] answerCorrect = new boolean[5];
@@ -34,9 +41,10 @@ public class ExerciseSelectDatatypes extends AppCompatActivity implements View.O
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.checkbox_layout_default);
+        setupItems();
         setupDrawer();
         connectBurger();
-        setupItems();
+        mySound = MediaPlayer.create(this,R.raw.sound);
         setText();
     }
 
@@ -48,6 +56,7 @@ public class ExerciseSelectDatatypes extends AppCompatActivity implements View.O
         box3 = findViewById(R.id.checkbox_layout_4_checkbox3);
         box4 = findViewById(R.id.checkbox_layout_4_checkbox4);
         submit = findViewById(R.id.checkbox_submit_button);
+        nHelper = new NotificationHelper(this);
         submit.setOnClickListener(this);
     }
 
@@ -118,6 +127,8 @@ public class ExerciseSelectDatatypes extends AppCompatActivity implements View.O
             else if (i>5)
             {
                 PlayMenu.positionOfNewLevel = 1;
+                mySound.start();
+                sendNotification(title,message);
                 finish();
             }
         }
@@ -228,4 +239,11 @@ public class ExerciseSelectDatatypes extends AppCompatActivity implements View.O
                     break;
         }
     }
-}
+
+    public void sendNotification(String title, String message) {
+        NotificationCompat.Builder nBuilder = nHelper.getChannelNotification(title, message);
+        nHelper.getNotificationManager().notify(1, nBuilder.build());
+    }
+
+
+    }

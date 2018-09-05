@@ -49,6 +49,8 @@
     <string name="close">"Close</string>
     <string name="credits"><![CDATA[NJK<3]]></string>
     <string name="moveToTheory">Aktuelle Theorie</string>
+    <string name="notify">Channeltest</string>
+    <string name="channel_description">test123</string>
 
 
 </resources>
