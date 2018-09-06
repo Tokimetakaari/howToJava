@@ -142,7 +142,7 @@ public class ExerciseClassesAndObjects extends AppCompatActivity implements View
     @Override
     public void onClick(View view) {
         if(view.getId() == R.id.cloze_submit_button) {
-            if ((!answer1.getText().toString().isEmpty()) && (!answer2.getText().toString().isEmpty()) && (i <=4)) {
+            if ((!answer1.getText().toString().isEmpty()) && (i <=4)) {
                 checkCorrectAnswers();
                 answered[i] = true;
                 i++;
