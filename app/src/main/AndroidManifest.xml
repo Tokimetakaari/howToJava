@@ -33,6 +33,7 @@
         <activity android:name=".InterfacesAndEvents" />
         <activity android:name=".DataInJava" />
         <activity android:name=".ExerciseClassesAndObjects" />
+        <activity android:name=".ExerciseForMethods1" />
     </application>
 
 </manifest>
