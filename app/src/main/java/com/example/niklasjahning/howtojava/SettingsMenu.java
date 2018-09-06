@@ -40,6 +40,9 @@ public class SettingsMenu extends AppCompatActivity implements View.OnClickListe
         if(switchOnOff1) {
             setTheme(R.style.Kai);
         }
+        if(!switchOnOff1){
+            setTheme(R.style.AppTheme);
+        }
         setContentView(R.layout.settings);
         setupItems();
         setupDrawer();
@@ -112,6 +115,7 @@ public class SettingsMenu extends AppCompatActivity implements View.OnClickListe
         }
         loadPref();
         updateIt();
+
     }
 
     public void savePref() {
