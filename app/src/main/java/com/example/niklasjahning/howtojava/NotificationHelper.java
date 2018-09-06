@@ -34,7 +34,7 @@ public class NotificationHelper extends ContextWrapper {
     }
 
     public NotificationManager getNotificationManager() {
-        if(notificationManager== null) {
+        if(notificationManager == null) {
             notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
 
         }

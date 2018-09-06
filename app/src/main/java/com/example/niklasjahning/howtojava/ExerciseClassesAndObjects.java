@@ -1,8 +1,10 @@
 package com.example.niklasjahning.howtojava;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.NotificationCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -15,6 +17,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class ExerciseClassesAndObjects extends AppCompatActivity implements View.OnClickListener {
+
+    MediaPlayer mySound;
 
     TextView textView;
     Button submit;
@@ -40,10 +44,16 @@ public class ExerciseClassesAndObjects extends AppCompatActivity implements View
     String alternative4_6 = "Dog umberto =new Dog ()";
     String alternative4_7 = "Dog umberto= new Dog ()";
 
+    //Hier die Strings für die Notification festlegen
+    String title = "Congrats";
+    String message = "Du hast Übung X bestanden";
+    private NotificationHelper nHelper;
+    private int questionsQ = 2;
 
 
     boolean[] answerCorrect = new boolean[4];
     boolean[] answered = new boolean[4];
+
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
     NavigationView burger;
@@ -56,6 +66,7 @@ public class ExerciseClassesAndObjects extends AppCompatActivity implements View
         setupDrawer();
         connectBurger();
         setupItems();
+        mySound = MediaPlayer.create(this,R.raw.sound);
         setText();
 
 
@@ -72,6 +83,7 @@ public class ExerciseClassesAndObjects extends AppCompatActivity implements View
         answer7 = findViewById(R.id.cloze_answer_7);
         answer8 = findViewById(R.id.cloze_answer_8);
         submit = findViewById(R.id.cloze_submit_button);
+        nHelper = new NotificationHelper(this);
         submit.setOnClickListener(this);
     }
 
@@ -138,6 +150,10 @@ public class ExerciseClassesAndObjects extends AppCompatActivity implements View
 
             } else if (i > 4) {
                 PlayMenu.positionOfNewLevel = 3;
+                if (numOfCorrectAnswers >=  questionsQ /2) {
+                    mySound.start();
+                    sendNotification(title, message);
+                }
                 finish();
 
             }
@@ -217,5 +233,11 @@ public class ExerciseClassesAndObjects extends AppCompatActivity implements View
 
         }
     }
+
+    public void sendNotification(String title, String message) {
+        NotificationCompat.Builder nBuilder = nHelper.getChannelNotification(title, message);
+        nHelper.getNotificationManager().notify(1, nBuilder.build());
+    }
+
 
 }

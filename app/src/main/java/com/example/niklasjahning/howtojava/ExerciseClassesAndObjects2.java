@@ -1,8 +1,10 @@
 package com.example.niklasjahning.howtojava;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.NotificationCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -15,6 +17,7 @@ import android.widget.Toast;
 
 public class ExerciseClassesAndObjects2 extends AppCompatActivity implements View.OnClickListener {
 
+    MediaPlayer mySound;
 
     TextView textView;
     CheckBox box1, box2, box3, box4;
@@ -24,10 +27,17 @@ public class ExerciseClassesAndObjects2 extends AppCompatActivity implements Vie
 
     boolean[] answerCorrect = new boolean[5];
     boolean[] answered = new boolean[5];
+
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
     NavigationView burger;
     private Intent intent;
+
+    //Hier die Strings für die Notification festlegen
+    String title = "Congrats";
+    String message = "Du hast Übung 2 bestanden";
+    private NotificationHelper nHelper;
+    private int questionsQ = 3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -37,6 +47,7 @@ public class ExerciseClassesAndObjects2 extends AppCompatActivity implements Vie
         setupDrawer();
         connectBurger();
         setupItems();
+        mySound = MediaPlayer.create(this,R.raw.sound);
         setText();
     }
 
@@ -48,6 +59,7 @@ public class ExerciseClassesAndObjects2 extends AppCompatActivity implements Vie
         box3 = findViewById(R.id.checkbox_layout_4_checkbox3);
         box4 = findViewById(R.id.checkbox_layout_4_checkbox4);
         submit = findViewById(R.id.checkbox_submit_button);
+        nHelper = new NotificationHelper(this);
         submit.setOnClickListener(this);
     }
 
@@ -118,6 +130,10 @@ public class ExerciseClassesAndObjects2 extends AppCompatActivity implements Vie
             else if (i>3)
             {
                 PlayMenu.positionOfNewLevel = 4;
+                if (numOfCorrectAnswers >=  questionsQ /2) {
+                    mySound.start();
+                    sendNotification(title, message);
+                }
                 finish();
             }
         }
@@ -148,11 +164,7 @@ public class ExerciseClassesAndObjects2 extends AppCompatActivity implements Vie
                 box4.setVisibility(View.GONE);
                 break;
             case 3:
-                for (int j = 0; j < 3; j++)
-                {
-                    if (answerCorrect[j])
-                    {numOfCorrectAnswers ++;}
-                }
+                countCorrectAnswers();
                 textView.setText("Sie haben " + numOfCorrectAnswers + " Fragen richtig beantwortet.");
                 box1.setClickable(false);
                 box1.setVisibility(View.INVISIBLE);
@@ -170,6 +182,15 @@ public class ExerciseClassesAndObjects2 extends AppCompatActivity implements Vie
                 break;
         }
         resetCheckbox();
+    }
+
+    private int countCorrectAnswers() {
+        for (int j = 0; j < 3; j++)
+        {
+            if (answerCorrect[j])
+            {numOfCorrectAnswers ++;}
+        }
+        return numOfCorrectAnswers;
     }
 
 
@@ -201,6 +222,11 @@ public class ExerciseClassesAndObjects2 extends AppCompatActivity implements Vie
             default:
                 break;
         }
+    }
+
+    public void sendNotification(String title, String message) {
+        NotificationCompat.Builder nBuilder = nHelper.getChannelNotification(title, message);
+        nHelper.getNotificationManager().notify(1, nBuilder.build());
     }
 
 

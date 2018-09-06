@@ -37,8 +37,7 @@ public class ExerciseSelectDatatypes extends AppCompatActivity implements View.O
     boolean[] answered = new boolean[5];
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.checkbox_layout_default);
         setupItems();
@@ -136,8 +135,7 @@ public class ExerciseSelectDatatypes extends AppCompatActivity implements View.O
         }
     }
 
-    private void setText()
-    {
+    private void setText() {
         switch (i) {
             case 0:
                 textView.setText("Welchen Datentyp würden Sie verwenden um den Wert 5 zu speichern?");
@@ -251,5 +249,4 @@ public class ExerciseSelectDatatypes extends AppCompatActivity implements View.O
         nHelper.getNotificationManager().notify(1, nBuilder.build());
     }
 
-
-    }
+}
