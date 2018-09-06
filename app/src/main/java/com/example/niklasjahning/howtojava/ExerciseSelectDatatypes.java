@@ -29,7 +29,7 @@ public class ExerciseSelectDatatypes extends AppCompatActivity implements View.O
     private Intent intent;
     //Hier die Strings für die Notification festlegen
     String title = "Congrats";
-    String message = "Du hast Übung X bestanden";
+    String message = "Du hast Übung 1 bestanden";
     private NotificationHelper nHelper;
     private int questionsQ = 5;
 
@@ -47,8 +47,7 @@ public class ExerciseSelectDatatypes extends AppCompatActivity implements View.O
         setText();
     }
 
-    private void setupItems()
-    {
+    private void setupItems() {
         textView = findViewById(R.id.checkbox_layout_4_question);
         box1 = findViewById(R.id.checkbox_layout_4_checkbox1);
         box2 = findViewById(R.id.checkbox_layout_4_checkbox2);
