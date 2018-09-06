@@ -15,44 +15,39 @@ import android.widget.CheckBox;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class ExerciseClassesAndObjects2 extends AppCompatActivity implements View.OnClickListener {
+public class ExerciseArray extends AppCompatActivity implements View.OnClickListener {
 
     MediaPlayer mySound;
-
     TextView textView;
     CheckBox box1, box2, box3, box4;
     Button submit;
     int i = 0;
-    int numOfCorrectAnswers=0;
-
-    boolean[] answerCorrect = new boolean[3];
-    boolean[] answered = new boolean[3];
-
+    int numOfCorrectAnswers = 0;
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
     NavigationView burger;
     private Intent intent;
-
     //Hier die Strings für die Notification festlegen
     String title = "Congrats";
-    String message = "Du hast Übung 4 bestanden";
+    String message = "Du hast Übung X bestanden";
     private NotificationHelper nHelper;
-    private int questionsQ = 3;
+    private int questionsQ = 8;
+
+    boolean[] answerCorrect = new boolean[8];
+    boolean[] answered = new boolean[8];
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.checkbox_layout_default);
+        setupItems();
         setupDrawer();
         connectBurger();
-        setupItems();
         mySound = MediaPlayer.create(this,R.raw.sound);
         setText();
     }
 
-    private void setupItems()
-    {
+    private void setupItems() {
         textView = findViewById(R.id.checkbox_layout_4_question);
         box1 = findViewById(R.id.checkbox_layout_4_checkbox1);
         box2 = findViewById(R.id.checkbox_layout_4_checkbox2);
@@ -70,20 +65,20 @@ public class ExerciseClassesAndObjects2 extends AppCompatActivity implements Vie
             public boolean onNavigationItemSelected(MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.play_menu:
-                        intent = new Intent(ExerciseClassesAndObjects2.this, PlayMenu.class);
+                        intent = new Intent(ExerciseArray.this, PlayMenu.class);
                         startActivity(intent);
                         break;
                     case R.id.theory_menu:
-                        intent = new Intent(ExerciseClassesAndObjects2.this, TheoryMenu.class);
+                        intent = new Intent(ExerciseArray.this, TheoryMenu.class);
                         startActivity(intent);
                         break;
                     case R.id.setting_menu:
-                        intent = new Intent(ExerciseClassesAndObjects2.this, SettingsMenu.class);
+                        intent = new Intent(ExerciseArray.this, SettingsMenu.class);
                         startActivity(intent);
                         break;
                     case R.id.moveToTheory:
                         finish();
-                        intent = new Intent(ExerciseClassesAndObjects2.this, ClassesAndObjects.class);
+                        intent = new Intent(ExerciseArray.this, Arrays.class);
                         startActivity(intent);
                         break;
                     case R.id.credits:
@@ -120,16 +115,16 @@ public class ExerciseClassesAndObjects2 extends AppCompatActivity implements Vie
     {
         if(view.getId() == R.id.checkbox_submit_button)
         {
-            if ( (box1.isChecked()|| box2.isChecked() || box3.isChecked() || box4.isChecked()) && (i <=3))
+            if ( (box1.isChecked()|| box2.isChecked() || box3.isChecked() || box4.isChecked()) && (i <=8))
             {
                 checkCorrectAnswers();
                 answered[i] = true;
                 i++;
                 setText();
             }
-            else if (i>3)
+            else if (i>8)
             {
-                PlayMenu.positionOfNewLevel = 4;
+                PlayMenu.positionOfNewLevel = 1;
                 if (numOfCorrectAnswers >=  questionsQ /2) {
                     mySound.start();
                     sendNotification(title, message);
@@ -139,33 +134,67 @@ public class ExerciseClassesAndObjects2 extends AppCompatActivity implements Vie
         }
     }
 
-    private void setText()
-    {
+    private void setText() {
         switch (i) {
             case 0:
-                textView.setText("Welches Sichtbarkeitsattribut besagt, dass ein Objekt oder eine Variable nur innerhalb der aktuellen Klasse sichtbar ist?");
-                box1.setText("private");
-                box2.setText("protected");
-                box3.setText("public");
-                box4.setVisibility(View.GONE);
+                textView.setText(" Kreuzen Sie die richtig initialisierten Arrays an.");
+                box1.setText(" int[] gradeList = {1, 2, 3, 4, 5, 6}");
+                box2.setText(" String names = new names[]");
+                box3.setText(" Array<numbers> String = new array<numbers>");
+                box4.setText(" double[] list = new double[10]");
                 break;
             case 1:
-                textView.setText("Welches Sichtbarkeitsattribut besagt, dass ein Objekt oder eine Variable im gesamten Programm sichtbar ist?");
-                box1.setText("protected");
-                box2.setText("public");
-                box3.setText("private");
+                textView.setText(" Arrays verwendet man um:");
+                box1.setText(" eine Ansammlung von Werte des gleichen Datentypes zu speichern");
+                box2.setText(" verschiedene Klassenvariablen zusammenzufassen, der Datentyp kann unbeachtet bleiben");
+                box3.setVisibility(View.GONE);
                 box4.setVisibility(View.GONE);
                 break;
             case 2:
-                textView.setText("Objekte oder Variablen, welche nach dem Erstellen nicht mehr verändert werden können, sind: ");
-                box1.setText("final");
-                box2.setText("static");
-                box3.setText("protected");
-                box4.setVisibility(View.GONE);
+                textView.setText(" Wie lässt sich auf die Länge eines Arrays zugreifen?");
+                box1.setText(" arrayName.length");
+                box2.setText(" arrayName.length()");
+                box3.setText(" arrayName.size");
+                box4.setText(" arrayName.size()");
                 break;
             case 3:
+                textView.setText(" Wie viele Reihen, bzw. Spalten hat dieser zweidimensionale Array: int[][] multi = new int[5][10]");
+                box1.setText(" Der Array hat 5 Reihen und 10 Spalten.");
+                box2.setText(" Der Array hat 5 Spalten und 10 Reihen.");
+                box3.setVisibility(View.GONE);
+                box4.setVisibility(View.GONE);
+                break;
+            case 4:
+                textView.setText(" Was ist der Vorteil einer ArrayList im Gegensatz zu dem Array?");
+                box1.setText(" Die ArrayList kann auch unterschiedliche Datentypen in einer List speichern.");
+                box2.setText(" Die Größe/ Länge der ArrayList ist veränderbar.");
+                box3.setText(" Man kann Elemente auch nach der Indizialisierung hinzufügen oder entfernen.");
+                box4.setVisibility(View.GONE);
+                break;
+            case 5:
+                textView.setText(" Welche ArrayLists sind korrekt initialisiert?");
+                box1.setText(" ArrayList<int> myList = new ArrayList<int>(50)");
+                box2.setText(" ArrayList<String> groceries = new ArrayList<String>(200)");
+                box3.setText(" ArrayLists myArrayList = new ArrayList()");
+                box4.setText(" ArrayLists<Double> myDoubleList = new ArrayList()");
+                break;
+            case 6:
+                textView.setText(" Wo beginnen die Indizes des Arrays, als auch der ArrayList?");
+                box1.setText(" bei 0");
+                box2.setText(" bei 1");
+                box3.setVisibility(View.GONE);
+                box4.setVisibility(View.GONE);
+                break;
+            case 7:
+                textView.setText(" Wie lässt man sich die Anzahl der Elemente einer ArrayList ausgeben?");
+                box1.setText(" myArrayList.length");
+                box2.setText(" myArrayList.length()");
+                box3.setText(" myArrayList.size");
+                box4.setText(" myArrayList.size()");
+                break;
+            case 8:
                 countCorrectAnswers();
-                textView.setText("Sie haben " + numOfCorrectAnswers + " Fragen richtig beantwortet.");
+                textView.setText("Sie haben " + numOfCorrectAnswers + " Fragen von " + questionsQ + "richtig beantwortet.");
                 box1.setClickable(false);
                 box1.setVisibility(View.INVISIBLE);
                 box2.setClickable(false);
@@ -184,8 +213,17 @@ public class ExerciseClassesAndObjects2 extends AppCompatActivity implements Vie
         resetCheckbox();
     }
 
+
+    private void resetCheckbox ()
+    {
+        box1.setChecked(false);
+        box2.setChecked(false);
+        box3.setChecked(false);
+        box4.setChecked(false);
+    }
+
     private int countCorrectAnswers() {
-        for (int j = 0; j < 3; j++)
+        for (int j = 0; j < 8; j++)
         {
             if (answerCorrect[j])
             {numOfCorrectAnswers ++;}
@@ -193,29 +231,40 @@ public class ExerciseClassesAndObjects2 extends AppCompatActivity implements Vie
         return numOfCorrectAnswers;
     }
 
-
-    private void resetCheckbox () {
-        box1.setChecked(false);
-        box2.setChecked(false);
-        box3.setChecked(false);
-        box4.setChecked(false);
-    }
-
     private void checkCorrectAnswers() {
         switch (i)
         {
-            case 0: if (box1.isChecked() && !box2.isChecked() && !box3.isChecked() && !box4.isChecked())
+            case 0: if (box1.isChecked() && !box2.isChecked() && !box3.isChecked() && box4.isChecked()) {
+                answerCorrect[i] = true;
+            }
+                break;
+            case 1: if (box1.isChecked() && !box2.isChecked()) {
+                answerCorrect[i] = true;
+            }
+                break;
+            case 2: if (box1.isChecked() && !box2.isChecked() && !box3.isChecked() && !box4.isChecked()) {
+                answerCorrect[i] = true;
+            }
+                break;
+            case 3: if (box1.isChecked() || !box2.isChecked())
             {
                 answerCorrect[i] = true;
             }
                 break;
-            case 1: if (!box1.isChecked() && box2.isChecked() && !box3.isChecked() && !box4.isChecked())
+            case 4: if (!box1.isChecked() && box2.isChecked() && box3.isChecked())
             {
                 answerCorrect[i] = true;
             }
                 break;
-            case 2: if (box1.isChecked() && !box2.isChecked() && !box3.isChecked() && !box4.isChecked())
-            {
+            case 5: if (!box1.isChecked() && box2.isChecked() && box3.isChecked() && !box4.isChecked()) {
+                answerCorrect[i] = true;
+            }
+                break;
+            case 6: if (box1.isChecked() && !box2.isChecked()) {
+                answerCorrect[i] = true;
+            }
+                break;
+            case 7: if (!box1.isChecked() && !box2.isChecked() && !box3.isChecked() && box4.isChecked()) {
                 answerCorrect[i] = true;
             }
                 break;
@@ -228,6 +277,7 @@ public class ExerciseClassesAndObjects2 extends AppCompatActivity implements Vie
         NotificationCompat.Builder nBuilder = nHelper.getChannelNotification(title, message);
         nHelper.getNotificationManager().notify(1, nBuilder.build());
     }
+
 
 
 }

@@ -46,7 +46,7 @@ public class ExerciseClassesAndObjects extends AppCompatActivity implements View
 
     //Hier die Strings für die Notification festlegen
     String title = "Congrats";
-    String message = "Du hast Übung X bestanden";
+    String message = "Du hast Übung 3 bestanden";
     private NotificationHelper nHelper;
     private int questionsQ = 4;
 
