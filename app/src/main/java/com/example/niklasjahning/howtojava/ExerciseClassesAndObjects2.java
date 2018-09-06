@@ -25,8 +25,8 @@ public class ExerciseClassesAndObjects2 extends AppCompatActivity implements Vie
     int i = 0;
     int numOfCorrectAnswers=0;
 
-    boolean[] answerCorrect = new boolean[5];
-    boolean[] answered = new boolean[5];
+    boolean[] answerCorrect = new boolean[3];
+    boolean[] answered = new boolean[3];
 
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
