@@ -32,6 +32,9 @@ public class PlayMenu extends AppCompatActivity implements View.OnClickListener 
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+        if(SettingsMenu.switchOnOff1) {
+            setTheme(R.style.Kai);
+        }
         setContentView(R.layout.play_menu);
         setupButtons();
         setupDrawer();

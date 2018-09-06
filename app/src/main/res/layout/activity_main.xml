@@ -7,27 +7,21 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/main_menu_theorie_button"
-        android:background="@color/colorAccent1"
-        android:textColorHint="@android:color/white"
+        android:text="@string/main_menu_theorie_button"
         android:id="@+id/theory_button"/>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:hint="@string/main_menu_play_button"
-        android:textColorHint="@android:color/white"
-        android:background="@color/colorAccent1"
+        android:text="@string/main_menu_play_button"
         android:id="@+id/play_button"/>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="@color/colorAccent1"
-        android:hint="@string/main_menu_setting_button"
-        android:textColorHint="@android:color/white"
+        android:text="@string/main_menu_setting_button"
         android:id="@+id/settings_button"/>
 
     </RelativeLayout>
