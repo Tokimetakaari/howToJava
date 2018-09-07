@@ -35,6 +35,9 @@ public class Theory extends AppCompatActivity implements View.OnClickListener
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+        if(SettingsMenu.switchOnOff1) {
+            setTheme(R.style.Kai);
+        }
         setContentView(R.layout.read_theory);
         setupDrawer();
         setupButtons();

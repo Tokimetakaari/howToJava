@@ -1,8 +1,10 @@
 package com.example.niklasjahning.howtojava;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.NotificationCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -15,6 +17,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class ExerciseClassesAndObjects extends AppCompatActivity implements View.OnClickListener {
+
+    MediaPlayer mySound;
 
     TextView textView;
     Button submit;
@@ -40,10 +44,16 @@ public class ExerciseClassesAndObjects extends AppCompatActivity implements View
     String alternative4_6 = "Dog umberto =new Dog ()";
     String alternative4_7 = "Dog umberto= new Dog ()";
 
+    //Hier die Strings für die Notification festlegen
+    String title = "Congrats";
+    String message = "Du hast Übung 3 bestanden";
+    private NotificationHelper nHelper;
+    private int questionsQ = 4;
 
 
     boolean[] answerCorrect = new boolean[4];
     boolean[] answered = new boolean[4];
+
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
     NavigationView burger;
@@ -56,6 +66,7 @@ public class ExerciseClassesAndObjects extends AppCompatActivity implements View
         setupDrawer();
         connectBurger();
         setupItems();
+        mySound = MediaPlayer.create(this,R.raw.sound);
         setText();
 
 
@@ -72,6 +83,7 @@ public class ExerciseClassesAndObjects extends AppCompatActivity implements View
         answer7 = findViewById(R.id.cloze_answer_7);
         answer8 = findViewById(R.id.cloze_answer_8);
         submit = findViewById(R.id.cloze_submit_button);
+        nHelper = new NotificationHelper(this);
         submit.setOnClickListener(this);
     }
 
@@ -130,7 +142,7 @@ public class ExerciseClassesAndObjects extends AppCompatActivity implements View
     @Override
     public void onClick(View view) {
         if(view.getId() == R.id.cloze_submit_button) {
-            if ((!answer1.getText().toString().isEmpty()) && (!answer2.getText().toString().isEmpty()) && (i <=4)) {
+            if ((!answer1.getText().toString().isEmpty()) && (i <=4)) {
                 checkCorrectAnswers();
                 answered[i] = true;
                 i++;
@@ -138,6 +150,10 @@ public class ExerciseClassesAndObjects extends AppCompatActivity implements View
 
             } else if (i > 4) {
                 PlayMenu.positionOfNewLevel = 3;
+                if (numOfCorrectAnswers >=  questionsQ /2) {
+                    mySound.start();
+                    sendNotification(title, message);
+                }
                 finish();
 
             }
@@ -148,7 +164,8 @@ public class ExerciseClassesAndObjects extends AppCompatActivity implements View
     private void setText() {
         switch (i) {
             case 0:
-                textView.setText("Klassen dienen als ________ für Objekte und beschreiben deren ________, wie der Hund zum Beispiel Stöckchen holt und bellt");
+                textView.setText("Klassen dienen als ________ für Objekte/ Instanzen.");
+                answer2.setVisibility(View.GONE);
                 answer3.setVisibility(View.GONE);
                 answer4.setVisibility(View.GONE);
                 answer5.setVisibility(View.GONE);
@@ -156,8 +173,8 @@ public class ExerciseClassesAndObjects extends AppCompatActivity implements View
                 answer7.setVisibility(View.GONE);
                 answer8.setVisibility(View.GONE);
                 break;
-            case 1:
-                textView.setText("Ergänzen Sie folgenden Code, um die Klasse Hund zu erzeugen und ein Objekt/ eine Instanz dieser Klasse mit Namen Umberto zu erstellen");
+            case 1: textView.setText("Klassen beschreiben die ________ von Objekten, bzw. Instanzen, wie der Hund zum Beispiel Stöckchen holt und bellt.");
+                answer2.setVisibility(View.GONE);
                 answer3.setVisibility(View.GONE);
                 answer4.setVisibility(View.GONE);
                 answer5.setVisibility(View.GONE);
@@ -166,7 +183,27 @@ public class ExerciseClassesAndObjects extends AppCompatActivity implements View
                 answer8.setVisibility(View.GONE);
                 break;
             case 2:
-                for (int j = 0; j < 2; j++) {
+                textView.setText("Schreiben Sie den Code, um die Klasse Hund zu erzeugen ein Objekt/ eine Instanz dieser Klasse mit Namen Umberto zu erstellen");
+                answer2.setVisibility(View.GONE);
+                answer3.setVisibility(View.GONE);
+                answer4.setVisibility(View.GONE);
+                answer5.setVisibility(View.GONE);
+                answer6.setVisibility(View.GONE);
+                answer7.setVisibility(View.GONE);
+                answer8.setVisibility(View.GONE);
+                break;
+            case 3:
+                textView.setText("Schreiben Sie den Code, um ein Objekt/ eine Instanz der zuvor erstellten Klasse 'Dog' mit Namen 'Umberto' zu erstellen");
+                answer2.setVisibility(View.GONE);
+                answer3.setVisibility(View.GONE);
+                answer4.setVisibility(View.GONE);
+                answer5.setVisibility(View.GONE);
+                answer6.setVisibility(View.GONE);
+                answer7.setVisibility(View.GONE);
+                answer8.setVisibility(View.GONE);
+                break;
+            case 4:
+                for (int j = 0; j < 4; j++) {
                     if (answerCorrect[j]) {
                         numOfCorrectAnswers ++;
                     }
@@ -174,8 +211,6 @@ public class ExerciseClassesAndObjects extends AppCompatActivity implements View
                 textView.setText("Sie haben " + numOfCorrectAnswers +" richtig beantwortet");
                 answer1.setVisibility(View.INVISIBLE);
                 answer1.setClickable(false);
-                answer2.setVisibility(View.INVISIBLE);
-                answer2.setClickable(false);
                 i++;
                 break;
         }
@@ -185,7 +220,6 @@ public class ExerciseClassesAndObjects extends AppCompatActivity implements View
 
     private void resetAnswers() {
         answer1.setText("");
-        answer2.setText("");
     }
 
 
@@ -199,7 +233,7 @@ public class ExerciseClassesAndObjects extends AppCompatActivity implements View
                 }
                 break;
             case 1:
-                if (answer2.getText().toString().equals(solution2) || (answer2.getText().toString().equals(alternative2_1))) {
+                if (answer1.getText().toString().equals(solution2) || (answer1.getText().toString().equals(alternative2_1))) {
                     answerCorrect[i] = true;
                 }
                 break;
@@ -209,7 +243,7 @@ public class ExerciseClassesAndObjects extends AppCompatActivity implements View
                 }
                 break;
             case 3:
-                if (answer2.getText().toString().equals(solution4) || (answer2.getText().toString().equals(alternative4_1)) || (answer2.getText().toString().equals(alternative4_2)) || (answer2.getText().toString().equals(alternative4_3)) || (answer2.getText().toString().equals(alternative4_4)) || (answer2.getText().toString().equals(alternative4_5)) || (answer2.getText().toString().equals(alternative4_6)) || (answer2.getText().toString().equals(alternative4_7))) {
+                if (answer1.getText().toString().equals(solution4) || (answer1.getText().toString().equals(alternative4_1)) || (answer1.getText().toString().equals(alternative4_2)) || (answer1.getText().toString().equals(alternative4_3)) || (answer1.getText().toString().equals(alternative4_4)) || (answer1.getText().toString().equals(alternative4_5)) || (answer1.getText().toString().equals(alternative4_6)) || (answer1.getText().toString().equals(alternative4_7))) {
                     answerCorrect[i] = true;
                 }
                 break;
@@ -217,5 +251,11 @@ public class ExerciseClassesAndObjects extends AppCompatActivity implements View
 
         }
     }
+
+    public void sendNotification(String title, String message) {
+        NotificationCompat.Builder nBuilder = nHelper.getChannelNotification(title, message);
+        nHelper.getNotificationManager().notify(1, nBuilder.build());
+    }
+
 
 }

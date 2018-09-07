@@ -29,7 +29,7 @@ public class ExerciseSelectDatatypes extends AppCompatActivity implements View.O
     private Intent intent;
     //Hier die Strings für die Notification festlegen
     String title = "Congrats";
-    String message = "Du hast Übung X bestanden";
+    String message = "Du hast Übung 1 bestanden";
     private NotificationHelper nHelper;
     private int questionsQ = 5;
 
@@ -37,8 +37,7 @@ public class ExerciseSelectDatatypes extends AppCompatActivity implements View.O
     boolean[] answered = new boolean[5];
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.checkbox_layout_default);
         setupItems();
@@ -48,8 +47,7 @@ public class ExerciseSelectDatatypes extends AppCompatActivity implements View.O
         setText();
     }
 
-    private void setupItems()
-    {
+    private void setupItems() {
         textView = findViewById(R.id.checkbox_layout_4_question);
         box1 = findViewById(R.id.checkbox_layout_4_checkbox1);
         box2 = findViewById(R.id.checkbox_layout_4_checkbox2);
@@ -136,8 +134,7 @@ public class ExerciseSelectDatatypes extends AppCompatActivity implements View.O
         }
     }
 
-    private void setText()
-    {
+    private void setText() {
         switch (i) {
             case 0:
                 textView.setText("Welchen Datentyp würden Sie verwenden um den Wert 5 zu speichern?");
@@ -251,5 +248,4 @@ public class ExerciseSelectDatatypes extends AppCompatActivity implements View.O
         nHelper.getNotificationManager().notify(1, nBuilder.build());
     }
 
-
-    }
+}

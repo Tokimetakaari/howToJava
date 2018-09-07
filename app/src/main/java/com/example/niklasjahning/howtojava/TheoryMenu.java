@@ -23,6 +23,9 @@ public class TheoryMenu extends AppCompatActivity implements View.OnClickListene
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if(SettingsMenu.switchOnOff1) {
+            setTheme(R.style.Kai);
+        }
         setContentView(R.layout.menu);
         setupDrawer();
         setupButtons();

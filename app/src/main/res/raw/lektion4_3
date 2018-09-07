@@ -2,9 +2,9 @@
 
 Multidimensionale Arrays sind Arrays, welche weitere Arrays enthalten.
 Der bekannteste ist der zweidimensionale Array, welcher zum Beispiel für das Zeichnen eines Schachbretts verwendet werden kann.
-Um den zweidimensionalen Array zu deklarieren, schreibt man:
+Um den zweidimensionalen Array zu initialisieren, schreibt man:
 int[][] twoDimensions = { {1, 2, 3} {4, 5, 6} };
-Um nun auf ein Element des Arrays mit Hilfe der Indizes zugreifen zu können, muss man sowohl den Reihen-, als auch den Spaltenindex angeben:
+Um nun auf ein Element des Arrays mit Hilfe der Indizes zugreifen zu können, muss man zuerst den Reihen-, als dann auch den Spaltenindex angeben:
 int x = twoDimensions[1][0];
 System.out.println(x):
 //outputs 4

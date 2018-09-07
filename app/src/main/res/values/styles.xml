@@ -1,10 +1,31 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+
     </style>
+
+    <style name="Kai" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/black</item>
+        <item name="colorPrimaryDark">@color/black</item>
+        <item name="colorAccent">@color/green</item>
+        <item name="android:background">@color/black</item>
+        <item name="android:windowBackground">@color/white</item>
+        <item name="android:colorBackground">@color/black</item>
+        <item name="android:scrollbarThumbVertical">@color/black</item>
+        <item name="colorButtonNormal">@color/white</item>
+        <item name="android:textColor">@color/green</item>
+        <item name="android:textAppearanceButton">@color/black</item>
+        <item name="android:textSize">20dp</item>
+        <item name="android:textColorSecondary">@color/white</item>
+        <item name="android:textColorPrimary">@color/green</item>
+        <item name="android:actionMenuTextColor">@color/green</item>
+
+
+    </style>
+
 
 </resources>

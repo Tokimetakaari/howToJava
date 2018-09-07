@@ -34,6 +34,7 @@
         <activity android:name=".DataInJava" />
         <activity android:name=".ExerciseClassesAndObjects" />
         <activity android:name=".ExerciseForMethods1" />
+        <activity android:name=".ExerciseClassesAndObjects2" />
     </application>
 
 </manifest>

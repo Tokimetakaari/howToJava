@@ -29,6 +29,9 @@ public class PlayMenu extends AppCompatActivity implements View.OnClickListener 
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+        if(SettingsMenu.switchOnOff1) {
+            setTheme(R.style.Kai);
+        }
         setContentView(R.layout.play_menu);
         unlockLevel();
         setupButtons();
@@ -171,13 +174,13 @@ public class PlayMenu extends AppCompatActivity implements View.OnClickListener 
                 break;
             case R.id.play_lektion_2: i = new Intent(PlayMenu.this, ExerciseSelectDatatypes2.class);
                break;
-            case R.id.play_lektion_3: i = new Intent(PlayMenu.this, ExerciseOperators.class);
+            case R.id.play_lektion_3: i = new Intent(PlayMenu.this, ExerciseClassesAndObjects.class);
                 break;
-            case R.id.play_lektion_4: i = new Intent(PlayMenu.this, ExerciseClassesAndObjects.class);
+            case R.id.play_lektion_4: i = new Intent(PlayMenu.this, ExerciseClassesAndObjects2.class);
                 break;
-            case R.id.play_lektion_5: i = new Intent(PlayMenu.this, ExerciseSelectDatatypes.class);
+            case R.id.play_lektion_5: i = new Intent(PlayMenu.this, ExerciseOperators.class);
                 break;
-            case R.id.play_lektion_6: i = new Intent(PlayMenu.this, ExerciseOperators.class);
+            case R.id.play_lektion_6: i = new Intent(PlayMenu.this, ExerciseArray.class);
                 break;
             case R.id.play_lektion_7: i = new Intent(PlayMenu.this, ExerciseSelectDatatypes.class);
                 break;
