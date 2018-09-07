@@ -24,6 +24,15 @@
         android:layout_height="wrap_content"
         android:id="@+id/programmingExerciseEditText_2"/>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/programmingExerciseTextView_3"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/programmingExerciseEditText_3"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -1,5 +1,6 @@
 package com.example.niklasjahning.howtojava;
 
+import android.arch.persistence.room.Room;
 import android.view.MotionEvent;
 import android.content.Intent;
 import android.support.v4.view.GestureDetectorCompat;
@@ -15,15 +16,41 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button theory, play, settings;
     private GestureDetectorCompat gestureObject;
     private Intent i;
+    static public AppDatabase database;
+    static final String databaseName = "AppDatabase";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        setupDataBase();
         gestureObject = new GestureDetectorCompat(this, new LearnGesture());
 
         setupButtons();
         setupListener();
+    }
+
+    private void setupDataBase()
+    {
+        database = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, databaseName).fallbackToDestructiveMigration().build();
+        setupDataEntries();
+    }
+    private void setupDataEntries()
+    {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+        for (int j = 0; j < PlayMenu.numOfButtons; j++)
+        {
+            BooleanField booleanField = new BooleanField();
+            booleanField.setValue(0);
+            booleanField.setFieldPosition(j);
+            database.booleanDao().insertBooleanField(booleanField);
+
+        }
+            }
+        }).start();
+
     }
 
 

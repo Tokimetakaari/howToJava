@@ -12,19 +12,16 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import java.util.List;
-
 public class PlayMenu extends AppCompatActivity implements View.OnClickListener {
 
     Button b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15, b16, b17, b18, b19, b20, b21, b22, b23, b24, b25, b26, b27, b28, b29, b30;
     Intent i ;
-    MyDatabaseAdapter database;
-    AppDatabase appDatabase;
-    int numOfButtons = 30;
+    final static int numOfButtons = 30;
     static int positionOfNewLevel = 0;
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
     NavigationView burger;
+
 
 
 
@@ -33,37 +30,17 @@ public class PlayMenu extends AppCompatActivity implements View.OnClickListener 
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.play_menu);
+        unlockLevel();
         setupButtons();
         setupDrawer();
-//        test();
         setupListener();
-//        setupDataBase();
-//        setupDataEntries();
-//        unlockLevel();
+
     }
 
- /*   private void setupDataBase()
-    {
-        appDatabase = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "appDataBase").build();
-        database = new MyDatabaseAdapter(this);
-        database.open();
-    }
 
-    private void setupDataEntries()
-    {
-        for (int j = 0; j < numOfButtons; j++)
-        {
-            database.insertMyObject(new BooleanField(0,false));
-            //insertBooleanField(new BooleanField(j, false));
-            database.notify();
-            if (j == 0)
-            {
-                database.insertMyObject(new BooleanField(0,true));
-                //insertBooleanField(new BooleanField(0, true));
-                database.notify();
-            }
-        }
-    } */
+
+
+
     private void setupDrawer() {
      mDrawerLayout = (DrawerLayout) findViewById(R.id.burgerLayout);
      mToggle = new ActionBarDrawerToggle(this,mDrawerLayout, R.string.open, R.string.close);
@@ -89,7 +66,9 @@ public class PlayMenu extends AppCompatActivity implements View.OnClickListener 
     {
         b1 = findViewById(R.id.play_lektion_1);
         b2 = findViewById(R.id.play_lektion_2);
+        b2.setEnabled(false);
         b3 = findViewById(R.id.play_lektion_3);
+        b3.setEnabled(true);
         b4 = findViewById(R.id.play_lektion_4);
         b5 = findViewById(R.id.play_lektion_5);
         b6 = findViewById(R.id.play_lektion_6);
@@ -118,8 +97,6 @@ public class PlayMenu extends AppCompatActivity implements View.OnClickListener 
         b29 = findViewById(R.id.play_lektion_29);
         b30 = findViewById(R.id.play_lektion_30);
         connectBurger();
-
-
     }
 
     private void connectBurger() {
@@ -209,37 +186,49 @@ public class PlayMenu extends AppCompatActivity implements View.OnClickListener 
         }
         startActivity(i);
     }
-    /*
 
-    private void test ()
+    private void unlockLevel()
     {
-        for (int k = 0 ; k < numOfButtons; k++)
+        for ( int i = 1; i < numOfButtons; i++)
         {
-            BooleanField booleanOne = (BooleanField) getBooleans(k);
-            switch (k)
+            switch (i)
             {
-                case 1: if ( booleanOne.getValue() )
-                        {
-                            b2.setClickable(true);
-                            b2.setVisibility(View.VISIBLE);
-                        }
-                        break;
-                case 2: if ( booleanOne.getValue() )
+                case 1: if (getValues(1)==1)
                 {
-                    b3.setClickable(true);
-                    b3.setVisibility(View.VISIBLE);
+                     b2.setEnabled(true);
                 }
-                    break;
-
+                break;
+                case 2: if (getValues(2)==1)
+                {
+                    b3.setEnabled(false);
+                }
+                break;
             }
         }
 
     }
 
-    private void unlockLevel()
+    private int getValues(int i)
     {
-        BooleanField booleanOne = (BooleanField) getBooleans(positionOfNewLevel);
-        booleanOne.setValue(true);
-        database.notify();
-    } */
+        final BooleanField[] searchEntry = new BooleanField[1];
+        final int position = i;
+        new Thread(new Runnable() {
+                @Override
+                public void run() {
+                     searchEntry[0] = MainActivity.database.booleanDao().getBooleans(position);
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+
+                        }
+                    });
+                }
+            }).start();
+        if (searchEntry[0] != null)
+        {
+            return  searchEntry[0].getValue();
+        }
+       return 0;
+    }
 }
+
