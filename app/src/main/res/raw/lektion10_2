@@ -13,7 +13,7 @@ try {
   icon = new ImageIcon(cat);
 }
 catch(IOException e) {
-  System.out.println("Fail")
+  System.out.println("Fail");
 }
 
 Hier wird versucht das Katzenbild als Icon zu setzen. Sollte dies nicht funktionieren, wird eine Fehlermeldung geworfen, welche durch "IOException e" "abgefangen" wird.

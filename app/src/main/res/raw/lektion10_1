@@ -7,17 +7,17 @@ In Java lassen sich verschiedene Dateitypen laden, solche wie Bilder, Musik oder
 Bei dem einlesen von Dateien - im folgenden Beispiel sind es Bilder - muss man einen Dateipfad im Code angeben. Dieser kann auf zwei verschiedene Varianten angegeben werden:
 
 1 Absoluter Dateipfad:
-Hierbei wird ein Dateipfad angegeben der von Wurzel der Festplatte bis hin zum Speicherort des Bildes reicht.
+Hierbei wird ein Dateipfad angegeben, der von der Wurzel der Festplatte bis hin zum Speicherort des Bildes reicht.
 Beispiel:
 C:\Users\YourName\Bilder\cat.jpg
-Sollte das Bild aufgerufen werden, wird vom Programm exakt der Dateipfad befolgt. Sollte er dort nichts finden, wird auch kein Bild angezeigt.
-Diese Methode is auch eher unpraktiabel. Sollte das Programm auf einen anderen Computer verwendet werden kann es sein das dort nicht das Bild im selben Dateipfad vorhanden ist.
+Sollte das Bild aufgerufen werden, wird vom Programm exakt der Dateipfad befolgt. Sollte es dort nichts finden, wird auch kein Bild angezeigt.
+Diese Methode ist auch eher unpraktiabel. Sollte das Programm auf einem anderen Computer verwendet werden, kann es sein das dort dieses Bild nicht im selben Dateipfad vorhanden ist.
 
 2 Relativer Dateipfad:
-Hierbei wird nur das letzte Stück des Dateipfads angegeben, dieser ist somit nicht vollständig und wird mit dem aktuellen Dateipfad kombiniert.
+Hierbei wird nur das letzte Stück des Dateipfads angegeben; dieser ist somit nicht vollständig und wird mit dem aktuellen Dateipfad kombiniert.
 Beispiel:
 Bilder\cat.jpg
-Diese Methode ist sehr weit verbreitet um eine Bild innerhalb eines Programms aufzurufen. Dadurch ist das Programm auch unabhängig von äußeren Dateien.
+Diese Methode ist sehr weit verbreitet, um eine Bild innerhalb eines Programms aufzurufen. Dadurch ist das Programm auch unabhängig von äußeren Dateien.
 
 Anwendungsbeispiel in Java:
 Image image1 = getImage(getCodeBase(), "Bilder\cat.jpg");  <-- Relativer Dateipfad
@@ -26,6 +26,9 @@ Image image2 = getImage(getCodeBase(), "C:\Users\YourName\Bilder\cat.jpg");  <--
 public void paint(Graphics g) {
       super.paint(g);
       if(image != null) {
-         g.drawImage(image1, 0, 0, this);
+         g.drawImage(image1, 0, 0, ImageObserver observer);
       }
 }
+
+In den Klammern der drawImage-Methode wird zuerst das Image übergeben, dann die x-Position sowie die y Position angegeben (0,0 bedeutet die Ecke oben links) und schließlich noch der ImageObserver angegeben, welcher die Anwendung über Image Updates informiert.
+(Dieser ist bei der BufferedImage Class überflüssig und für gewöhnlich 'null'.

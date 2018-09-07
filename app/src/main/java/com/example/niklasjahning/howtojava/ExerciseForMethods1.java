@@ -161,11 +161,11 @@ public class ExerciseForMethods1 extends AppCompatActivity implements View.OnCli
                     box4.setText("private void doSomething();");
                     break;
                 case 5:
-                    textView.setText("In einer Methode wird ein boolean deklariert. Man versucht diesen über eine andere Methode zu verändern. Wieso wird es nicht funktionieren?");
-                    box1.setText("Es wird funktionieren");
-                    box2.setText("Es klappt nicht, da Methoden keine anderen Methoden aufrufen können");
-                    box3.setText("Es klappt nicht, da eine lokale Variable nur solange existiert wie die Methode ausgeführt wird. ");
-                    box4.setText("Es klappt nicht, weil boolean in Methoden nicht verwendet werden dürfen");
+                    textView.setText("In einer Methode wird ein boolean deklariert. Man versucht diesen über eine andere Methode zu verändern. Ist das möglich? funktionieren?");
+                    box1.setText("Ja, es wird funktionieren.");
+                    box2.setText("Nein, es klappt nicht, da Methoden keine anderen Methoden aufrufen können.");
+                    box3.setText("Nein, es klappt nicht, da eine lokale Variable nur solange existiert wie die Methode ausgeführt wird.");
+                    box4.setText("Nein, es klappt nicht, weil boolean in Methoden nicht verwendet werden dürfen.");
                     break;
                 case 6:
                     for (int j = 0; j < 6; j++)

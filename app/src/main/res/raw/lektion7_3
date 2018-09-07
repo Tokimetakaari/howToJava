@@ -1,4 +1,4 @@
-7.3 Werte an Methoden Übergeben
+7.3 Werte an Methoden übergeben
 Wie in den beiden vorherigen Lektionen erwähnt, können Werte an Methoden übergeben werden. Um dies zu ermöglichen, müssen Variablen in den runden Klammern definiert werden.
 Zum Beispiel:
      public int zahlenAddieren(int a, int b) {}
