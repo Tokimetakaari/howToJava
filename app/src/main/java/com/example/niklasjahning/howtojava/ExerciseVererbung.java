@@ -15,7 +15,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class ExerciseKonstruktoren extends AppCompatActivity implements View.OnClickListener {
+public class ExerciseVererbung extends AppCompatActivity implements View.OnClickListener {
 
     MediaPlayer mySound;
     TextView textView;
@@ -24,20 +24,17 @@ public class ExerciseKonstruktoren extends AppCompatActivity implements View.OnC
     int i = 0;
     int numOfCorrectAnswers = 0;
 
-    String solution1 = "Methoden";
-    String alternative1_1 = "methoden";
-    String alternative1_2 = "Methods";
-    String alternative1_3 = "methods";
-    String solution2 = "Konstruktoren";
-    String alternative2_1 = "konstruktren";
-    String solution3 = "public Resident(vname, nname)";
-    String alternative3_1 = "public Resident (vname, nname)";
-    String alternative3_2 = "public Resident (vname,nname)";
-    String alternative3_3 = "public Resident(vname,nname)";
-    String solution4 = "Block";
-    String alternative4_1 = "block";
-    String alternative4_2 = "Methodenblock";
-    String alternative4_3 = "methodenblock";
+    String solution1 = "Superklasse";
+    String alternative1_1 = "superklasse";
+    String alternative1_2 = "Elternklasse";
+    String alternative1_3 = "elternklasse";
+    String solution2 = "extends";
+    String solution3 = "Superklasse";
+    String alternative3_1 = "superklasse";
+    String alternative3_2 = "Elternklasse";
+    String alternative3_3 = "elternklasse";
+    String solution4 = "protected";
+    String alternative4_1 = "Protected";
 
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
@@ -69,7 +66,7 @@ public class ExerciseKonstruktoren extends AppCompatActivity implements View.OnC
     private void setText() {
         switch (i) {
             case 0:
-                textView.setText("Ergänzen Sie: Konstruktoren ähneln __________ ");
+                textView.setText("Man unterscheidet zwischen der Subklasse und der ________ .");
                 editText2.setVisibility(View.GONE);
                 editText3.setVisibility(View.GONE);
                 editText4.setVisibility(View.GONE);
@@ -79,19 +76,13 @@ public class ExerciseKonstruktoren extends AppCompatActivity implements View.OnC
                 editText8.setVisibility(View.GONE);
                 break;
             case 1:
-                textView.setText("Konstruktoren können keine anderen ________ aufrufen.");
+                textView.setText("Die Subklasse erbt von der Superklasse und kann deren Methoden und Variablen verwenden. Dies wird durch das Schlüsselwort ________ ausgeführt.");
                 break;
             case 2:
-                textView.setText("Schreiben Sie den Konstruktor für folgende Klasse, welcher zwei String-Werte 'vname' und  als zweites 'nname' übergeben werden: " +
-                        "public class Resident {" +
-                        "   ________ {" +
-                        "      vorname = vname;" +
-                        "      nachname = nname;" +
-                        "   }" +
-                        "}");
+                textView.setText("Durch super.methodenname() kann man die Methoden der ________ aufrufen.");
                 break;
             case 3:
-                textView.setText("Jeglicher Code, welcher innerhalb einer Methode oder eines Konstruktors innerhalb geschweifter Klammern steht, kann als ________ bezeichnet/ zusammengefasst werden.");
+                textView.setText("Es kann nur auf ________ oder public Methoden der Superklasse zugegriffen werden.");
                 break;
             case 4:
                 for (int j = 0; j < 4; j++)
@@ -134,21 +125,21 @@ public class ExerciseKonstruktoren extends AppCompatActivity implements View.OnC
             public boolean onNavigationItemSelected(MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.play_menu:
-                        intent = new Intent(ExerciseKonstruktoren.this, PlayMenu.class);
+                        intent = new Intent(ExerciseVererbung.this, PlayMenu.class);
                         startActivity(intent);
                         break;
                     case R.id.theory_menu:
-                        intent = new Intent(ExerciseKonstruktoren.this, TheoryMenu.class);
+                        intent = new Intent(ExerciseVererbung.this, TheoryMenu.class);
                         startActivity(intent);
                         break;
                     case R.id.setting_menu:
-                        intent = new Intent(ExerciseKonstruktoren.this, SettingsMenu.class);
+                        intent = new Intent(ExerciseVererbung.this, SettingsMenu.class);
                         startActivity(intent);
                         break;
                     case R.id.moveToTheory:
                         finish();
-                        intent = new Intent(ExerciseKonstruktoren.this, Theory.class);
-                        intent.putExtra("txt_num", 61);
+                        intent = new Intent(ExerciseVererbung.this, Theory.class);
+                        intent.putExtra("txt_num", 81);
                         startActivity(intent);
                         break;
                     case R.id.credits:
@@ -212,7 +203,7 @@ public class ExerciseKonstruktoren extends AppCompatActivity implements View.OnC
                     answerCorrect[i] = true;
                 }
             case 1:
-                if (editText1.getText().toString().equals(solution2) || (editText1.getText().toString().equals(alternative2_1))) {
+                if (editText1.getText().toString().equals(solution2)) {
                     answerCorrect[i] = true;
                 }
                 break;
@@ -223,13 +214,13 @@ public class ExerciseKonstruktoren extends AppCompatActivity implements View.OnC
                 }
                 break;
             case 3:
-                if (editText1.getText().toString().equals(solution4) || (editText1.getText().toString().equals(alternative4_1)) || (editText1.getText().toString().equals(alternative4_2)) || (editText1.getText().toString().equals(alternative4_3)) ) {
+                if (editText1.getText().toString().equals(solution4) || (editText1.getText().toString().equals(alternative4_1)) ) {
                     answerCorrect[i] = true;
 
                 }
                 break;
-                default:
-                    break;
+            default:
+                break;
 
 
 
