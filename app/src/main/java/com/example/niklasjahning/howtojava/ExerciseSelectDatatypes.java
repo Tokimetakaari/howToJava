@@ -214,32 +214,32 @@ public class ExerciseSelectDatatypes extends AppCompatActivity implements View.O
         switch (i)
         {
             case 0: if (box1.isChecked() && !box2.isChecked() && !box3.isChecked() && !box4.isChecked())
-                    {
-                        answerCorrect[i] = true;
-                    }
-                    break;
+            {
+                answerCorrect[i] = true;
+            }
+                break;
             case 1: if (!box1.isChecked() && !box2.isChecked() && box3.isChecked() && !box4.isChecked())
-                    {
-                        answerCorrect[i] = true;
-                    }
-                    break;
+            {
+                answerCorrect[i] = true;
+            }
+                break;
             case 2: if (box1.isChecked() && !box2.isChecked() && !box3.isChecked() && !box4.isChecked())
-                    {
-                        answerCorrect[i] = true;
-                    }
-                    break;
+            {
+                answerCorrect[i] = true;
+            }
+                break;
             case 3: if (box1.isChecked() || box2.isChecked() && !box3.isChecked() && !box4.isChecked())
-                    {
-                        answerCorrect[i] = true;
-                    }
-                    break;
+            {
+                answerCorrect[i] = true;
+            }
+                break;
             case 4: if (!box1.isChecked() && box2.isChecked() && !box3.isChecked() && !box4.isChecked())
-                    {
-                        answerCorrect[i] = true;
-                    }
-                    break;
+            {
+                answerCorrect[i] = true;
+            }
+                break;
             default:
-                    break;
+                break;
         }
     }
 

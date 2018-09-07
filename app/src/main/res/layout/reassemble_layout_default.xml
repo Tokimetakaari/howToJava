@@ -22,18 +22,6 @@
             android:id="@+id/reassemble_question"/>
 
 
-        <resources>
-            <string-array
-                android:name="spinner_array">
-                <item>1</item>
-                <item>2</item>
-                <item>3</item>
-                <item>4</item>
-                <item>5</item>
-                <item>6</item>
-            </string-array>
-        </resources>
-
 <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -43,7 +31,8 @@
         <Spinner
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:id="@+id/reassemble_spinner_1"/>
+            android:id="@+id/reassemble_spinner_1"
+            android:entries="@array/spinnerNums"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -59,7 +48,8 @@
         <Spinner
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:id="@+id/reassemble_spinner_2"/>
+            android:id="@+id/reassemble_spinner_2"
+            android:entries="@array/spinnerNums"/>
 
 
 
@@ -78,7 +68,8 @@
         <Spinner
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:id="@+id/reassemble_spinner_3"/>
+            android:id="@+id/reassemble_spinner_3"
+            android:entries="@array/spinnerNums"/>
 
 
 
@@ -98,7 +89,8 @@
         <Spinner
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:id="@+id/reassemble_spinner_4"/>
+            android:id="@+id/reassemble_spinner_4"
+            android:entries="@array/spinnerNums"/>
 
 
 
@@ -117,7 +109,8 @@
         <Spinner
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:id="@+id/reassemble_spinner_5"/>
+            android:id="@+id/reassemble_spinner_5"
+            android:entries="@array/spinnerNums"/>
 
 
 
@@ -137,7 +130,8 @@
         <Spinner
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:id="@+id/reassemble_spinner_6"/>
+            android:id="@+id/reassemble_spinner_6"
+            android:entries="@array/spinnerNums"/>
 
 
 

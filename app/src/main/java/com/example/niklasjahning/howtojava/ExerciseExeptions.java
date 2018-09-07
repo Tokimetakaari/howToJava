@@ -38,7 +38,6 @@ public class ExerciseExeptions extends AppCompatActivity implements View.OnClick
     AdapterView.OnItemClickListener onItemClickListener;
 
 
-
     boolean[] answerCorrect = new boolean[5];
     boolean[] answered = new boolean[5];
 
@@ -133,10 +132,14 @@ public class ExerciseExeptions extends AppCompatActivity implements View.OnClick
     }
 
     private int[] getSelectedItemPositions() {
-        int[] itemPositions = new int[2];
+        int[] itemPositions = new int[6];
 
-        itemPositions[0] = spinnerEggSize.getSelectedItemPosition();
-        itemPositions[1] = spinnerDoneness.getSelectedItemPosition();
+        itemPositions[0] = spinner1.getSelectedItemPosition();
+        itemPositions[1] = spinner2.getSelectedItemPosition();
+        itemPositions[2] = spinner3.getSelectedItemPosition();
+        itemPositions[3] = spinner4.getSelectedItemPosition();
+        itemPositions[4] = spinner5.getSelectedItemPosition();
+        itemPositions[5] = spinner6.getSelectedItemPosition();
 
         return itemPositions;
     }
@@ -144,11 +147,11 @@ public class ExerciseExeptions extends AppCompatActivity implements View.OnClick
     @Override
     public void onClick(View view)
     {
-        if(view.getId() == R.id.checkbox_submit_button)
+        if(view.getId() == R.id.reassemble_submit_button)
         {
             if ( (spinner1.getSelectedItem() != null || spinner2.getSelectedItem() != null || spinner3.getSelectedItem() != null || spinner4.getSelectedItem() != null) && (i <=5))
             {
-                checkCorrectAnswers();
+                checkCorrectAnswers(getSelectedItemPositions());
                 answered[i] = true;
                 i++;
                 setText();
@@ -168,6 +171,15 @@ public class ExerciseExeptions extends AppCompatActivity implements View.OnClick
     private void setText() {
         switch (i) {
             case 0:
+                textQuest.setText("Deine ");
+                textView1.setText("Deine");
+                textView2.setText("Alter");
+                textView3.setText("Say");
+                textView4.setText("What");
+                textView5.setText("What");
+                textView6.setText("What");
+                break;
+            case 1:
                 textQuest.setText("");
                 textView1.setText("");
                 textView2.setText("");
@@ -175,16 +187,37 @@ public class ExerciseExeptions extends AppCompatActivity implements View.OnClick
                 textView4.setText("");
                 textView5.setText("");
                 textView6.setText("");
-                break;
-            case 1:
-                textView2.setText("");
             case 2:
+                textQuest.setText("");
+                textView1.setText("");
+                textView2.setText("");
                 textView3.setText("");
-            case 3:
                 textView4.setText("");
-            case 4:
                 textView5.setText("");
+                textView6.setText("");
+            case 3:
+                textQuest.setText("");
+                textView1.setText("");
+                textView2.setText("");
+                textView3.setText("");
+                textView4.setText("");
+                textView5.setText("");
+                textView6.setText("");
+            case 4:
+                textQuest.setText("");
+                textView1.setText("");
+                textView2.setText("");
+                textView3.setText("");
+                textView4.setText("");
+                textView5.setText("");
+                textView6.setText("");
             case 5:
+                textQuest.setText("");
+                textView1.setText("");
+                textView2.setText("");
+                textView3.setText("");
+                textView4.setText("");
+                textView5.setText("");
                 textView6.setText("");
             case 6:
                 countCorrectAnswers();
@@ -206,29 +239,47 @@ public class ExerciseExeptions extends AppCompatActivity implements View.OnClick
 
                 break;
             default:
+                break;
 
 
         }
+        resetSpinner();
     }
 
-    private void initSpinner(Spinner spinner, int arrayID) {
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
-                ExerciseExeptions.this, arrayID,
-                android.R.layout.simple_spinner_item);
+    private void resetSpinner ()
+    {
+        spinner1.setSelected(false);
+        spinner2.setSelected(false);
+        spinner3.setSelected(false);
+        spinner4.setSelected(false);
+        spinner5.setSelected(false);
+        spinner6.setSelected(false);
 
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
-
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            {
-                int[] itemPositions = getSelectedItemPositions();
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView){
-            }
-            }
-        });
     }
 
+    private void checkCorrectAnswers(int[] itemPostions) {
+        switch (i)
+        {
+            case 0: if (itemPostions[0] == 1) {
+                if (itemPostions[1] == 2) {
+                    if (itemPostions[2] == 3) {
+                        if (itemPostions[3] == 4) {
+                            if (itemPostions[4] == 5) {
+                                if (itemPostions[5] == 6) {
+
+                                    answerCorrect[i] = true;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+                break;
+            default:
+                break;
+        }
+    }
 
     private int countCorrectAnswers() {
         for (int j = 0; j < 5; j++)
@@ -237,6 +288,11 @@ public class ExerciseExeptions extends AppCompatActivity implements View.OnClick
             {numOfCorrectAnswers ++;}
         }
         return numOfCorrectAnswers;
+    }
+
+    public void sendNotification(String title, String message) {
+        android.support.v4.app.NotificationCompat.Builder nBuilder = nHelper.getChannelNotification(title, message);
+        nHelper.getNotificationManager().notify(1, nBuilder.build());
     }
 
 }

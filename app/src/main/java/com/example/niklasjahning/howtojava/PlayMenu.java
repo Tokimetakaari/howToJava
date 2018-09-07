@@ -23,8 +23,6 @@ public class PlayMenu extends AppCompatActivity implements View.OnClickListener 
     NavigationView burger;
 
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -39,9 +37,6 @@ public class PlayMenu extends AppCompatActivity implements View.OnClickListener 
         setupListener();
 
     }
-
-
-
 
 
     private void setupDrawer() {
@@ -163,8 +158,6 @@ public class PlayMenu extends AppCompatActivity implements View.OnClickListener 
         b30.setOnClickListener(this);
     }
 
-
-
     @Override
     public void onClick(View view)
     {
@@ -178,7 +171,7 @@ public class PlayMenu extends AppCompatActivity implements View.OnClickListener 
                 break;
             case R.id.play_lektion_4: i = new Intent(PlayMenu.this, ExerciseClassesAndObjects2.class);
                 break;
-            case R.id.play_lektion_5: i = new Intent(PlayMenu.this, ExerciseOperators.class);
+            case R.id.play_lektion_5: i = new Intent(PlayMenu.this, ExerciseExeptions.class);
                 break;
             case R.id.play_lektion_6: i = new Intent(PlayMenu.this, ExerciseArray.class);
                 break;
