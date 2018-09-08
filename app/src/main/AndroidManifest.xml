@@ -39,6 +39,7 @@
         <activity android:name=".ExerciseKonstruktoren" />
         <activity android:name=".ExerciseVererbung" />
         <activity android:name=".ProgrammingExerciseForMethods" />
+        <activity android:name=".ExerciseExeptions" />
     </application>
 
 </manifest>

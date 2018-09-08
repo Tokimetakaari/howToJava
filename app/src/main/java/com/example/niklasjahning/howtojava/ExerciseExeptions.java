@@ -35,7 +35,7 @@ public class ExerciseExeptions extends AppCompatActivity implements View.OnClick
     String message = "Du hast Übung 1 bestanden";
     private NotificationHelper nHelper;
     private int questionsQ = 5;
-    AdapterView.OnItemClickListener onItemClickListener;
+    AdapterView.OnItemSelectedListener onItemSelectedListener;
 
 
     boolean[] answerCorrect = new boolean[5];
@@ -61,6 +61,7 @@ public class ExerciseExeptions extends AppCompatActivity implements View.OnClick
         textView4 = findViewById(R.id.reassemble_text_4);
         textView5 = findViewById(R.id.reassemble_text_5);
         textView6 = findViewById(R.id.reassemble_text_6);
+        textQuest = findViewById(R.id.reassemble_question);
         spinner1 = findViewById(R.id.reassemble_spinner_1);
         spinner2 = findViewById(R.id.reassemble_spinner_2);
         spinner3 = findViewById(R.id.reassemble_spinner_3);
@@ -70,12 +71,7 @@ public class ExerciseExeptions extends AppCompatActivity implements View.OnClick
         submit = findViewById(R.id.reassemble_submit_button);
         nHelper = new NotificationHelper(this);
         submit.setOnClickListener(this);
-        spinner1.setOnItemClickListener(onItemClickListener);
-        spinner2.setOnItemClickListener(onItemClickListener);
-        spinner3.setOnItemClickListener(onItemClickListener);
-        spinner4.setOnItemClickListener(onItemClickListener);
-        spinner5.setOnItemClickListener(onItemClickListener);
-        spinner6.setOnItemClickListener(onItemClickListener);
+
 
     }
 
@@ -134,12 +130,12 @@ public class ExerciseExeptions extends AppCompatActivity implements View.OnClick
     private int[] getSelectedItemPositions() {
         int[] itemPositions = new int[6];
 
-        itemPositions[0] = spinner1.getSelectedItemPosition();
-        itemPositions[1] = spinner2.getSelectedItemPosition();
-        itemPositions[2] = spinner3.getSelectedItemPosition();
-        itemPositions[3] = spinner4.getSelectedItemPosition();
-        itemPositions[4] = spinner5.getSelectedItemPosition();
-        itemPositions[5] = spinner6.getSelectedItemPosition();
+        itemPositions[0] = Integer.parseInt(spinner1.getSelectedItem().toString());
+        itemPositions[1] = Integer.parseInt(spinner2.getSelectedItem().toString());
+        itemPositions[2] = Integer.parseInt(spinner3.getSelectedItem().toString());
+        itemPositions[3] = Integer.parseInt(spinner4.getSelectedItem().toString());
+        itemPositions[4] = Integer.parseInt(spinner5.getSelectedItem().toString());
+        itemPositions[5] = Integer.parseInt(spinner6.getSelectedItem().toString());
 
         return itemPositions;
     }

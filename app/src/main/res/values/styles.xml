@@ -23,9 +23,9 @@
         <item name="android:textColorSecondary">@color/white</item>
         <item name="android:textColorPrimary">@color/green</item>
         <item name="android:actionMenuTextColor">@color/green</item>
-
-
     </style>
+
+
 
 
 </resources>

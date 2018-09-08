@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        loadPref();
         if(SettingsMenu.switchOnOff1) {
             setTheme(R.style.Kai);
         }
@@ -40,6 +41,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         gestureObject = new GestureDetectorCompat(this, new LearnGesture());
         setupButtons();
         setupListener();
+    }
+
+    public void loadPref() {
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
+        SettingsMenu.switchOnOff1 = sharedPreferences.getBoolean(SWITCH1,false);
+        SettingsMenu.switchOnOff2 = sharedPreferences.getBoolean(SWITCH2,false);
+        SettingsMenu.switchOnOff3 = sharedPreferences.getBoolean(SWITCH3,false);
+        SettingsMenu.switchOnOff4 = sharedPreferences.getBoolean(SWITCH4,false);
+
+
     }
 
     private void setupDataBase()
