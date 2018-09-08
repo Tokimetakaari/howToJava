@@ -17,12 +17,12 @@ public class BooleanField
 
     public BooleanField()
     {
-
+        fieldPosition = entryId;
     }
 
-    public BooleanField(int position, int newValue)
+    public BooleanField( int newValue)
     {
-        fieldPosition = position;
+
         value= newValue;
     }
 
@@ -36,19 +36,19 @@ public class BooleanField
         this.entryId = entryId;
     }
 
-    public int getFieldPosition() {
-        return fieldPosition;
-    }
-
-    public void setFieldPosition(int fieldPosition) {
-        this.fieldPosition = fieldPosition;
-    }
-
     public int getValue() {
         return value;
     }
 
     public void setValue(int value) {
         this.value = value;
+    }
+
+    public int getFieldPosition() {
+        return fieldPosition;
+    }
+
+    public void setFieldPosition(int fieldPosition) {
+        this.fieldPosition = fieldPosition;
     }
 }

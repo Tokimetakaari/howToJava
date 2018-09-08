@@ -140,14 +140,14 @@ public class ExerciseForMethods1 extends AppCompatActivity implements View.OnCli
                     box4.setText("Methoden können nur den Typ zurückgeben, mit dem sie deklariert wurden");
                     break;
                 case 2:
-                    textView.setText("Welche Methodendeklaration ist notwendig um eine Zahl zurückgeben zu können??");
-                    box1.setText("double");
-                    box2.setText("int");
-                    box3.setText("byte");
-                    box4.setText("long");
+                    textView.setText("Was sind gültige Methodennamen?");
+                    box1.setText("public int ZAHLa&BADDIEREN");
+                    box2.setText("public int zahlenAddieren");
+                    box3.setText("public int 2ZahlenAddieren");
+                    box4.setText("public int %addieren%");
                     break;
                 case 3:
-                    textView.setText("Welchen Datentyp würden Sie verwenden um den Buchstaben c zu speichern?");
+                    textView.setText("Welche Methodendeklaration ist notwendig um eine Zahl zurückgeben zu können?");
                     box1.setText("public void zahlZurückgeben()");
                     box2.setText("public int zahlzurückgeben()");
                     box3.setText("public double zahlZurückgeben");
@@ -215,17 +215,17 @@ public class ExerciseForMethods1 extends AppCompatActivity implements View.OnCli
                     answerCorrect[i] = true;
                 }
                     break;
-                case 2: if (!box1.isChecked() && box2.isChecked() || box3.isChecked() && !box4.isChecked())
+                case 2: if (!box1.isChecked() && box2.isChecked() && !box3.isChecked() && !box4.isChecked())
                 {
                     answerCorrect[i] = true;
                 }
                     break;
-                case 3: if (!box1.isChecked() && !box2.isChecked() && box3.isChecked() && !box4.isChecked())
+                case 3: if (!box1.isChecked() && box2.isChecked() || box3.isChecked() && !box4.isChecked())
                 {
                     answerCorrect[i] = true;
                 }
                     break;
-                case 4: if (!box1.isChecked() && box2.isChecked() && !box3.isChecked() && !box4.isChecked())
+                case 4: if (!box1.isChecked() && !box2.isChecked() && box3.isChecked() && !box4.isChecked())
                 {
                     answerCorrect[i] = true;
                 }

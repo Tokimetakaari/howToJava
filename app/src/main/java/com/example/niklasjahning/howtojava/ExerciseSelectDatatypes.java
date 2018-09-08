@@ -28,7 +28,7 @@ public class ExerciseSelectDatatypes extends AppCompatActivity implements View.O
     NavigationView burger;
     private Intent intent;
     //Hier die Strings für die Notification festlegen
-    String title = "Congrats";
+    String title = "Congratulation";
     String message = "Du hast Übung 1 bestanden";
     private NotificationHelper nHelper;
     private int questionsQ = 5;
@@ -129,8 +129,6 @@ public class ExerciseSelectDatatypes extends AppCompatActivity implements View.O
 
                 if (numOfCorrectAnswers >=  questionsQ /2) {
                     mySound.start();
-                    PlayMenu.unlockLevelNumber=1;
-                    PlayMenu.setValue();
                     sendNotification(title, message);
                 }
                 finish();

@@ -182,7 +182,7 @@ public class ExerciseVererbung extends AppCompatActivity implements View.OnClick
                 setText();
 
             } else if (i > 4) {
-                PlayMenu.positionOfNewLevel = 1;
+                PlayMenu.unlockLevelNumber = 1;
                 if (numOfCorrectAnswers >=  questionsQ /2) {
                     mySound.start();
                     sendNotification(title, message);

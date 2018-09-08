@@ -32,7 +32,7 @@ public class PlayMenu extends AppCompatActivity implements View.OnClickListener 
         if(SettingsMenu.switchOnOff1) {
             setTheme(R.style.Kai);
         }
-        setValue();
+        //setValue();
         setContentView(R.layout.play_menu);
         setupButtons();
         setupDrawer();
@@ -66,11 +66,8 @@ public class PlayMenu extends AppCompatActivity implements View.OnClickListener 
     {
         b1 = findViewById(R.id.play_lektion_1);
         b2 = findViewById(R.id.play_lektion_2);
-        b2.setEnabled(false);
         b3 = findViewById(R.id.play_lektion_3);
-        b3.setEnabled(false);
         b4 = findViewById(R.id.play_lektion_4);
-        b4.setEnabled(false);
         b5 = findViewById(R.id.play_lektion_5);
         b6 = findViewById(R.id.play_lektion_6);
         b7 = findViewById(R.id.play_lektion_7);
@@ -97,7 +94,6 @@ public class PlayMenu extends AppCompatActivity implements View.OnClickListener 
         b28 = findViewById(R.id.play_lektion_28);
         b29 = findViewById(R.id.play_lektion_29);
         b30 = findViewById(R.id.play_lektion_30);
-        unlockLevel();
         connectBurger();
     }
 
@@ -181,9 +177,11 @@ public class PlayMenu extends AppCompatActivity implements View.OnClickListener 
                 break;
             case R.id.play_lektion_6: i = new Intent(PlayMenu.this, ExerciseArray.class);
                 break;
-            case R.id.play_lektion_7: i = new Intent(PlayMenu.this, ExerciseKonstruktoren.class);
+            case R.id.play_lektion_7: i = new Intent(PlayMenu.this,ExerciseForMethods1.class);
                 break;
-            case R.id.play_lektion_8: i = new Intent(PlayMenu.this, ExerciseVererbung.class);
+            case R.id.play_lektion_8: i = new Intent(PlayMenu.this, ExerciseKonstruktoren.class);
+                break;
+            case R.id.play_lektion_9: i = new Intent(PlayMenu.this, ExerciseVererbung.class);
                 break;
         }
         startActivity(i);
@@ -191,13 +189,14 @@ public class PlayMenu extends AppCompatActivity implements View.OnClickListener 
 
     private void unlockLevel()
     {
-
-        {    switch (unlockLevelNumber)
+        for (int i = 0; i < numOfButtons; i++)
+        {    switch (i)
             {
                 case 1: if (getValues()==1)
                 {
                      b2.setEnabled(true);
                 }
+                else {b2.setEnabled(false);}
                 break;
                 case 2: if (getValues()==1)
                 {
@@ -209,14 +208,15 @@ public class PlayMenu extends AppCompatActivity implements View.OnClickListener 
 
     }
 
-    public static void setValue()
+    public static  void setValue()
     {
-        new Thread(new Runnable() {
+       new Thread(new Runnable() {
             @Override
             public void run() {
-                BooleanField booleanField = MainActivity.database.booleanDao().getBooleans(unlockLevelNumber);
+                BooleanField booleanField = new BooleanField();
+                booleanField.setFieldPosition(unlockLevelNumber);
                 booleanField.setValue(1);
-                MainActivity.database.booleanDao().updateBooleanField(booleanField);
+                MainActivity.database.booleanDao().insertBooleanField(booleanField);
 
             }
         }).start();

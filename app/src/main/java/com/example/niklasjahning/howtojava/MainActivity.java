@@ -45,32 +45,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void setupDataBase()
     {
         database = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, databaseName).fallbackToDestructiveMigration().build();
-        setupDataEntries();
+        setupDataEntry();
     }
-    private void setupDataEntries()
+    private void setupDataEntry()
     {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                BooleanField booleanField = new BooleanField();
-                booleanField.setValue(1);
-                booleanField.setFieldPosition(1);
-                database.booleanDao().insertBooleanField(booleanField);
-
-                for (int j = 2; j < PlayMenu.numOfButtons; j++)
         {
-            booleanField = new BooleanField();
+            BooleanField booleanField = new BooleanField();
             booleanField.setValue(0);
-            booleanField.setFieldPosition(j);
+            booleanField.setFieldPosition(booleanField.getEntryId());
             database.booleanDao().insertBooleanField(booleanField);
 
         }
             }
         }).start();
-
     }
-
-
 
     private void setupButtons()
     {
