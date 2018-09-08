@@ -15,7 +15,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class ExerciseEvents extends AppCompatActivity implements View.OnClickListener {
+public class ExerciseTryCatchPhrase extends AppCompatActivity implements View.OnClickListener {
+
 
 
     MediaPlayer mySound;
@@ -25,19 +26,15 @@ public class ExerciseEvents extends AppCompatActivity implements View.OnClickLis
     int i = 0;
     int numOfCorrectAnswers = 0;
 
-    String solution1 = "Keyevent";
-    String alternative1_1 = "keyevent";
-    String alternative1_2 = "key event";
-    String alternative1_3 = "Key event";
-    String alternative1_4 = "Key Event";
-    String solution2 = "Observer";
-    String alternative2_1 = "observer";
-    String solution3 = "Observer";
-    String alternative3_1 = "observer";
-    String alternative3_2 = "Listener";
-    String alternative3_3 = "listener";
-    String solution4 = "Interface";
-    String alternative4_1 = "interface";
+    String solution1 = "Try-Catch-Phrase";
+    String alternative1_1 = "try-catch-phrase";
+    String alternative1_2 = "Try Catch Phrase";
+    String alternative1_3 = "try catch phrase";
+    String alternative1_4 = "Try catch phrase";
+    String solution2 = "try";
+    String alternative2_1 = "Try";
+    String solution3 = "Catch";
+    String alternative3_1 = "catch";
 
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
@@ -47,11 +44,11 @@ public class ExerciseEvents extends AppCompatActivity implements View.OnClickLis
     String title = "Congrats";
     String message = "Du hast Übung 1 bestanden";
     private NotificationHelper nHelper;
-    private int questionsQ = 4;
+    private int questionsQ = 3;
 
 
-    boolean[] answerCorrect = new boolean[4];
-    boolean[] answered = new boolean[4];
+    boolean[] answerCorrect = new boolean[3];
+    boolean[] answered = new boolean[3];
 
 
     @Override
@@ -69,7 +66,7 @@ public class ExerciseEvents extends AppCompatActivity implements View.OnClickLis
     private void setText() {
         switch (i) {
             case 0:
-                textView.setText("Wenn der Nutzer innerhalb des geöffneten Anwendungsfenster einen 'Key' drückt, ist dies ein ________ .");
+                textView.setText("Um den Absturz eines Programmes zu verhindern verwendet und Fehler anzufangen, verwendet man einen ________ .");
                 editText2.setVisibility(View.GONE);
                 editText3.setVisibility(View.GONE);
                 editText4.setVisibility(View.GONE);
@@ -79,16 +76,13 @@ public class ExerciseEvents extends AppCompatActivity implements View.OnClickLis
                 editText8.setVisibility(View.GONE);
                 break;
             case 1:
-                textView.setText("Die Objekte, welche auf die Events lauschen heißen Listener oder ________ .");
+                textView.setText("Wird keine Exeption 'gethrowed' wird der Code im ________-Phrase ausgeführt");
                 break;
             case 2:
-                textView.setText("Das Observer-Pattern besagt, dass ein Key/ Mouse eine Nachricht an alle ________ sendet.");
+                textView.setText("Wenn ein Fehler, (welcher in der Bedingung definiert ist), gefunden wurde, wird der Code im _______-Phrase ausgeführt.");
                 break;
             case 3:
-                textView.setText("Die Listenerklasse braucht passende Methoden, um die Events empfangen und darauf reagieren zu können, deshalb sollte man immer das _______ implementieren");
-                break;
-            case 4:
-                for (int j = 0; j < 4; j++)
+                for (int j = 0; j < 3; j++)
                 {
                     if (answerCorrect[j])
                     {numOfCorrectAnswers ++;}
@@ -128,20 +122,21 @@ public class ExerciseEvents extends AppCompatActivity implements View.OnClickLis
             public boolean onNavigationItemSelected(MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.play_menu:
-                        intent = new Intent(ExerciseEvents.this, PlayMenu.class);
+                        intent = new Intent(ExerciseTryCatchPhrase.this, PlayMenu.class);
                         startActivity(intent);
                         break;
                     case R.id.theory_menu:
-                        intent = new Intent(ExerciseEvents.this, TheoryMenu.class);
+                        intent = new Intent(ExerciseTryCatchPhrase.this, TheoryMenu.class);
                         startActivity(intent);
                         break;
                     case R.id.setting_menu:
-                        intent = new Intent(ExerciseEvents.this, SettingsMenu.class);
+                        intent = new Intent(ExerciseTryCatchPhrase.this, SettingsMenu.class);
                         startActivity(intent);
                         break;
                     case R.id.moveToTheory:
                         finish();
-                        intent = new Intent(ExerciseEvents.this, InterfacesAndEvents.class);
+                        intent = new Intent(ExerciseTryCatchPhrase.this, DataInJava.class);
+
                         startActivity(intent);
                         break;
                     case R.id.credits:
@@ -177,13 +172,13 @@ public class ExerciseEvents extends AppCompatActivity implements View.OnClickLis
     @Override
     public void onClick(View view) {
         if (view.getId() == R.id.cloze_submit_button) {
-            if ((!editText1.getText().toString().isEmpty()) && (i <= 4)) {
+            if ((!editText1.getText().toString().isEmpty()) && (i <= 3)) {
                 checkCorrectAnswers();
                 answered[i] = true;
                 i++;
                 setText();
 
-            } else if (i > 4) {
+            } else if (i > 3) {
                 if (numOfCorrectAnswers >=  questionsQ /2) {
                     mySound.start();
                     sendNotification(title, message);
@@ -209,13 +204,7 @@ public class ExerciseEvents extends AppCompatActivity implements View.OnClickLis
                 }
                 break;
             case 2:
-                if (editText1.getText().toString().equals(solution3) || (editText1.getText().toString().equals(alternative3_1)) || (editText1.getText().toString().equals(alternative3_2)) || (editText1.getText().toString().equals(alternative3_3)) ) {
-                    answerCorrect[i] = true;
-
-                }
-                break;
-            case 3:
-                if (editText1.getText().toString().equals(solution4) || (editText1.getText().toString().equals(alternative4_1)) ) {
+                if (editText1.getText().toString().equals(solution3) || (editText1.getText().toString().equals(alternative3_1)) ) {
                     answerCorrect[i] = true;
 
                 }
@@ -239,6 +228,7 @@ public class ExerciseEvents extends AppCompatActivity implements View.OnClickLis
         NotificationCompat.Builder nBuilder = nHelper.getChannelNotification(title, message);
         nHelper.getNotificationManager().notify(1, nBuilder.build());
     }
+
 
 
 }

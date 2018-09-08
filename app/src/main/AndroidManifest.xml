@@ -42,6 +42,8 @@
         <activity android:name=".ExerciseExeptions" />
         <activity android:name=".ExerciseInterfaces" />
         <activity android:name=".ExerciseEvents" />
+        <activity android:name=".ExerciseTryCatchPhrase" />
+        <activity android:name=".ExerciseBufferedReader" />
     </application>
 
 </manifest>
