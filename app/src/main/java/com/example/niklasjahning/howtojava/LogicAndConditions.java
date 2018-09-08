@@ -13,6 +13,9 @@ public class LogicAndConditions extends AppCompatActivity implements View.OnClic
             @Override
             protected void onCreate(Bundle savedInstanceState) {
                 super.onCreate(savedInstanceState);
+                if(SettingsMenu.switchOnOff1) {
+                    setTheme(R.style.Kai);
+                }
                 setContentView(R.layout.logische_ausdruecke_menu);
                 setupButtons();
                 setupListener();

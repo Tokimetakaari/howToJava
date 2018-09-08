@@ -14,6 +14,9 @@ public class DataInJava extends AppCompatActivity implements View.OnClickListene
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if(SettingsMenu.switchOnOff1) {
+            setTheme(R.style.Kai);
+        }
         setContentView(R.layout.data_in_java_menu);
         setupButtons();
         setupListener();

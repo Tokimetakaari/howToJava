@@ -14,6 +14,9 @@ public class ClassesAndObjects extends AppCompatActivity implements View.OnClick
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if(SettingsMenu.switchOnOff1) {
+            setTheme(R.style.Kai);
+        }
         setContentView(R.layout.classes_objects_menu);
         setupButtons();
         setupListener();

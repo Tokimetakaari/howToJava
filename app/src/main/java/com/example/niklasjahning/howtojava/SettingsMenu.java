@@ -22,16 +22,10 @@ public class SettingsMenu extends AppCompatActivity implements View.OnClickListe
     private Intent i;
     private Switch aSwitch1, aSwitch2, aSwitch3, aSwitch4;
     Button saveButton;
-
     public static final String SHARED_PREFS = "sharedPrefs";
     public static final String SWITCH1 = "swtich1";
-    public static final String SWITCH2 = "swtich2";
-    public static final String SWITCH3 = "swtich3";
-    public static final String SWITCH4 = "swtich4";
     public static boolean switchOnOff1;
-    public static boolean switchOnOff2;
-    public static boolean switchOnOff3;
-    public static boolean switchOnOff4;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,9 +33,6 @@ public class SettingsMenu extends AppCompatActivity implements View.OnClickListe
         loadPref();
         if(switchOnOff1) {
             setTheme(R.style.Kai);
-        }
-        if(!switchOnOff1){
-            setTheme(R.style.AppTheme);
         }
         setContentView(R.layout.settings);
         setupItems();
@@ -54,9 +45,6 @@ public class SettingsMenu extends AppCompatActivity implements View.OnClickListe
 
     private void setupItems() {
         aSwitch1 = findViewById(R.id.color1_switch);
-        aSwitch2 = findViewById(R.id.color2_switch);
-        aSwitch3 = findViewById(R.id.color3_switch);
-        aSwitch4 = findViewById(R.id.color4_switch);
         saveButton = findViewById(R.id.setting_save_button);
         saveButton.setOnClickListener(this);
     }
@@ -124,31 +112,25 @@ public class SettingsMenu extends AppCompatActivity implements View.OnClickListe
         SharedPreferences.Editor editor = sharedPreferences.edit();
 
         editor.putBoolean(SWITCH1, aSwitch1.isChecked());
-        editor.putBoolean(SWITCH2, aSwitch2.isChecked());
-        editor.putBoolean(SWITCH3, aSwitch3.isChecked());
-        editor.putBoolean(SWITCH4, aSwitch4.isChecked());
+
 
         editor.apply();
 
-        Toast.makeText(this, "Neustart pls", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "Neustarten bitte", Toast.LENGTH_LONG).show();
 
     }
 
     public void loadPref() {
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
         switchOnOff1 = sharedPreferences.getBoolean(SWITCH1,false);
-        switchOnOff2 = sharedPreferences.getBoolean(SWITCH2,false);
-        switchOnOff3 = sharedPreferences.getBoolean(SWITCH3,false);
-        switchOnOff4 = sharedPreferences.getBoolean(SWITCH4,false);
+
 
 
     }
 
     public void updateIt() {
         aSwitch1.setChecked(switchOnOff1);
-        aSwitch2.setChecked(switchOnOff2);
-        aSwitch3.setChecked(switchOnOff3);
-        aSwitch4.setChecked(switchOnOff4);
+
 
     }
 

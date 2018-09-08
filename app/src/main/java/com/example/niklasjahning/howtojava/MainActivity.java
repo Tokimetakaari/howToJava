@@ -46,9 +46,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void loadPref() {
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
         SettingsMenu.switchOnOff1 = sharedPreferences.getBoolean(SWITCH1,false);
-        SettingsMenu.switchOnOff2 = sharedPreferences.getBoolean(SWITCH2,false);
-        SettingsMenu.switchOnOff3 = sharedPreferences.getBoolean(SWITCH3,false);
-        SettingsMenu.switchOnOff4 = sharedPreferences.getBoolean(SWITCH4,false);
 
 
     }

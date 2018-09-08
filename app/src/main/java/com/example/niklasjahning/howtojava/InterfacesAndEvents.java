@@ -13,6 +13,9 @@ public class InterfacesAndEvents extends AppCompatActivity implements View.OnCli
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if(SettingsMenu.switchOnOff1) {
+            setTheme(R.style.Kai);
+        }
         setContentView(R.layout.interfaces_events_menu);
         setupButtons();
         setupListener();

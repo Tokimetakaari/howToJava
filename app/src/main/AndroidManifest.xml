@@ -44,6 +44,7 @@
         <activity android:name=".ExerciseEvents" />
         <activity android:name=".ExerciseTryCatchPhrase" />
         <activity android:name=".ExerciseBufferedReader" />
+        <activity android:name=".ExcerciseIfElse" />
     </application>
 
 </manifest>
