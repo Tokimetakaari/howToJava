@@ -17,7 +17,7 @@ public class BooleanField
 
     public BooleanField()
     {
-        fieldPosition = entryId;
+
     }
 
     public BooleanField( int newValue)

@@ -53,6 +53,8 @@
     <string name="channel_description">test123</string>
     <string name="this_color">Diese Farbe ?</string>
     <string name="save_button">SAVE</string>
+    <string name="play_menu_button8">Programmierübung zu Methoden</string>
+    <string name="play_menu_button7">Fragen zu Methoden</string>
 
     <string-array name="spinnerNums">
         <item>1</item>

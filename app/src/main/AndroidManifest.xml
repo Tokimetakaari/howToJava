@@ -38,6 +38,7 @@
         <activity android:name=".ExerciseArray" />
         <activity android:name=".ExerciseKonstruktoren" />
         <activity android:name=".ExerciseVererbung" />
+        <activity android:name=".ProgrammingExerciseForMethods" />
     </application>
 
 </manifest>

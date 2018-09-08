@@ -61,14 +61,14 @@
         <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/theorie_button7"
+        android:text="@string/play_menu_button7"
         android:id="@+id/play_lektion_7"/>
 
 
         <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/theorie_button8"
+        android:text="@string/play_menu_button8"
         android:id="@+id/play_lektion_8"/>
 
 
