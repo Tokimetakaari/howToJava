@@ -3,6 +3,7 @@ package com.example.niklasjahning.howtojava;
 import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.Query;
+import android.arch.persistence.room.Update;
 import android.support.v7.app.AppCompatActivity;
 
 import java.util.List;
@@ -17,5 +18,10 @@ public interface BooleanDao
 
     @Query("SELECT * FROM BooleanField WHERE fieldPosition LIKE :search")
     BooleanField getBooleans(int search);
+
+    @Update
+    void updateBooleanField (BooleanField booleanField);
+
+    
 
 }

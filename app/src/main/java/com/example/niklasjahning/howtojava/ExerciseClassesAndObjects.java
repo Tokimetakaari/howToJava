@@ -11,7 +11,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -149,7 +148,7 @@ public class ExerciseClassesAndObjects extends AppCompatActivity implements View
                 setText();
 
             } else if (i > 4) {
-                PlayMenu.positionOfNewLevel = 3;
+                PlayMenu.unlockLevelNumber = 3;
                 if (numOfCorrectAnswers >=  questionsQ /2) {
                     mySound.start();
                     sendNotification(title, message);

@@ -52,9 +52,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         new Thread(new Runnable() {
             @Override
             public void run() {
-        for (int j = 0; j < PlayMenu.numOfButtons; j++)
+                BooleanField booleanField = new BooleanField();
+                booleanField.setValue(1);
+                booleanField.setFieldPosition(1);
+                database.booleanDao().insertBooleanField(booleanField);
+
+                for (int j = 2; j < PlayMenu.numOfButtons; j++)
         {
-            BooleanField booleanField = new BooleanField();
+            booleanField = new BooleanField();
             booleanField.setValue(0);
             booleanField.setFieldPosition(j);
             database.booleanDao().insertBooleanField(booleanField);

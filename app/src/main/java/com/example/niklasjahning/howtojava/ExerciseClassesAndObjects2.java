@@ -129,7 +129,7 @@ public class ExerciseClassesAndObjects2 extends AppCompatActivity implements Vie
             }
             else if (i>3)
             {
-                PlayMenu.positionOfNewLevel = 4;
+                PlayMenu.unlockLevelNumber = 4;
                 if (numOfCorrectAnswers >=  questionsQ /2) {
                     mySound.start();
                     sendNotification(title, message);

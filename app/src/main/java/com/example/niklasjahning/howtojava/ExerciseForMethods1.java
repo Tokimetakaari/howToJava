@@ -116,7 +116,7 @@ public class ExerciseForMethods1 extends AppCompatActivity implements View.OnCli
                 }
                 else if (i>6)
                 {
-                    PlayMenu.positionOfNewLevel = 1;
+                    PlayMenu.unlockLevelNumber = 1;
                     finish();
                 }
             }

@@ -1,6 +1,5 @@
 package com.example.niklasjahning.howtojava;
 
-import android.arch.persistence.room.Room;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -17,10 +16,13 @@ public class PlayMenu extends AppCompatActivity implements View.OnClickListener 
     Button b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15, b16, b17, b18, b19, b20, b21, b22, b23, b24, b25, b26, b27, b28, b29, b30;
     Intent i ;
     final static int numOfButtons = 30;
-    static int positionOfNewLevel = 0;
+    static int unlockLevelNumber ;
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
     NavigationView burger;
+
+
+
 
 
     @Override
@@ -30,8 +32,8 @@ public class PlayMenu extends AppCompatActivity implements View.OnClickListener 
         if(SettingsMenu.switchOnOff1) {
             setTheme(R.style.Kai);
         }
+        setValue();
         setContentView(R.layout.play_menu);
-        unlockLevel();
         setupButtons();
         setupDrawer();
         setupListener();
@@ -66,8 +68,9 @@ public class PlayMenu extends AppCompatActivity implements View.OnClickListener 
         b2 = findViewById(R.id.play_lektion_2);
         b2.setEnabled(false);
         b3 = findViewById(R.id.play_lektion_3);
-        b3.setEnabled(true);
+        b3.setEnabled(false);
         b4 = findViewById(R.id.play_lektion_4);
+        b4.setEnabled(false);
         b5 = findViewById(R.id.play_lektion_5);
         b6 = findViewById(R.id.play_lektion_6);
         b7 = findViewById(R.id.play_lektion_7);
@@ -94,6 +97,7 @@ public class PlayMenu extends AppCompatActivity implements View.OnClickListener 
         b28 = findViewById(R.id.play_lektion_28);
         b29 = findViewById(R.id.play_lektion_29);
         b30 = findViewById(R.id.play_lektion_30);
+        unlockLevel();
         connectBurger();
     }
 
@@ -158,6 +162,8 @@ public class PlayMenu extends AppCompatActivity implements View.OnClickListener 
         b30.setOnClickListener(this);
     }
 
+
+
     @Override
     public void onClick(View view)
     {
@@ -185,18 +191,17 @@ public class PlayMenu extends AppCompatActivity implements View.OnClickListener 
 
     private void unlockLevel()
     {
-        for ( int i = 1; i < numOfButtons; i++)
-        {
-            switch (i)
+
+        {    switch (unlockLevelNumber)
             {
-                case 1: if (getValues(1)==1)
+                case 1: if (getValues()==1)
                 {
                      b2.setEnabled(true);
                 }
                 break;
-                case 2: if (getValues(2)==1)
+                case 2: if (getValues()==1)
                 {
-                    b3.setEnabled(false);
+                    b3.setEnabled(true);
                 }
                 break;
             }
@@ -204,27 +209,26 @@ public class PlayMenu extends AppCompatActivity implements View.OnClickListener 
 
     }
 
-    private int getValues(int i)
+    public static void setValue()
+    {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                BooleanField booleanField = MainActivity.database.booleanDao().getBooleans(unlockLevelNumber);
+                booleanField.setValue(1);
+                MainActivity.database.booleanDao().updateBooleanField(booleanField);
+
+            }
+        }).start();
+    }
+
+
+    private int getValues()
     {
         final BooleanField[] searchEntry = new BooleanField[1];
-        final int position = i;
-        new Thread(new Runnable() {
-                @Override
-                public void run() {
-                     searchEntry[0] = MainActivity.database.booleanDao().getBooleans(position);
-                    runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-
-                        }
-                    });
-                }
-            }).start();
-        if (searchEntry[0] != null)
-        {
+        searchEntry[0] = MainActivity.database.booleanDao().getBooleans(unlockLevelNumber);
             return  searchEntry[0].getValue();
-        }
-       return 0;
     }
+
 }
 

@@ -33,6 +33,7 @@ public class ExerciseSelectDatatypes extends AppCompatActivity implements View.O
     private NotificationHelper nHelper;
     private int questionsQ = 5;
 
+
     boolean[] answerCorrect = new boolean[5];
     boolean[] answered = new boolean[5];
 
@@ -46,6 +47,7 @@ public class ExerciseSelectDatatypes extends AppCompatActivity implements View.O
         mySound = MediaPlayer.create(this,R.raw.sound);
         setText();
     }
+
 
     private void setupItems() {
         textView = findViewById(R.id.checkbox_layout_4_question);
@@ -124,15 +126,18 @@ public class ExerciseSelectDatatypes extends AppCompatActivity implements View.O
             }
             else if (i>5)
             {
-                PlayMenu.positionOfNewLevel = 1;
+
                 if (numOfCorrectAnswers >=  questionsQ /2) {
                     mySound.start();
+                    PlayMenu.unlockLevelNumber=1;
+                    PlayMenu.setValue();
                     sendNotification(title, message);
                 }
                 finish();
             }
         }
     }
+
 
     private void setText() {
         switch (i) {
