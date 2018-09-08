@@ -4,8 +4,10 @@ import android.annotation.TargetApi;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.ContextWrapper;
+import android.content.Intent;
 import android.os.Build;
 import android.support.v4.app.NotificationCompat;
 
@@ -42,11 +44,15 @@ public class NotificationHelper extends ContextWrapper {
         return notificationManager;
     }
 
-    public NotificationCompat.Builder getChannelNotification(String title, String message) {
+    public NotificationCompat.Builder getChannelNotification(String title, String message, Intent next) {
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, next,PendingIntent.FLAG_UPDATE_CURRENT);
+
         return new NotificationCompat.Builder(getApplicationContext(),channelID)
                 .setContentTitle(title)
                 .setContentText(message)
-                .setSmallIcon(R.mipmap.sharp_explore_black_18dp);
+                .setSmallIcon(R.mipmap.sharp_explore_black_18dp)
+                .setAutoCancel(true)
+                .setContentIntent(pendingIntent);
 
     }
 }

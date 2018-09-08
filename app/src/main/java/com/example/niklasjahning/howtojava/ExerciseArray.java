@@ -32,6 +32,7 @@ public class ExerciseArray extends AppCompatActivity implements View.OnClickList
     String message = "Du hast Übung X bestanden";
     private NotificationHelper nHelper;
     private int questionsQ = 8;
+    private Intent next;
 
     boolean[] answerCorrect = new boolean[8];
     boolean[] answered = new boolean[8];
@@ -56,6 +57,7 @@ public class ExerciseArray extends AppCompatActivity implements View.OnClickList
         submit = findViewById(R.id.checkbox_submit_button);
         nHelper = new NotificationHelper(this);
         submit.setOnClickListener(this);
+        next = new Intent(this,ExerciseSelectDatatypes2.class);
     }
 
     private void connectBurger() {
@@ -127,7 +129,7 @@ public class ExerciseArray extends AppCompatActivity implements View.OnClickList
                 PlayMenu.unlockLevelNumber = 1;
                 if (numOfCorrectAnswers >=  questionsQ /2) {
                     mySound.start();
-                    sendNotification(title, message);
+                    sendNotification(title, message, next);
                 }
                 finish();
             }
@@ -273,8 +275,8 @@ public class ExerciseArray extends AppCompatActivity implements View.OnClickList
         }
     }
 
-    public void sendNotification(String title, String message) {
-        NotificationCompat.Builder nBuilder = nHelper.getChannelNotification(title, message);
+    public void sendNotification(String title, String message, Intent next) {
+        NotificationCompat.Builder nBuilder = nHelper.getChannelNotification(title, message, next);
         nHelper.getNotificationManager().notify(1, nBuilder.build());
     }
 

@@ -48,6 +48,8 @@ public class ExerciseKonstruktoren extends AppCompatActivity implements View.OnC
     String message = "Du hast Übung 1 bestanden";
     private NotificationHelper nHelper;
     private int questionsQ = 4;
+    private Intent next;
+
 
 
     boolean[] answerCorrect = new boolean[4];
@@ -123,6 +125,7 @@ public class ExerciseKonstruktoren extends AppCompatActivity implements View.OnC
         editText6 = findViewById(R.id.cloze_answer_6);
         editText7 = findViewById(R.id.cloze_answer_7);
         editText8 = findViewById(R.id.cloze_answer_8);
+        next = new Intent(this,ExerciseSelectDatatypes2.class);
 
     }
 
@@ -194,7 +197,7 @@ public class ExerciseKonstruktoren extends AppCompatActivity implements View.OnC
                 PlayMenu.unlockLevelNumber = 1;
                 if (numOfCorrectAnswers >=  questionsQ /2) {
                     mySound.start();
-                    sendNotification(title, message);
+                    sendNotification(title, message, next);
                 }
                 finish();
 
@@ -243,8 +246,8 @@ public class ExerciseKonstruktoren extends AppCompatActivity implements View.OnC
     }
 
 
-    public void sendNotification(String title, String message) {
-        NotificationCompat.Builder nBuilder = nHelper.getChannelNotification(title, message);
+    public void sendNotification(String title, String message, Intent next) {
+        NotificationCompat.Builder nBuilder = nHelper.getChannelNotification(title, message, next);
         nHelper.getNotificationManager().notify(1, nBuilder.build());
     }
 

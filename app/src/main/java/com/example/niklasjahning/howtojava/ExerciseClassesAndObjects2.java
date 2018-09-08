@@ -38,6 +38,7 @@ public class ExerciseClassesAndObjects2 extends AppCompatActivity implements Vie
     String message = "Du hast Übung 4 bestanden";
     private NotificationHelper nHelper;
     private int questionsQ = 3;
+    private Intent next;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -61,6 +62,7 @@ public class ExerciseClassesAndObjects2 extends AppCompatActivity implements Vie
         submit = findViewById(R.id.checkbox_submit_button);
         nHelper = new NotificationHelper(this);
         submit.setOnClickListener(this);
+        next = new Intent(this,ExerciseSelectDatatypes2.class);
     }
 
     private void connectBurger() {
@@ -132,7 +134,7 @@ public class ExerciseClassesAndObjects2 extends AppCompatActivity implements Vie
                 PlayMenu.unlockLevelNumber = 4;
                 if (numOfCorrectAnswers >=  questionsQ /2) {
                     mySound.start();
-                    sendNotification(title, message);
+                    sendNotification(title, message, next);
                 }
                 finish();
             }
@@ -224,8 +226,8 @@ public class ExerciseClassesAndObjects2 extends AppCompatActivity implements Vie
         }
     }
 
-    public void sendNotification(String title, String message) {
-        NotificationCompat.Builder nBuilder = nHelper.getChannelNotification(title, message);
+    public void sendNotification(String title, String message, Intent next) {
+        NotificationCompat.Builder nBuilder = nHelper.getChannelNotification(title, message, next);
         nHelper.getNotificationManager().notify(1, nBuilder.build());
     }
 

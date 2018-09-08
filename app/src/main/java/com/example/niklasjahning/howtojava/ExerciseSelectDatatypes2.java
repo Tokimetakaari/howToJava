@@ -1,6 +1,7 @@
 package com.example.niklasjahning.howtojava;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
@@ -30,6 +31,7 @@ public class ExerciseSelectDatatypes2 extends AppCompatActivity implements View.
     String alternative2_2 = "boolean lazy =true;";
     String alternative2_3 ="boolean lazy=true;";
     String solution3 = "String name;";
+    MediaPlayer mySound;
 
     boolean[] answerCorrect = new boolean[3];
     boolean[] answered = new boolean[3];
@@ -37,6 +39,7 @@ public class ExerciseSelectDatatypes2 extends AppCompatActivity implements View.
     private ActionBarDrawerToggle mToggle;
     NavigationView burger;
     private Intent intent;
+    private Intent next;
 
 
     @Override
@@ -101,6 +104,7 @@ public class ExerciseSelectDatatypes2 extends AppCompatActivity implements View.
         editText6 = findViewById(R.id.cloze_answer_6);
         editText7 = findViewById(R.id.cloze_answer_7);
         editText8 = findViewById(R.id.cloze_answer_8);
+        next = new Intent(this,ExerciseClassesAndObjects.class);
 
 
 

@@ -45,6 +45,8 @@ public class ExerciseTryCatchPhrase extends AppCompatActivity implements View.On
     String message = "Du hast Übung 1 bestanden";
     private NotificationHelper nHelper;
     private int questionsQ = 3;
+    private Intent next;
+
 
 
     boolean[] answerCorrect = new boolean[3];
@@ -111,6 +113,8 @@ public class ExerciseTryCatchPhrase extends AppCompatActivity implements View.On
         editText6 = findViewById(R.id.cloze_answer_6);
         editText7 = findViewById(R.id.cloze_answer_7);
         editText8 = findViewById(R.id.cloze_answer_8);
+        nHelper = new NotificationHelper(this);
+        next = new Intent(this,ExerciseSelectDatatypes2.class);
 
     }
 
@@ -181,7 +185,7 @@ public class ExerciseTryCatchPhrase extends AppCompatActivity implements View.On
             } else if (i > 3) {
                 if (numOfCorrectAnswers >=  questionsQ /2) {
                     mySound.start();
-                    sendNotification(title, message);
+                    sendNotification(title, message, next);
                 }
                 finish();
 
@@ -224,8 +228,8 @@ public class ExerciseTryCatchPhrase extends AppCompatActivity implements View.On
     }
 
 
-    public void sendNotification(String title, String message) {
-        NotificationCompat.Builder nBuilder = nHelper.getChannelNotification(title, message);
+    public void sendNotification(String title, String message, Intent next) {
+        NotificationCompat.Builder nBuilder = nHelper.getChannelNotification(title, message, next);
         nHelper.getNotificationManager().notify(1, nBuilder.build());
     }
 

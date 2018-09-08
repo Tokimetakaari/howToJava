@@ -35,7 +35,9 @@ public class ExerciseExeptions extends AppCompatActivity implements View.OnClick
     String message = "Du hast Übung 1 bestanden";
     private NotificationHelper nHelper;
     private int questionsQ = 5;
-    AdapterView.OnItemSelectedListener onItemSelectedListener;
+    private Intent next;
+
+
 
 
     boolean[] answerCorrect = new boolean[5];
@@ -71,6 +73,8 @@ public class ExerciseExeptions extends AppCompatActivity implements View.OnClick
         submit = findViewById(R.id.reassemble_submit_button);
         nHelper = new NotificationHelper(this);
         submit.setOnClickListener(this);
+        next = new Intent(this,ExerciseSelectDatatypes2.class);
+
 
 
     }
@@ -157,7 +161,7 @@ public class ExerciseExeptions extends AppCompatActivity implements View.OnClick
                 PlayMenu.unlockLevelNumber = 1;
                 if (numOfCorrectAnswers >=  questionsQ /2) {
                     mySound.start();
-                    sendNotification(title, message);
+                    sendNotification(title, message, next);
                 }
                 finish();
             }
@@ -217,7 +221,7 @@ public class ExerciseExeptions extends AppCompatActivity implements View.OnClick
                 textView6.setText("");
             case 6:
                 countCorrectAnswers();
-                textQuest.setText("Sie haben " + numOfCorrectAnswers + " Fragen von " + questionsQ + "richtig beantwortet.");
+                textQuest.setText("Sie haben " + numOfCorrectAnswers + " Fragen von " + questionsQ + " richtig beantwortet.");
                 textView1.setVisibility(View.GONE);
                 textView2.setVisibility(View.GONE);
                 textView3.setVisibility(View.GONE);
@@ -286,8 +290,8 @@ public class ExerciseExeptions extends AppCompatActivity implements View.OnClick
         return numOfCorrectAnswers;
     }
 
-    public void sendNotification(String title, String message) {
-        android.support.v4.app.NotificationCompat.Builder nBuilder = nHelper.getChannelNotification(title, message);
+    public void sendNotification(String title, String message, Intent next) {
+        android.support.v4.app.NotificationCompat.Builder nBuilder = nHelper.getChannelNotification(title, message, next);
         nHelper.getNotificationManager().notify(1, nBuilder.build());
     }
 

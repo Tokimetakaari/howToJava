@@ -48,6 +48,7 @@ public class ExerciseClassesAndObjects extends AppCompatActivity implements View
     String message = "Du hast Übung 3 bestanden";
     private NotificationHelper nHelper;
     private int questionsQ = 4;
+    private Intent next;
 
 
     boolean[] answerCorrect = new boolean[4];
@@ -57,6 +58,7 @@ public class ExerciseClassesAndObjects extends AppCompatActivity implements View
     private ActionBarDrawerToggle mToggle;
     NavigationView burger;
     private Intent intent;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,6 +86,7 @@ public class ExerciseClassesAndObjects extends AppCompatActivity implements View
         submit = findViewById(R.id.cloze_submit_button);
         nHelper = new NotificationHelper(this);
         submit.setOnClickListener(this);
+        next = new Intent(this,ExerciseSelectDatatypes2.class);
     }
 
     private void connectBurger() {
@@ -151,7 +154,7 @@ public class ExerciseClassesAndObjects extends AppCompatActivity implements View
                 PlayMenu.unlockLevelNumber = 3;
                 if (numOfCorrectAnswers >=  questionsQ /2) {
                     mySound.start();
-                    sendNotification(title, message);
+                    sendNotification(title, message, next);
                 }
                 finish();
 
@@ -251,8 +254,8 @@ public class ExerciseClassesAndObjects extends AppCompatActivity implements View
         }
     }
 
-    public void sendNotification(String title, String message) {
-        NotificationCompat.Builder nBuilder = nHelper.getChannelNotification(title, message);
+    public void sendNotification(String title, String message, Intent next) {
+        NotificationCompat.Builder nBuilder = nHelper.getChannelNotification(title, message, next);
         nHelper.getNotificationManager().notify(1, nBuilder.build());
     }
 

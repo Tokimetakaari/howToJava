@@ -28,10 +28,11 @@ public class ExerciseSelectDatatypes extends AppCompatActivity implements View.O
     NavigationView burger;
     private Intent intent;
     //Hier die Strings für die Notification festlegen
-    String title = "Congratulation";
-    String message = "Du hast Übung 1 bestanden";
+    String title = "Congratulation, du hast Übung 1 bestanden";
+    String message = "Zur nächsten Übung hier klicken!";
     private NotificationHelper nHelper;
     private int questionsQ = 5;
+    private Intent next;
 
 
     boolean[] answerCorrect = new boolean[5];
@@ -58,6 +59,7 @@ public class ExerciseSelectDatatypes extends AppCompatActivity implements View.O
         submit = findViewById(R.id.checkbox_submit_button);
         nHelper = new NotificationHelper(this);
         submit.setOnClickListener(this);
+        next = new Intent(this,ExerciseSelectDatatypes2.class);
     }
 
     private void connectBurger() {
@@ -129,7 +131,7 @@ public class ExerciseSelectDatatypes extends AppCompatActivity implements View.O
 
                 if (numOfCorrectAnswers >=  questionsQ /2) {
                     mySound.start();
-                    sendNotification(title, message);
+                    sendNotification(title, message,next);
                 }
                 finish();
             }
@@ -246,8 +248,8 @@ public class ExerciseSelectDatatypes extends AppCompatActivity implements View.O
         }
     }
 
-    public void sendNotification(String title, String message) {
-        NotificationCompat.Builder nBuilder = nHelper.getChannelNotification(title, message);
+    public void sendNotification(String title, String message, Intent next) {
+        NotificationCompat.Builder nBuilder = nHelper.getChannelNotification(title, message, next);
         nHelper.getNotificationManager().notify(1, nBuilder.build());
     }
 

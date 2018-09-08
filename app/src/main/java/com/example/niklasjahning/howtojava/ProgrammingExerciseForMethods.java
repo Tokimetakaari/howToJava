@@ -30,6 +30,7 @@ public class ProgrammingExerciseForMethods extends AppCompatActivity implements 
     String title = "Congrats";
     String message = "Du hast Übung 8 bestanden";
     private NotificationHelper nHelper;
+    private Intent next;
 
 
     @Override
@@ -50,7 +51,7 @@ public class ProgrammingExerciseForMethods extends AppCompatActivity implements 
             if ( i == 2)
             {
                 mySound.start();
-                sendNotification(title, message);
+                sendNotification(title, message, next);
                 viewOne.setText("Sie haben die Übung bestanden");
                 textOne.setVisibility(View.GONE);
             }
@@ -76,6 +77,8 @@ public class ProgrammingExerciseForMethods extends AppCompatActivity implements 
         viewThree.setVisibility(View.GONE);
         submit = findViewById(R.id.programmingExerciseButton);
         submit.setOnClickListener(this);
+        nHelper = new NotificationHelper(this);
+        next = new Intent(this,ExerciseSelectDatatypes2.class);
     }
 
     private void setText()
@@ -207,8 +210,8 @@ public class ProgrammingExerciseForMethods extends AppCompatActivity implements 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
-    public void sendNotification(String title, String message) {
-        NotificationCompat.Builder nBuilder = nHelper.getChannelNotification(title, message);
+    public void sendNotification(String title, String message, Intent next) {
+        NotificationCompat.Builder nBuilder = nHelper.getChannelNotification(title, message, next);
         nHelper.getNotificationManager().notify(1, nBuilder.build());
     }
 }

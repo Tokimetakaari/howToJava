@@ -51,6 +51,7 @@ public class SettingsMenu extends AppCompatActivity implements View.OnClickListe
 
     }
 
+
     private void setupItems() {
         aSwitch1 = findViewById(R.id.color1_switch);
         aSwitch2 = findViewById(R.id.color2_switch);
