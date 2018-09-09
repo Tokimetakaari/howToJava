@@ -134,7 +134,6 @@ public class ExerciseLoops extends AppCompatActivity implements View.OnClickList
         }
     }
 
-
     private void update()
     {
         new Thread(new Runnable() {

@@ -120,14 +120,13 @@ public class ExerciseBufferedReader extends AppCompatActivity implements View.On
             {
                 if (numOfCorrectAnswers >=  answered.length /2) {
                     mySound.start();
+                    update();
                     sendNotification(getString(R.string.notifyTitle17), getString(R.string.endMessage), next);
                 }
                 finish();
             }
         }
     }
-
-
 
     private void setText() {
         switch (i) {
