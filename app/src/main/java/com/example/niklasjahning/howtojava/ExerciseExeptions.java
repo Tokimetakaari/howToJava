@@ -106,6 +106,8 @@ public class ExerciseExeptions extends AppCompatActivity implements View.OnClick
             }
         });}
 
+
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
@@ -166,7 +168,7 @@ public class ExerciseExeptions extends AppCompatActivity implements View.OnClick
         new Thread(new Runnable() {
             @Override
             public void run() {
-                PlayMenu.unlockLevelNumber=18;
+                PlayMenu.unlockLevelNumber=16;
                 StorageEntry storageEntry = MainActivity.database.daoAccess().getConfiqEntry("unlockLevel");
                 storageEntry.setValue(PlayMenu.unlockLevelNumber);
                 MainActivity.database.daoAccess().updateEntries(storageEntry);

@@ -139,6 +139,19 @@ public class ExerciseEvents extends AppCompatActivity implements View.OnClickLis
             }
         });}
 
+    private void update()
+    {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                PlayMenu.unlockLevelNumber=14;
+                StorageEntry storageEntry = MainActivity.database.daoAccess().getConfiqEntry("unlockLevel");
+                storageEntry.setValue(PlayMenu.unlockLevelNumber);
+                MainActivity.database.daoAccess().updateEntries(storageEntry);
+            }
+        }).start();
+    }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -174,6 +187,7 @@ public class ExerciseEvents extends AppCompatActivity implements View.OnClickLis
                 if (numOfCorrectAnswers >=  questionsQ /2) {
                     mySound.start();
                     sendNotification(getString(R.string.notifyTitle14),getString(R.string.notifyMessage),next);
+                    update();
                 }
                 finish();
 

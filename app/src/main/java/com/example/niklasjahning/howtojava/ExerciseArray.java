@@ -231,7 +231,6 @@ public class ExerciseArray extends AppCompatActivity implements View.OnClickList
         resetCheckbox();
     }
 
-
     private void resetCheckbox ()
     {
         box1.setChecked(false);

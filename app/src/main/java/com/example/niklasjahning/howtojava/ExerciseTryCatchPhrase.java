@@ -167,12 +167,26 @@ public class ExerciseTryCatchPhrase extends AppCompatActivity implements View.On
             } else if (i > 3) {
                 if (numOfCorrectAnswers >=  answered.length /2) {
                     mySound.start();
+                    update();
                     sendNotification(getString(R.string.notifyTitle15), getString(R.string.notifyMessage),next);
                 }
                 finish();
 
             }
         }
+    }
+
+    private void update()
+    {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                PlayMenu.unlockLevelNumber=15;
+                StorageEntry storageEntry = MainActivity.database.daoAccess().getConfiqEntry("unlockLevel");
+                storageEntry.setValue(PlayMenu.unlockLevelNumber);
+                MainActivity.database.daoAccess().updateEntries(storageEntry);
+            }
+        }).start();
     }
 
     private void checkCorrectAnswers() {

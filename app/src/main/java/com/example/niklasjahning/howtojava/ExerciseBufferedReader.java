@@ -184,6 +184,19 @@ public class ExerciseBufferedReader extends AppCompatActivity implements View.On
         return numOfCorrectAnswers;
     }
 
+    private void update()
+    {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                PlayMenu.unlockLevelNumber=17;
+                StorageEntry storageEntry = MainActivity.database.daoAccess().getConfiqEntry("unlockLevel");
+                storageEntry.setValue(PlayMenu.unlockLevelNumber);
+                MainActivity.database.daoAccess().updateEntries(storageEntry);
+            }
+        }).start();
+    }
+
     private void checkCorrectAnswers() {
         switch (i)
         {
