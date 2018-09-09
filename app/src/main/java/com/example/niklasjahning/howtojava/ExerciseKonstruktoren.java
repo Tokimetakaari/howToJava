@@ -23,22 +23,6 @@ public class ExerciseKonstruktoren extends AppCompatActivity implements View.OnC
     Button submit;
     int i = 0;
     int numOfCorrectAnswers = 0;
-
-    String solution1 = "Methoden";
-    String alternative1_1 = "methoden";
-    String alternative1_2 = "Methods";
-    String alternative1_3 = "methods";
-    String solution2 = "Konstruktoren";
-    String alternative2_1 = "konstruktren";
-    String solution3 = "public Resident(vname, nname)";
-    String alternative3_1 = "public Resident (vname, nname)";
-    String alternative3_2 = "public Resident (vname,nname)";
-    String alternative3_3 = "public Resident(vname,nname)";
-    String solution4 = "Block";
-    String alternative4_1 = "block";
-    String alternative4_2 = "Methodenblock";
-    String alternative4_3 = "methodenblock";
-
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
     NavigationView burger;
@@ -46,9 +30,6 @@ public class ExerciseKonstruktoren extends AppCompatActivity implements View.OnC
     private NotificationHelper nHelper;
     private int questionsQ = 4;
     private Intent next;
-
-
-
     boolean[] answerCorrect = new boolean[4];
     boolean[] answered = new boolean[4];
 
@@ -68,7 +49,7 @@ public class ExerciseKonstruktoren extends AppCompatActivity implements View.OnC
     private void setText() {
         switch (i) {
             case 0:
-                textView.setText("Ergänzen Sie: Konstruktoren ähneln __________ ");
+                textView.setText(R.string.exerciseKonstruktorenQ1);
                 editText2.setVisibility(View.GONE);
                 editText3.setVisibility(View.GONE);
                 editText4.setVisibility(View.GONE);
@@ -78,19 +59,19 @@ public class ExerciseKonstruktoren extends AppCompatActivity implements View.OnC
                 editText8.setVisibility(View.GONE);
                 break;
             case 1:
-                textView.setText("Konstruktoren können keine anderen ________ aufrufen.");
+                textView.setText(R.string.exerciseKonstruktorenQ2);
                 break;
             case 2:
-                textView.setText("Schreiben Sie den Konstruktor für folgende Klasse, welcher zwei String-Werte 'vname' und  als zweites 'nname' übergeben werden: " +
-                        "public class Resident {" +
-                        "   ________ {" +
-                        "      vorname = vname;" +
-                        "      nachname = nname;" +
-                        "   }" +
-                        "}");
+                textView.setText(getString(R.string.exerciseKonstruktorenQ3__1) +
+                        getString(R.string.exerciseKonstruktorenQ3_2) +
+                        getString(R.string.exerciseKonstruktorenQ3_3) +
+                        getString(R.string.exerciseKonstruktorenQ3_4) +
+                        getString(R.string.exerciseKonstruktorenQ3_5) +
+                        getString(R.string.exerciseKonstruktorenQ3_6) +
+                        getString(R.string.exerciseKonstruktorenQ3_7));
                 break;
             case 3:
-                textView.setText("Jeglicher Code, welcher innerhalb einer Methode oder eines Konstruktors innerhalb geschweifter Klammern steht, kann als ________ bezeichnet/ zusammengefasst werden.");
+                textView.setText(R.string.exerciseKonstruktorenQ4);
                 break;
             case 4:
                 for (int j = 0; j < 4; j++)
@@ -219,26 +200,34 @@ public class ExerciseKonstruktoren extends AppCompatActivity implements View.OnC
 
     private void checkCorrectAnswers() {
 
-//        Falls mehrere Schreibweise zählen einfach eine weitere Bedingung mit || hinzufügen editText1.getText().toString().equals(alternative1)
-
         switch (i) {
             case 0:
-                if (editText1.getText().toString().equals(solution1) || (editText1.getText().toString().equals(alternative1_1)) || (editText1.getText().toString().equals(alternative1_2)) || (editText1.getText().toString().equals(alternative1_3))) {
+                if (editText1.getText().toString().equals(getString(R.string.exerciseKonstruktorenA1))
+                        || (editText1.getText().toString().equals(getString(R.string.exerciseKonstruktorenA1A1)))
+                        || (editText1.getText().toString().equals(getString(R.string.exerciseKonstruktorenA1A2)))
+                        || (editText1.getText().toString().equals(getString(R.string.exerciseKonstruktorenA1A3)))) {
                     answerCorrect[i] = true;
                 }
             case 1:
-                if (editText1.getText().toString().equals(solution2) || (editText1.getText().toString().equals(alternative2_1))) {
+                if (editText1.getText().toString().equals(getString(R.string.exerciseKonstruktorenA2))
+                        || (editText1.getText().toString().equals(getString(R.string.exerciseKonstruktorenA2A1)))) {
                     answerCorrect[i] = true;
                 }
                 break;
             case 2:
-                if (editText1.getText().toString().equals(solution3) || (editText1.getText().toString().equals(alternative3_1)) || (editText1.getText().toString().equals(alternative3_2)) || (editText1.getText().toString().equals(alternative3_3)) ) {
+                if (editText1.getText().toString().equals(getString(R.string.exerciseKonstruktorenA3))
+                        || (editText1.getText().toString().equals(getString(R.string.exerciseKonstruktorenA3A1)))
+                        || (editText1.getText().toString().equals(getString(R.string.exerciseKonstruktorenA3A2)))
+                        || (editText1.getText().toString().equals(getString(R.string.exerciseKonstruktorenA3A3)))) {
                     answerCorrect[i] = true;
 
                 }
                 break;
             case 3:
-                if (editText1.getText().toString().equals(solution4) || (editText1.getText().toString().equals(alternative4_1)) || (editText1.getText().toString().equals(alternative4_2)) || (editText1.getText().toString().equals(alternative4_3)) ) {
+                if (editText1.getText().toString().equals(getString(R.string.exerciseKonstruktorenA4))
+                        || (editText1.getText().toString().equals(getString(R.string.exerciseKonstruktorenA4A1)))
+                        || (editText1.getText().toString().equals(getString(R.string.exerciseKonstruktorenA4A2)))
+                        || (editText1.getText().toString().equals(getString(R.string.exerciseKonstruktorenA4A3)))) {
                     answerCorrect[i] = true;
 
                 }

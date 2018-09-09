@@ -283,5 +283,31 @@
     <string name="exerciseArrayQ8A3">myArrayList.size</string>
     <string name="exerciseArrayQ8A4">myArrayList.size()</string>
 
+    //Konstruktoren
+    <string name="exerciseKonstruktorenQ1">Ergänzen Sie: Konstruktoren ähneln __________</string>
+    <string name="exerciseKonstruktorenQ2">Konstruktoren können keine anderen ________ aufrufen.</string>
+    <string name="exerciseKonstruktorenQ4">Jeglicher Code, welcher innerhalb einer Methode oder eines Konstruktors innerhalb geschweifter Klammern steht, kann als ________ bezeichnet/ zusammengefasst werden.</string>
+    <string name="exerciseKonstruktorenQ3._1">Schreiben Sie den Konstruktor für folgende Klasse, welcher zwei String-Werte \'vname\' und  als zweites \'nname\' übergeben werden:</string>
+    <string name="exerciseKonstruktorenQ3_2">public class Resident {</string>
+    <string name="exerciseKonstruktorenQ3_3">________ {</string>
+    <string name="exerciseKonstruktorenQ3_4">vorname = vname;</string>
+    <string name="exerciseKonstruktorenQ3_5">nachname = nname;</string>
+    <string name="exerciseKonstruktorenQ3_6">}</string>
+    <string name="exerciseKonstruktorenQ3_7">}</string>
+    <string name="exerciseKonstruktorenA1">Methoden</string>
+    <string name="exerciseKonstruktorenA1A1">methoden</string>
+    <string name="exerciseKonstruktorenA1A2">Methods</string>
+    <string name="exerciseKonstruktorenA1A3">methods</string>
+    <string name="exerciseKonstruktorenA2">Konstruktoren</string>
+    <string name="exerciseKonstruktorenA2A1">konstruktren</string>
+    <string name="exerciseKonstruktorenA3">public Resident(vname, nname)</string>
+    <string name="exerciseKonstruktorenA3A1">public Resident (vname, nname)</string>
+    <string name="exerciseKonstruktorenA3A2">public Resident (vname,nname)</string>
+    <string name="exerciseKonstruktorenA3A3">public Resident(vname,nname)</string>
+    <string name="exerciseKonstruktorenA4">Block</string>
+    <string name="exerciseKonstruktorenA4A1">block</string>
+    <string name="exerciseKonstruktorenA4A2">Methodenblock</string>
+    <string name="exerciseKonstruktorenA4A3">methodenblock</string>
+
 
 </resources>
