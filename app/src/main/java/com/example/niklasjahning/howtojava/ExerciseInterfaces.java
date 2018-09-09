@@ -27,11 +27,7 @@ public class ExerciseInterfaces extends AppCompatActivity implements View.OnClic
     private ActionBarDrawerToggle mToggle;
     NavigationView burger;
     private Intent intent;
-    //Hier die Strings für die Notification festlegen
-    String title = "Congrats";
-    String message = "Du hast Übung 1 bestanden";
     private NotificationHelper nHelper;
-    private int questionsQ = 2;
     private Intent next;
 
     boolean[] answerCorrect = new boolean[2];
@@ -84,7 +80,7 @@ public class ExerciseInterfaces extends AppCompatActivity implements View.OnClic
                         startActivity(intent);
                         break;
                     case R.id.credits:
-                        Toast.makeText(getApplicationContext(),"Thanks for playing!",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), getString(R.string.credits_text),Toast.LENGTH_SHORT).show();
                         break;
                 }
                 return true;
@@ -126,9 +122,9 @@ public class ExerciseInterfaces extends AppCompatActivity implements View.OnClic
             }
             else if (i>2)
             {
-                if (numOfCorrectAnswers >=  questionsQ /2) {
+                if (numOfCorrectAnswers >=  answered.length /2) {
                     mySound.start();
-                    sendNotification(title, message, next);
+                    sendNotification(getString(R.string.notifyTitle13), getString(R.string.notifyMessage), next);
                 }
                 finish();
             }
@@ -138,22 +134,22 @@ public class ExerciseInterfaces extends AppCompatActivity implements View.OnClic
     private void setText() {
         switch (i) {
             case 0:
-                textView.setText("Welche der folgenden Punkte treffen auf Interfaces zu?");
-                box1.setText("Ein Interfaces ist, ähnlich wie eine Klasse, ein Referenztyp.");
-                box2.setText("Interfaces werden durch das Schlüsselwort 'extends' implementiert.");
-                box3.setText("Man kann immer nur ein Interface implementieren.");
-                box4.setText("Wenn eine Klasse ein Interface implementiert hat, muss diese alle Methodensignaturen übernehmen/ überschreiben.");
+                textView.setText(R.string.exerciseInterfacesQ1);
+                box1.setText(R.string.exerciseInterfacesQ1A1);
+                box2.setText(R.string.exerciseInterfacesQ1A2);
+                box3.setText(R.string.exerciseInterfacesQ1A3);
+                box4.setText(R.string.exerciseInterfacesQ1A4);
                 break;
             case 1:
-                textView.setText("Implementiert eine Klasse ein Interface schreibt man: public class MyClass implements MyInterface {}");
-                box1.setText("wahr");
-                box2.setText("falsch");
+                textView.setText(R.string.exerciseInterfacesQ2);
+                box1.setText(R.string.exerciseInterfacesQ2A1);
+                box2.setText(R.string.exerciseInterfacesQ2A2);
                 box3.setVisibility(View.GONE);
                 box4.setVisibility(View.GONE);
                 break;
             case 2:
                 countCorrectAnswers();
-                textView.setText("Sie haben " + numOfCorrectAnswers + " Fragen von " + questionsQ + "richtig beantwortet.");
+                textView.setText(getString(R.string.endScreenExercise,numOfCorrectAnswers,answered.length));
                 box1.setClickable(false);
                 box1.setVisibility(View.INVISIBLE);
                 box2.setClickable(false);
@@ -162,7 +158,7 @@ public class ExerciseInterfaces extends AppCompatActivity implements View.OnClic
                 box3.setVisibility(View.INVISIBLE);
                 box4.setClickable(false);
                 box4.setVisibility(View.INVISIBLE);
-                submit.setText("Zurück zum Hauptmenü");
+                submit.setText(getString(R.string.endScreenSubmit));
                 i++;
 
                 break;

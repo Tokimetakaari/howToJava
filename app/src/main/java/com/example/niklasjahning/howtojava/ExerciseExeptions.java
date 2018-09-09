@@ -30,11 +30,7 @@ public class ExerciseExeptions extends AppCompatActivity implements View.OnClick
     private ActionBarDrawerToggle mToggle;
     NavigationView burger;
     private Intent intent;
-    //Hier die Strings für die Notification festlegen
-    String title = "Congrats";
-    String message = "Du hast Übung 1 bestanden";
     private NotificationHelper nHelper;
-    private int questionsQ = 5;
     private Intent next;
 
 
@@ -103,7 +99,7 @@ public class ExerciseExeptions extends AppCompatActivity implements View.OnClick
                         startActivity(intent);
                         break;
                     case R.id.credits:
-                        Toast.makeText(getApplicationContext(),"Thanks for playing!",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),getString(R.string.credits_text),Toast.LENGTH_SHORT).show();
                         break;
                 }
                 return true;
@@ -155,10 +151,10 @@ public class ExerciseExeptions extends AppCompatActivity implements View.OnClick
             else if (i>5)
             {
                 PlayMenu.unlockLevelNumber = 1;
-                if (numOfCorrectAnswers >=  questionsQ /2) {
+                if (numOfCorrectAnswers >=  answered.length /2) {
                     mySound.start();
                     update();
-                    sendNotification(title, message, next);
+                    sendNotification(getString(R.string.notifyTitle16), getString(R.string.notifyMessage), next);
                 }
                 finish();
             }
@@ -231,7 +227,7 @@ public class ExerciseExeptions extends AppCompatActivity implements View.OnClick
                 textView6.setText("");
             case 6:
                 countCorrectAnswers();
-                textQuest.setText("Sie haben " + numOfCorrectAnswers + " Fragen von " + questionsQ + " richtig beantwortet.");
+                textQuest.setText(getString(R.string.endScreenExercise,numOfCorrectAnswers,answered.length));
                 textView1.setVisibility(View.GONE);
                 textView2.setVisibility(View.GONE);
                 textView3.setVisibility(View.GONE);
@@ -244,7 +240,7 @@ public class ExerciseExeptions extends AppCompatActivity implements View.OnClick
                 spinner4.setVisibility(View.GONE);
                 spinner5.setVisibility(View.GONE);
                 spinner6.setVisibility(View.GONE);
-                submit.setText("Zurück zum Hauptmenü");
+                submit.setText(getString(R.string.endScreenSubmit));
                 i++;
 
                 break;

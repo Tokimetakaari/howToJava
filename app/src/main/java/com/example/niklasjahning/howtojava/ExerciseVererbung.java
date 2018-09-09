@@ -23,29 +23,11 @@ public class ExerciseVererbung extends AppCompatActivity implements View.OnClick
     Button submit;
     int i = 0;
     int numOfCorrectAnswers = 0;
-
-    String solution1 = "Superklasse";
-    String alternative1_1 = "superklasse";
-    String alternative1_2 = "Elternklasse";
-    String alternative1_3 = "elternklasse";
-    String solution2 = "extends";
-    String solution3 = "Superklasse";
-    String alternative3_1 = "superklasse";
-    String alternative3_2 = "Elternklasse";
-    String alternative3_3 = "elternklasse";
-    String solution4 = "protected";
-    String alternative4_1 = "Protected";
-
-
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
     NavigationView burger;
     private Intent intent;
-    //Hier die Strings für die Notification festlegen
-    String title = "Congrats";
-    String message = "Du hast Übung 1 bestanden";
     private NotificationHelper nHelper;
-    private int questionsQ = 4;
     private Intent next;
 
 
@@ -68,7 +50,7 @@ public class ExerciseVererbung extends AppCompatActivity implements View.OnClick
     private void setText() {
         switch (i) {
             case 0:
-                textView.setText("Man unterscheidet zwischen der Subklasse und der ________ .");
+                textView.setText(R.string.exerciseVererbungQ1);
                 editText2.setVisibility(View.GONE);
                 editText3.setVisibility(View.GONE);
                 editText4.setVisibility(View.GONE);
@@ -78,13 +60,13 @@ public class ExerciseVererbung extends AppCompatActivity implements View.OnClick
                 editText8.setVisibility(View.GONE);
                 break;
             case 1:
-                textView.setText("Die Subklasse erbt von der Superklasse und kann deren Methoden und Variablen verwenden. Dies wird durch das Schlüsselwort ________ ausgeführt.");
+                textView.setText(R.string.exerciseVererbungQ2);
                 break;
             case 2:
-                textView.setText("Durch super.methodenname() kann man die Methoden der ________ aufrufen.");
+                textView.setText(R.string.exerciseVererbungQ3);
                 break;
             case 3:
-                textView.setText("Es kann nur auf ________ oder public Methoden der Superklasse zugegriffen werden.");
+                textView.setText(R.string.exerciseVererbungQ4);
                 break;
             case 4:
                 for (int j = 0; j < 4; j++)
@@ -92,7 +74,7 @@ public class ExerciseVererbung extends AppCompatActivity implements View.OnClick
                     if (answerCorrect[j])
                     {numOfCorrectAnswers ++;}
                 }
-                textView.setText("Sie haben " + numOfCorrectAnswers +" richtig beantwortet");
+                textView.setText(getString(R.string.endScreenExercise,numOfCorrectAnswers,answered.length));
                 editText1.setVisibility(View.INVISIBLE);
                 editText1.setClickable(false);
                 i++;
@@ -187,10 +169,10 @@ public class ExerciseVererbung extends AppCompatActivity implements View.OnClick
 
             } else if (i > 4) {
                 PlayMenu.unlockLevelNumber = 1;
-                if (numOfCorrectAnswers >=  questionsQ /2) {
+                if (numOfCorrectAnswers >=  answered.length /2) {
                     mySound.start();
                     update();
-                    sendNotification(title, message, next);
+                    sendNotification(getString(R.string.notifyTitle12), getString(R.string.notifyMessage), next);
                 }
                 finish();
 
@@ -217,22 +199,29 @@ public class ExerciseVererbung extends AppCompatActivity implements View.OnClick
 
         switch (i) {
             case 0:
-                if (editText1.getText().toString().equals(solution1) || (editText1.getText().toString().equals(alternative1_1)) || (editText1.getText().toString().equals(alternative1_2)) || (editText1.getText().toString().equals(alternative1_3))) {
+                if (editText1.getText().toString().equals(getString(R.string.exerciseVererbungA1))
+                        || (editText1.getText().toString().equals(getString(R.string.exerciseVererbungA1A1)))
+                        || (editText1.getText().toString().equals(getString(R.string.exerciseVererbungA1A2)))
+                        || (editText1.getText().toString().equals(getString(R.string.exerciseVererbungA1A3)))) {
                     answerCorrect[i] = true;
                 }
             case 1:
-                if (editText1.getText().toString().equals(solution2)) {
+                if (editText1.getText().toString().equals(getString(R.string.exerciseVererbungA2))) {
                     answerCorrect[i] = true;
                 }
                 break;
             case 2:
-                if (editText1.getText().toString().equals(solution3) || (editText1.getText().toString().equals(alternative3_1)) || (editText1.getText().toString().equals(alternative3_2)) || (editText1.getText().toString().equals(alternative3_3)) ) {
+                if (editText1.getText().toString().equals(getString(R.string.exerciseVererbungA3))
+                        || (editText1.getText().toString().equals(getString(R.string.exerciseVererbungA3A1)))
+                    || (editText1.getText().toString().equals(getString(R.string.exerciseVererbungA3A2)))
+                    || (editText1.getText().toString().equals(getString(R.string.exerciseVererbungA3A3)))) {
                     answerCorrect[i] = true;
 
                 }
                 break;
             case 3:
-                if (editText1.getText().toString().equals(solution4) || (editText1.getText().toString().equals(alternative4_1)) ) {
+                if (editText1.getText().toString().equals(getString(R.string.exerciseVererbungA4) )
+                        || (editText1.getText().toString().equals(getString(R.string.exerciseVererbungA4A1))) ) {
                     answerCorrect[i] = true;
 
                 }

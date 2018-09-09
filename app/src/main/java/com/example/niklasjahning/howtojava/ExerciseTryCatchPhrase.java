@@ -25,26 +25,12 @@ public class ExerciseTryCatchPhrase extends AppCompatActivity implements View.On
     Button submit;
     int i = 0;
     int numOfCorrectAnswers = 0;
-
-    String solution1 = "Try-Catch-Phrase";
-    String alternative1_1 = "try-catch-phrase";
-    String alternative1_2 = "Try Catch Phrase";
-    String alternative1_3 = "try catch phrase";
-    String alternative1_4 = "Try catch phrase";
-    String solution2 = "try";
-    String alternative2_1 = "Try";
-    String solution3 = "Catch";
-    String alternative3_1 = "catch";
-
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
     NavigationView burger;
     private Intent intent;
-    //Hier die Strings für die Notification festlegen
-    String title = "Congratulation, du hast Übung 16 bestanden";
-    String message = "Zur nächsten Übung hier klicken!";
+
     private NotificationHelper nHelper;
-    private int questionsQ = 3;
     private Intent next;
 
 
@@ -68,7 +54,7 @@ public class ExerciseTryCatchPhrase extends AppCompatActivity implements View.On
     private void setText() {
         switch (i) {
             case 0:
-                textView.setText("Um den Absturz eines Programmes zu verhindern verwendet und Fehler anzufangen, verwendet man einen ________ .");
+                textView.setText(R.string.exerciseTryCatchQ1);
                 editText2.setVisibility(View.GONE);
                 editText3.setVisibility(View.GONE);
                 editText4.setVisibility(View.GONE);
@@ -78,10 +64,10 @@ public class ExerciseTryCatchPhrase extends AppCompatActivity implements View.On
                 editText8.setVisibility(View.GONE);
                 break;
             case 1:
-                textView.setText("Wird keine Exeption 'gethrowed' wird der Code im ________-Phrase ausgeführt");
+                textView.setText(R.string.exerciseTryCatchQ2);
                 break;
             case 2:
-                textView.setText("Wenn ein Fehler, (welcher in der Bedingung definiert ist), gefunden wurde, wird der Code im _______-Phrase ausgeführt.");
+                textView.setText(R.string.exerciseTryCatchQ3);
                 break;
             case 3:
                 for (int j = 0; j < 3; j++)
@@ -89,7 +75,7 @@ public class ExerciseTryCatchPhrase extends AppCompatActivity implements View.On
                     if (answerCorrect[j])
                     {numOfCorrectAnswers ++;}
                 }
-                textView.setText("Sie haben " + numOfCorrectAnswers +" richtig beantwortet");
+                textView.setText(getString(R.string.endScreenExercise,numOfCorrectAnswers, answered.length));
                 editText1.setVisibility(View.INVISIBLE);
                 editText1.setClickable(false);
                 i++;
@@ -144,7 +130,7 @@ public class ExerciseTryCatchPhrase extends AppCompatActivity implements View.On
                         startActivity(intent);
                         break;
                     case R.id.credits:
-                        Toast.makeText(getApplicationContext(),"Thanks for playing!",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),getString(R.string.credits_text),Toast.LENGTH_SHORT).show();
                         break;
                 }
                 return true;
@@ -166,7 +152,7 @@ public class ExerciseTryCatchPhrase extends AppCompatActivity implements View.On
     }
 
     private void setupDrawer() {
-        mDrawerLayout = (DrawerLayout) findViewById(R.id.burgerLayout);
+        mDrawerLayout =  findViewById(R.id.burgerLayout);
         mToggle = new ActionBarDrawerToggle(this,mDrawerLayout, R.string.open, R.string.close);
         mDrawerLayout.addDrawerListener(mToggle);
         mToggle.syncState();
@@ -185,7 +171,7 @@ public class ExerciseTryCatchPhrase extends AppCompatActivity implements View.On
             } else if (i > 3) {
                 if (numOfCorrectAnswers >=  answered.length /2) {
                     mySound.start();
-                    sendNotification(title, message, next);
+                    sendNotification(getString(R.string.notifyTitle15), getString(R.string.notifyMessage),next);
                 }
                 finish();
 
@@ -199,16 +185,22 @@ public class ExerciseTryCatchPhrase extends AppCompatActivity implements View.On
 
         switch (i) {
             case 0:
-                if (editText1.getText().toString().equals(solution1) || (editText1.getText().toString().equals(alternative1_1)) || (editText1.getText().toString().equals(alternative1_2)) || (editText1.getText().toString().equals(alternative1_3)) || (editText1.getText().toString().equals(alternative1_4))) {
+                if (editText1.getText().toString().equals(getString(R.string.exerciseTryCatchA1))
+                        || (editText1.getText().toString().equals(getString(R.string.exerciseTryCatchA1A1)))
+                        || (editText1.getText().toString().equals(getString(R.string.exerciseTryCatchA1A2)))
+                        || (editText1.getText().toString().equals(getString(R.string.exerciseTryCatchA1A3)))
+                        || (editText1.getText().toString().equals(getString(R.string.exerciseTryCatchA1A4)))) {
                     answerCorrect[i] = true;
                 }
             case 1:
-                if ((editText1.getText().toString().equals(solution2)) || (editText1.getText().toString().equals(alternative2_1)) ) {
+                if ((editText1.getText().toString().equals(getString(R.string.exerciseTryCatchA2)))
+                        || (editText1.getText().toString().equals(getString(R.string.exerciseTryCatchA2A1)))) {
                     answerCorrect[i] = true;
                 }
                 break;
             case 2:
-                if (editText1.getText().toString().equals(solution3) || (editText1.getText().toString().equals(alternative3_1)) ) {
+                if (editText1.getText().toString().equals(getString(R.string.exerciseTryCatchA3))
+                        || (editText1.getText().toString().equals(getString(R.string.exerciseTryCatchA3A1)))) {
                     answerCorrect[i] = true;
 
                 }

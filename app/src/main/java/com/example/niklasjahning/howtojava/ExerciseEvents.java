@@ -25,27 +25,11 @@ public class ExerciseEvents extends AppCompatActivity implements View.OnClickLis
     int i = 0;
     int numOfCorrectAnswers = 0;
 
-    String solution1 = "Keyevent";
-    String alternative1_1 = "keyevent";
-    String alternative1_2 = "key event";
-    String alternative1_3 = "Key event";
-    String alternative1_4 = "Key Event";
-    String solution2 = "Observer";
-    String alternative2_1 = "observer";
-    String solution3 = "Observer";
-    String alternative3_1 = "observer";
-    String alternative3_2 = "Listener";
-    String alternative3_3 = "listener";
-    String solution4 = "Interface";
-    String alternative4_1 = "interface";
-
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
     NavigationView burger;
     private Intent intent;
-    //Hier die Strings für die Notification festlegen
-    String title = "Congrats";
-    String message = "Du hast Übung 1 bestanden";
+
     private NotificationHelper nHelper;
     private int questionsQ = 4;
     private Intent next;
@@ -70,7 +54,7 @@ public class ExerciseEvents extends AppCompatActivity implements View.OnClickLis
     private void setText() {
         switch (i) {
             case 0:
-                textView.setText("Wenn der Nutzer innerhalb des geöffneten Anwendungsfenster einen 'Key' drückt, ist dies ein ________ .");
+                textView.setText(R.string.exerciseEventsQ1);
                 editText2.setVisibility(View.GONE);
                 editText3.setVisibility(View.GONE);
                 editText4.setVisibility(View.GONE);
@@ -80,13 +64,13 @@ public class ExerciseEvents extends AppCompatActivity implements View.OnClickLis
                 editText8.setVisibility(View.GONE);
                 break;
             case 1:
-                textView.setText("Die Objekte, welche auf die Events lauschen heißen Listener oder ________ .");
+                textView.setText(R.string.exerciseEventsQ2);
                 break;
             case 2:
-                textView.setText("Das Observer-Pattern besagt, dass ein Key/ Mouse eine Nachricht an alle ________ sendet.");
+                textView.setText(R.string.exerciseEventsQ3);
                 break;
             case 3:
-                textView.setText("Die Listenerklasse braucht passende Methoden, um die Events empfangen und darauf reagieren zu können, deshalb sollte man immer das _______ implementieren");
+                textView.setText(R.string.exerciseEventsQ4);
                 break;
             case 4:
                 for (int j = 0; j < 4; j++)
@@ -94,9 +78,10 @@ public class ExerciseEvents extends AppCompatActivity implements View.OnClickLis
                     if (answerCorrect[j])
                     {numOfCorrectAnswers ++;}
                 }
-                textView.setText("Sie haben " + numOfCorrectAnswers +" richtig beantwortet");
+                textView.setText(getString(R.string.endScreenExercise,numOfCorrectAnswers,answered.length));
                 editText1.setVisibility(View.INVISIBLE);
                 editText1.setClickable(false);
+                submit.setText(R.string.endScreenSubmit);
                 i++;
                 break;
 
@@ -147,7 +132,7 @@ public class ExerciseEvents extends AppCompatActivity implements View.OnClickLis
                         startActivity(intent);
                         break;
                     case R.id.credits:
-                        Toast.makeText(getApplicationContext(),"Thanks for playing!",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),getString(R.string.credits_text),Toast.LENGTH_SHORT).show();
                         break;
                 }
                 return true;
@@ -188,7 +173,7 @@ public class ExerciseEvents extends AppCompatActivity implements View.OnClickLis
             } else if (i > 4) {
                 if (numOfCorrectAnswers >=  questionsQ /2) {
                     mySound.start();
-                    sendNotification(title, message, next);
+                    sendNotification(getString(R.string.notifyTitle14),getString(R.string.notifyMessage),next);
                 }
                 finish();
 
@@ -202,22 +187,31 @@ public class ExerciseEvents extends AppCompatActivity implements View.OnClickLis
 
         switch (i) {
             case 0:
-                if (editText1.getText().toString().equals(solution1) || (editText1.getText().toString().equals(alternative1_1)) || (editText1.getText().toString().equals(alternative1_2)) || (editText1.getText().toString().equals(alternative1_3)) || (editText1.getText().toString().equals(alternative1_4))) {
+                if (editText1.getText().toString().equals(getString(R.string.exerciseEventsA1))
+                        || (editText1.getText().toString().equals(getString(R.string.exerciseEventsA1A1)))
+                        || (editText1.getText().toString().equals(getString(R.string.exerciseEventsA1A2)))
+                        || (editText1.getText().toString().equals(getString(R.string.exerciseEventsA1A3)))
+                        || (editText1.getText().toString().equals(getString(R.string.exerciseEventsA1A4)))) {
                     answerCorrect[i] = true;
                 }
             case 1:
-                if ((editText1.getText().toString().equals(solution2)) || (editText1.getText().toString().equals(alternative2_1)) ) {
+                if ((editText1.getText().toString().equals(getString(R.string.exerciseEventsA2)) )
+                        || (editText1.getText().toString().equals(getString(R.string.exerciseEventsA2A2)))) {
                     answerCorrect[i] = true;
                 }
                 break;
             case 2:
-                if (editText1.getText().toString().equals(solution3) || (editText1.getText().toString().equals(alternative3_1)) || (editText1.getText().toString().equals(alternative3_2)) || (editText1.getText().toString().equals(alternative3_3)) ) {
+                if (editText1.getText().toString().equals(getString(R.string.exerciseEventsA3))
+                        || (editText1.getText().toString().equals(getString(R.string.exerciseEventsA3A1)))
+                        || (editText1.getText().toString().equals(getString(R.string.exerciseEventsA3A2)))
+                        || (editText1.getText().toString().equals(getString(R.string.exerciseEventsA3A3)))) {
                     answerCorrect[i] = true;
 
                 }
                 break;
             case 3:
-                if (editText1.getText().toString().equals(solution4) || (editText1.getText().toString().equals(alternative4_1)) ) {
+                if (editText1.getText().toString().equals(getString(R.string.exerciseEventsA4))
+                        || (editText1.getText().toString().equals(getString(R.string.exerciseEventsA4A1)))) {
                     answerCorrect[i] = true;
 
                 }

@@ -108,10 +108,6 @@
     <string name="play_menu_button15">Try-Catch-Phrase</string>
     <string name="play_menu_button16">Exceptions</string>
     <string name="play_menu_button17">Buffered Reader</string>
-    <string name="programming_exercises_answer_not_correct">Ihre Lösung ist fehlerhaft. Bitte überprüfen Sie sie noch einmal</string>
-    <string name="programming_exercises_answer_correct">Ihre Lösung stimmt</string>
-    <string name="programming_methods_exercise1">Scheiben Sie eine öffentliche Methode namens \'addieren\', die zwei Zahlen \'a\' und \'b\' übergeben bekommt und addiert und in einer neuen lokalen Variable namens \'c\' speichert. \'c\' soll anschließend ausgegeben werden.</string>
-    <string name="programming_methods_exercise2">Verändern sie die Methode nun so, dass die beiden Zahlen \'a\' und \'b\' mit einer while-Schleife solange verglichen werden bis \'a == b\' gilt. Solange \'a\' kleiner \'b\' soll \'a\' um 1 erhöht werden. Anschließend soll \'a\' zurückgegeben werden</string>
 
     //EndScreen
     <string name="endScreenExercise">Sie haben %d von %d richtig beantwortet</string>
@@ -282,6 +278,90 @@
     <string name="exerciseArrayQ8A2">myArrayList.length()</string>
     <string name="exerciseArrayQ8A3">myArrayList.size</string>
     <string name="exerciseArrayQ8A4">myArrayList.size()</string>
+
+    //Programming exercise
+
+    <string name="programming_exercises_answer_not_correct">Ihre Lösung ist fehlerhaft. Bitte überprüfen Sie sie noch einmal</string>
+    <string name="programming_exercises_answer_correct">Ihre Lösung stimmt</string>
+    <string name="programming_methods_exercise1">Scheiben Sie eine öffentliche Methode namens \'addieren\', die zwei Zahlen \'a\' und \'b\' übergeben bekommt und addiert und in einer neuen lokalen Variable namens \'c\' speichert. \'c\' soll anschließend ausgegeben werden.</string>
+    <string name="programming_methods_exercise2">Verändern sie die Methode nun so, dass die beiden Zahlen \'a\' und \'b\' mit einer while-Schleife solange verglichen werden bis \'a == b\' gilt. Solange \'a\' kleiner \'b\' soll \'a\' um 1 erhöht werden. Anschließend soll \'a\' zurückgegeben werden</string>
+
+    // Buffered Reader exercise
+    <string name="exerciseBufferedReaderQ1">Zum Hochladen und Einlesen einer Textdatei benötigt man:</string>
+    <string name="exerciseBufferedReaderQ2">Nachdem dem InputStream die einzulesende Textdatei zugewiesen wurde, wird so lange eingelesen, bis kein Text mehr vorhanden ist. Hierbei hilft:</string>
+    <string name="exerciseBufferedReaderQ1A1">ArrayList</string>
+    <string name="exerciseBufferedReaderQ1A2">BufferedReader</string>
+    <string name="exerciseBufferedReaderQ1A3">Observer</string>
+    <string name="exerciseBufferedReaderQ1A4">InputStream</string>
+    <string name="exerciseBufferedReaderQ2A1">switch-case</string>
+    <string name="exerciseBufferedReaderQ2A2">for-Schleife</string>
+    <string name="exerciseBufferedReaderQ2A3">while-Schleife</string>
+    <string name="exerciseBufferedReaderQ2A4">if-Bedingung</string>
+
+   // Try-Catch-Phrase exercise
+
+    <string name="exerciseTryCatchQ1">Um den Absturz eines Programmes zu verhindern verwendet und Fehler anzufangen, verwendet man einen ________ .</string>
+    <string name="exerciseTryCatchQ2">Wird keine Exeption geworfen wird der Code im ________-Phrase ausgeführt</string>
+    <string name="exerciseTryCatchQ3">Wenn ein Fehler, (welcher in der Bedingung definiert ist), gefunden wurde, wird der Code im _______-Phrase ausgeführt.</string>
+    <string name="exerciseTryCatchA1">Try-Catch-Phrase</string>
+    <string name="exerciseTryCatchA1A1">try-catch-phrase</string>
+    <string name="exerciseTryCatchA1A2">Try Catch Phrase</string>
+    <string name="exerciseTryCatchA1A3">try catch phrase</string>
+    <string name="exerciseTryCatchA1A4">Try catch phrase</string>
+    <string name="exerciseTryCatchA2">try</string>
+    <string name="exerciseTryCatchA2A1">Try</string>
+    <string name="exerciseTryCatchA3">Catch</string>
+    <string name="exerciseTryCatchA3A1">catch</string>
+
+
+   // Events exercise
+
+    <string name="exerciseEventsQ1">Wenn der Nutzer innerhalb des geöffneten Anwendungsfenster einen \'Key\' drückt, ist dies ein ________ .</string>
+    <string name="exerciseEventsQ2">Die Objekte, welche auf die Events lauschen heißen Listener oder ________ .</string>
+    <string name="exerciseEventsQ3">Das Observer-Pattern besagt, dass ein Key/ Mouse eine Nachricht an alle ________ sendet.</string>
+    <string name="exerciseEventsQ4">Die Listenerklasse braucht passende Methoden, um die Events empfangen und darauf reagieren zu können, deshalb sollte man immer das _______ implementieren</string>
+    <string name="exerciseEventsA1">Keyevent</string>
+    <string name="exerciseEventsA1A1">keyevent</string>
+    <string name="exerciseEventsA1A2">key event</string>
+    <string name="exerciseEventsA1A3">Key event</string>
+    <string name="exerciseEventsA1A4">Key Event</string>
+    <string name="exerciseEventsA2">Observer</string>
+    <string name="exerciseEventsA2A2">observer</string>
+    <string name="exerciseEventsA3">Observer</string>
+    <string name="exerciseEventsA3A1">observer</string>
+    <string name="exerciseEventsA3A2">Listener</string>
+    <string name="exerciseEventsA3A3">listener</string>
+    <string name="exerciseEventsA4">Interface</string>
+    <string name="exerciseEventsA4A1">interface</string>
+
+    // Interfaces exercise
+
+    <string name="exerciseInterfacesQ1">Welche der folgenden Punkte treffen auf Interfaces zu?</string>
+    <string name="exerciseInterfacesQ2">Implementiert eine Klasse ein Interface schreibt man: public class MyClass implements MyInterface {}</string>
+    <string name="exerciseInterfacesQ1A1">Ein Interfaces ist, ähnlich wie eine Klasse, ein Referenztyp.</string>
+    <string name="exerciseInterfacesQ1A2">Interfaces werden durch das Schlüsselwort \'extends\' implementiert.</string>
+    <string name="exerciseInterfacesQ1A3">Man kann immer nur ein Interface implementieren.</string>
+    <string name="exerciseInterfacesQ1A4">Wenn eine Klasse ein Interface implementiert hat, muss diese alle Methodensignaturen übernehmen/ überschreiben.</string>
+    <string name="exerciseInterfacesQ2A1">wahr</string>
+    <string name="exerciseInterfacesQ2A2">falsch</string>
+
+    //Vererbung exercise
+
+    <string name="exerciseVererbungQ1">Man unterscheidet zwischen der Subklasse und der ________ .</string>
+    <string name="exerciseVererbungQ2">Die Subklasse erbt von der Superklasse und kann deren Methoden und Variablen verwenden. Dies wird durch das Schlüsselwort ________ ausgeführt.</string>
+    <string name="exerciseVererbungQ3">Durch super.methodenname() kann man die Methoden der ________ aufrufen.</string>
+    <string name="exerciseVererbungQ4">Es kann nur auf ________ oder public Methoden der Superklasse zugegriffen werden.</string>
+    <string name="exerciseVererbungA1">Superklasse</string>
+    <string name="exerciseVererbungA1A1">superklasse</string>
+    <string name="exerciseVererbungA1A2">Elternklasse</string>
+    <string name="exerciseVererbungA1A3">elternklasse</string>
+    <string name="exerciseVererbungA2">extends</string>
+    <string name="exerciseVererbungA3">Superklasse</string>
+    <string name="exerciseVererbungA3A1">superklasse</string>
+    <string name="exerciseVererbungA3A2">Elternklasse</string>
+    <string name="exerciseVererbungA3A3">elternklasse</string>
+    <string name="exerciseVererbungA4">protected</string>
+    <string name="exerciseVererbungA4A1">Protected</string>
 
     //Konstruktoren
     <string name="exerciseKonstruktorenQ1">Ergänzen Sie: Konstruktoren ähneln __________</string>

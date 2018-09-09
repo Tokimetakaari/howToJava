@@ -28,9 +28,6 @@ public class ExerciseBufferedReader extends AppCompatActivity implements View.On
     private ActionBarDrawerToggle mToggle;
     NavigationView burger;
     private Intent intent;
-    //Hier die Strings für die Notification festlegen
-    String title = "Congratulation, du hast Übung 18 bestanden";
-    String message = "Zur nächsten Übung hier klicken!";
     private NotificationHelper nHelper;
     private int questionsQ = 2;
     private Intent next;
@@ -85,7 +82,7 @@ public class ExerciseBufferedReader extends AppCompatActivity implements View.On
                         startActivity(intent);
                         break;
                     case R.id.credits:
-                        Toast.makeText(getApplicationContext(),"Thanks for playing!",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),R.string.credits_text,Toast.LENGTH_SHORT).show();
                         break;
                 }
                 return true;
@@ -125,7 +122,7 @@ public class ExerciseBufferedReader extends AppCompatActivity implements View.On
             {
                 if (numOfCorrectAnswers >=  questionsQ /2) {
                     mySound.start();
-                    sendNotification(title, message, next);
+                    sendNotification(getString(R.string.notifyTitle17), getString(R.string.notifyMessage), next);
                 }
                 finish();
             }
@@ -137,22 +134,22 @@ public class ExerciseBufferedReader extends AppCompatActivity implements View.On
     private void setText() {
         switch (i) {
             case 0:
-                textView.setText("Zum Hochladen und Einlesen einer Textdatei benötigt man:");
-                box1.setText("ArrayList");
-                box2.setText("BufferedReader");
-                box3.setText("Observer");
-                box4.setText("InputStream");
+                textView.setText(R.string.exerciseBufferedReaderQ1);
+                box1.setText(R.string.exerciseBufferedReaderQ1A1);
+                box2.setText(R.string.exerciseBufferedReaderQ1A2);
+                box3.setText(R.string.exerciseBufferedReaderQ1A3);
+                box4.setText(R.string.exerciseBufferedReaderQ1A4);
                 break;
             case 1:
-                textView.setText("Nachdem dem InputStream die einzulesende Textdatei zugewiesen wurde, wird so lange eingelesen, bis kein Text mehr vorhanden ist. Hierbei hilft:");
-                box1.setText("switch-case");
-                box2.setText("for-Schleife");
-                box3.setText("while-Schleife");
-                box4.setText("if-Bedingung");
+                textView.setText(R.string.exerciseBufferedReaderQ2);
+                box1.setText(R.string.exerciseBufferedReaderQ2A1);
+                box2.setText(R.string.exerciseBufferedReaderQ2A2);
+                box3.setText(R.string.exerciseBufferedReaderQ2A3);
+                box4.setText(R.string.exerciseBufferedReaderQ2A4);
                 break;
             case 2:
                 countCorrectAnswers();
-                textView.setText("Sie haben " + numOfCorrectAnswers + " Fragen von " + questionsQ + "richtig beantwortet.");
+                textView.setText(getString(R.string.endScreenExercise,numOfCorrectAnswers,answered.length));
                 box1.setClickable(false);
                 box1.setVisibility(View.INVISIBLE);
                 box2.setClickable(false);
@@ -161,7 +158,7 @@ public class ExerciseBufferedReader extends AppCompatActivity implements View.On
                 box3.setVisibility(View.INVISIBLE);
                 box4.setClickable(false);
                 box4.setVisibility(View.INVISIBLE);
-                submit.setText("Zurück zum Hauptmenü");
+                submit.setText(R.string.endScreenSubmit);
                 i++;
 
                 break;
