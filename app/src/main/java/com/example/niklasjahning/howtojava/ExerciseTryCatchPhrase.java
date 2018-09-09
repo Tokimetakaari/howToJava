@@ -41,8 +41,8 @@ public class ExerciseTryCatchPhrase extends AppCompatActivity implements View.On
     NavigationView burger;
     private Intent intent;
     //Hier die Strings für die Notification festlegen
-    String title = "Congrats";
-    String message = "Du hast Übung 1 bestanden";
+    String title = "Congratulation, du hast Übung 16 bestanden";
+    String message = "Zur nächsten Übung hier klicken!";
     private NotificationHelper nHelper;
     private int questionsQ = 3;
     private Intent next;
@@ -183,7 +183,7 @@ public class ExerciseTryCatchPhrase extends AppCompatActivity implements View.On
                 setText();
 
             } else if (i > 3) {
-                if (numOfCorrectAnswers >=  questionsQ /2) {
+                if (numOfCorrectAnswers >=  answered.length /2) {
                     mySound.start();
                     sendNotification(title, message, next);
                 }

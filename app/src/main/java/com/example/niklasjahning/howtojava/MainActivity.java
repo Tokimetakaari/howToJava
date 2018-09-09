@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         gestureObject = new GestureDetectorCompat(this, new LearnGesture());
         setupButtons();
         setupListener();
+        firstEntry();
     }
 
     public void loadPref() {
@@ -56,6 +57,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         database = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, databaseName).fallbackToDestructiveMigration().build();
     }
 
+    private void firstEntry()
+    {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                StorageEntry storageEntry = new StorageEntry();
+                storageEntry.setValue(0);
+                storageEntry.setConfiqName("unlockLevel");
+                database.daoAccess().insertEntry(storageEntry);
+            }
+        }).start();
+
+    }
     private void setupButtons()
     {
         theory = findViewById(R.id.theory_button);

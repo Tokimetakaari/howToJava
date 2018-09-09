@@ -29,8 +29,8 @@ public class ExerciseBufferedReader extends AppCompatActivity implements View.On
     NavigationView burger;
     private Intent intent;
     //Hier die Strings für die Notification festlegen
-    String title = "Congrats";
-    String message = "Du hast Übung 1 bestanden";
+    String title = "Congratulation, du hast Übung 18 bestanden";
+    String message = "Zur nächsten Übung hier klicken!";
     private NotificationHelper nHelper;
     private int questionsQ = 2;
     private Intent next;
@@ -58,7 +58,7 @@ public class ExerciseBufferedReader extends AppCompatActivity implements View.On
         submit = findViewById(R.id.checkbox_submit_button);
         nHelper = new NotificationHelper(this);
         submit.setOnClickListener(this);
-        next = new Intent(this,ExerciseSelectDatatypes2.class);
+        next = new Intent(this,MainActivity.class);
     }
 
     private void connectBurger() {
@@ -98,10 +98,6 @@ public class ExerciseBufferedReader extends AppCompatActivity implements View.On
         if(mToggle.onOptionsItemSelected(item)){
             return true;
         }
-
-
-
-
         return super.onOptionsItemSelected(item);
     }
 
@@ -135,6 +131,8 @@ public class ExerciseBufferedReader extends AppCompatActivity implements View.On
             }
         }
     }
+
+
 
     private void setText() {
         switch (i) {

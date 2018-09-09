@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.NotificationCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -40,6 +41,9 @@ public class ExerciseSelectDatatypes2 extends AppCompatActivity implements View.
     NavigationView burger;
     private Intent intent;
     private Intent next;
+    private NotificationHelper nHelper;
+    String title = "Congratulation, du hast Übung 1 bestanden";
+    String message = "Zur nächsten Übung hier klicken!";
 
 
     @Override
@@ -105,6 +109,7 @@ public class ExerciseSelectDatatypes2 extends AppCompatActivity implements View.
         editText7 = findViewById(R.id.cloze_answer_7);
         editText8 = findViewById(R.id.cloze_answer_8);
         next = new Intent(this,ExerciseClassesAndObjects.class);
+        nHelper = new NotificationHelper(this);
 
 
 
@@ -174,10 +179,10 @@ public class ExerciseSelectDatatypes2 extends AppCompatActivity implements View.
             } else if (i > 3) {
                 if (numOfCorrectAnswers >=  answered.length /2) {
                     mySound.start();
+                    update();
                     sendNotification(title, message,next);
 
                 }
-                update();
                 finish();
 
             }
@@ -225,5 +230,11 @@ public class ExerciseSelectDatatypes2 extends AppCompatActivity implements View.
     private void resetEdit()
     {
         editText1.setText("");
+    }
+
+
+    public void sendNotification(String title, String message, Intent next) {
+        NotificationCompat.Builder nBuilder = nHelper.getChannelNotification(title, message, next);
+        nHelper.getNotificationManager().notify(1, nBuilder.build());
     }
 }

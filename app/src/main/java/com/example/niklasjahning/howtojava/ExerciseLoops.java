@@ -11,70 +11,45 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class ProgrammingExerciseForMethods extends AppCompatActivity implements View.OnClickListener {
-
+public class ExerciseLoops extends AppCompatActivity implements View.OnClickListener {
 
     MediaPlayer mySound;
-    Button submit;
     TextView viewOne, viewTwo, viewThree;
     EditText textOne, textTwo,textThree;
+    Button submit;
+    int i = 0;
+    int numOfCorrectAnswers=0;
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
     NavigationView burger;
     private Intent intent;
-    int i = 0;
-    String title = "Congrats";
-    String message = "Du hast Übung 8 bestanden";
+    //Hier die Strings für die Notification festlegen
+    String title = "Congratulation, du hast Übung 7 bestanden";
+    String message = "Zur nächsten Übung hier klicken!";
     private NotificationHelper nHelper;
     private Intent next;
 
+
+    boolean[] answerCorrect = new boolean[5];
+    boolean[] answered = new boolean[5];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.programming_exercise);
+        setupItems();
         setupDrawer();
         connectBurger();
-        setupItems();
+        mySound = MediaPlayer.create(this,R.raw.sound);
         setText();
     }
 
-    @Override
-    public void onClick(View view) {
-        if (view.getId()==R.id.programmingExerciseButton)
-        {
-            if ( i < 2)
-            {compareTwoStrings();}
-            if ( i == 2)
-            {
-                mySound.start();
-                sendNotification(title, message, next);
-                update();
-            }
-            finish();
-
-        }
-    }
-    private void update()
-    {
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                PlayMenu.unlockLevelNumber=8;
-                StorageEntry storageEntry = MainActivity.database.daoAccess().getConfiqEntry("unlockLevel");
-                storageEntry.setValue(8);
-                MainActivity.database.daoAccess().updateEntries(storageEntry);
-            }
-        }).start();
-    }
-
-    private void setupItems()
-    {
-
+    private void setupItems() {
         textOne = findViewById(R.id.programmingExerciseEditText_1);
         textTwo = findViewById(R.id.programmingExerciseEditText_2);
         textTwo.setVisibility(View.GONE);
@@ -87,8 +62,84 @@ public class ProgrammingExerciseForMethods extends AppCompatActivity implements 
         viewThree.setVisibility(View.GONE);
         submit = findViewById(R.id.programmingExerciseButton);
         submit.setOnClickListener(this);
+        submit = findViewById(R.id.programmingExerciseButton);
         nHelper = new NotificationHelper(this);
-        next = new Intent(this,ExerciseSelectDatatypes2.class);
+        submit.setOnClickListener(this);
+        next = new Intent(this,ExerciseKonstruktoren.class);
+    }
+
+    private void connectBurger() {
+        burger = findViewById(R.id.test);
+        burger.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.play_menu:
+                        intent = new Intent(ExerciseLoops.this, PlayMenu.class);
+                        startActivity(intent);
+                        break;
+                    case R.id.theory_menu:
+                        intent = new Intent(ExerciseLoops.this, TheoryMenu.class);
+                        startActivity(intent);
+                        break;
+                    case R.id.setting_menu:
+                        intent = new Intent(ExerciseLoops.this, SettingsMenu.class);
+                        startActivity(intent);
+                        break;
+                    case R.id.moveToTheory:
+                        finish();
+                        intent = new Intent(ExerciseLoops.this, DataTypes.class);
+                        startActivity(intent);
+                        break;
+                    case R.id.credits:
+                        Toast.makeText(getApplicationContext(),"Thanks for playing!",Toast.LENGTH_SHORT).show();
+                        break;
+                }
+                return true;
+            }
+        });}
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        if(mToggle.onOptionsItemSelected(item)){
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void setupDrawer() {
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.burgerLayout);
+        mToggle = new ActionBarDrawerToggle(this,mDrawerLayout, R.string.open, R.string.close);
+        mDrawerLayout.addDrawerListener(mToggle);
+        mToggle.syncState();
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
+
+    @Override
+    public void onClick(View view)
+    {
+        if(view.getId() == R.id.checkbox_submit_button)
+        {
+            mySound.start();
+            update();
+            sendNotification(title, message,next);
+            finish();
+        }
+    }
+
+
+    private void update()
+    {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                PlayMenu.unlockLevelNumber=7;
+                StorageEntry storageEntry = MainActivity.database.daoAccess().getConfiqEntry("unlockLevel");
+                storageEntry.setValue(PlayMenu.unlockLevelNumber);
+                MainActivity.database.daoAccess().updateEntries(storageEntry);
+            }
+        }).start();
     }
 
     private void setText()
@@ -96,9 +147,10 @@ public class ProgrammingExerciseForMethods extends AppCompatActivity implements 
         switch (i)
         {
             case 0: viewOne.setText(R.string.programming_methods_exercise1);
-                    break;
+                break;
             case 1: viewOne.setText(R.string.programming_methods_exercise2);
-                    break;
+                break;
+
         }
     }
 
@@ -126,7 +178,7 @@ public class ProgrammingExerciseForMethods extends AppCompatActivity implements 
                     {
                         b++;
                     }
-                else{
+                    else{
                         return false;
                     }
                 }
@@ -168,57 +220,11 @@ public class ProgrammingExerciseForMethods extends AppCompatActivity implements 
         }
     }
 
-
-        private void connectBurger() {
-        burger = findViewById(R.id.test);
-        burger.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(MenuItem item) {
-                switch (item.getItemId()) {
-                    case R.id.play_menu:
-                        intent = new Intent(ProgrammingExerciseForMethods.this, PlayMenu.class);
-                        startActivity(intent);
-                        break;
-                    case R.id.theory_menu:
-                        intent = new Intent(ProgrammingExerciseForMethods.this, TheoryMenu.class);
-                        startActivity(intent);
-                        break;
-                    case R.id.setting_menu:
-                        intent = new Intent(ProgrammingExerciseForMethods.this, SettingsMenu.class);
-                        startActivity(intent);
-                        break;
-                    case R.id.moveToTheory:
-                        finish();
-                        intent = new Intent(ProgrammingExerciseForMethods.this, DataTypes.class);
-                        startActivity(intent);
-                        break;
-                    case R.id.credits:
-                        Toast.makeText(getApplicationContext(),"Thanks for playing!",Toast.LENGTH_SHORT).show();
-                        break;
-                }
-                return true;
-            }
-        });}
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-
-        if(mToggle.onOptionsItemSelected(item)){
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
-    private void setupDrawer() {
-        mDrawerLayout = (DrawerLayout) findViewById(R.id.burgerLayout);
-        mToggle = new ActionBarDrawerToggle(this,mDrawerLayout, R.string.open, R.string.close);
-        mDrawerLayout.addDrawerListener(mToggle);
-        mToggle.syncState();
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-    }
-
     public void sendNotification(String title, String message, Intent next) {
         NotificationCompat.Builder nBuilder = nHelper.getChannelNotification(title, message, next);
         nHelper.getNotificationManager().notify(1, nBuilder.build());
     }
+
 }
+
+

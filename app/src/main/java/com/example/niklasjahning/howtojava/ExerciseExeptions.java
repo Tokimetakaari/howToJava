@@ -116,10 +116,6 @@ public class ExerciseExeptions extends AppCompatActivity implements View.OnClick
         if(mToggle.onOptionsItemSelected(item)){
             return true;
         }
-
-
-
-
         return super.onOptionsItemSelected(item);
     }
 
@@ -174,9 +170,9 @@ public class ExerciseExeptions extends AppCompatActivity implements View.OnClick
         new Thread(new Runnable() {
             @Override
             public void run() {
-                PlayMenu.unlockLevelNumber=5;
+                PlayMenu.unlockLevelNumber=18;
                 StorageEntry storageEntry = MainActivity.database.daoAccess().getConfiqEntry("unlockLevel");
-                storageEntry.setValue(5);
+                storageEntry.setValue(PlayMenu.unlockLevelNumber);
                 MainActivity.database.daoAccess().updateEntries(storageEntry);
             }
         }).start();
@@ -280,7 +276,6 @@ public class ExerciseExeptions extends AppCompatActivity implements View.OnClick
                         if (itemPostions[3] == 4) {
                             if (itemPostions[4] == 5) {
                                 if (itemPostions[5] == 6) {
-
                                     answerCorrect[i] = true;
                                 }
                             }

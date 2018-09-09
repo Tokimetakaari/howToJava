@@ -61,17 +61,20 @@
     <string name="play_menu_button5">Operatoren</string>
     <string name="play_menu_button6">Bedingte Abfragen</string>
     <string name="play_menu_button7">Arrays</string>
-    <string name="play_menu_button8"></string>
-    <string name="play_menu_button9"></string>
-    <string name="play_menu_button10">Konstruktoren</string>
-    <string name="play_menu_button11">Methoden</string>
-    <string name="play_menu_button12">Methoden 2</string>
-    <string name="play_menu_button13">Vererbung</string>
-    <string name="play_menu_button14">Interfaces</string>
-    <string name="play_menu_button15">Events</string>
-    <string name="play_menu_button16">Try-Catch-Phrase</string>
-    <string name="play_menu_button17">Exceptions</string>
-    <string name="play_menu_button18">Buffered Reader</string>
+    <string name="play_menu_button8">Schleifen</string>
+    <string name="play_menu_button9">Konstruktoren</string>
+    <string name="play_menu_button10">Methoden</string>
+    <string name="play_menu_button11">Methoden 2</string>
+    <string name="play_menu_button12">Vererbung</string>
+    <string name="play_menu_button13">Interfaces</string>
+    <string name="play_menu_button14">Events</string>
+    <string name="play_menu_button15">Try-Catch-Phrase</string>
+    <string name="play_menu_button16">Exceptions</string>
+    <string name="play_menu_button17">Buffered Reader</string>
+    <string name="programming_exercises_answer_not_correct">Ihre Lösung ist fehlerhaft. Bitte überprüfen Sie sie noch einmal</string>
+    <string name="programming_exercises_answer_correct">Ihre Lösung stimmt</string>
+    <string name="programming_methods_exercise1">Scheiben Sie eine öffentliche Methode namens \'addieren\', die zwei Zahlen \'a\' und \'b\' übergeben bekommt und addiert und in einer neuen lokalen Variable namens \'c\' speichert. \'c\' soll anschließend ausgegeben werden.</string>
+    <string name="programming_methods_exercise2">Verändern sie die Methode nun so, dass die beiden Zahlen \'a\' und \'b\' mit einer while-Schleife solange verglichen werden bis \'a == b\' gilt. Solange \'a\' kleiner \'b\' soll \'a\' um 1 erhöht werden. Anschließend soll \'a\' zurückgegeben werden</string>
 
 
     <string-array name="spinnerNums">

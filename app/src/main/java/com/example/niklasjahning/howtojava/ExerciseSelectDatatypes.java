@@ -97,11 +97,7 @@ public class ExerciseSelectDatatypes extends AppCompatActivity implements View.O
         if(mToggle.onOptionsItemSelected(item)){
             return true;
         }
-
-
-
-
-        return super.onOptionsItemSelected(item);
+         return super.onOptionsItemSelected(item);
     }
 
     private void setupDrawer() {
@@ -144,7 +140,7 @@ public class ExerciseSelectDatatypes extends AppCompatActivity implements View.O
             public void run() {
                 PlayMenu.unlockLevelNumber=1;
                 StorageEntry storageEntry = MainActivity.database.daoAccess().getConfiqEntry("unlockLevel");
-                storageEntry.setValue(PlayMenu.unlockLevelNumber);
+                storageEntry.setValue(1);
                 MainActivity.database.daoAccess().updateEntries(storageEntry);
             }
         }).start();

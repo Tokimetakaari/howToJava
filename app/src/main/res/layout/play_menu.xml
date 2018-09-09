@@ -130,11 +130,7 @@
             android:layout_height="wrap_content"
             android:text="@string/play_menu_button17"
             android:id="@+id/play_lektion_17"/>
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/play_menu_button18"
-            android:id="@+id/play_lektion_18"/>
+
 
     </LinearLayout>
 
