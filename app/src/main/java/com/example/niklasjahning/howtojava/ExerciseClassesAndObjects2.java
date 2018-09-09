@@ -62,7 +62,7 @@ public class ExerciseClassesAndObjects2 extends AppCompatActivity implements Vie
         submit = findViewById(R.id.checkbox_submit_button);
         nHelper = new NotificationHelper(this);
         submit.setOnClickListener(this);
-        next = new Intent(this,ExerciseSelectDatatypes2.class);
+        next = new Intent(this,ExerciseOperators.class);
     }
 
     private void connectBurger() {
@@ -149,7 +149,7 @@ public class ExerciseClassesAndObjects2 extends AppCompatActivity implements Vie
             public void run() {
                 PlayMenu.unlockLevelNumber=4;
                 StorageEntry storageEntry = MainActivity.database.daoAccess().getConfiqEntry("unlockLevel");
-                storageEntry.setValue(4);
+                storageEntry.setValue(PlayMenu.unlockLevelNumber);
                 MainActivity.database.daoAccess().updateEntries(storageEntry);
             }
         }).start();

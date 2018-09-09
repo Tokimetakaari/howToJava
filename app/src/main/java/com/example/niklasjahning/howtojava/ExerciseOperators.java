@@ -1,8 +1,10 @@
 package com.example.niklasjahning.howtojava;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.NotificationCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -24,6 +26,12 @@ public class ExerciseOperators extends AppCompatActivity implements View.OnClick
     private ActionBarDrawerToggle mToggle;
     NavigationView burger;
     private Intent intent;
+    private Intent next;
+    MediaPlayer mySound;
+    private NotificationHelper nHelper;
+    String title = "Congratulation, du hast Übung 1 bestanden";
+    String message = "Zur nächsten Übung hier klicken!";
+
 
     boolean[] answerCorrect = new boolean[7];
     boolean[] answered = new boolean[7];
@@ -35,6 +43,7 @@ public class ExerciseOperators extends AppCompatActivity implements View.OnClick
         setupItems();
         setupDrawer();
         connectBurger();
+        mySound = MediaPlayer.create(this,R.raw.sound);
         setText();
 
 
@@ -49,6 +58,8 @@ public class ExerciseOperators extends AppCompatActivity implements View.OnClick
         box4 = findViewById(R.id.checkbox_layout_4_checkbox4);
         submit = findViewById(R.id.checkbox_submit_button);
         submit.setOnClickListener(this);
+        nHelper = new NotificationHelper(this);
+        next = new Intent(this,ExerciseIfElse.class);
     }
 
     private void connectBurger() {
@@ -103,22 +114,36 @@ public class ExerciseOperators extends AppCompatActivity implements View.OnClick
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
+    private void update()
+    {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                PlayMenu.unlockLevelNumber=5;
+                StorageEntry storageEntry = MainActivity.database.daoAccess().getConfiqEntry("unlockLevel");
+                storageEntry.setValue(PlayMenu.unlockLevelNumber);
+                MainActivity.database.daoAccess().updateEntries(storageEntry);
+            }
+        }).start();
+    }
 
     @Override
-    public void onClick(View view)
-    {
-        if(view.getId() == R.id.checkbox_submit_button)
-        {
-            if ( (box1.isChecked()|| box2.isChecked() || box3.isChecked() || box4.isChecked()) && (i <=7))
-            {
+    public void onClick(View view) {
+        if (view.getId() == R.id.checkbox_submit_button) {
+            if ((box1.isChecked() || box2.isChecked() || box3.isChecked() || box4.isChecked()) && (i <= 7)) {
                 checkCorrectAnswers();
                 answered[i] = true;
                 i++;
                 setText();
 
-            } else if (i>=7) {
-                finish();
+            } else if (i >= 7) {
+                if (numOfCorrectAnswers >= answerCorrect.length / 2) {
+                    mySound.start();
+                    sendNotification(title, message, next);
+                    update();
+                    finish();
 
+                }
             }
         }
     }
@@ -178,11 +203,7 @@ public class ExerciseOperators extends AppCompatActivity implements View.OnClick
                 box4.setText("70 % 65 = ?");
                 break;
             case 7:
-                for (int j = 0; j < 7; j++)
-                {
-                    if (answerCorrect[j])
-                    {numOfCorrectAnswers ++;}
-                }
+                countCorrectAnswers();
                 textView.setText("Sie haben " + numOfCorrectAnswers +" richtig beantwortet");
                 box1.setVisibility(View.INVISIBLE);
                 box1.setClickable(false);
@@ -253,6 +274,19 @@ public class ExerciseOperators extends AppCompatActivity implements View.OnClick
 
                 break;
         }
+    }
+
+    private void countCorrectAnswers() {
+        for (int j = 0; j < 7; j++)
+        {
+            if (answerCorrect[j])
+            {numOfCorrectAnswers ++;}
+        }
+    }
+
+    public void sendNotification(String title, String message, Intent next) {
+        NotificationCompat.Builder nBuilder = nHelper.getChannelNotification(title, message, next);
+        nHelper.getNotificationManager().notify(1, nBuilder.build());
     }
 
 

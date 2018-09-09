@@ -86,7 +86,7 @@ public class ExerciseClassesAndObjects extends AppCompatActivity implements View
         submit = findViewById(R.id.cloze_submit_button);
         nHelper = new NotificationHelper(this);
         submit.setOnClickListener(this);
-        next = new Intent(this,ExerciseSelectDatatypes2.class);
+        next = new Intent(this,ExerciseClassesAndObjects2.class);
     }
 
     private void connectBurger() {
@@ -172,7 +172,7 @@ public class ExerciseClassesAndObjects extends AppCompatActivity implements View
             public void run() {
                 PlayMenu.unlockLevelNumber=3;
                 StorageEntry storageEntry = MainActivity.database.daoAccess().getConfiqEntry("unlockLevel");
-                storageEntry.setValue(3);
+                storageEntry.setValue(PlayMenu.unlockLevelNumber);
                 MainActivity.database.daoAccess().updateEntries(storageEntry);
             }
         }).start();

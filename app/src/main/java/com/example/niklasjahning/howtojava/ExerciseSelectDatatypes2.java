@@ -80,7 +80,7 @@ public class ExerciseSelectDatatypes2 extends AppCompatActivity implements View.
                     if (answerCorrect[j])
                     {numOfCorrectAnswers ++;}
                 }
-                textView.setText("Sie haben " + numOfCorrectAnswers +" richtig beantwortet");
+                textView.setText("Sie haben " + numOfCorrectAnswers +" von " + answered.length + " richtig beantwortet");
                 editText1.setVisibility(View.INVISIBLE);
                 editText1.setClickable(false);
                 i++;
@@ -172,7 +172,11 @@ public class ExerciseSelectDatatypes2 extends AppCompatActivity implements View.
                 setText();
 
             } else if (i > 3) {
-                PlayMenu.unlockLevelNumber = 2;
+                if (numOfCorrectAnswers >=  answered.length /2) {
+                    mySound.start();
+                    sendNotification(title, message,next);
+
+                }
                 update();
                 finish();
 
@@ -187,7 +191,7 @@ public class ExerciseSelectDatatypes2 extends AppCompatActivity implements View.
             public void run() {
                 PlayMenu.unlockLevelNumber=2;
                 StorageEntry storageEntry = MainActivity.database.daoAccess().getConfiqEntry("unlockLevel");
-                storageEntry.setValue(2);
+                storageEntry.setValue(PlayMenu.unlockLevelNumber);
                 MainActivity.database.daoAccess().updateEntries(storageEntry);
             }
         }).start();

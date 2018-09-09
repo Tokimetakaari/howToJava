@@ -132,12 +132,12 @@ public class ExerciseIfElse extends AppCompatActivity implements View.OnClickLis
                 if (numOfCorrectAnswers >=  questionsQ /2) {
                     mySound.start();
                     sendNotification(title, message,next);
+                    update();
                 }
                 finish();
             }
         }
     }
-
 
     private void setText() {
         switch (i) {
@@ -197,6 +197,18 @@ public class ExerciseIfElse extends AppCompatActivity implements View.OnClickLis
         resetCheckbox();
     }
 
+    private void update()
+    {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                PlayMenu.unlockLevelNumber=6;
+                StorageEntry storageEntry = MainActivity.database.daoAccess().getConfiqEntry("unlockLevel");
+                storageEntry.setValue(PlayMenu.unlockLevelNumber);
+                MainActivity.database.daoAccess().updateEntries(storageEntry);
+            }
+        }).start();
+    }
 
     private void resetCheckbox ()
     {

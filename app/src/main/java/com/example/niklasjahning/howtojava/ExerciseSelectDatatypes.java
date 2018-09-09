@@ -31,7 +31,6 @@ public class ExerciseSelectDatatypes extends AppCompatActivity implements View.O
     String title = "Congratulation, du hast Übung 1 bestanden";
     String message = "Zur nächsten Übung hier klicken!";
     private NotificationHelper nHelper;
-    private int questionsQ = 5;
     private Intent next;
 
 
@@ -48,7 +47,6 @@ public class ExerciseSelectDatatypes extends AppCompatActivity implements View.O
         mySound = MediaPlayer.create(this,R.raw.sound);
         setText();
     }
-
 
     private void setupItems() {
         textView = findViewById(R.id.checkbox_layout_4_question);
@@ -129,7 +127,7 @@ public class ExerciseSelectDatatypes extends AppCompatActivity implements View.O
             else if (i>5)
             {
 
-                if (numOfCorrectAnswers >=  questionsQ /2) {
+                if (numOfCorrectAnswers >=  answered.length /2) {
                     mySound.start();
                     update();
                     sendNotification(title, message,next);
@@ -146,7 +144,7 @@ public class ExerciseSelectDatatypes extends AppCompatActivity implements View.O
             public void run() {
                 PlayMenu.unlockLevelNumber=1;
                 StorageEntry storageEntry = MainActivity.database.daoAccess().getConfiqEntry("unlockLevel");
-                storageEntry.setValue(1);
+                storageEntry.setValue(PlayMenu.unlockLevelNumber);
                 MainActivity.database.daoAccess().updateEntries(storageEntry);
             }
         }).start();
@@ -191,7 +189,7 @@ public class ExerciseSelectDatatypes extends AppCompatActivity implements View.O
                 break;
             case 5:
                 countCorrectAnswers();
-                textView.setText("Sie haben " + numOfCorrectAnswers + " Fragen von " + questionsQ + "richtig beantwortet.");
+                textView.setText("Sie haben " + numOfCorrectAnswers + " Fragen von " + answered.length + " richtig beantwortet.");
                 box1.setClickable(false);
                 box1.setVisibility(View.INVISIBLE);
                 box2.setClickable(false);
