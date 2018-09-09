@@ -123,7 +123,6 @@ public class ExerciseTryCatchPhrase extends AppCompatActivity implements View.On
                     case R.id.moveToTheory:
                         finish();
                         intent = new Intent(ExerciseTryCatchPhrase.this, DataInJava.class);
-
                         startActivity(intent);
                         break;
                     case R.id.credits:

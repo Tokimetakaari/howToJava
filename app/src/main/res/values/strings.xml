@@ -288,8 +288,28 @@
 
     <string name="programming_exercises_answer_not_correct">Ihre Lösung ist fehlerhaft. Bitte überprüfen Sie sie noch einmal</string>
     <string name="programming_exercises_answer_correct">Ihre Lösung stimmt</string>
+
+    // Programming for Methods
+
     <string name="programming_methods_exercise1">Scheiben Sie eine öffentliche Methode namens \'addieren\', die zwei Zahlen \'a\' und \'b\' übergeben bekommt und addiert und in einer neuen lokalen Variable namens \'c\' speichert. \'c\' soll anschließend ausgegeben werden.</string>
     <string name="programming_methods_exercise2">Verändern sie die Methode nun so, dass die beiden Zahlen \'a\' und \'b\' mit einer while-Schleife solange verglichen werden bis \'a == b\' gilt. Solange \'a\' kleiner \'b\' soll \'a\' um 1 erhöht werden. Anschließend soll \'a\' zurückgegeben werden</string>
+    <string name="exerciseProgrammingMethodsA1">public int addieren(int a, int b) { int c = a + b ;return c;}</string>
+    <string name="exerciseProgrammingMethodsA1A1">public int addieren(int a, int b){ int c; c = a + b ;return c;}</string>
+    <string name="exerciseProgrammingMethodsA1A2">public int addieren(int a, int b) {return a+b;}</string>
+    <string name="exerciseProgrammingMethodsA2A1"><![CDATA[public int addieren(int a, int b) { while (a < b){ a = a+1;} return a;}]]></string>
+    <string name="exerciseProgrammingMethodsA2A2"><![CDATA[public int addieren(int a, int b) { while (a < b){ a ++;}return a;}]]></string>
+    <string name="exerciseProgrammingMethodsA2A3"><![CDATA[public int addieren(int a, int b) { while (a < b){ a += 1;}return a;}]]></string>
+
+    // Programming for Loops
+
+
+    <string name="programming_Loops_exerciseQ1">Erstellen sie eine for-Schleife die genau 10 mal Wiederholt wird und bei 0 startet. </string>
+    <string name="programming_Loops_exerciseQ2">Verändern sie die for-Schleife so, dass sie bei 10 startet und bis 0 runter zählt. </string>
+    <string name="exerciseProgrammingLoopsA1A1"><![CDATA[for ( int i = 0; i< 10; i++)]]></string>
+    <string name="exerciseProgrammingLoopsA1A2"><![CDATA[for ( int i = 0; i< 10; i++) {}]]></string>
+    <string name="exerciseProgrammingLoopsA2A2"><![CDATA[for ( int i = 10; i > 0; i--) {}]]></string>
+    <string name="exerciseProgrammingLoopsA2A1"><![CDATA[for ( int i = 10; i> 0; i--)]]></string>
+
 
     // Buffered Reader exercise
     <string name="exerciseBufferedReaderQ1">Zum Hochladen und Einlesen einer Textdatei benötigt man:</string>

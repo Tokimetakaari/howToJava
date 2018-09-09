@@ -27,8 +27,6 @@ public class ProgrammingExerciseForMethods extends AppCompatActivity implements 
     NavigationView burger;
     private Intent intent;
     int i = 0;
-    String title = "Congrats";
-    String message = "Du hast Übung 8 bestanden";
     private NotificationHelper nHelper;
     private Intent next;
 
@@ -50,14 +48,18 @@ public class ProgrammingExerciseForMethods extends AppCompatActivity implements 
         {
             if ( i < 2)
             {compareTwoStrings();}
-            if ( i == 2)
+            else
             {
+                if ( i == 2)
+                {
+                    mySound.start();
+                    sendNotification(getString(R.string.notifyTitle11), getString(R.string.notifyMessage), next);
+                    update();
+                }
 
-                mySound.start();
-                sendNotification(title, message, next);
-                update();
+                finish();
             }
-            finish();
+
 
         }
     }
@@ -140,11 +142,9 @@ public class ProgrammingExerciseForMethods extends AppCompatActivity implements 
     {
         switch (i) {
             case 0:
-                String correctSolution = "public int addieren(int a, int b) { int c = a + b ;return c;}";
-                String correctSolutionTwo  = "public int addieren(int a, int b){ int c; c = a + b ;return c;}";
-                String correctSolutionThree = "public int addieren(int a, int b) {return a+b;}";
-
-                if (compareStrings(correctSolution) || compareStrings(correctSolutionTwo) || compareStrings(correctSolutionThree)) {
+                if (compareStrings(getString(R.string.exerciseProgrammingMethodsA1))
+                        || compareStrings( getString(R.string.exerciseProgrammingMethodsA1A1))
+                        || compareStrings(getString(R.string.exerciseProgrammingMethodsA1A2))) {
                     viewOne.setText(R.string.programming_exercises_answer_correct);
                     i++;
                     setText();
@@ -153,11 +153,9 @@ public class ProgrammingExerciseForMethods extends AppCompatActivity implements 
                 }
                 break;
             case 1:
-                correctSolution           = "public int addieren(int a, int b) { while (a < b){ a = a+1;} return a;}";
-                correctSolutionTwo        = "public int addieren(int a, int b) { while (a < b){ a ++;}return a;}";
-                correctSolutionThree       = "public int addieren(int a, int b) { while (a < b){ a += 1;}return a;}";
-
-                if (compareStrings(correctSolution) || compareStrings(correctSolutionTwo)  || compareStrings(correctSolutionThree)) {
+                if (compareStrings(getString(R.string.exerciseProgrammingMethodsA2A1))
+                        || compareStrings(getString(R.string.exerciseProgrammingMethodsA2A2))
+                        || compareStrings(getString(R.string.exerciseProgrammingMethodsA2A3))) {
                     viewOne.setText(R.string.programming_exercises_answer_correct);
                     i++;
                     setText();
@@ -195,7 +193,7 @@ public class ProgrammingExerciseForMethods extends AppCompatActivity implements 
                         startActivity(intent);
                         break;
                     case R.id.credits:
-                        Toast.makeText(getApplicationContext(),"Thanks for playing!",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),getString(R.string.credits_text),Toast.LENGTH_SHORT).show();
                         break;
                 }
                 return true;

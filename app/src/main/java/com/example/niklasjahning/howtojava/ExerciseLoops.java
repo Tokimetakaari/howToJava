@@ -83,7 +83,7 @@ public class ExerciseLoops extends AppCompatActivity implements View.OnClickList
                         break;
                     case R.id.moveToTheory:
                         finish();
-                        intent = new Intent(ExerciseLoops.this, DataTypes.class);
+                        intent = new Intent(ExerciseLoops.this, Loops.class);
                         startActivity(intent);
                         break;
                     case R.id.credits:
@@ -114,12 +114,23 @@ public class ExerciseLoops extends AppCompatActivity implements View.OnClickList
     @Override
     public void onClick(View view)
     {
-        if(view.getId() == R.id.checkbox_submit_button)
+        if (view.getId()==R.id.programmingExerciseButton)
         {
-            mySound.start();
-            update();
-            sendNotification(getString(R.string.notifyTitle8), getString(R.string.notifyMessage) ,next);
-            finish();
+            if ( i < 2)
+            {compareTwoStrings();}
+            else
+            {
+                if ( i == 2)
+                {
+                    mySound.start();
+                    sendNotification(getString(R.string.notifyTitle11), getString(R.string.notifyMessage), next);
+                    update();
+                }
+
+                finish();
+            }
+
+
         }
     }
 
@@ -141,9 +152,9 @@ public class ExerciseLoops extends AppCompatActivity implements View.OnClickList
     {
         switch (i)
         {
-            case 0: viewOne.setText(R.string.programming_methods_exercise1);
+            case 0: viewOne.setText(R.string.programming_Loops_exerciseQ1);
                 break;
-            case 1: viewOne.setText(R.string.programming_methods_exercise2);
+            case 1: viewOne.setText(R.string.programming_Loops_exerciseQ2);
                 break;
 
         }
@@ -185,11 +196,8 @@ public class ExerciseLoops extends AppCompatActivity implements View.OnClickList
     {
         switch (i) {
             case 0:
-                String correctSolution = "public int addieren(int a, int b) { int c = a + b ;return c;}";
-                String correctSolutionTwo  = "public int addieren(int a, int b){ int c; c = a + b ;return c;}";
-                String correctSolutionThree = "public int addieren(int a, int b) {return a+b;}";
-
-                if (compareStrings(correctSolution) || compareStrings(correctSolutionTwo) || compareStrings(correctSolutionThree)) {
+                if (compareStrings(getString(R.string.exerciseProgrammingLoopsA1A1)) || compareStrings(getString(R.string.exerciseProgrammingLoopsA1A2)))
+            {
                     viewOne.setText(R.string.programming_exercises_answer_correct);
                     i++;
                     setText();
@@ -198,11 +206,8 @@ public class ExerciseLoops extends AppCompatActivity implements View.OnClickList
                 }
                 break;
             case 1:
-                correctSolution           = "public int addieren(int a, int b) { while (a < b){ a = a+1;} return a;}";
-                correctSolutionTwo        = "public int addieren(int a, int b) { while (a < b){ a ++;}return a;}";
-                correctSolutionThree       = "public int addieren(int a, int b) { while (a < b){ a += 1;}return a;}";
 
-                if (compareStrings(correctSolution) || compareStrings(correctSolutionTwo)  || compareStrings(correctSolutionThree)) {
+                if (compareStrings(getString(R.string.exerciseProgrammingLoopsA2A1)) || compareStrings(getString(R.string.exerciseProgrammingLoopsA2A2))) {
                     viewOne.setText(R.string.programming_exercises_answer_correct);
                     i++;
                     setText();
