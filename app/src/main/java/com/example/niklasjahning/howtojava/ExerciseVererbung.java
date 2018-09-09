@@ -39,6 +39,7 @@ public class ExerciseVererbung extends AppCompatActivity implements View.OnClick
         setContentView(R.layout.cloze_default);
         setupDrawer();
         connectBurger();
+        mySound = MediaPlayer.create(this,R.raw.sound);
         setupItems();
         setText();
 
@@ -127,7 +128,7 @@ public class ExerciseVererbung extends AppCompatActivity implements View.OnClick
                         startActivity(intent);
                         break;
                     case R.id.credits:
-                        Toast.makeText(getApplicationContext(),"Thanks for playing!",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),R.string.credits_text,Toast.LENGTH_SHORT).show();
                         break;
                 }
                 return true;

@@ -40,6 +40,7 @@ public class ProgrammingExerciseForMethods extends AppCompatActivity implements 
         setupDrawer();
         connectBurger();
         setupItems();
+        mySound = MediaPlayer.create(this,R.raw.sound);
         setText();
     }
 
@@ -51,6 +52,7 @@ public class ProgrammingExerciseForMethods extends AppCompatActivity implements 
             {compareTwoStrings();}
             if ( i == 2)
             {
+
                 mySound.start();
                 sendNotification(title, message, next);
                 update();

@@ -41,6 +41,7 @@ public class ExerciseTryCatchPhrase extends AppCompatActivity implements View.On
         setContentView(R.layout.cloze_default);
         setupDrawer();
         connectBurger();
+        mySound = MediaPlayer.create(this,R.raw.sound);
         setupItems();
         setText();
 

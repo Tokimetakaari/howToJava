@@ -86,6 +86,7 @@ public class PlayMenu extends AppCompatActivity implements View.OnClickListener 
         buttonList[15]=findViewById(R.id.play_lektion_16);
         buttonList[16]=findViewById(R.id.play_lektion_17);
 
+
         connectBurger();
     }
 
