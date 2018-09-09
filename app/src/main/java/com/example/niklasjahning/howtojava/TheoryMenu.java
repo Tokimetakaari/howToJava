@@ -76,7 +76,7 @@ public class TheoryMenu extends AppCompatActivity implements View.OnClickListene
                     case R.id.play_menu:
                         i = new Intent(TheoryMenu.this, PlayMenu.class);
                         startActivity(i);
-
+                        break;
                     case R.id.theory_menu:
                         Toast.makeText(getApplicationContext(),"Du bist bereits in Theory",Toast.LENGTH_SHORT).show();
                         break;

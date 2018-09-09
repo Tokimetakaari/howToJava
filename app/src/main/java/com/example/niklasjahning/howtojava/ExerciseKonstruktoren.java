@@ -43,9 +43,6 @@ public class ExerciseKonstruktoren extends AppCompatActivity implements View.OnC
     private ActionBarDrawerToggle mToggle;
     NavigationView burger;
     private Intent intent;
-    //Hier die Strings für die Notification festlegen
-    String title = "Congrats";
-    String message = "Du hast Übung 1 bestanden";
     private NotificationHelper nHelper;
     private int questionsQ = 4;
     private Intent next;
@@ -101,9 +98,10 @@ public class ExerciseKonstruktoren extends AppCompatActivity implements View.OnC
                     if (answerCorrect[j])
                     {numOfCorrectAnswers ++;}
                 }
-                textView.setText("Sie haben " + numOfCorrectAnswers +" richtig beantwortet");
+                textView.setText(getString(R.string.endScreenExercise,numOfCorrectAnswers,answered.length));
                 editText1.setVisibility(View.INVISIBLE);
                 editText1.setClickable(false);
+                submit.setText(R.string.endScreenSubmit);
                 i++;
                 break;
 
@@ -126,6 +124,7 @@ public class ExerciseKonstruktoren extends AppCompatActivity implements View.OnC
         editText7 = findViewById(R.id.cloze_answer_7);
         editText8 = findViewById(R.id.cloze_answer_8);
         next = new Intent(this,ExerciseSelectDatatypes2.class);
+        nHelper = new NotificationHelper(this);
 
     }
 
@@ -155,7 +154,7 @@ public class ExerciseKonstruktoren extends AppCompatActivity implements View.OnC
                         startActivity(intent);
                         break;
                     case R.id.credits:
-                        Toast.makeText(getApplicationContext(),"Thanks for playing!",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),R.string.credits_text,Toast.LENGTH_SHORT).show();
                         break;
                 }
                 return true;
@@ -194,11 +193,10 @@ public class ExerciseKonstruktoren extends AppCompatActivity implements View.OnC
                 setText();
 
             } else if (i > 4) {
-                PlayMenu.unlockLevelNumber = 1;
                 if (numOfCorrectAnswers >=  questionsQ /2) {
                     mySound.start();
                     update();
-                    sendNotification(title, message, next);
+                    sendNotification(getString(R.string.notifyTitle9), getString(R.string.notifyMessage), next);
                 }
                 finish();
 

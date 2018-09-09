@@ -96,9 +96,8 @@ public class PlayMenu extends AppCompatActivity implements View.OnClickListener 
             public boolean onNavigationItemSelected(MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.play_menu:
-
                         Toast.makeText(getApplicationContext(),"Du befindest dich bereits in Play",Toast.LENGTH_SHORT).show();
-
+                        break;
                     case R.id.theory_menu:
                         i = new Intent(PlayMenu.this, TheoryMenu.class);
                         startActivity(i);
@@ -110,7 +109,7 @@ public class PlayMenu extends AppCompatActivity implements View.OnClickListener 
                         Toast.makeText(getApplicationContext(),"Du bist aktuell in keiner Übung",Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.credits:
-                        Toast.makeText(getApplicationContext(),"Thanks for playing!",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), R.string.credits_text,Toast.LENGTH_SHORT).show();
                         break;
                 }
                 return true;

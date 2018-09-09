@@ -77,10 +77,9 @@ public class Theory extends AppCompatActivity implements View.OnClickListener
             public boolean onNavigationItemSelected(MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.play_menu:
-
                         i = new Intent(Theory.this, PlayMenu.class);
                         startActivity(i);
-
+                        break;
                     case R.id.theory_menu:
                         i = new Intent(Theory.this, TheoryMenu.class);
                         startActivity(i);

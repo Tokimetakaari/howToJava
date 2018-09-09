@@ -80,7 +80,7 @@ public class ExerciseArray extends AppCompatActivity implements View.OnClickList
                         startActivity(intent);
                         break;
                     case R.id.credits:
-                        Toast.makeText(getApplicationContext(),"Thanks for playing!",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),R.string.credits_text,Toast.LENGTH_SHORT).show();
                         break;
                 }
                 return true;

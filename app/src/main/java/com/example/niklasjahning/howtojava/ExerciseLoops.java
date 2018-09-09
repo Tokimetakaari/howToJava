@@ -28,9 +28,6 @@ public class ExerciseLoops extends AppCompatActivity implements View.OnClickList
     private ActionBarDrawerToggle mToggle;
     NavigationView burger;
     private Intent intent;
-    //Hier die Strings für die Notification festlegen
-    String title = "Congratulation, du hast Übung 7 bestanden";
-    String message = "Zur nächsten Übung hier klicken!";
     private NotificationHelper nHelper;
     private Intent next;
 
@@ -92,7 +89,7 @@ public class ExerciseLoops extends AppCompatActivity implements View.OnClickList
                         startActivity(intent);
                         break;
                     case R.id.credits:
-                        Toast.makeText(getApplicationContext(),"Thanks for playing!",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),R.string.credits_text,Toast.LENGTH_SHORT).show();
                         break;
                 }
                 return true;
@@ -123,7 +120,7 @@ public class ExerciseLoops extends AppCompatActivity implements View.OnClickList
         {
             mySound.start();
             update();
-            sendNotification(title, message,next);
+            sendNotification(getString(R.string.notifyTitle8), getString(R.string.notifyMessage) ,next);
             finish();
         }
     }
@@ -134,7 +131,7 @@ public class ExerciseLoops extends AppCompatActivity implements View.OnClickList
         new Thread(new Runnable() {
             @Override
             public void run() {
-                PlayMenu.unlockLevelNumber=7;
+                PlayMenu.unlockLevelNumber=8;
                 StorageEntry storageEntry = MainActivity.database.daoAccess().getConfiqEntry("unlockLevel");
                 storageEntry.setValue(PlayMenu.unlockLevelNumber);
                 MainActivity.database.daoAccess().updateEntries(storageEntry);
