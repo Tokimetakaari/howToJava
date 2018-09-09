@@ -114,6 +114,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         return super.onTouchEvent(event);
     }
 
+    //https://www.youtube.com/watch?v=Q5Ndr944U2o&t=392s
     class LearnGesture extends GestureDetector.SimpleOnGestureListener {
         @Override
         public boolean onFling(MotionEvent event1, MotionEvent event2, float velocityX, float velocityY) {
