@@ -29,6 +29,7 @@ public class ExerciseForMethods1 extends AppCompatActivity implements View.OnCli
         boolean[] answered = new boolean[5];
         MediaPlayer mySound;
         private NotificationHelper nHelper;
+        private Intent next;
 
         @Override
         protected void onCreate(Bundle savedInstanceState)
@@ -52,6 +53,7 @@ public class ExerciseForMethods1 extends AppCompatActivity implements View.OnCli
             submit = findViewById(R.id.checkbox_submit_button);
             nHelper = new NotificationHelper(this);
             submit.setOnClickListener(this);
+            next = new Intent(this,ExerciseVererbung.class);
         }
 
         private void connectBurger() {
@@ -130,14 +132,14 @@ public class ExerciseForMethods1 extends AppCompatActivity implements View.OnCli
             }
         }
 
-    private void update()
+         private void update()
     {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                PlayMenu.unlockLevelNumber=7;
+                PlayMenu.unlockLevelNumber=10;
                 StorageEntry storageEntry = MainActivity.database.daoAccess().getConfiqEntry("unlockLevel");
-                storageEntry.setValue(7);
+                storageEntry.setValue(PlayMenu.unlockLevelNumber);
                 MainActivity.database.daoAccess().updateEntries(storageEntry);
             }
         }).start();

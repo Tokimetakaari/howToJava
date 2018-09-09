@@ -29,7 +29,6 @@ public class ExerciseInterfaces extends AppCompatActivity implements View.OnClic
     private Intent intent;
     private NotificationHelper nHelper;
     private Intent next;
-
     boolean[] answerCorrect = new boolean[2];
     boolean[] answered = new boolean[2];
 
@@ -53,7 +52,7 @@ public class ExerciseInterfaces extends AppCompatActivity implements View.OnClic
         submit = findViewById(R.id.checkbox_submit_button);
         nHelper = new NotificationHelper(this);
         submit.setOnClickListener(this);
-        next = new Intent(this,ExerciseSelectDatatypes2.class);
+        next = new Intent(this,ExerciseEvents.class);
     }
 
     private void connectBurger() {

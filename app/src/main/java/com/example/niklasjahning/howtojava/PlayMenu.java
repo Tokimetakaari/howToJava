@@ -106,7 +106,7 @@ public class PlayMenu extends AppCompatActivity implements View.OnClickListener 
                         i = new Intent(PlayMenu.this, SettingsMenu.class);
                         startActivity(i);
                     case R.id.moveToTheory:
-                        Toast.makeText(getApplicationContext(),"Du bist aktuell in keiner Übung",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),R.string.noExercise,Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.credits:
                         Toast.makeText(getApplicationContext(), R.string.credits_text,Toast.LENGTH_SHORT).show();

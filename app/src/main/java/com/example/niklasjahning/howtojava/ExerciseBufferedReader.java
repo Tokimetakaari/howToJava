@@ -29,9 +29,7 @@ public class ExerciseBufferedReader extends AppCompatActivity implements View.On
     NavigationView burger;
     private Intent intent;
     private NotificationHelper nHelper;
-    private int questionsQ = 2;
     private Intent next;
-
     boolean[] answerCorrect = new boolean[2];
     boolean[] answered = new boolean[2];
 
@@ -120,9 +118,9 @@ public class ExerciseBufferedReader extends AppCompatActivity implements View.On
             }
             else if (i>2)
             {
-                if (numOfCorrectAnswers >=  questionsQ /2) {
+                if (numOfCorrectAnswers >=  answered.length /2) {
                     mySound.start();
-                    sendNotification(getString(R.string.notifyTitle17), getString(R.string.notifyMessage), next);
+                    sendNotification(getString(R.string.notifyTitle17), getString(R.string.endMessage), next);
                 }
                 finish();
             }

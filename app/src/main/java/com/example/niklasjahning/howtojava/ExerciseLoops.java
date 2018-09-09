@@ -30,8 +30,6 @@ public class ExerciseLoops extends AppCompatActivity implements View.OnClickList
     private Intent intent;
     private NotificationHelper nHelper;
     private Intent next;
-
-
     boolean[] answerCorrect = new boolean[5];
     boolean[] answered = new boolean[5];
 

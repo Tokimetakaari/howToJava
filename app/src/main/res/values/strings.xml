@@ -51,6 +51,10 @@
     //Burger
     <string name="credits_text">Thanks for playing!</string>
     <string name="credits"><![CDATA[NJK<3]]></string>
+    <string name="noExercise">Du bist aktuell in keiner Übung</string>
+    <string name="noSetting">Du befindest dich bereits in den Einstellungen</string>
+    <string name="noTheory">Du bist bereits in Theory</string>
+
 
 
     <string-array name="spinnerNums">
@@ -71,6 +75,7 @@
     <string name="this_color">Alternative Theme</string>
     <string name="save_button">SAVE</string>
     <string name="notifyMessage">Zur nächsten Übung hier klicken!</string>
+    <string name ="endMessage">Zurück zum Hauptmenü!</string>
     <string name="notifyTitle1">Congratulation, du hast Übung 1 bestanden</string>
     <string name="notifyTitle2">Congratulation, du hast Übung 2 bestanden</string>
     <string name="notifyTitle3">Congratulation, du hast Übung 3 bestanden</string>

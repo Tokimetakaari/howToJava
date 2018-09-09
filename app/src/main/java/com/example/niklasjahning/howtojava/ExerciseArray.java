@@ -53,7 +53,7 @@ public class ExerciseArray extends AppCompatActivity implements View.OnClickList
         submit = findViewById(R.id.checkbox_submit_button);
         nHelper = new NotificationHelper(this);
         submit.setOnClickListener(this);
-        next = new Intent(this,ExerciseSelectDatatypes2.class);
+        next = new Intent(this,ExerciseLoops.class);
     }
 
     private void connectBurger() {

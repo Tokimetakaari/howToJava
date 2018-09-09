@@ -103,7 +103,7 @@ public class ExerciseEvents extends AppCompatActivity implements View.OnClickLis
         editText6 = findViewById(R.id.cloze_answer_6);
         editText7 = findViewById(R.id.cloze_answer_7);
         editText8 = findViewById(R.id.cloze_answer_8);
-        next = new Intent(this,ExerciseSelectDatatypes2.class);
+        next = new Intent(this,ExerciseTryCatchPhrase.class);
 
     }
 

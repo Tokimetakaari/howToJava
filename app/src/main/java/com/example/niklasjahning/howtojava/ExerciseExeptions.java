@@ -69,7 +69,7 @@ public class ExerciseExeptions extends AppCompatActivity implements View.OnClick
         submit = findViewById(R.id.reassemble_submit_button);
         nHelper = new NotificationHelper(this);
         submit.setOnClickListener(this);
-        next = new Intent(this,ExerciseSelectDatatypes2.class);
+        next = new Intent(this,ExerciseBufferedReader.class);
 
 
 

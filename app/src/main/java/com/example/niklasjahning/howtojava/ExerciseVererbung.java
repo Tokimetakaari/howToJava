@@ -29,8 +29,6 @@ public class ExerciseVererbung extends AppCompatActivity implements View.OnClick
     private Intent intent;
     private NotificationHelper nHelper;
     private Intent next;
-
-
     boolean[] answerCorrect = new boolean[4];
     boolean[] answered = new boolean[4];
 
@@ -99,7 +97,7 @@ public class ExerciseVererbung extends AppCompatActivity implements View.OnClick
         editText7 = findViewById(R.id.cloze_answer_7);
         editText8 = findViewById(R.id.cloze_answer_8);
         nHelper = new NotificationHelper(this);
-        next = new Intent(this,ExerciseSelectDatatypes2.class);
+        next = new Intent(this,ExerciseInterfaces.class);
 
     }
 
