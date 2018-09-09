@@ -37,7 +37,6 @@ public class ExerciseClassesAndObjects2 extends AppCompatActivity implements Vie
     String title = "Congrats";
     String message = "Du hast Übung 4 bestanden";
     private NotificationHelper nHelper;
-    private int questionsQ = 3;
     private Intent next;
 
     @Override
@@ -131,8 +130,8 @@ public class ExerciseClassesAndObjects2 extends AppCompatActivity implements Vie
             }
             else if (i>3)
             {
-                PlayMenu.unlockLevelNumber = 4;
-                if (numOfCorrectAnswers >=  questionsQ /2) {
+
+                if (numOfCorrectAnswers >=  answered.length /2) {
                     mySound.start();
                     update();
                     sendNotification(title, message, next);
@@ -181,7 +180,7 @@ public class ExerciseClassesAndObjects2 extends AppCompatActivity implements Vie
                 break;
             case 3:
                 countCorrectAnswers();
-                textView.setText("Sie haben " + numOfCorrectAnswers + " Fragen richtig beantwortet.");
+                textView.setText("Sie haben " + numOfCorrectAnswers + "von" + answered.length + " Fragen richtig beantwortet.");
                 box1.setClickable(false);
                 box1.setVisibility(View.INVISIBLE);
                 box2.setClickable(false);
@@ -208,7 +207,6 @@ public class ExerciseClassesAndObjects2 extends AppCompatActivity implements Vie
         }
         return numOfCorrectAnswers;
     }
-
 
     private void resetCheckbox () {
         box1.setChecked(false);

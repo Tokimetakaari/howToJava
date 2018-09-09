@@ -1,4 +1,5 @@
 <resources>
+    //Theory
     <string name="app_name">howToJava()</string>
     <string name="theorie_button1">1. Primitive Datentypen</string>
     <string name="theorie_button2">2. Klassen und Objekte</string>
@@ -11,11 +12,13 @@
     <string name="theorie_button9">9. Interfaces und Events</string>
     <string name="theorie_button10">10. Dateien in Java</string>
 
+    //Main
     <string name="main_menu_theorie_button">Theorie</string>
     <string name="main_menu_play_button">Play</string>
     <string name="main_menu_setting_button">Einstellungen</string>
     <string name="submit_button">Weiter</string>
 
+    //Submenus Theory
     <string name="datatypes_menu_button1">1.1 Einfache Datentypen</string>
     <string name="datatypes_menu_button2">1.2 Zusammengesetzte Datentypen</string>
     <string name="datatypes_menu_button3">1.3 Variablen</string>
@@ -45,6 +48,16 @@
     <string name="data_in_java_button3">10.3 Buffered Reader und InputStream</string>
 
 
+    <string-array name="spinnerNums">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+    </string-array>
+
+    //Notfication
     <string name="open">"Open</string>
     <string name="close">"Close</string>
     <string name="credits"><![CDATA[NJK<3]]></string>
@@ -53,7 +66,27 @@
     <string name="channel_description">test123</string>
     <string name="this_color">Alternative Theme</string>
     <string name="save_button">SAVE</string>
+    <string name="notifyMessage">Zur nächsten Übung hier klicken!</string>
+    <string name="notifyTitle1">Congratulation, du hast Übung 1 bestanden</string>
+    <string name="notifyTitle2">Congratulation, du hast Übung 2 bestanden</string>
+    <string name="notifyTitle3">Congratulation, du hast Übung 3 bestanden</string>
+    <string name="notifyTitle4">Congratulation, du hast Übung 4 bestanden</string>
+    <string name="notifyTitle5">Congratulation, du hast Übung 5 bestanden</string>
+    <string name="notifyTitle6">Congratulation, du hast Übung 6 bestanden</string>
+    <string name="notifyTitle7">Congratulation, du hast Übung 7 bestanden</string>
+    <string name="notifyTitle8">Congratulation, du hast Übung 8 bestanden</string>
+    <string name="notifyTitle9">Congratulation, du hast Übung 9 bestanden</string>
+    <string name="notifyTitle10">Congratulation, du hast Übung 10 bestanden</string>
+    <string name="notifyTitle11">Congratulation, du hast Übung 11 bestanden</string>
+    <string name="notifyTitle12">Congratulation, du hast Übung 12 bestanden</string>
+    <string name="notifyTitle13">Congratulation, du hast Übung 13 bestanden</string>
+    <string name="notifyTitle14">Congratulation, du hast Übung 14 bestanden</string>
+    <string name="notifyTitle15">Congratulation, du hast Übung 15 bestanden</string>
+    <string name="notifyTitle16">Congratulation, du hast Übung 16 bestanden</string>
+    <string name="notifyTitle17">Congratulation, du hast Übung 17 bestanden</string>
+    <string name="notifyTitle18">Congratulation, du hast Übung 18 bestanden</string>
 
+    //Playmenu
     <string name="play_menu_button1">Datentypen auswählen</string>
     <string name="play_menu_button2">Datentypen 2</string>
     <string name="play_menu_button3">Klassen und Objekte</string>
@@ -73,15 +106,76 @@
     <string name="play_menu_button17">Exceptions</string>
     <string name="play_menu_button18">Buffered Reader</string>
 
+    //EndScreen
+    <string name="endScreenExercise">Sie haben %d von %d richtig beantwortet</string>
+    <string name="endScreenSubmit">Zurück zum Menü</string>
 
-    <string-array name="spinnerNums">
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-        <item>5</item>
-        <item>6</item>
-    </string-array>
+    //SelectDatatypes 1
+    <string name="exerciseSelectDatatypesQ1">Welchen Datentyp würden Sie verwenden um den Wert 5 zu speichern?</string>
+    <string name="exerciseSelectDatatypesQ2">Welchen Datentyp würden Sie verwenden um den Wert true zu speichern?</string>
+    <string name="exerciseSelectDatatypesQ3">Welchen Datentyp würden Sie verwenden um den Wert 1,3 zu speichern?</string>
+    <string name="exerciseSelectDatatypesQ4">Welchen Datentyp würden Sie verwenden um den Buchstaben c zu speichern?</string>
+    <string name="exerciseSelectDatatypesQ5">Welchen Datentyp würden Sie verwenden um das Wort Java zu speichern?</string>
+    <string name="exerciseSelectDatatypesQ1A1">int</string>
+    <string name="exerciseSelectDatatypesQ1A2">float</string>
+    <string name="exerciseSelectDatatypesQ1A3">String</string>
+    <string name="exerciseSelectDatatypesQ1A4">boolean</string>
+    <string name="exerciseSelectDatatypesQ2A1">int</string>
+    <string name="exerciseSelectDatatypesQ2A2">String</string>
+    <string name="exerciseSelectDatatypesQ2A3">boolean</string>
+    <string name="exerciseSelectDatatypesQ2A4">byte</string>
+    <string name="exerciseSelectDatatypesQ3A1">double</string>
+    <string name="exerciseSelectDatatypesQ3A2">int</string>
+    <string name="exerciseSelectDatatypesQ3A3">byte</string>
+    <string name="exerciseSelectDatatypesQ3A4">long</string>
+    <string name="exerciseSelectDatatypesQ4A1">char</string>
+    <string name="exerciseSelectDatatypesQ4A2">String</string>
+    <string name="exerciseSelectDatatypesQ4A3">int</string>
+    <string name="exerciseSelectDatatypesQ4A4">boolean</string>
+    <string name="exerciseSelectDatatypesQ5A1">char</string>
+    <string name="exerciseSelectDatatypesQ5A2">String</string>
+    <string name="exerciseSelectDatatypesQ5A3">double</string>
+    <string name="exerciseSelectDatatypesQ5A4">float</string>
+
+    //SelectDatatypes 2
+    <string name="exerciseOperatorsQ1">Der Anfangswert von x beträgt 7. Sie inkrementieren drei Mal. Welchen Wert hat x jetzt?</string>
+    <string name="exerciseSelectDatatypes2Q1">Erstelle einen Integer mit dem Namen \'age\' und dem Wert 4.</string>
+    <string name="exerciseSelectDatatypes2Q2">Erstellen Sie einen Boolean mit dem Namen \'lazy\' und den Wert \'true\':</string>
+    <string name="exerciseSelectDatatypes2Q3">Legen Sie einen String fest mit den Namen \'name\' fest:</string>
+    <string name="exerciseSelectDatatypes2A1">int age = 4;</string>
+    <string name="exerciseSelectDatatypes2A1A1">int age= 4;</string>
+    <string name="exerciseSelectDatatypes2A1A2">int age=4;</string>
+    <string name="exerciseSelectDatatypes2A1A3">int age =4;</string>
+    <string name="exerciseSelectDatatypes2A2">boolean lazy = true;</string>
+    <string name="exerciseSelectDatatypes2A2A1">boolean lazy= true;</string>
+    <string name="exerciseSelectDatatypes2A2A2">boolean lazy =true;</string>
+    <string name="exerciseSelectDatatypes2A2A3">boolean lazy=true;</string>
+    <string name="exerciseSelectDatatypes2A3">String name;</string>
+
+
+    //Classes and Objects 1
+    <string name="exerciseClassesAndObjectsQ1">Klassen dienen als ________ für Objekte/ Instanzen.</string>
+    <string name="exerciseClassesAndObjectsQ2">Klassen beschreiben die ________ von Objekten, bzw. Instanzen, wie der Hund zum Beispiel Stöckchen holt und bellt.</string>
+    <string name="exerciseClassesAndObjectsQ3">Schreiben Sie den Code, um die Klasse Hund zu erzeugen ein Objekt/ eine Instanz dieser Klasse mit Namen Umberto zu erstellen</string>
+    <string name="exerciseClassesAndObjectsQ4">Schreiben Sie den Code, um ein Objekt/ eine Instanz der zuvor erstellten Klasse \'Dog\' mit Namen \'Umberto\' zu erstellen</string>
+    <string name="exerciseClassesAndObjectsA1">Muster</string>
+    <string name="exerciseClassesAndObjectsA1A1">muster</string>
+    <string name="exerciseClassesAndObjectsA1A2">Vorlagen</string>
+    <string name="exerciseClassesAndObjectsA1A3">vorlagen</string>
+    <string name="exerciseClassesAndObjectsA1A4">Konzepte</string>
+    <string name="exerciseClassesAndObjectsA1A5">konzepte</string>
+    <string name="exerciseClassesAndObjectsA2">Eigenschaften</string>
+    <string name="exerciseClassesAndObjectsA2A1">eigenschaften</string>
+    <string name="exerciseClassesAndObjectsA3">public class Dog{}</string>
+    <string name="exerciseClassesAndObjectsA3A1">public class Dog {}</string>
+    <string name="exerciseClassesAndObjectsA4">Dog umberto = new Dog();</string>
+    <string name="exerciseClassesAndObjectsA4A1">Dog umberto=new Dog()</string>
+    <string name="exerciseClassesAndObjectsA4A2">Dog umberto =new Dog()</string>
+    <string name="exerciseClassesAndObjectsA4A3">Dog umberto= new Dog()</string>
+    <string name="exerciseClassesAndObjectsA4A4">Dog umberto = new Dog ()</string>
+    <string name="exerciseClassesAndObjectsA4A5">Dog umberto=new Dog ()</string>
+    <string name="exerciseClassesAndObjectsA4A6">Dog umberto =new Dog ()</string>
+    <string name="exerciseClassesAndObjectsA4A7">Dog umberto= new Dog ()</string>
 
 
 </resources>

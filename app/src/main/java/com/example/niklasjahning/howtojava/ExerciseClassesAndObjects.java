@@ -18,42 +18,15 @@ import android.widget.Toast;
 public class ExerciseClassesAndObjects extends AppCompatActivity implements View.OnClickListener {
 
     MediaPlayer mySound;
-
     TextView textView;
     Button submit;
     int i = 0;
     int numOfCorrectAnswers = 0;
     EditText answer1, answer2, answer3, answer4, answer5, answer6, answer7, answer8;
-    String solution1 = "Muster";
-    String alternative1_1 = "muster";
-    String alternative1_2 = "Vorlagen";
-    String alternative1_3 ="vorlagen";
-    String alternative1_4 = "Konzepte";
-    String alternative1_5 = "konzepte";
-    String solution2 = "Eigenschaften";
-    String alternative2_1 = "eigenschaften";
-    String solution3 = "public class Dog{}";
-    String alternative3_1 = "public class Dog {}";
-    String solution4 = "Dog umberto = new Dog();";
-    String alternative4_1 = "Dog umberto=new Dog()";
-    String alternative4_2 = "Dog umberto =new Dog()";
-    String alternative4_3 = "Dog umberto= new Dog()";
-    String alternative4_4 = "Dog umberto = new Dog ()";
-    String alternative4_5 = "Dog umberto=new Dog ()";
-    String alternative4_6 = "Dog umberto =new Dog ()";
-    String alternative4_7 = "Dog umberto= new Dog ()";
-
-    //Hier die Strings für die Notification festlegen
-    String title = "Congrats";
-    String message = "Du hast Übung 3 bestanden";
     private NotificationHelper nHelper;
-    private int questionsQ = 4;
     private Intent next;
-
-
     boolean[] answerCorrect = new boolean[4];
     boolean[] answered = new boolean[4];
-
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
     NavigationView burger;
@@ -151,10 +124,9 @@ public class ExerciseClassesAndObjects extends AppCompatActivity implements View
                 setText();
 
             } else if (i > 4) {
-                PlayMenu.unlockLevelNumber = 3;
-                if (numOfCorrectAnswers >=  questionsQ /2) {
+                if (numOfCorrectAnswers >=  answered.length /2) {
                     mySound.start();
-                    sendNotification(title, message, next);
+                    sendNotification(getString(R.string.notifyTitle3), getString(R.string.notifyMessage), next);
                     update();
                 }
                 finish();
@@ -181,7 +153,7 @@ public class ExerciseClassesAndObjects extends AppCompatActivity implements View
     private void setText() {
         switch (i) {
             case 0:
-                textView.setText("Klassen dienen als ________ für Objekte/ Instanzen.");
+                textView.setText(R.string.exerciseClassesAndObjectsQ1);
                 answer2.setVisibility(View.GONE);
                 answer3.setVisibility(View.GONE);
                 answer4.setVisibility(View.GONE);
@@ -190,7 +162,7 @@ public class ExerciseClassesAndObjects extends AppCompatActivity implements View
                 answer7.setVisibility(View.GONE);
                 answer8.setVisibility(View.GONE);
                 break;
-            case 1: textView.setText("Klassen beschreiben die ________ von Objekten, bzw. Instanzen, wie der Hund zum Beispiel Stöckchen holt und bellt.");
+            case 1: textView.setText(R.string.exerciseClassesAndObjectsQ2);
                 answer2.setVisibility(View.GONE);
                 answer3.setVisibility(View.GONE);
                 answer4.setVisibility(View.GONE);
@@ -200,7 +172,7 @@ public class ExerciseClassesAndObjects extends AppCompatActivity implements View
                 answer8.setVisibility(View.GONE);
                 break;
             case 2:
-                textView.setText("Schreiben Sie den Code, um die Klasse Hund zu erzeugen ein Objekt/ eine Instanz dieser Klasse mit Namen Umberto zu erstellen");
+                textView.setText(R.string.exerciseClassesAndObjectsQ3);
                 answer2.setVisibility(View.GONE);
                 answer3.setVisibility(View.GONE);
                 answer4.setVisibility(View.GONE);
@@ -210,7 +182,7 @@ public class ExerciseClassesAndObjects extends AppCompatActivity implements View
                 answer8.setVisibility(View.GONE);
                 break;
             case 3:
-                textView.setText("Schreiben Sie den Code, um ein Objekt/ eine Instanz der zuvor erstellten Klasse 'Dog' mit Namen 'Umberto' zu erstellen");
+                textView.setText(R.string.exerciseClassesAndObjectsQ4);
                 answer2.setVisibility(View.GONE);
                 answer3.setVisibility(View.GONE);
                 answer4.setVisibility(View.GONE);
@@ -225,9 +197,10 @@ public class ExerciseClassesAndObjects extends AppCompatActivity implements View
                         numOfCorrectAnswers ++;
                     }
                 }
-                textView.setText("Sie haben " + numOfCorrectAnswers +" richtig beantwortet");
+                textView.setText(getString(R.string.endScreenExercise,numOfCorrectAnswers,answered.length));
                 answer1.setVisibility(View.INVISIBLE);
                 answer1.setClickable(false);
+                submit.setText(R.string.endScreenSubmit);
                 i++;
                 break;
         }
@@ -240,27 +213,40 @@ public class ExerciseClassesAndObjects extends AppCompatActivity implements View
     }
 
 
-
     private void checkCorrectAnswers() {
         switch (i) {
 
             case 0:
-                if (answer1.getText().toString().equals(solution1) || (answer1.getText().toString().equals(alternative1_1)) || (answer1.getText().toString().equals(alternative1_2)) || (answer1.getText().toString().equals(alternative1_3)) || (answer1.getText().toString().equals(alternative1_4)) || (answer1.getText().toString().equals(alternative1_5))) {
+                if (answer1.getText().toString().equals(getString(R.string.exerciseClassesAndObjectsA1))
+                        || (answer1.getText().toString().equals(getString(R.string.exerciseClassesAndObjectsA1A1)))
+                        || (answer1.getText().toString().equals(getString(R.string.exerciseClassesAndObjectsA1A2)))
+                        || (answer1.getText().toString().equals(getString(R.string.exerciseClassesAndObjectsA1A3)))
+                        || (answer1.getText().toString().equals(getString(R.string.exerciseClassesAndObjectsA1A4)))
+                        || (answer1.getText().toString().equals(getString(R.string.exerciseClassesAndObjectsA1A5)))) {
                     answerCorrect[i] = true;
                 }
                 break;
             case 1:
-                if (answer1.getText().toString().equals(solution2) || (answer1.getText().toString().equals(alternative2_1))) {
+                if (answer1.getText().toString().equals(getString(R.string.exerciseClassesAndObjectsA2))
+                        || (answer1.getText().toString().equals(getString(R.string.exerciseClassesAndObjectsA2A1)))) {
                     answerCorrect[i] = true;
                 }
                 break;
             case 2:
-                if (answer1.getText().toString().equals(solution3) || (answer1.getText().toString().equals(alternative3_1))) {
+                if (answer1.getText().toString().equals(getString(R.string.exerciseClassesAndObjectsA3))
+                        || (answer1.getText().toString().equals(getString(R.string.exerciseClassesAndObjectsA3A1)))) {
                     answerCorrect[i] = true;
                 }
                 break;
             case 3:
-                if (answer1.getText().toString().equals(solution4) || (answer1.getText().toString().equals(alternative4_1)) || (answer1.getText().toString().equals(alternative4_2)) || (answer1.getText().toString().equals(alternative4_3)) || (answer1.getText().toString().equals(alternative4_4)) || (answer1.getText().toString().equals(alternative4_5)) || (answer1.getText().toString().equals(alternative4_6)) || (answer1.getText().toString().equals(alternative4_7))) {
+                if (answer1.getText().toString().equals(getString(R.string.exerciseClassesAndObjectsA4))
+                        || (answer1.getText().toString().equals(getString(R.string.exerciseClassesAndObjectsA4A1)))
+                        || (answer1.getText().toString().equals(getString(R.string.exerciseClassesAndObjectsA4A2)))
+                        || (answer1.getText().toString().equals(R.string.exerciseClassesAndObjectsA4A3))
+                        || (answer1.getText().toString().equals(R.string.exerciseClassesAndObjectsA4A4))
+                        || (answer1.getText().toString().equals(R.string.exerciseClassesAndObjectsA4A5))
+                        || (answer1.getText().toString().equals(R.string.exerciseClassesAndObjectsA4A6))
+                        || (answer1.getText().toString().equals(R.string.exerciseClassesAndObjectsA4A7))) {
                     answerCorrect[i] = true;
                 }
                 break;
@@ -268,6 +254,7 @@ public class ExerciseClassesAndObjects extends AppCompatActivity implements View
 
         }
     }
+
 
     public void sendNotification(String title, String message, Intent next) {
         NotificationCompat.Builder nBuilder = nHelper.getChannelNotification(title, message, next);

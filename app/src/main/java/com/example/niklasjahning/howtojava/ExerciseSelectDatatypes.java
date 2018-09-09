@@ -153,43 +153,43 @@ public class ExerciseSelectDatatypes extends AppCompatActivity implements View.O
     private void setText() {
         switch (i) {
             case 0:
-                textView.setText("Welchen Datentyp würden Sie verwenden um den Wert 5 zu speichern?");
-                box1.setText("int");
-                box2.setText("float");
-                box3.setText("String");
-                box4.setText("boolean");
+                textView.setText(R.string.exerciseSelectDatatypesQ1);
+                box1.setText(R.string.exerciseSelectDatatypesQ1A1);
+                box2.setText(R.string.exerciseSelectDatatypesQ1A2);
+                box3.setText(R.string.exerciseSelectDatatypesQ1A3);
+                box4.setText(R.string.exerciseSelectDatatypesQ1A4);
                 break;
             case 1:
-                textView.setText("Welchen Datentyp würden Sie verwenden um den Wert true zu speichern?");
-                box1.setText("int");
-                box2.setText("String");
-                box3.setText("boolean");
-                box4.setText("byte");
+                textView.setText(R.string.exerciseSelectDatatypesQ2);
+                box1.setText(R.string.exerciseSelectDatatypesQ2A1);
+                box2.setText(R.string.exerciseSelectDatatypesQ2A2);
+                box3.setText(R.string.exerciseSelectDatatypesQ2A3);
+                box4.setText(R.string.exerciseSelectDatatypesQ2A4);
                 break;
             case 2:
-                textView.setText("Welchen Datentyp würden Sie verwenden um den Wert 1,3 zu speichern?");
-                box1.setText("double");
-                box2.setText("int");
-                box3.setText("byte");
-                box4.setText("long");
+                textView.setText(R.string.exerciseSelectDatatypesQ3);
+                box1.setText(R.string.exerciseSelectDatatypesQ3A1);
+                box2.setText(R.string.exerciseSelectDatatypesQ3A2);
+                box3.setText(R.string.exerciseSelectDatatypesQ3A3);
+                box4.setText(R.string.exerciseSelectDatatypesQ3A4);
                 break;
             case 3:
-                textView.setText("Welchen Datentyp würden Sie verwenden um den Buchstaben c zu speichern?");
-                box1.setText("char");
-                box2.setText("String");
-                box3.setText("int");
-                box4.setText("boolean");
+                textView.setText(R.string.exerciseSelectDatatypesQ4);
+                box1.setText(R.string.exerciseSelectDatatypesQ4A1);
+                box2.setText(R.string.exerciseSelectDatatypesQ4A2);
+                box3.setText(R.string.exerciseSelectDatatypesQ4A3);
+                box4.setText(R.string.exerciseSelectDatatypesQ4A4);
                 break;
             case 4:
-                textView.setText("Welchen Datentyp würden Sie verwenden um das Wort Java zu speichern?");
-                box1.setText("char");
-                box2.setText("String");
-                box3.setText("double");
-                box4.setText("float");
+                textView.setText(R.string.exerciseSelectDatatypesQ5);
+                box1.setText(R.string.exerciseSelectDatatypesQ5A1);
+                box2.setText(R.string.exerciseSelectDatatypesQ5A2);
+                box3.setText(R.string.exerciseSelectDatatypesQ5A3);
+                box4.setText(R.string.exerciseSelectDatatypesQ5A4);
                 break;
             case 5:
                 countCorrectAnswers();
-                textView.setText("Sie haben " + numOfCorrectAnswers + " Fragen von " + answered.length + " richtig beantwortet.");
+                textView.setText(getString(R.string.endScreenExercise,numOfCorrectAnswers,answered.length));
                 box1.setClickable(false);
                 box1.setVisibility(View.INVISIBLE);
                 box2.setClickable(false);
@@ -198,7 +198,7 @@ public class ExerciseSelectDatatypes extends AppCompatActivity implements View.O
                 box3.setVisibility(View.INVISIBLE);
                 box4.setClickable(false);
                 box4.setVisibility(View.INVISIBLE);
-                submit.setText("Zurück zum Hauptmenü");
+                submit.setText(R.string.endScreenSubmit);
                 i++;
 
                 break;

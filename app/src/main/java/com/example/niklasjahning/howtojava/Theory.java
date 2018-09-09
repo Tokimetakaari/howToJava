@@ -90,8 +90,10 @@ public class Theory extends AppCompatActivity implements View.OnClickListener
                         startActivity(i);
                     case R.id.moveToTheory:
                         Toast.makeText(getApplicationContext(),"Du bist aktuell in keiner Übung",Toast.LENGTH_SHORT).show();
+                        break;
                     case R.id.credits:
                         Toast.makeText(getApplicationContext(),"Thanks for playing!",Toast.LENGTH_SHORT).show();
+                        break;
                 }
                 return true;
             }

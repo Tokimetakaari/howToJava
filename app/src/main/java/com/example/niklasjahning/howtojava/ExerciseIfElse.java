@@ -31,7 +31,6 @@ public class ExerciseIfElse extends AppCompatActivity implements View.OnClickLis
     String title = "Congratulation, du hast Übung 1 bestanden";
     String message = "Zur nächsten Übung hier klicken!";
     private NotificationHelper nHelper;
-    private int questionsQ = 5;
     private Intent next;
 
 
@@ -129,7 +128,7 @@ public class ExerciseIfElse extends AppCompatActivity implements View.OnClickLis
             else if (i>5)
             {
 
-                if (numOfCorrectAnswers >=  questionsQ /2) {
+                if (numOfCorrectAnswers >= answered.length /2) {
                     mySound.start();
                     sendNotification(title, message,next);
                     update();
@@ -178,7 +177,7 @@ public class ExerciseIfElse extends AppCompatActivity implements View.OnClickLis
                 break;
             case 5:
                 countCorrectAnswers();
-                textView.setText("Sie haben " + numOfCorrectAnswers + " Fragen von " + questionsQ + "richtig beantwortet.");
+                textView.setText("Sie haben " + numOfCorrectAnswers + " Fragen von " + answered.length + "richtig beantwortet.");
                 box1.setClickable(false);
                 box1.setVisibility(View.INVISIBLE);
                 box2.setClickable(false);
