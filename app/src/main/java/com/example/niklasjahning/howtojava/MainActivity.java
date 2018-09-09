@@ -1,6 +1,7 @@
 package com.example.niklasjahning.howtojava;
 
 import android.arch.persistence.room.Room;
+import android.content.SharedPreferences;
 import android.view.MotionEvent;
 import android.content.Intent;
 import android.support.v4.view.GestureDetectorCompat;
@@ -9,6 +10,8 @@ import android.os.Bundle;
 import android.view.GestureDetector;
 import android.view.View;
 import android.widget.Button;
+
+import static com.example.niklasjahning.howtojava.SettingsMenu.SHARED_PREFS;
 
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{

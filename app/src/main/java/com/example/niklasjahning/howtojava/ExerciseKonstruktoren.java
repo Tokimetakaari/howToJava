@@ -197,12 +197,26 @@ public class ExerciseKonstruktoren extends AppCompatActivity implements View.OnC
                 PlayMenu.unlockLevelNumber = 1;
                 if (numOfCorrectAnswers >=  questionsQ /2) {
                     mySound.start();
+                    update();
                     sendNotification(title, message, next);
                 }
                 finish();
 
             }
         }
+    }
+
+    private void update()
+    {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                PlayMenu.unlockLevelNumber=9;
+                StorageEntry storageEntry = MainActivity.database.daoAccess().getConfiqEntry("unlockLevel");
+                storageEntry.setValue(9);
+                MainActivity.database.daoAccess().updateEntries(storageEntry);
+            }
+        }).start();
     }
 
     private void checkCorrectAnswers() {

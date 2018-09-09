@@ -57,9 +57,22 @@ public class ProgrammingExerciseForMethods extends AppCompatActivity implements 
             }
             if ( i > 2 )
             {
+                update();
                 finish();
             }
         }
+    }
+    private void update()
+    {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                PlayMenu.unlockLevelNumber=8;
+                StorageEntry storageEntry = MainActivity.database.daoAccess().getConfiqEntry("unlockLevel");
+                storageEntry.setValue(8);
+                MainActivity.database.daoAccess().updateEntries(storageEntry);
+            }
+        }).start();
     }
 
     private void setupItems()

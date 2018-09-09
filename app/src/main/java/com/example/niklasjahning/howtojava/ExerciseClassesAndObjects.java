@@ -155,6 +155,7 @@ public class ExerciseClassesAndObjects extends AppCompatActivity implements View
                 if (numOfCorrectAnswers >=  questionsQ /2) {
                     mySound.start();
                     sendNotification(title, message, next);
+                    update();
                 }
                 finish();
 
@@ -164,7 +165,18 @@ public class ExerciseClassesAndObjects extends AppCompatActivity implements View
         }
     }
 
-
+    private void update()
+    {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                PlayMenu.unlockLevelNumber=3;
+                StorageEntry storageEntry = MainActivity.database.daoAccess().getConfiqEntry("unlockLevel");
+                storageEntry.setValue(3);
+                MainActivity.database.daoAccess().updateEntries(storageEntry);
+            }
+        }).start();
+    }
 
     private void setText() {
         switch (i) {

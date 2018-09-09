@@ -173,10 +173,24 @@ public class ExerciseSelectDatatypes2 extends AppCompatActivity implements View.
 
             } else if (i > 3) {
                 PlayMenu.unlockLevelNumber = 2;
+                update();
                 finish();
 
             }
         }
+    }
+
+    private void update()
+    {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                PlayMenu.unlockLevelNumber=2;
+                StorageEntry storageEntry = MainActivity.database.daoAccess().getConfiqEntry("unlockLevel");
+                storageEntry.setValue(2);
+                MainActivity.database.daoAccess().updateEntries(storageEntry);
+            }
+        }).start();
     }
 
     private void checkCorrectAnswers() {
