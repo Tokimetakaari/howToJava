@@ -194,7 +194,7 @@
     <string name="R_string_exerciseClassesAndObjects2Q3A2">static</string>
     <string name="R_string_exerciseClassesAndObjects2Q3A3">protected</string>
 
-
+    //Operatores
     <string name="exerciseOperatorsQ1">Der Anfangswert von x beträgt 7. Sie inkrementieren drei Mal. Welchen Wert hat x jetzt?</string>
     <string name="exerciseOperatorsQ2">Der Anfangswert von x beträgt 24. Sie dekrementieren fünfmal. Welchen Wert hat x jetzt?</string>
     <string name="exerciseOperatorsQ3">Lösen sie folgende Gleichung: 20 % 7 = ?</string>
@@ -230,6 +230,51 @@
     <string name="exerciseOperatorsQ7A2">18 % 5 = ?</string>
     <string name="exerciseOperatorsQ7A3">13 % 10 = ?</string>
     <string name="exerciseOperatorsQ7A4">70 % 65 = ?</string>
+
+    //If else
+    <string name="exerciseIfElseQ1">Was gibt es nicht ?</string>
+    <string name="exerciseIfElseQ2">Welches ist das richtige Grundgerüst?</string>
+    <string name="exerciseIfElseQ1A1">if() {}</string>
+    <string name="exerciseIfElseQ1A2">else() {}</string>
+    <string name="exerciseIfElseQ1A3">if else() {}</string>
+    <string name="exerciseIfElseQ1A4">else if () {}</string>
+    <string name="exerciseIfElseQ2A1">swtich {}</string>
+    <string name="exerciseIfElseQ2A2">switch(){}</string>
+    <string name="exerciseIfElseQ2A3">switch()</string>
+    <string name="exerciseIfElseQ2A4">switch</string>
+    <string name="exerciseArrayQ1">Kreuzen Sie die richtig initialisierten Arrays an.</string>
+    <string name="exerciseArrayQ2">Arrays verwendet man um:</string>
+    <string name="exerciseArrayQ3">Wie lässt sich auf die Länge eines Arrays zugreifen?</string>
+    <string name="exerciseArrayQ4">Wie viele Reihen, bzw. Spalten hat dieser zweidimensionale Array: int[][] multi = new int[5][10]</string>
+    <string name="exerciseArrayQ5">Was ist der Vorteil einer ArrayList im Gegensatz zu dem Array?</string>
+    <string name="exerciseArrayQ6">Welche ArrayLists sind korrekt initialisiert?</string>
+    <string name="exerciseArrayQ7">Wo beginnen die Indizes des Arrays, als auch der ArrayList?</string>
+    <string name="exerciseArrayQ8">Wie lässt man sich die Anzahl der Elemente einer ArrayList ausgeben?</string>
+    <string name="exerciseArrayQ1A1">int[] gradeList = {1, 2, 3, 4, 5, 6}</string>
+    <string name="exerciseArrayQ1A2">String names = new names[]</string>
+    <string name="exerciseArrayQ1A3"><![CDATA[Array<numbers> String = new array<numbers>]]></string>
+    <string name="exerciseArrayQ1A4">double[] list = new double[10]</string>
+    <string name="exerciseArrayQ2A1">eine Ansammlung von Werte des gleichen Datentypes zu speichern</string>
+    <string name="exerciseArrayQ2A2">verschiedene Klassenvariablen zusammenzufassen, der Datentyp kann unbeachtet bleiben</string>
+    <string name="exerciseArrayQ3A1">arrayName.length</string>
+    <string name="exerciseArrayQ3A2">arrayName.length()</string>
+    <string name="exerciseArrayQ3A3">arrayName.size</string>
+    <string name="exerciseArrayQ3A4">arrayName.size()</string>
+    <string name="exerciseArrayQ4A1">Der Array hat 5 Reihen und 10 Spalten.</string>
+    <string name="exerciseArrayQ4A2">Der Array hat 5 Spalten und 10 Reihen.</string>
+    <string name="exerciseArrayQ5A1">Die ArrayList kann auch unterschiedliche Datentypen in einer List speichern.</string>
+    <string name="exerciseArrayQ5A2">Die Größe/ Länge der ArrayList ist veränderbar.</string>
+    <string name="exerciseArrayQ5A3">Man kann Elemente auch nach der Indizialisierung hinzufügen oder entfernen.</string>
+    <string name="exerciseArrayQ6A1"><![CDATA[ArrayList<int> myList = new ArrayList<int>(50)]]></string>
+    <string name="exerciseArrayQ6A2"><![CDATA[ArrayList<String> groceries = new ArrayList<String>(200)]]></string>
+    <string name="exerciseArrayQ6A3">ArrayLists myArrayList = new ArrayList()</string>
+    <string name="exerciseArrayQ6A4"><![CDATA[ArrayLists<Double> myDoubleList = new ArrayList()]]></string>
+    <string name="exerciseArrayQ7A1">bei 0</string>
+    <string name="exerciseArrayQ7A2">bei 1</string>
+    <string name="exerciseArrayQ8A1">myArrayList.length</string>
+    <string name="exerciseArrayQ8A2">myArrayList.length()</string>
+    <string name="exerciseArrayQ8A3">myArrayList.size</string>
+    <string name="exerciseArrayQ8A4">myArrayList.size()</string>
 
 
 </resources>

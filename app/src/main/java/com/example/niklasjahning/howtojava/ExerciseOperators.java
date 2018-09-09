@@ -29,8 +29,6 @@ public class ExerciseOperators extends AppCompatActivity implements View.OnClick
     private Intent next;
     MediaPlayer mySound;
     private NotificationHelper nHelper;
-
-
     boolean[] answerCorrect = new boolean[7];
     boolean[] answered = new boolean[7];
 

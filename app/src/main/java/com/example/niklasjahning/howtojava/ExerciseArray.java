@@ -27,13 +27,9 @@ public class ExerciseArray extends AppCompatActivity implements View.OnClickList
     private ActionBarDrawerToggle mToggle;
     NavigationView burger;
     private Intent intent;
-    //Hier die Strings für die Notification festlegen
-    String title = "Congrats";
-    String message = "Du hast Übung X bestanden";
     private NotificationHelper nHelper;
     private int questionsQ = 8;
     private Intent next;
-
     boolean[] answerCorrect = new boolean[8];
     boolean[] answered = new boolean[8];
 
@@ -130,7 +126,7 @@ public class ExerciseArray extends AppCompatActivity implements View.OnClickList
                 if (numOfCorrectAnswers >=  questionsQ /2) {
                     mySound.start();
                     update();
-                    sendNotification(title, message, next);
+                    sendNotification(getString(R.string.notifyTitle7),getString(R.string.notifyMessage), next);
                 }
                 finish();
             }
@@ -142,9 +138,9 @@ public class ExerciseArray extends AppCompatActivity implements View.OnClickList
         new Thread(new Runnable() {
             @Override
             public void run() {
-                PlayMenu.unlockLevelNumber=6;
+                PlayMenu.unlockLevelNumber=7;
                 StorageEntry storageEntry = MainActivity.database.daoAccess().getConfiqEntry("unlockLevel");
-                storageEntry.setValue(6);
+                storageEntry.setValue(PlayMenu.unlockLevelNumber);
                 MainActivity.database.daoAccess().updateEntries(storageEntry);
             }
         }).start();
@@ -153,64 +149,64 @@ public class ExerciseArray extends AppCompatActivity implements View.OnClickList
     private void setText() {
         switch (i) {
             case 0:
-                textView.setText(" Kreuzen Sie die richtig initialisierten Arrays an.");
-                box1.setText(" int[] gradeList = {1, 2, 3, 4, 5, 6}");
-                box2.setText(" String names = new names[]");
-                box3.setText(" Array<numbers> String = new array<numbers>");
-                box4.setText(" double[] list = new double[10]");
+                textView.setText(R.string.exerciseArrayQ1);
+                box1.setText(R.string.exerciseArrayQ1A1);
+                box2.setText(R.string.exerciseArrayQ1A2);
+                box3.setText(R.string.exerciseArrayQ1A3);
+                box4.setText(R.string.exerciseArrayQ1A4);
                 break;
             case 1:
-                textView.setText(" Arrays verwendet man um:");
-                box1.setText(" eine Ansammlung von Werte des gleichen Datentypes zu speichern");
-                box2.setText(" verschiedene Klassenvariablen zusammenzufassen, der Datentyp kann unbeachtet bleiben");
+                textView.setText(R.string.exerciseArrayQ2);
+                box1.setText(R.string.exerciseArrayQ2A1);
+                box2.setText(R.string.exerciseArrayQ2A2);
                 box3.setVisibility(View.GONE);
                 box4.setVisibility(View.GONE);
                 break;
             case 2:
-                textView.setText(" Wie lässt sich auf die Länge eines Arrays zugreifen?");
-                box1.setText(" arrayName.length");
-                box2.setText(" arrayName.length()");
-                box3.setText(" arrayName.size");
-                box4.setText(" arrayName.size()");
+                textView.setText(R.string.exerciseArrayQ3);
+                box1.setText(R.string.exerciseArrayQ3A1);
+                box2.setText(R.string.exerciseArrayQ3A2);
+                box3.setText(R.string.exerciseArrayQ3A3);
+                box4.setText(R.string.exerciseArrayQ3A4);
                 break;
             case 3:
-                textView.setText(" Wie viele Reihen, bzw. Spalten hat dieser zweidimensionale Array: int[][] multi = new int[5][10]");
-                box1.setText(" Der Array hat 5 Reihen und 10 Spalten.");
-                box2.setText(" Der Array hat 5 Spalten und 10 Reihen.");
+                textView.setText(R.string.exerciseArrayQ4);
+                box1.setText(R.string.exerciseArrayQ4A1);
+                box2.setText(R.string.exerciseArrayQ4A2);
                 box3.setVisibility(View.GONE);
                 box4.setVisibility(View.GONE);
                 break;
             case 4:
-                textView.setText(" Was ist der Vorteil einer ArrayList im Gegensatz zu dem Array?");
-                box1.setText(" Die ArrayList kann auch unterschiedliche Datentypen in einer List speichern.");
-                box2.setText(" Die Größe/ Länge der ArrayList ist veränderbar.");
-                box3.setText(" Man kann Elemente auch nach der Indizialisierung hinzufügen oder entfernen.");
+                textView.setText(R.string.exerciseArrayQ5);
+                box1.setText(R.string.exerciseArrayQ5A1);
+                box2.setText(R.string.exerciseArrayQ5A2);
+                box3.setText(R.string.exerciseArrayQ5A3);
                 box4.setVisibility(View.GONE);
                 break;
             case 5:
-                textView.setText(" Welche ArrayLists sind korrekt initialisiert?");
-                box1.setText(" ArrayList<int> myList = new ArrayList<int>(50)");
-                box2.setText(" ArrayList<String> groceries = new ArrayList<String>(200)");
-                box3.setText(" ArrayLists myArrayList = new ArrayList()");
-                box4.setText(" ArrayLists<Double> myDoubleList = new ArrayList()");
+                textView.setText(R.string.exerciseArrayQ6);
+                box1.setText(R.string.exerciseArrayQ6A1);
+                box2.setText(R.string.exerciseArrayQ6A2);
+                box3.setText(R.string.exerciseArrayQ6A3);
+                box4.setText(R.string.exerciseArrayQ6A4);
                 break;
             case 6:
-                textView.setText(" Wo beginnen die Indizes des Arrays, als auch der ArrayList?");
-                box1.setText(" bei 0");
-                box2.setText(" bei 1");
+                textView.setText(R.string.exerciseArrayQ7);
+                box1.setText(R.string.exerciseArrayQ7A1);
+                box2.setText(R.string.exerciseArrayQ7A2);
                 box3.setVisibility(View.GONE);
                 box4.setVisibility(View.GONE);
                 break;
             case 7:
-                textView.setText(" Wie lässt man sich die Anzahl der Elemente einer ArrayList ausgeben?");
-                box1.setText(" myArrayList.length");
-                box2.setText(" myArrayList.length()");
-                box3.setText(" myArrayList.size");
-                box4.setText(" myArrayList.size()");
+                textView.setText(R.string.exerciseArrayQ8);
+                box1.setText(R.string.exerciseArrayQ8A1);
+                box2.setText(R.string.exerciseArrayQ8A2);
+                box3.setText(R.string.exerciseArrayQ8A3);
+                box4.setText(R.string.exerciseArrayQ8A4);
                 break;
             case 8:
                 countCorrectAnswers();
-                textView.setText("Sie haben " + numOfCorrectAnswers + " Fragen von " + questionsQ + "richtig beantwortet.");
+                textView.setText(getString(R.string.endScreenExercise,numOfCorrectAnswers,answered.length));
                 box1.setClickable(false);
                 box1.setVisibility(View.INVISIBLE);
                 box2.setClickable(false);
@@ -219,7 +215,7 @@ public class ExerciseArray extends AppCompatActivity implements View.OnClickList
                 box3.setVisibility(View.INVISIBLE);
                 box4.setClickable(false);
                 box4.setVisibility(View.INVISIBLE);
-                submit.setText("Zurück zum Hauptmenü");
+                submit.setText(R.string.endScreenSubmit);
                 i++;
 
                 break;

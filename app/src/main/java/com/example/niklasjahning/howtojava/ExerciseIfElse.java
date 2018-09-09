@@ -27,15 +27,12 @@ public class ExerciseIfElse extends AppCompatActivity implements View.OnClickLis
     private ActionBarDrawerToggle mToggle;
     NavigationView burger;
     private Intent intent;
-    //Hier die Strings für die Notification festlegen
-    String title = "Congratulation, du hast Übung 1 bestanden";
-    String message = "Zur nächsten Übung hier klicken!";
     private NotificationHelper nHelper;
     private Intent next;
 
 
-    boolean[] answerCorrect = new boolean[5];
-    boolean[] answered = new boolean[5];
+    boolean[] answerCorrect = new boolean[2];
+    boolean[] answered = new boolean[2];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -118,19 +115,19 @@ public class ExerciseIfElse extends AppCompatActivity implements View.OnClickLis
     {
         if(view.getId() == R.id.checkbox_submit_button)
         {
-            if ( (box1.isChecked()|| box2.isChecked() || box3.isChecked() || box4.isChecked()) && (i <=5))
+            if ( (box1.isChecked()|| box2.isChecked() || box3.isChecked() || box4.isChecked()) && (i <=3))
             {
                 checkCorrectAnswers();
                 answered[i] = true;
                 i++;
                 setText();
             }
-            else if (i>5)
+            else if (i>3)
             {
 
                 if (numOfCorrectAnswers >= answered.length /2) {
                     mySound.start();
-                    sendNotification(title, message,next);
+                    sendNotification(getString(R.string.notifyTitle6), getString(R.string.notifyMessage),next);
                     update();
                 }
                 finish();
@@ -141,43 +138,22 @@ public class ExerciseIfElse extends AppCompatActivity implements View.OnClickLis
     private void setText() {
         switch (i) {
             case 0:
-                textView.setText("Was gibt es nicht ?");
-                box1.setText("if() {}");
-                box2.setText("else() {}");
-                box3.setText("if else() {}");
-                box4.setText("else if () {}");
+                textView.setText(R.string.exerciseIfElseQ1);
+                box1.setText(R.string.exerciseIfElseQ1A1);
+                box2.setText(R.string.exerciseIfElseQ1A2);
+                box3.setText(R.string.exerciseIfElseQ1A3);
+                box4.setText(R.string.exerciseIfElseQ1A4);
                 break;
             case 1:
-                textView.setText("Welchen Datentyp würden Sie verwenden um den Wert true zu speichern?");
-                box1.setText("int");
-                box2.setText("String");
-                box3.setText("boolean");
-                box4.setText("byte");
+                textView.setText(R.string.exerciseIfElseQ2);
+                box1.setText(R.string.exerciseIfElseQ2A1);
+                box2.setText(R.string.exerciseIfElseQ2A2);
+                box3.setText(R.string.exerciseIfElseQ2A3);
+                box4.setText(R.string.exerciseIfElseQ2A4);
                 break;
             case 2:
-                textView.setText("Welchen Datentyp würden Sie verwenden um den Wert 1,3 zu speichern?");
-                box1.setText("double");
-                box2.setText("int");
-                box3.setText("byte");
-                box4.setText("long");
-                break;
-            case 3:
-                textView.setText("Welchen Datentyp würden Sie verwenden um den Buchstaben c zu speichern?");
-                box1.setText("char");
-                box2.setText("String");
-                box3.setText("int");
-                box4.setText("boolean");
-                break;
-            case 4:
-                textView.setText("Welchen Datentyp würden Sie verwenden um das Wort Java zu speichern?");
-                box1.setText("char");
-                box2.setText("String");
-                box3.setText("double");
-                box4.setText("float");
-                break;
-            case 5:
                 countCorrectAnswers();
-                textView.setText("Sie haben " + numOfCorrectAnswers + " Fragen von " + answered.length + "richtig beantwortet.");
+                textView.setText(getString(R.string.endScreenExercise,numOfCorrectAnswers,answered.length));
                 box1.setClickable(false);
                 box1.setVisibility(View.INVISIBLE);
                 box2.setClickable(false);
@@ -186,7 +162,7 @@ public class ExerciseIfElse extends AppCompatActivity implements View.OnClickLis
                 box3.setVisibility(View.INVISIBLE);
                 box4.setClickable(false);
                 box4.setVisibility(View.INVISIBLE);
-                submit.setText("Zurück zum Hauptmenü");
+                submit.setText(R.string.endScreenSubmit);
                 i++;
 
                 break;
@@ -218,7 +194,7 @@ public class ExerciseIfElse extends AppCompatActivity implements View.OnClickLis
     }
 
     private int countCorrectAnswers() {
-        for (int j = 0; j < 5; j++)
+        for (int j = 0; j < 2; j++)
         {
             if (answerCorrect[j])
             {numOfCorrectAnswers ++;}
