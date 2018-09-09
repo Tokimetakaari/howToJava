@@ -25,8 +25,8 @@ public class ExerciseForMethods1 extends AppCompatActivity implements View.OnCli
         private ActionBarDrawerToggle mToggle;
         NavigationView burger;
         private Intent intent;
-        boolean[] answerCorrect = new boolean[5];
-        boolean[] answered = new boolean[5];
+        boolean[] answerCorrect = new boolean[6];
+        boolean[] answered = new boolean[6];
         MediaPlayer mySound;
         private NotificationHelper nHelper;
         private Intent next;
@@ -191,11 +191,7 @@ public class ExerciseForMethods1 extends AppCompatActivity implements View.OnCli
                     box4.setText(R.string.exerciseMethodsQ6A4);
                     break;
                 case 6:
-                    for (int j = 0; j < 6; j++)
-                    {
-                        if (answerCorrect[j])
-                        {numOfCorrectAnswers ++;}
-                    }
+                    countCorrectAnswers();
                     textView.setText(getString(R.string.endScreenExercise,numOfCorrectAnswers,answered.length));
                     box1.setClickable(false);
                     box1.setVisibility(View.INVISIBLE);
@@ -215,8 +211,16 @@ public class ExerciseForMethods1 extends AppCompatActivity implements View.OnCli
             resetCheckbox();
         }
 
+    private void countCorrectAnswers() {
+        for (int j = 0; j < 6; j++)
+        {
+            if (answerCorrect[j])
+            {numOfCorrectAnswers ++;}
+        }
+        }
 
-        private void resetCheckbox ()
+
+    private void resetCheckbox ()
         {
             box1.setChecked(false);
             box2.setChecked(false);

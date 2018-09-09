@@ -73,11 +73,7 @@ public class ExerciseEvents extends AppCompatActivity implements View.OnClickLis
                 textView.setText(R.string.exerciseEventsQ4);
                 break;
             case 4:
-                for (int j = 0; j < 4; j++)
-                {
-                    if (answerCorrect[j])
-                    {numOfCorrectAnswers ++;}
-                }
+                countCorrectAnswers();
                 textView.setText(getString(R.string.endScreenExercise,numOfCorrectAnswers,answered.length));
                 editText1.setVisibility(View.INVISIBLE);
                 editText1.setClickable(false);
@@ -88,6 +84,14 @@ public class ExerciseEvents extends AppCompatActivity implements View.OnClickLis
 
         }
         resetEdit();
+    }
+
+    private void countCorrectAnswers() {
+        for (int j = 0; j < 4; j++)
+        {
+            if (answerCorrect[j])
+            {numOfCorrectAnswers ++;}
+        }
     }
 
     private void setupItems() {
@@ -104,6 +108,7 @@ public class ExerciseEvents extends AppCompatActivity implements View.OnClickLis
         editText7 = findViewById(R.id.cloze_answer_7);
         editText8 = findViewById(R.id.cloze_answer_8);
         next = new Intent(this,ExerciseTryCatchPhrase.class);
+        nHelper = new NotificationHelper(this);
 
     }
 

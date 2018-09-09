@@ -176,8 +176,7 @@ public class ProgrammingExerciseForMethods extends AppCompatActivity implements 
         }
     }
 
-
-        private void connectBurger() {
+    private void connectBurger() {
         burger = findViewById(R.id.test);
         burger.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
