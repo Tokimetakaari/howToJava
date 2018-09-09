@@ -27,13 +27,8 @@ public class ExerciseSelectDatatypes extends AppCompatActivity implements View.O
     private ActionBarDrawerToggle mToggle;
     NavigationView burger;
     private Intent intent;
-    //Hier die Strings für die Notification festlegen
-    String title = "Congratulation, du hast Übung 1 bestanden";
-    String message = "Zur nächsten Übung hier klicken!";
     private NotificationHelper nHelper;
     private Intent next;
-
-
     boolean[] answerCorrect = new boolean[5];
     boolean[] answered = new boolean[5];
 
@@ -84,7 +79,7 @@ public class ExerciseSelectDatatypes extends AppCompatActivity implements View.O
                         startActivity(intent);
                         break;
                     case R.id.credits:
-                        Toast.makeText(getApplicationContext(),"Thanks for playing!",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),R.string.credits_text,Toast.LENGTH_SHORT).show();
                         break;
                 }
                 return true;
@@ -126,7 +121,7 @@ public class ExerciseSelectDatatypes extends AppCompatActivity implements View.O
                 if (numOfCorrectAnswers >=  answered.length /2) {
                     mySound.start();
                     update();
-                    sendNotification(title, message,next);
+                    sendNotification(getString(R.string.notifyTitle1), getString(R.string.notifyMessage),next);
                 }
                 finish();
             }

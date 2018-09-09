@@ -309,5 +309,37 @@
     <string name="exerciseKonstruktorenA4A2">Methodenblock</string>
     <string name="exerciseKonstruktorenA4A3">methodenblock</string>
 
+    //Methods
+    <string name="exerciseMethodsQ1">Welche Aussage trifft zu?</string>
+    <string name="exerciseMethodsQ2">Was für Werte können von Methoden zurückgegeben werden?</string>
+    <string name="exerciseMethodsQ3">Was sind gültige Methodennamen?</string>
+    <string name="exerciseMethodsQ4">Welche Methodendeklaration ist notwendig um eine Zahl zurückgeben zu können?</string>
+    <string name="exerciseMethodsQ5">Mit welchem Befehl wird die Methode \"private void doSomething()\" gestartet?</string>
+    <string name="exerciseMethodsQ6">In einer Methode wird ein boolean deklariert. Man versucht diesen über eine andere Methode zu verändern. Ist das möglich? funktionieren?</string>
+    <string name="exerciseMethodsQ1A1">Methoden manipulieren Daten</string>
+    <string name="exerciseMethodsQ1A2">Methoden sind Objekte von Klassen</string>
+    <string name="exerciseMethodsQ1A3">Methoden können keine Werte zurückgeben</string>
+    <string name="exerciseMethodsQ1A4">Methoden gibt es in Java nicht</string>
+    <string name="exerciseMethodsQ2A1">Methoden können keine Werte zurückgeben</string>
+    <string name="exerciseMethodsQ2A2">nur einfache Datentypen wie int, boolean und Strings</string>
+    <string name="exerciseMethodsQ2A3">nur Objekte einer Klasse</string>
+    <string name="exerciseMethodsQ2A4">Methoden können nur den Typ zurückgeben, mit dem sie deklariert wurden</string>
+    <string name="exerciseMethodsQ3A1"><![CDATA[public int ZAHLa&BADDIEREN]]></string>
+    <string name="exerciseMethodsQ3A2">public int zahlenAddieren</string>
+    <string name="exerciseMethodsQ3A3">public int 2ZahlenAddieren</string>
+    <string name="exerciseMethodsQ3A4">public int %addieren%</string>
+    <string name="exerciseMethodsQ4A1">public void zahlZurückgeben()</string>
+    <string name="exerciseMethodsQ4A2">public int zahlzurückgeben()</string>
+    <string name="exerciseMethodsQ4A3">public double zahlZurückgeben</string>
+    <string name="exerciseMethodsQ4A4">public boolean zahlZurückgeben()</string>
+    <string name="exerciseMethodsQ5A1">doSomething.start();</string>
+    <string name="exerciseMethodsQ5A2">operate(doSomething);</string>
+    <string name="exerciseMethodsQ5A3">doSomething();</string>
+    <string name="exerciseMethodsQ5A4">private void doSomething();</string>
+    <string name="exerciseMethodsQ6A1">Ja, es wird funktionieren.</string>
+    <string name="exerciseMethodsQ6A2">Nein, es klappt nicht, da Methoden keine anderen Methoden aufrufen können.</string>
+    <string name="exerciseMethodsQ6A3">Nein, es klappt nicht, da eine lokale Variable nur solange existiert wie die Methode ausgeführt wird.</string>
+    <string name="exerciseMethodsQ6A4">Nein, es klappt nicht, weil boolean in Methoden nicht verwendet werden dürfen.</string>
+
 
 </resources>

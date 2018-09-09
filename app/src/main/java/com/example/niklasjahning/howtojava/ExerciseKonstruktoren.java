@@ -28,7 +28,6 @@ public class ExerciseKonstruktoren extends AppCompatActivity implements View.OnC
     NavigationView burger;
     private Intent intent;
     private NotificationHelper nHelper;
-    private int questionsQ = 4;
     private Intent next;
     boolean[] answerCorrect = new boolean[4];
     boolean[] answered = new boolean[4];
@@ -40,9 +39,9 @@ public class ExerciseKonstruktoren extends AppCompatActivity implements View.OnC
         setContentView(R.layout.cloze_default);
         setupDrawer();
         connectBurger();
+        mySound = MediaPlayer.create(this,R.raw.sound);
         setupItems();
         setText();
-
 
     }
 
@@ -174,7 +173,7 @@ public class ExerciseKonstruktoren extends AppCompatActivity implements View.OnC
                 setText();
 
             } else if (i > 4) {
-                if (numOfCorrectAnswers >=  questionsQ /2) {
+                if (numOfCorrectAnswers >=  answered.length /2) {
                     mySound.start();
                     update();
                     sendNotification(getString(R.string.notifyTitle9), getString(R.string.notifyMessage), next);

@@ -1,8 +1,10 @@
 package com.example.niklasjahning.howtojava;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.NotificationCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -23,10 +25,10 @@ public class ExerciseForMethods1 extends AppCompatActivity implements View.OnCli
         private ActionBarDrawerToggle mToggle;
         NavigationView burger;
         private Intent intent;
-
-
         boolean[] answerCorrect = new boolean[5];
         boolean[] answered = new boolean[5];
+        MediaPlayer mySound;
+        private NotificationHelper nHelper;
 
         @Override
         protected void onCreate(Bundle savedInstanceState)
@@ -35,6 +37,7 @@ public class ExerciseForMethods1 extends AppCompatActivity implements View.OnCli
             setContentView(R.layout.checkbox_layout_default);
             setupDrawer();
             connectBurger();
+            mySound = MediaPlayer.create(this,R.raw.sound);
             setupItems();
             setText();
         }
@@ -47,6 +50,7 @@ public class ExerciseForMethods1 extends AppCompatActivity implements View.OnCli
             box3 = findViewById(R.id.checkbox_layout_4_checkbox3);
             box4 = findViewById(R.id.checkbox_layout_4_checkbox4);
             submit = findViewById(R.id.checkbox_submit_button);
+            nHelper = new NotificationHelper(this);
             submit.setOnClickListener(this);
         }
 
@@ -70,11 +74,11 @@ public class ExerciseForMethods1 extends AppCompatActivity implements View.OnCli
                             break;
                         case R.id.moveToTheory:
                             finish();
-                            intent = new Intent(com.example.niklasjahning.howtojava.ExerciseForMethods1.this, DataTypes.class);
+                            intent = new Intent(com.example.niklasjahning.howtojava.ExerciseForMethods1.this, Methods.class);
                             startActivity(intent);
                             break;
                         case R.id.credits:
-                            Toast.makeText(getApplicationContext(),"Thanks for playing!",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(),R.string.credits_text,Toast.LENGTH_SHORT).show();
                             break;
                     }
                     return true;
@@ -116,7 +120,11 @@ public class ExerciseForMethods1 extends AppCompatActivity implements View.OnCli
                 }
                 else if (i>6)
                 {
-                    update();
+                    if (numOfCorrectAnswers >=  answered.length /2) {
+                        mySound.start();
+                        update();
+                        sendNotification(getString(R.string.notifyTitle9), getString(R.string.notifyMessage), next);
+                    }
                     finish();
                 }
             }
@@ -139,46 +147,46 @@ public class ExerciseForMethods1 extends AppCompatActivity implements View.OnCli
         {
             switch (i) {
                 case 0:
-                    textView.setText("Welche Aussage trifft zu?");
-                    box1.setText("Methoden manipulieren Daten");
-                    box2.setText("Methoden sind Objekte von Klassen");
-                    box3.setText("Methoden können keine Werte zurückgeben");
-                    box4.setText("Methoden gibt es in Java nicht");
+                    textView.setText(R.string.exerciseMethodsQ1);
+                    box1.setText(R.string.exerciseMethodsQ1A1);
+                    box2.setText(R.string.exerciseMethodsQ1A2);
+                    box3.setText(R.string.exerciseMethodsQ1A3);
+                    box4.setText(R.string.exerciseMethodsQ1A4);
                     break;
                 case 1:
-                    textView.setText("Was für Werte können von Methoden zurückgegeben werden?");
-                    box1.setText("Methoden können keine Werte zurückgeben");
-                    box2.setText("nur einfache Datentypen wie int, boolean und Strings");
-                    box3.setText("nur Objekte einer Klasse");
-                    box4.setText("Methoden können nur den Typ zurückgeben, mit dem sie deklariert wurden");
+                    textView.setText(R.string.exerciseMethodsQ2);
+                    box1.setText(R.string.exerciseMethodsQ2A1);
+                    box2.setText(R.string.exerciseMethodsQ2A2);
+                    box3.setText(R.string.exerciseMethodsQ2A3);
+                    box4.setText(R.string.exerciseMethodsQ2A4);
                     break;
                 case 2:
-                    textView.setText("Was sind gültige Methodennamen?");
-                    box1.setText("public int ZAHLa&BADDIEREN");
-                    box2.setText("public int zahlenAddieren");
-                    box3.setText("public int 2ZahlenAddieren");
-                    box4.setText("public int %addieren%");
+                    textView.setText(R.string.exerciseMethodsQ3);
+                    box1.setText(R.string.exerciseMethodsQ3A1);
+                    box2.setText(R.string.exerciseMethodsQ3A2);
+                    box3.setText(R.string.exerciseMethodsQ3A3);
+                    box4.setText(R.string.exerciseMethodsQ3A4);
                     break;
                 case 3:
-                    textView.setText("Welche Methodendeklaration ist notwendig um eine Zahl zurückgeben zu können?");
-                    box1.setText("public void zahlZurückgeben()");
-                    box2.setText("public int zahlzurückgeben()");
-                    box3.setText("public double zahlZurückgeben");
-                    box4.setText("public boolean zahlZurückgeben()");
+                    textView.setText(R.string.exerciseMethodsQ4);
+                    box1.setText(R.string.exerciseMethodsQ4A1);
+                    box2.setText(R.string.exerciseMethodsQ4A2);
+                    box3.setText(R.string.exerciseMethodsQ4A3);
+                    box4.setText(R.string.exerciseMethodsQ4A4);
                     break;
                 case 4:
-                    textView.setText("Mit welchem Befehl wird die Methode \"private void doSomething()\" gestartet?");
-                    box1.setText("doSomething.start();");
-                    box2.setText("operate(doSomething);");
-                    box3.setText("doSomething();");
-                    box4.setText("private void doSomething();");
+                    textView.setText(R.string.exerciseMethodsQ5);
+                    box1.setText(R.string.exerciseMethodsQ5A1);
+                    box2.setText(R.string.exerciseMethodsQ5A2);
+                    box3.setText(R.string.exerciseMethodsQ5A3);
+                    box4.setText(R.string.exerciseMethodsQ5A4);
                     break;
                 case 5:
-                    textView.setText("In einer Methode wird ein boolean deklariert. Man versucht diesen über eine andere Methode zu verändern. Ist das möglich? funktionieren?");
-                    box1.setText("Ja, es wird funktionieren.");
-                    box2.setText("Nein, es klappt nicht, da Methoden keine anderen Methoden aufrufen können.");
-                    box3.setText("Nein, es klappt nicht, da eine lokale Variable nur solange existiert wie die Methode ausgeführt wird.");
-                    box4.setText("Nein, es klappt nicht, weil boolean in Methoden nicht verwendet werden dürfen.");
+                    textView.setText(R.string.exerciseMethodsQ6);
+                    box1.setText(R.string.exerciseMethodsQ6A1);
+                    box2.setText(R.string.exerciseMethodsQ6A2);
+                    box3.setText(R.string.exerciseMethodsQ6A3);
+                    box4.setText(R.string.exerciseMethodsQ6A4);
                     break;
                 case 6:
                     for (int j = 0; j < 6; j++)
@@ -186,7 +194,7 @@ public class ExerciseForMethods1 extends AppCompatActivity implements View.OnCli
                         if (answerCorrect[j])
                         {numOfCorrectAnswers ++;}
                     }
-                    textView.setText("Sie haben " + numOfCorrectAnswers + " Fragen richtig beantwortet.");
+                    textView.setText(getString(R.string.endScreenExercise,numOfCorrectAnswers,answered.length));
                     box1.setClickable(false);
                     box1.setVisibility(View.INVISIBLE);
                     box2.setClickable(false);
@@ -195,7 +203,7 @@ public class ExerciseForMethods1 extends AppCompatActivity implements View.OnCli
                     box3.setVisibility(View.INVISIBLE);
                     box4.setClickable(false);
                     box4.setVisibility(View.INVISIBLE);
-                    submit.setText("Zurück zum Hauptmenü");
+                    submit.setText(R.string.endScreenSubmit);
                     i++;
 
                     break;
@@ -253,5 +261,10 @@ public class ExerciseForMethods1 extends AppCompatActivity implements View.OnCli
                     break;
             }
         }
+
+    public void sendNotification(String title, String message, Intent next) {
+        NotificationCompat.Builder nBuilder = nHelper.getChannelNotification(title, message, next);
+        nHelper.getNotificationManager().notify(1, nBuilder.build());
+    }
     }
 
