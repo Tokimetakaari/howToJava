@@ -4,8 +4,8 @@ import android.arch.persistence.room.Database;
 import android.arch.persistence.room.RoomDatabase;
 
 
-@Database( entities = {BooleanField.class}, version = 1, exportSchema = false)
+@Database( entities = {StorageEntry.class}, version = 1, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase
 {
-    public abstract BooleanDao booleanDao();
+    public abstract DaoAccess daoAccess();
 }

@@ -131,6 +131,8 @@ public class ExerciseSelectDatatypes extends AppCompatActivity implements View.O
 
                 if (numOfCorrectAnswers >=  questionsQ /2) {
                     mySound.start();
+                    update();
+                    sendNotification(title, message);
                     sendNotification(title, message,next);
                 }
                 finish();
@@ -138,6 +140,18 @@ public class ExerciseSelectDatatypes extends AppCompatActivity implements View.O
         }
     }
 
+    private void update()
+    {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                PlayMenu.unlockLevelNumber=1;
+                StorageEntry storageEntry = MainActivity.database.daoAccess().getConfiqEntry("unlockLevel");
+                storageEntry.setValue(1);
+                MainActivity.database.daoAccess().updateEntries(storageEntry);
+            }
+        }).start();
+    }
 
     private void setText() {
         switch (i) {
@@ -196,7 +210,6 @@ public class ExerciseSelectDatatypes extends AppCompatActivity implements View.O
         }
             resetCheckbox();
     }
-
 
     private void resetCheckbox ()
     {

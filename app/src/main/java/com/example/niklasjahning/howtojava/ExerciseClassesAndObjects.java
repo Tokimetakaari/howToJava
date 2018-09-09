@@ -158,9 +158,12 @@ public class ExerciseClassesAndObjects extends AppCompatActivity implements View
                 }
                 finish();
 
+
+
             }
         }
     }
+
 
 
     private void setText() {

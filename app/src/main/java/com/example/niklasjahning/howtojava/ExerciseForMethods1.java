@@ -116,11 +116,24 @@ public class ExerciseForMethods1 extends AppCompatActivity implements View.OnCli
                 }
                 else if (i>6)
                 {
-                    PlayMenu.unlockLevelNumber = 1;
+                    update();
                     finish();
                 }
             }
         }
+
+    private void update()
+    {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                PlayMenu.unlockLevelNumber=7;
+                StorageEntry storageEntry = MainActivity.database.daoAccess().getConfiqEntry("unlockLevel");
+                storageEntry.setValue(7);
+                MainActivity.database.daoAccess().updateEntries(storageEntry);
+            }
+        }).start();
+    }
 
         private void setText()
         {

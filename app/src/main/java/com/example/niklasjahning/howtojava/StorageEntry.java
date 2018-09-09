@@ -5,26 +5,22 @@ import android.arch.persistence.room.PrimaryKey;
 import android.support.annotation.NonNull;
 
 @Entity
-public class BooleanField
+public class StorageEntry
 {
     @PrimaryKey(autoGenerate = true)
     @NonNull
     private int entryId;
-    private int fieldPosition;
+    private String confiqName;
     private int value;
     // 0 = false
     // 1 = true
 
-    public BooleanField()
+    public StorageEntry()
     {
 
     }
 
-    public BooleanField( int newValue)
-    {
 
-        value= newValue;
-    }
 
 
     @NonNull
@@ -44,11 +40,11 @@ public class BooleanField
         this.value = value;
     }
 
-    public int getFieldPosition() {
-        return fieldPosition;
+    public String getConfiqName() {
+        return confiqName;
     }
 
-    public void setFieldPosition(int fieldPosition) {
-        this.fieldPosition = fieldPosition;
+    public void setConfiqName(String confiqName) {
+        this.confiqName = confiqName;
     }
 }

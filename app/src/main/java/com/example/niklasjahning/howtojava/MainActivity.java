@@ -1,7 +1,6 @@
 package com.example.niklasjahning.howtojava;
 
 import android.arch.persistence.room.Room;
-import android.content.SharedPreferences;
 import android.view.MotionEvent;
 import android.content.Intent;
 import android.support.v4.view.GestureDetectorCompat;
@@ -11,14 +10,13 @@ import android.view.GestureDetector;
 import android.view.View;
 import android.widget.Button;
 
-import static com.example.niklasjahning.howtojava.SettingsMenu.SHARED_PREFS;
-
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     Button theory, play, settings;
     private GestureDetectorCompat gestureObject;
     private Intent i;
+
     static public AppDatabase database;
     static final String databaseName = "AppDatabase";
     public static final String SWITCH1 = "swtich1";
@@ -53,22 +51,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void setupDataBase()
     {
         database = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, databaseName).fallbackToDestructiveMigration().build();
-        setupDataEntry();
-    }
-    private void setupDataEntry()
-    {
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-        {
-            BooleanField booleanField = new BooleanField();
-            booleanField.setValue(0);
-            booleanField.setFieldPosition(booleanField.getEntryId());
-            database.booleanDao().insertBooleanField(booleanField);
-
-        }
-            }
-        }).start();
     }
 
     private void setupButtons()
