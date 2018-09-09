@@ -68,7 +68,7 @@ public class ProgrammingExerciseForMethods extends AppCompatActivity implements 
         new Thread(new Runnable() {
             @Override
             public void run() {
-                PlayMenu.unlockLevelNumber=8;
+                PlayMenu.unlockLevelNumber=11;
                 StorageEntry storageEntry = MainActivity.database.daoAccess().getConfiqEntry("unlockLevel");
                 storageEntry.setValue(8);
                 MainActivity.database.daoAccess().updateEntries(storageEntry);
@@ -108,8 +108,7 @@ public class ProgrammingExerciseForMethods extends AppCompatActivity implements 
 
     private boolean compareStrings(String solution)
     {
-        String inputSolution;
-        inputSolution = textOne.getText().toString();
+        String inputSolution = textOne.getText().toString();
         int a = 0;
         int b = 0;
         char solutions;
@@ -123,15 +122,24 @@ public class ProgrammingExerciseForMethods extends AppCompatActivity implements 
                 b++;
             }
             else {
-                if (input == ' ' || input == '\n') {
+                if (input == ' ')  {
                     a++;
                 } else {
-                    if (solutions == ' '||  solutions == '\n')
-                    {
-                        b++;
-                    }
-                else{
-                        return false;
+                    if (input == '\n')
+                    {a++;}
+                    else {
+                        if (solutions == ' ')
+                        {
+                            b++;
+                        }
+                        else{
+                            if (  solutions == '\n')
+                            {b++;}
+                            else
+                            {
+                                return false;
+                            }
+                        }
                     }
                 }
             }

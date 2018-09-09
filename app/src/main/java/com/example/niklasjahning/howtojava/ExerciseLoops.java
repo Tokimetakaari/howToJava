@@ -123,7 +123,7 @@ public class ExerciseLoops extends AppCompatActivity implements View.OnClickList
                 if ( i == 2)
                 {
                     mySound.start();
-                    sendNotification(getString(R.string.notifyTitle11), getString(R.string.notifyMessage), next);
+                    sendNotification(getString(R.string.notifyTitle8), getString(R.string.notifyMessage), next);
                     update();
                 }
 
@@ -162,8 +162,7 @@ public class ExerciseLoops extends AppCompatActivity implements View.OnClickList
 
     private boolean compareStrings(String solution)
     {
-        String inputSolution;
-        inputSolution = textOne.getText().toString();
+        String inputSolution = textOne.getText().toString();
         int a = 0;
         int b = 0;
         char solutions;
@@ -177,15 +176,24 @@ public class ExerciseLoops extends AppCompatActivity implements View.OnClickList
                 b++;
             }
             else {
-                if (input == ' ' || input == '\n') {
-                    a++;
+                if (input == ' ')  {
+                        a++;
                 } else {
-                    if (solutions == ' '||  solutions == '\n')
+                    if (input == '\n')
+                    {a++;}
+                    else {
+                    if (solutions == ' ')
                     {
                         b++;
                     }
                     else{
-                        return false;
+                        if (  solutions == '\n')
+                        {b++;}
+                        else
+                        {
+                            return false;
+                    }
+                    }
                     }
                 }
             }
