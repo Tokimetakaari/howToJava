@@ -141,7 +141,6 @@
     <string name="exerciseSelectDatatypesQ5A4">float</string>
 
     //SelectDatatypes 2
-    <string name="exerciseOperatorsQ1">Der Anfangswert von x beträgt 7. Sie inkrementieren drei Mal. Welchen Wert hat x jetzt?</string>
     <string name="exerciseSelectDatatypes2Q1">Erstelle einen Integer mit dem Namen \'age\' und dem Wert 4.</string>
     <string name="exerciseSelectDatatypes2Q2">Erstellen Sie einen Boolean mit dem Namen \'lazy\' und den Wert \'true\':</string>
     <string name="exerciseSelectDatatypes2Q3">Legen Sie einen String fest mit den Namen \'name\' fest:</string>
@@ -179,6 +178,58 @@
     <string name="exerciseClassesAndObjectsA4A5">Dog umberto=new Dog ()</string>
     <string name="exerciseClassesAndObjectsA4A6">Dog umberto =new Dog ()</string>
     <string name="exerciseClassesAndObjectsA4A7">Dog umberto= new Dog ()</string>
+
+
+    //Classes and Objects 2
+    <string name="exerciseClassesAndObjects2Q1">Welches Sichtbarkeitsattribut besagt, dass ein Objekt oder eine Variable nur innerhalb der aktuellen Klasse sichtbar ist?</string>
+    <string name="R.string.exerciseClassesAndObjects2Q2">Welches Sichtbarkeitsattribut besagt, dass ein Objekt oder eine Variable im gesamten Programm sichtbar ist?</string>
+    <string name="R.string.exerciseClassesAndObjects2Q3">Objekte oder Variablen, welche nach dem Erstellen nicht mehr verändert werden können, sind:</string>
+    <string name="exerciseClassesAndObjects2Q1A1">private</string>
+    <string name="exerciseClassesAndObjects2Q1A2">protected</string>
+    <string name="exerciseClassesAndObjects2Q1A3">public</string>
+    <string name="R_string_exerciseClassesAndObjects2Q2A1">protected</string>
+    <string name="R_string_exerciseClassesAndObjects2Q2A2">public</string>
+    <string name="R_string_exerciseClassesAndObjects2Q2A3">private</string>
+    <string name="R_string_exerciseClassesAndObjects2Q3A1">final</string>
+    <string name="R_string_exerciseClassesAndObjects2Q3A2">static</string>
+    <string name="R_string_exerciseClassesAndObjects2Q3A3">protected</string>
+
+
+    <string name="exerciseOperatorsQ1">Der Anfangswert von x beträgt 7. Sie inkrementieren drei Mal. Welchen Wert hat x jetzt?</string>
+    <string name="exerciseOperatorsQ2">Der Anfangswert von x beträgt 24. Sie dekrementieren fünfmal. Welchen Wert hat x jetzt?</string>
+    <string name="exerciseOperatorsQ3">Lösen sie folgende Gleichung: 20 % 7 = ?</string>
+    <string name="exerciseOperatorsQ4">Lösen sie folgende Gleichung: 18 % 6 = ?</string>
+    <string name="exerciseOperatorsQ5">Es sind folgende Werte gegeben: x = 5 und y = 7. Sie inkrementieren x zweimal und zeitgleich dekrementieren Sie dreimal y. Lösen sie folgenden Term: x - y = ?</string>
+    <string name="exerciseOperatorsQ6">Es sind folgende Werte gegeben: x = 28 und y = 14. Sie dekrementieren x sechsmal und zeitgleich dekrementieren Sie zweimal y. Lösen sie folgenden Term: x % y = ?</string>
+    <string name="exerciseOperatorsQ7">Welche Gleichung ergibt 5 ? (Mehrfachantworten möglich)</string>
+    <string name="exerciseOperatorsQ1A1">4</string>
+    <string name="exerciseOperatorsQ1A2">10</string>
+    <string name="exerciseOperatorsQ1A3">8</string>
+    <string name="exerciseOperatorsQ1A4">5</string>
+    <string name="exerciseOperatorsQ2A1">10</string>
+    <string name="exerciseOperatorsQ2A2">29</string>
+    <string name="exerciseOperatorsQ2A3">20</string>
+    <string name="exerciseOperatorsQ2A4">19</string>
+    <string name="exerciseOperatorsQ3A1">6</string>
+    <string name="exerciseOperatorsQ3A2">3</string>
+    <string name="exerciseOperatorsQ3A3">2</string>
+    <string name="exerciseOperatorsQ3A4">7</string>
+    <string name="exerciseOperatorsQ4A1">3</string>
+    <string name="exerciseOperatorsQ4A2">6</string>
+    <string name="exerciseOperatorsQ4A3">18</string>
+    <string name="exerciseOperatorsQ4A4">0</string>
+    <string name="exerciseOperatorsQ5A1">11</string>
+    <string name="exerciseOperatorsQ5A2">3</string>
+    <string name="exerciseOperatorsQ5A3">-7</string>
+    <string name="exerciseOperatorsQ5A4">-3</string>
+    <string name="exerciseOperatorsQ6A1">11</string>
+    <string name="exerciseOperatorsQ6A2">14</string>
+    <string name="exerciseOperatorsQ6A3">18</string>
+    <string name="exerciseOperatorsQ6A4">10</string>
+    <string name="exerciseOperatorsQ7A1">50 % 15 = ?</string>
+    <string name="exerciseOperatorsQ7A2">18 % 5 = ?</string>
+    <string name="exerciseOperatorsQ7A3">13 % 10 = ?</string>
+    <string name="exerciseOperatorsQ7A4">70 % 65 = ?</string>
 
 
 </resources>

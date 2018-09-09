@@ -29,8 +29,6 @@ public class ExerciseOperators extends AppCompatActivity implements View.OnClick
     private Intent next;
     MediaPlayer mySound;
     private NotificationHelper nHelper;
-    String title = "Congratulation, du hast Übung 1 bestanden";
-    String message = "Zur nächsten Übung hier klicken!";
 
 
     boolean[] answerCorrect = new boolean[7];
@@ -107,7 +105,7 @@ public class ExerciseOperators extends AppCompatActivity implements View.OnClick
     }
 
     private void setupDrawer() {
-        mDrawerLayout = (DrawerLayout) findViewById(R.id.burgerLayout);
+        mDrawerLayout = findViewById(R.id.burgerLayout);
         mToggle = new ActionBarDrawerToggle(this,mDrawerLayout, R.string.open, R.string.close);
         mDrawerLayout.addDrawerListener(mToggle);
         mToggle.syncState();
@@ -139,7 +137,7 @@ public class ExerciseOperators extends AppCompatActivity implements View.OnClick
             } else if (i >= 7) {
                 if (numOfCorrectAnswers >= answerCorrect.length / 2) {
                     mySound.start();
-                    sendNotification(title, message, next);
+                    sendNotification(getString(R.string.notifyTitle5), getString(R.string.notifyMessage), next);
                     update();
                     finish();
 
@@ -152,59 +150,59 @@ public class ExerciseOperators extends AppCompatActivity implements View.OnClick
         switch (i) {
             case 0:
                 textView.setText(R.string.exerciseOperatorsQ1);
-                box1.setText("4");
-                box2.setText("10");
-                box3.setText("8");
-                box4.setText("5");
+                box1.setText(R.string.exerciseOperatorsQ1A1);
+                box2.setText(R.string.exerciseOperatorsQ1A2);
+                box3.setText(R.string.exerciseOperatorsQ1A3);
+                box4.setText(R.string.exerciseOperatorsQ1A4);
                 break;
             case 1:
-                textView.setText("Der Anfangswert von x beträgt 24. Sie dekrementieren fünfmal. Welchen Wert hat x jetzt?");
-                box1.setText("10");
-                box2.setText("29");
-                box3.setText("20");
-                box4.setText("19");
+                textView.setText(R.string.exerciseOperatorsQ2);
+                box1.setText(R.string.exerciseOperatorsQ2A1);
+                box2.setText(R.string.exerciseOperatorsQ2A2);
+                box3.setText(R.string.exerciseOperatorsQ2A3);
+                box4.setText(R.string.exerciseOperatorsQ2A4);
                 break;
             case 2:
-                textView.setText("Lösen sie folgende Gleichung: 20 % 7 = ?");
-                box1.setText("6");
-                box2.setText("3");
-                box3.setText("2");
-                box4.setText("7");
+                textView.setText(R.string.exerciseOperatorsQ3);
+                box1.setText(R.string.exerciseOperatorsQ3A1);
+                box2.setText(R.string.exerciseOperatorsQ3A2);
+                box3.setText(R.string.exerciseOperatorsQ3A3);
+                box4.setText(R.string.exerciseOperatorsQ3A4);
                 break;
             case 3:
-                textView.setText("Lösen sie folgende Gleichung: 18 % 6 = ?");
-                box1.setText("3");
-                box2.setText("6");
-                box3.setText("18");
-                box4.setText("0");
+                textView.setText(R.string.exerciseOperatorsQ4);
+                box1.setText(R.string.exerciseOperatorsQ4A1);
+                box2.setText(R.string.exerciseOperatorsQ4A2);
+                box3.setText(R.string.exerciseOperatorsQ4A3);
+                box4.setText(R.string.exerciseOperatorsQ4A4);
                 break;
             case 4:
-                textView.setText("Es sind folgende Werte gegeben: x = 5 und y = 7. Sie inkrementieren x zweimal und zeitgleich dekrementieren Sie dreimal y. Lösen sie folgenden Term: x - y = ?");
-                box1.setText("11");
-                box2.setText("3");
-                box3.setText("-7");
-                box4.setText("-3");
+                textView.setText(R.string.exerciseOperatorsQ5);
+                box1.setText(R.string.exerciseOperatorsQ5A1);
+                box2.setText(R.string.exerciseOperatorsQ5A2);
+                box3.setText(R.string.exerciseOperatorsQ5A3);
+                box4.setText(R.string.exerciseOperatorsQ5A4);
                 break;
 
 
             case 5:
-                textView.setText("Es sind folgende Werte gegeben: x = 28 und y = 14. Sie dekrementieren x sechsmal und zeitgleich dekrementieren Sie zweimal y. Lösen sie folgenden Term: x % y = ?");
-                box1.setText("11");
-                box2.setText("14");
-                box3.setText("18");
-                box4.setText("10");
+                textView.setText(R.string.exerciseOperatorsQ6);
+                box1.setText(R.string.exerciseOperatorsQ6A1);
+                box2.setText(R.string.exerciseOperatorsQ6A2);
+                box3.setText(R.string.exerciseOperatorsQ6A3);
+                box4.setText(R.string.exerciseOperatorsQ6A4);
                 break;
 
             case 6:
-                textView.setText("Welche Gleichung ergibt 5 ? (Mehrfachantworten möglich)");
-                box1.setText("50 % 15 = ?");
-                box2.setText("18 % 5 = ?");
-                box3.setText("13 % 10 = ?");
-                box4.setText("70 % 65 = ?");
+                textView.setText(R.string.exerciseOperatorsQ7);
+                box1.setText(R.string.exerciseOperatorsQ7A1);
+                box2.setText(R.string.exerciseOperatorsQ7A2);
+                box3.setText(R.string.exerciseOperatorsQ7A3);
+                box4.setText(R.string.exerciseOperatorsQ7A4);
                 break;
             case 7:
                 countCorrectAnswers();
-                textView.setText("Sie haben " + numOfCorrectAnswers + "von" + answered.length+ " richtig beantwortet");
+                textView.setText(getString(R.string.endScreenExercise,numOfCorrectAnswers,answered.length));
                 box1.setVisibility(View.INVISIBLE);
                 box1.setClickable(false);
                 box2.setVisibility(View.INVISIBLE);
@@ -213,6 +211,7 @@ public class ExerciseOperators extends AppCompatActivity implements View.OnClick
                 box3.setClickable(false);
                 box4.setVisibility(View.INVISIBLE);
                 box4.setClickable(false);
+                submit.setText(R.string.endScreenSubmit);
                 i++;
                 break;
 

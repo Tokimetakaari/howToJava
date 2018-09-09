@@ -197,8 +197,6 @@ public class ExerciseSelectDatatypes2 extends AppCompatActivity implements View.
 
     private void checkCorrectAnswers() {
 
-//        Falls mehrere Schreibweise zählen einfach eine weitere Bedingung mit || hinzufügen editText1.getText().toString().equals(alternative1)
-
         switch (i) {
             case 0:
                 if (editText1.getText().toString().equals(getString(R.string.exerciseSelectDatatypes2A1))

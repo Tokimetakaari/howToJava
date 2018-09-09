@@ -32,10 +32,6 @@ public class ExerciseClassesAndObjects2 extends AppCompatActivity implements Vie
     private ActionBarDrawerToggle mToggle;
     NavigationView burger;
     private Intent intent;
-
-    //Hier die Strings für die Notification festlegen
-    String title = "Congrats";
-    String message = "Du hast Übung 4 bestanden";
     private NotificationHelper nHelper;
     private Intent next;
 
@@ -134,7 +130,7 @@ public class ExerciseClassesAndObjects2 extends AppCompatActivity implements Vie
                 if (numOfCorrectAnswers >=  answered.length /2) {
                     mySound.start();
                     update();
-                    sendNotification(title, message, next);
+                    sendNotification(getString(R.string.notifyTitle4), getString(R.string.notifyMessage), next);
                 }
                 finish();
             }
@@ -158,29 +154,29 @@ public class ExerciseClassesAndObjects2 extends AppCompatActivity implements Vie
     {
         switch (i) {
             case 0:
-                textView.setText("Welches Sichtbarkeitsattribut besagt, dass ein Objekt oder eine Variable nur innerhalb der aktuellen Klasse sichtbar ist?");
-                box1.setText("private");
-                box2.setText("protected");
-                box3.setText("public");
+                textView.setText(R.string.exerciseClassesAndObjects2Q1);
+                box1.setText(R.string.exerciseClassesAndObjects2Q1A1);
+                box2.setText(R.string.exerciseClassesAndObjects2Q1A2);
+                box3.setText(R.string.exerciseClassesAndObjects2Q1A3);
                 box4.setVisibility(View.GONE);
                 break;
             case 1:
-                textView.setText("Welches Sichtbarkeitsattribut besagt, dass ein Objekt oder eine Variable im gesamten Programm sichtbar ist?");
-                box1.setText("protected");
-                box2.setText("public");
-                box3.setText("private");
+                textView.setText(R.string.R_string_exerciseClassesAndObjects2Q2);
+                box1.setText(R.string.R_string_exerciseClassesAndObjects2Q2A1);
+                box2.setText(R.string.R_string_exerciseClassesAndObjects2Q2A2);
+                box3.setText(R.string.R_string_exerciseClassesAndObjects2Q2A3);
                 box4.setVisibility(View.GONE);
                 break;
             case 2:
-                textView.setText("Objekte oder Variablen, welche nach dem Erstellen nicht mehr verändert werden können, sind: ");
-                box1.setText("final");
-                box2.setText("static");
-                box3.setText("protected");
+                textView.setText(R.string.R_string_exerciseClassesAndObjects2Q3);
+                box1.setText(R.string.R_string_exerciseClassesAndObjects2Q3A1);
+                box2.setText(R.string.R_string_exerciseClassesAndObjects2Q3A2);
+                box3.setText(R.string.R_string_exerciseClassesAndObjects2Q3A3);
                 box4.setVisibility(View.GONE);
                 break;
             case 3:
                 countCorrectAnswers();
-                textView.setText("Sie haben " + numOfCorrectAnswers + "von" + answered.length + " Fragen richtig beantwortet.");
+                textView.setText(getString(R.string.endScreenExercise,numOfCorrectAnswers,answered.length));
                 box1.setClickable(false);
                 box1.setVisibility(View.INVISIBLE);
                 box2.setClickable(false);
@@ -189,7 +185,7 @@ public class ExerciseClassesAndObjects2 extends AppCompatActivity implements Vie
                 box3.setVisibility(View.INVISIBLE);
                 box4.setClickable(false);
                 box4.setVisibility(View.INVISIBLE);
-                submit.setText("Zurück zum Hauptmenü");
+                submit.setText(R.string.endScreenSubmit);
                 i++;
 
                 break;
