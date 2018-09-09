@@ -29,15 +29,10 @@ public class ExerciseEvents extends AppCompatActivity implements View.OnClickLis
     private ActionBarDrawerToggle mToggle;
     NavigationView burger;
     private Intent intent;
-
     private NotificationHelper nHelper;
-    private int questionsQ = 4;
     private Intent next;
-
-
     boolean[] answerCorrect = new boolean[4];
     boolean[] answered = new boolean[4];
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +40,7 @@ public class ExerciseEvents extends AppCompatActivity implements View.OnClickLis
         setContentView(R.layout.cloze_default);
         setupDrawer();
         connectBurger();
+        mySound = MediaPlayer.create(this,R.raw.sound);
         setupItems();
         setText();
 
@@ -157,7 +153,6 @@ public class ExerciseEvents extends AppCompatActivity implements View.OnClickLis
         }).start();
     }
 
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
@@ -189,7 +184,7 @@ public class ExerciseEvents extends AppCompatActivity implements View.OnClickLis
                 setText();
 
             } else if (i > 4) {
-                if (numOfCorrectAnswers >=  questionsQ /2) {
+                if (numOfCorrectAnswers >=  answered.length /2) {
                     mySound.start();
                     sendNotification(getString(R.string.notifyTitle14),getString(R.string.notifyMessage),next);
                     update();
