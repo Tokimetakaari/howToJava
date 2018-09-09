@@ -1,79 +1,106 @@
 package com.example.niklasjahning.howtojava;
 
+
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.NotificationCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.Spinner;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class ExerciseExeptions extends AppCompatActivity implements View.OnClickListener {
 
     MediaPlayer mySound;
-
-    Spinner spinner1, spinner2, spinner3, spinner4, spinner5, spinner6;
-    TextView textView1, textView2, textView3, textView4, textView5, textView6, textQuest;
+    TextView textView;
+    EditText editText1, editText2, editText3, editText4, editText5, editText6, editText7, editText8;
     Button submit;
-
     int i = 0;
-    int numOfCorrectAnswers=0;
+    int numOfCorrectAnswers = 0;
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
     NavigationView burger;
     private Intent intent;
     private NotificationHelper nHelper;
     private Intent next;
-
-
-
-
-    boolean[] answerCorrect = new boolean[5];
-    boolean[] answered = new boolean[5];
+    boolean[] answerCorrect = new boolean[3];
+    boolean[] answered = new boolean[3];
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.reassemble_layout_default);
-        setupItems();
+        setContentView(R.layout.cloze_default);
         setupDrawer();
         connectBurger();
         mySound = MediaPlayer.create(this,R.raw.sound);
+        setupItems();
         setText();
+
+
+    }
+
+    private void setText() {
+        switch (i) {
+            case 0:
+                textView.setText(R.string.exerciseExeptionQ1);
+                editText2.setVisibility(View.GONE);
+                editText3.setVisibility(View.GONE);
+                editText4.setVisibility(View.GONE);
+                editText5.setVisibility(View.GONE);
+                editText6.setVisibility(View.GONE);
+                editText7.setVisibility(View.GONE);
+                editText8.setVisibility(View.GONE);
+                break;
+            case 1:
+                textView.setText(R.string.exerciseExeptionQ2);
+                break;
+            case 2:
+                textView.setText(R.string.exerciseExeptionQ3);
+                break;
+            case 3:
+                for (int j = 0; j < 3; j++)
+                {
+                    if (answerCorrect[j])
+                    {numOfCorrectAnswers ++;}
+                }
+                textView.setText(getString(R.string.endScreenExercise,numOfCorrectAnswers,answered.length));
+                editText1.setVisibility(View.INVISIBLE);
+                editText1.setClickable(false);
+                i++;
+                break;
+
+
+        }
+        resetEdit();
     }
 
     private void setupItems() {
 
-        textView1 = findViewById(R.id.reassemble_text_1);
-        textView2 = findViewById(R.id.reassemble_text_2);
-        textView3 = findViewById(R.id.reassemble_text_3);
-        textView4 = findViewById(R.id.reassemble_text_4);
-        textView5 = findViewById(R.id.reassemble_text_5);
-        textView6 = findViewById(R.id.reassemble_text_6);
-        textQuest = findViewById(R.id.reassemble_question);
-        spinner1 = findViewById(R.id.reassemble_spinner_1);
-        spinner2 = findViewById(R.id.reassemble_spinner_2);
-        spinner3 = findViewById(R.id.reassemble_spinner_3);
-        spinner4 = findViewById(R.id.reassemble_spinner_4);
-        spinner5 = findViewById(R.id.reassemble_spinner_5);
-        spinner6 = findViewById(R.id.reassemble_spinner_6);
-        submit = findViewById(R.id.reassemble_submit_button);
         nHelper = new NotificationHelper(this);
+        textView = findViewById(R.id.cloze_text);
+        editText1 = findViewById(R.id.cloze_answer_1);
+        submit = findViewById(R.id.cloze_submit_button);
         submit.setOnClickListener(this);
+        editText2 = findViewById(R.id.cloze_answer_2);
+        editText3 = findViewById(R.id.cloze_answer_3);
+        editText4 = findViewById(R.id.cloze_answer_4);
+        editText5 = findViewById(R.id.cloze_answer_5);
+        editText6 = findViewById(R.id.cloze_answer_6);
+        editText7 = findViewById(R.id.cloze_answer_7);
+        editText8 = findViewById(R.id.cloze_answer_8);
+        nHelper = new NotificationHelper(this);
         next = new Intent(this,ExerciseBufferedReader.class);
 
-
-
     }
+
 
     private void connectBurger() {
         burger = findViewById(R.id.test);
@@ -99,13 +126,12 @@ public class ExerciseExeptions extends AppCompatActivity implements View.OnClick
                         startActivity(intent);
                         break;
                     case R.id.credits:
-                        Toast.makeText(getApplicationContext(),getString(R.string.credits_text),Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),R.string.credits_text,Toast.LENGTH_SHORT).show();
                         break;
                 }
                 return true;
             }
         });}
-
 
 
     @Override
@@ -114,6 +140,10 @@ public class ExerciseExeptions extends AppCompatActivity implements View.OnClick
         if(mToggle.onOptionsItemSelected(item)){
             return true;
         }
+
+
+
+
         return super.onOptionsItemSelected(item);
     }
 
@@ -125,40 +155,23 @@ public class ExerciseExeptions extends AppCompatActivity implements View.OnClick
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
-    private int[] getSelectedItemPositions() {
-        int[] itemPositions = new int[6];
-
-        itemPositions[0] = Integer.parseInt(spinner1.getSelectedItem().toString());
-        itemPositions[1] = Integer.parseInt(spinner2.getSelectedItem().toString());
-        itemPositions[2] = Integer.parseInt(spinner3.getSelectedItem().toString());
-        itemPositions[3] = Integer.parseInt(spinner4.getSelectedItem().toString());
-        itemPositions[4] = Integer.parseInt(spinner5.getSelectedItem().toString());
-        itemPositions[5] = Integer.parseInt(spinner6.getSelectedItem().toString());
-
-        return itemPositions;
-    }
-
     @Override
-    public void onClick(View view)
-    {
-        if(view.getId() == R.id.reassemble_submit_button)
-        {
-            if ( (spinner1.getSelectedItem() != null || spinner2.getSelectedItem() != null || spinner3.getSelectedItem() != null || spinner4.getSelectedItem() != null) && (i <=5))
-            {
-                checkCorrectAnswers(getSelectedItemPositions());
+    public void onClick(View view) {
+        if (view.getId() == R.id.cloze_submit_button) {
+            if ((!editText1.getText().toString().isEmpty()) && (i <= 3)) {
+                checkCorrectAnswers();
                 answered[i] = true;
                 i++;
                 setText();
-            }
-            else if (i>5)
-            {
-                PlayMenu.unlockLevelNumber = 1;
+
+            } else if (i > 3) {
                 if (numOfCorrectAnswers >=  answered.length /2) {
                     mySound.start();
                     update();
                     sendNotification(getString(R.string.notifyTitle16), getString(R.string.notifyMessage), next);
                 }
                 finish();
+
             }
         }
     }
@@ -176,129 +189,46 @@ public class ExerciseExeptions extends AppCompatActivity implements View.OnClick
         }).start();
     }
 
-    private void setText() {
+    private void checkCorrectAnswers() {
+
+//        Falls mehrere Schreibweise zählen einfach eine weitere Bedingung mit || hinzufügen editText1.getText().toString().equals(alternative1)
+
         switch (i) {
             case 0:
-                textQuest.setText("Deine ");
-                textView1.setText("Deine");
-                textView2.setText("Alter");
-                textView3.setText("Say");
-                textView4.setText("What");
-                textView5.setText("What");
-                textView6.setText("What");
-                break;
-            case 1:
-                textQuest.setText("");
-                textView1.setText("");
-                textView2.setText("");
-                textView3.setText("");
-                textView4.setText("");
-                textView5.setText("");
-                textView6.setText("");
-            case 2:
-                textQuest.setText("");
-                textView1.setText("");
-                textView2.setText("");
-                textView3.setText("");
-                textView4.setText("");
-                textView5.setText("");
-                textView6.setText("");
-            case 3:
-                textQuest.setText("");
-                textView1.setText("");
-                textView2.setText("");
-                textView3.setText("");
-                textView4.setText("");
-                textView5.setText("");
-                textView6.setText("");
-            case 4:
-                textQuest.setText("");
-                textView1.setText("");
-                textView2.setText("");
-                textView3.setText("");
-                textView4.setText("");
-                textView5.setText("");
-                textView6.setText("");
-            case 5:
-                textQuest.setText("");
-                textView1.setText("");
-                textView2.setText("");
-                textView3.setText("");
-                textView4.setText("");
-                textView5.setText("");
-                textView6.setText("");
-            case 6:
-                countCorrectAnswers();
-                textQuest.setText(getString(R.string.endScreenExercise,numOfCorrectAnswers,answered.length));
-                textView1.setVisibility(View.GONE);
-                textView2.setVisibility(View.GONE);
-                textView3.setVisibility(View.GONE);
-                textView4.setVisibility(View.GONE);
-                textView5.setVisibility(View.GONE);
-                textView6.setVisibility(View.GONE);
-                spinner1.setVisibility(View.GONE);
-                spinner2.setVisibility(View.GONE);
-                spinner3.setVisibility(View.GONE);
-                spinner4.setVisibility(View.GONE);
-                spinner5.setVisibility(View.GONE);
-                spinner6.setVisibility(View.GONE);
-                submit.setText(getString(R.string.endScreenSubmit));
-                i++;
-
-                break;
-            default:
-                break;
-
-
-        }
-        resetSpinner();
-    }
-
-    private void resetSpinner ()
-    {
-        spinner1.setSelected(false);
-        spinner2.setSelected(false);
-        spinner3.setSelected(false);
-        spinner4.setSelected(false);
-        spinner5.setSelected(false);
-        spinner6.setSelected(false);
-
-    }
-
-    private void checkCorrectAnswers(int[] itemPostions) {
-        switch (i)
-        {
-            case 0: if (itemPostions[0] == 1) {
-                if (itemPostions[1] == 2) {
-                    if (itemPostions[2] == 3) {
-                        if (itemPostions[3] == 4) {
-                            if (itemPostions[4] == 5) {
-                                if (itemPostions[5] == 6) {
-                                    answerCorrect[i] = true;
-                                }
-                            }
-                        }
-                    }
+                if (editText1.getText().toString().equals(getString(R.string.exerciseExeptionA1))
+                        || (editText1.getText().toString().equals(getString(R.string.exerciseExeptionsA1A1)))) {
+                    answerCorrect[i] = true;
                 }
-            }
+            case 1:
+                if (editText1.getText().toString().equals(getString(R.string.exerciseExeptionsA2))
+                        || (editText1.getText().toString().equals(getString(R.string.exerciseExeptionsA2A1)))) {
+                    answerCorrect[i] = true;
+                }
+                break;
+            case 2:
+                if (editText1.getText().toString().equals(getString(R.string.exerciseExeptionsA3))
+                        || (editText1.getText().toString().equals(getString(R.string.exerciseExeptionsA3A1)))) {
+                    answerCorrect[i] = true;
 
+                }
                 break;
             default:
                 break;
+
+
+
         }
+
     }
 
-    private int countCorrectAnswers() {
-        for (int j = 0; j < 5; j++)
-        {
-            if (answerCorrect[j])
-            {numOfCorrectAnswers ++;}
-        }
-        return numOfCorrectAnswers;
+    private void resetEdit()
+    {
+        editText1.setText("");
     }
+
 
     public void sendNotification(String title, String message, Intent next) {
-        android.support.v4.app.NotificationCompat.Builder nBuilder = nHelper.getChannelNotification(title, message, next);
+        NotificationCompat.Builder nBuilder = nHelper.getChannelNotification(title, message, next);
         nHelper.getNotificationManager().notify(1, nBuilder.build());
     }
 

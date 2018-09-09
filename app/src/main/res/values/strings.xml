@@ -339,6 +339,22 @@
     <string name="exerciseTryCatchA3A1">catch</string>
 
 
+
+    // Exeption exercise
+
+    <string name="exerciseExeptionQ1">Zum Einlesen von Dateien kann man entweder den relativen oder den ________ Dateipfad verwenden.</string>
+    <string name="exerciseExeptionQ2">Beim _________ Dateipfad wird nur das letzte Stück des Dateipfads angegeben.</string>
+    <string name="exerciseExeptionQ3">Image image2 = getImage(getCodeBase(), "C:\Users\Franz\Bilder\cat.jpg"); Hier wird das Bild mit Hilfe des _______ Dateipfades gefunden.</string>
+    <string name="exerciseExeptionQ4"></string>
+    <string name="exerciseExeptionA1">absoluten</string>
+    <string name="exerciseExeptionsA1A1">Absoluten</string>
+    <string name="exerciseExeptionsA2">relativen</string>
+    <string name="exerciseExeptionsA2A1">Relativen</string>
+    <string name="exerciseExeptionsA3">Absoluten</string>
+    <string name="exerciseExeptionsA3A1">absoluten</string>
+
+
+
    // Events exercise
 
     <string name="exerciseEventsQ1">Wenn der Nutzer innerhalb des geöffneten Anwendungsfenster einen \'Key\' drückt, ist dies ein ________ .</string>
