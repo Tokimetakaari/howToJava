@@ -132,7 +132,6 @@ public class ExerciseSelectDatatypes extends AppCompatActivity implements View.O
                 if (numOfCorrectAnswers >=  questionsQ /2) {
                     mySound.start();
                     update();
-                    sendNotification(title, message);
                     sendNotification(title, message,next);
                 }
                 finish();
