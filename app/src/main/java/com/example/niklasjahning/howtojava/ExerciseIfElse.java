@@ -113,14 +113,14 @@ public class ExerciseIfElse extends AppCompatActivity implements View.OnClickLis
     {
         if(view.getId() == R.id.checkbox_submit_button)
         {
-            if ( (box1.isChecked()|| box2.isChecked() || box3.isChecked() || box4.isChecked()) && (i <=3))
+            if ( (box1.isChecked()|| box2.isChecked() || box3.isChecked() || box4.isChecked()) && (i <=2))
             {
                 checkCorrectAnswers();
                 answered[i] = true;
                 i++;
                 setText();
             }
-            else if (i>3)
+            else if (i>2)
             {
 
                 if (numOfCorrectAnswers >= answered.length /2) {
