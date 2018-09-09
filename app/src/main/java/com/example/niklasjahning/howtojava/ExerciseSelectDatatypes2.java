@@ -23,17 +23,8 @@ public class ExerciseSelectDatatypes2 extends AppCompatActivity implements View.
     Button submit;
     int i = 0;
     int numOfCorrectAnswers = 0;
-    String solution1 = "int age = 4;";
-    String alternative1_1 = "int age= 4;";
-    String alternative1_2 = "int age=4;";
-    String alternative1_3 ="int age =4;";
-    String solution2 = "boolean lazy = true;";
-    String alternative2_1 = "boolean lazy= true;";
-    String alternative2_2 = "boolean lazy =true;";
-    String alternative2_3 ="boolean lazy=true;";
-    String solution3 = "String name;";
     MediaPlayer mySound;
-
+    private NotificationHelper nHelper;
     boolean[] answerCorrect = new boolean[3];
     boolean[] answered = new boolean[3];
     private DrawerLayout mDrawerLayout;
@@ -41,9 +32,6 @@ public class ExerciseSelectDatatypes2 extends AppCompatActivity implements View.
     NavigationView burger;
     private Intent intent;
     private Intent next;
-    private NotificationHelper nHelper;
-    String title = "Congratulation, du hast Übung 1 bestanden";
-    String message = "Zur nächsten Übung hier klicken!";
 
 
     @Override
@@ -53,6 +41,7 @@ public class ExerciseSelectDatatypes2 extends AppCompatActivity implements View.
         setupDrawer();
         connectBurger();
         setupItems();
+        mySound = MediaPlayer.create(this,R.raw.sound);
         setText();
 
 
@@ -62,7 +51,7 @@ public class ExerciseSelectDatatypes2 extends AppCompatActivity implements View.
 
         switch (i) {
             case 0:
-                textView.setText("Erstelle einen Integer mit dem Namen 'age' und dem Wert 4. ");
+                textView.setText(R.string.exerciseSelectDatatypes2Q1);
                 editText2.setVisibility(View.GONE);
                 editText3.setVisibility(View.GONE);
                 editText4.setVisibility(View.GONE);
@@ -72,27 +61,32 @@ public class ExerciseSelectDatatypes2 extends AppCompatActivity implements View.
                 editText8.setVisibility(View.GONE);
                 break;
             case 1:
-                textView.setText("Erstellen Sie einen Boolean mit dem Namen 'lazy' und den Wert 'true':");
+                textView.setText(R.string.exerciseSelectDatatypes2Q2);
                 break;
             case 2:
-                textView.setText("Legen Sie einen String fest mit den Namen 'name' fest:");
+                textView.setText(R.string.exerciseSelectDatatypes2Q3);
                 break;
 
             case 3:
-                for (int j = 0; j < 3; j++)
-                {
-                    if (answerCorrect[j])
-                    {numOfCorrectAnswers ++;}
-                }
-                textView.setText("Sie haben " + numOfCorrectAnswers +" von " + answered.length + " richtig beantwortet");
+                countCorrectAnswers();
+                textView.setText(getString(R.string.endScreenExercise, numOfCorrectAnswers, answered.length));
                 editText1.setVisibility(View.INVISIBLE);
                 editText1.setClickable(false);
+                submit.setText(R.string.endScreenSubmit);
                 i++;
                 break;
 
 
         }
         resetEdit();
+    }
+
+    private void countCorrectAnswers() {
+        for (int j = 0; j < 3; j++)
+        {
+            if (answerCorrect[j])
+            {numOfCorrectAnswers ++;}
+        }
     }
 
     private void setupItems() {
@@ -108,8 +102,8 @@ public class ExerciseSelectDatatypes2 extends AppCompatActivity implements View.
         editText6 = findViewById(R.id.cloze_answer_6);
         editText7 = findViewById(R.id.cloze_answer_7);
         editText8 = findViewById(R.id.cloze_answer_8);
-        next = new Intent(this,ExerciseClassesAndObjects.class);
         nHelper = new NotificationHelper(this);
+        next = new Intent(this,ExerciseClassesAndObjects.class);
 
 
 
@@ -179,9 +173,8 @@ public class ExerciseSelectDatatypes2 extends AppCompatActivity implements View.
             } else if (i > 3) {
                 if (numOfCorrectAnswers >=  answered.length /2) {
                     mySound.start();
+                    sendNotification(getString(R.string.notifyTitle1), getString(R.string.notifyMessage),next);
                     update();
-                    sendNotification(title, message,next);
-
                 }
                 finish();
 
@@ -208,16 +201,22 @@ public class ExerciseSelectDatatypes2 extends AppCompatActivity implements View.
 
         switch (i) {
             case 0:
-                if (editText1.getText().toString().equals(solution1) || (editText1.getText().toString().equals(alternative1_1)) || (editText1.getText().toString().equals(alternative1_2)) || (editText1.getText().toString().equals(alternative1_3))) {
+                if (editText1.getText().toString().equals(getString(R.string.exerciseSelectDatatypes2A1))
+                        || (editText1.getText().toString().equals(getString(R.string.exerciseSelectDatatypes2A1A1)))
+                        || (editText1.getText().toString().equals(getString(R.string.exerciseSelectDatatypes2A1A2)))
+                        || (editText1.getText().toString().equals(getString(R.string.exerciseSelectDatatypes2A1A3)))) {
                     answerCorrect[i] = true;
                 }
             case 1:
-                if (editText1.getText().toString().equals(solution2) || (editText1.getText().toString().equals(alternative2_1)) || (editText1.getText().toString().equals(alternative2_2)) || (editText1.getText().toString().equals(alternative2_3))) {
+                if (editText1.getText().toString().equals(getString(R.string.exerciseSelectDatatypes2A2))
+                        || (editText1.getText().toString().equals(getString(R.string.exerciseSelectDatatypes2A2A1)))
+                        || (editText1.getText().toString().equals(getString(R.string.exerciseSelectDatatypes2A2A2)))
+                        || (editText1.getText().toString().equals(getString(R.string.exerciseSelectDatatypes2A2A3)))) {
                     answerCorrect[i] = true;
                 }
                 break;
             case 2:
-                if (editText1.getText().toString().equals(solution3)) {
+                if (editText1.getText().toString().equals(getString(R.string.exerciseSelectDatatypes2A3))) {
                     answerCorrect[i] = true;
 
                 }

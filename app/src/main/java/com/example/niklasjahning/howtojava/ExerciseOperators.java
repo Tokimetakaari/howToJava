@@ -151,7 +151,7 @@ public class ExerciseOperators extends AppCompatActivity implements View.OnClick
     private void setText() {
         switch (i) {
             case 0:
-                textView.setText("Der Anfangswert von x beträgt 7. Sie inkrementieren drei Mal. Welchen Wert hat x jetzt?");
+                textView.setText(R.string.exerciseOperatorsQ1);
                 box1.setText("4");
                 box2.setText("10");
                 box3.setText("8");
@@ -204,7 +204,7 @@ public class ExerciseOperators extends AppCompatActivity implements View.OnClick
                 break;
             case 7:
                 countCorrectAnswers();
-                textView.setText("Sie haben " + numOfCorrectAnswers +" richtig beantwortet");
+                textView.setText("Sie haben " + numOfCorrectAnswers + "von" + answered.length+ " richtig beantwortet");
                 box1.setVisibility(View.INVISIBLE);
                 box1.setClickable(false);
                 box2.setVisibility(View.INVISIBLE);
@@ -223,7 +223,6 @@ public class ExerciseOperators extends AppCompatActivity implements View.OnClick
         resetCheckbox();
     }
 
-
     private void resetCheckbox ()
     {
         box1.setChecked(false);
@@ -231,7 +230,6 @@ public class ExerciseOperators extends AppCompatActivity implements View.OnClick
         box3.setChecked(false);
         box4.setChecked(false);
     }
-
 
     private void checkCorrectAnswers()
     {
