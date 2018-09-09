@@ -70,7 +70,7 @@ public class ProgrammingExerciseForMethods extends AppCompatActivity implements 
             public void run() {
                 PlayMenu.unlockLevelNumber=11;
                 StorageEntry storageEntry = MainActivity.database.daoAccess().getConfiqEntry("unlockLevel");
-                storageEntry.setValue(8);
+                storageEntry.setValue(PlayMenu.unlockLevelNumber);
                 MainActivity.database.daoAccess().updateEntries(storageEntry);
             }
         }).start();

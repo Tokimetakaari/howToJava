@@ -120,14 +120,13 @@ public class ExerciseBufferedReader extends AppCompatActivity implements View.On
             {
                 if (numOfCorrectAnswers >=  answered.length /2) {
                     mySound.start();
+                    update();
                     sendNotification(getString(R.string.notifyTitle17), getString(R.string.endMessage), next);
                 }
                 finish();
             }
         }
     }
-
-
 
     private void setText() {
         switch (i) {
@@ -182,6 +181,19 @@ public class ExerciseBufferedReader extends AppCompatActivity implements View.On
             {numOfCorrectAnswers ++;}
         }
         return numOfCorrectAnswers;
+    }
+
+    private void update()
+    {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                PlayMenu.unlockLevelNumber=17;
+                StorageEntry storageEntry = MainActivity.database.daoAccess().getConfiqEntry("unlockLevel");
+                storageEntry.setValue(PlayMenu.unlockLevelNumber);
+                MainActivity.database.daoAccess().updateEntries(storageEntry);
+            }
+        }).start();
     }
 
     private void checkCorrectAnswers() {

@@ -110,6 +110,7 @@ public class SettingsMenu extends AppCompatActivity implements View.OnClickListe
 
     }
 
+     //https://www.youtube.com/watch?v=fJEFZ6EOM9o&t=274s
     public void savePref() {
         SharedPreferences sharedPreferences =getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();

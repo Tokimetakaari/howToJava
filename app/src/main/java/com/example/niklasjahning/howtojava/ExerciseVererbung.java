@@ -167,7 +167,6 @@ public class ExerciseVererbung extends AppCompatActivity implements View.OnClick
                 setText();
 
             } else if (i > 4) {
-                PlayMenu.unlockLevelNumber = 1;
                 if (numOfCorrectAnswers >=  answered.length /2) {
                     mySound.start();
                     update();
@@ -184,9 +183,9 @@ public class ExerciseVererbung extends AppCompatActivity implements View.OnClick
         new Thread(new Runnable() {
             @Override
             public void run() {
-                PlayMenu.unlockLevelNumber=10;
+                PlayMenu.unlockLevelNumber=12;
                 StorageEntry storageEntry = MainActivity.database.daoAccess().getConfiqEntry("unlockLevel");
-                storageEntry.setValue(10);
+                storageEntry.setValue(PlayMenu.unlockLevelNumber);
                 MainActivity.database.daoAccess().updateEntries(storageEntry);
             }
         }).start();

@@ -21,10 +21,6 @@ public class PlayMenu extends AppCompatActivity implements View.OnClickListener 
     static int unlockLevelNumber ;
     Button[] buttonList = new Button[numOfButtons];
 
-
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -125,7 +121,6 @@ public class PlayMenu extends AppCompatActivity implements View.OnClickListener 
             buttonList[i].setOnClickListener(this);
         }
     }
-
 
     @Override
     public void onClick(View view)

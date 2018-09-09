@@ -164,6 +164,8 @@ public class ExerciseArray extends AppCompatActivity implements View.OnClickList
                 break;
             case 2:
                 textView.setText(R.string.exerciseArrayQ3);
+                box3.setVisibility(View.VISIBLE);
+                box4.setVisibility(View.VISIBLE);
                 box1.setText(R.string.exerciseArrayQ3A1);
                 box2.setText(R.string.exerciseArrayQ3A2);
                 box3.setText(R.string.exerciseArrayQ3A3);
@@ -177,6 +179,7 @@ public class ExerciseArray extends AppCompatActivity implements View.OnClickList
                 box4.setVisibility(View.GONE);
                 break;
             case 4:
+                box3.setVisibility(View.VISIBLE);
                 textView.setText(R.string.exerciseArrayQ5);
                 box1.setText(R.string.exerciseArrayQ5A1);
                 box2.setText(R.string.exerciseArrayQ5A2);
@@ -184,6 +187,7 @@ public class ExerciseArray extends AppCompatActivity implements View.OnClickList
                 box4.setVisibility(View.GONE);
                 break;
             case 5:
+                box4.setVisibility(View.VISIBLE);
                 textView.setText(R.string.exerciseArrayQ6);
                 box1.setText(R.string.exerciseArrayQ6A1);
                 box2.setText(R.string.exerciseArrayQ6A2);
@@ -198,6 +202,8 @@ public class ExerciseArray extends AppCompatActivity implements View.OnClickList
                 box4.setVisibility(View.GONE);
                 break;
             case 7:
+                box3.setVisibility(View.VISIBLE);
+                box4.setVisibility(View.VISIBLE);
                 textView.setText(R.string.exerciseArrayQ8);
                 box1.setText(R.string.exerciseArrayQ8A1);
                 box2.setText(R.string.exerciseArrayQ8A2);
@@ -224,7 +230,6 @@ public class ExerciseArray extends AppCompatActivity implements View.OnClickList
         }
         resetCheckbox();
     }
-
 
     private void resetCheckbox ()
     {

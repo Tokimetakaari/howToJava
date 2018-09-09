@@ -107,6 +107,19 @@ public class ExerciseInterfaces extends AppCompatActivity implements View.OnClic
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
+    private void update()
+    {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                PlayMenu.unlockLevelNumber=13;
+                StorageEntry storageEntry = MainActivity.database.daoAccess().getConfiqEntry("unlockLevel");
+                storageEntry.setValue(PlayMenu.unlockLevelNumber);
+                MainActivity.database.daoAccess().updateEntries(storageEntry);
+            }
+        }).start();
+    }
+
     @Override
     public void onClick(View view)
     {
@@ -123,6 +136,7 @@ public class ExerciseInterfaces extends AppCompatActivity implements View.OnClic
             {
                 if (numOfCorrectAnswers >=  answered.length /2) {
                     mySound.start();
+                    update();
                     sendNotification(getString(R.string.notifyTitle13), getString(R.string.notifyMessage), next);
                 }
                 finish();
