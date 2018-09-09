@@ -22,40 +22,40 @@
         <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Datentypen auswählen"
+        android:text="@string/play_menu_button1"
         android:id="@+id/play_lektion_1"/>
 
         <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Datentypen 2"
+        android:text="@string/play_menu_button2"
         android:id="@+id/play_lektion_2"
             android:enabled="false"/>
 
         <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Operatoren"
+        android:text="@string/play_menu_button3"
         android:id="@+id/play_lektion_3"/>
 
         <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/theorie_button4"
+        android:text="@string/play_menu_button4"
         android:id="@+id/play_lektion_4"/>
 
 
         <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/theorie_button5"
+        android:text="@string/play_menu_button5"
         android:id="@+id/play_lektion_5"/>
 
 
         <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/theorie_button6"
+        android:text="@string/play_menu_button6"
         android:id="@+id/play_lektion_6"/>
 
 
@@ -76,44 +76,65 @@
         <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/theorie_button9"
+        android:text="@string/play_menu_button9"
         android:id="@+id/play_lektion_9"/>
 
 
         <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/theorie_button10"
+        android:text="@string/play_menu_button10"
         android:id="@+id/play_lektion_10"/>
 
 
         <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/theorie_button1"
+        android:text="@string/play_menu_button11"
         android:id="@+id/play_lektion_11"/>
 
         <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/theorie_button2"
+        android:text="@string/play_menu_button12"
         android:id="@+id/play_lektion_12" />
 
 
         <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/theorie_button3"
+        android:text="@string/play_menu_button13"
         android:id="@+id/play_lektion_13"/>
 
 
         <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/theorie_button4"
+        android:text="@string/play_menu_button14"
         android:id="@+id/play_lektion_14"/>
 
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/play_menu_button15"
+            android:id="@+id/play_lektion_15"/>
 
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/play_menu_button16"
+            android:id="@+id/play_lektion_16"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/play_menu_button17"
+            android:id="@+id/play_lektion_17"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/play_menu_button18"
+            android:id="@+id/play_lektion_18"/>
 
     </LinearLayout>
 

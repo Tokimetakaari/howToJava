@@ -53,8 +53,26 @@
     <string name="channel_description">test123</string>
     <string name="this_color">Alternative Theme</string>
     <string name="save_button">SAVE</string>
-    <string name="play_menu_button8">Programmierübung zu Methoden</string>
-    <string name="play_menu_button7">Fragen zu Methoden</string>
+
+    <string name="play_menu_button1">Datentypen auswählen</string>
+    <string name="play_menu_button2">Datentypen 2</string>
+    <string name="play_menu_button3">Klassen und Objekte</string>
+    <string name="play_menu_button4">Klassen und Objekte 2</string>
+    <string name="play_menu_button5">Operatoren</string>
+    <string name="play_menu_button6">Bedingte Abfragen</string>
+    <string name="play_menu_button7">Arrays</string>
+    <string name="play_menu_button8"></string>
+    <string name="play_menu_button9"></string>
+    <string name="play_menu_button10">Konstruktoren</string>
+    <string name="play_menu_button11">Methoden</string>
+    <string name="play_menu_button12">Methoden 2</string>
+    <string name="play_menu_button13">Vererbung</string>
+    <string name="play_menu_button14">Interfaces</string>
+    <string name="play_menu_button15">Events</string>
+    <string name="play_menu_button16">Try-Catch-Phrase</string>
+    <string name="play_menu_button17">Exceptions</string>
+    <string name="play_menu_button18">Buffered Reader</string>
+
 
     <string-array name="spinnerNums">
         <item>1</item>

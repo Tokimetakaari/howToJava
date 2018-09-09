@@ -14,7 +14,7 @@ import android.widget.Toast;
 public class PlayMenu extends AppCompatActivity implements View.OnClickListener {
 
     Intent i ;
-    private  int numOfButtons = 12;
+    private  int numOfButtons = 18;
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
     NavigationView burger;
@@ -84,6 +84,12 @@ public class PlayMenu extends AppCompatActivity implements View.OnClickListener 
         buttonList[9]=findViewById(R.id.play_lektion_10);
         buttonList[10]=findViewById(R.id.play_lektion_11);
         buttonList[11]=findViewById(R.id.play_lektion_12);
+        buttonList[12]=findViewById(R.id.play_lektion_13);
+        buttonList[13]=findViewById(R.id.play_lektion_14);
+        buttonList[14]=findViewById(R.id.play_lektion_15);
+        buttonList[15]=findViewById(R.id.play_lektion_16);
+        buttonList[16]=findViewById(R.id.play_lektion_17);
+        buttonList[17]=findViewById(R.id.play_lektion_18);
 
         connectBurger();
     }
