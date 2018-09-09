@@ -15,7 +15,7 @@ import android.widget.CheckBox;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class ExcerciseIfElse extends AppCompatActivity implements View.OnClickListener {
+public class ExerciseIfElse extends AppCompatActivity implements View.OnClickListener {
 
     MediaPlayer mySound;
     TextView textView;
@@ -69,20 +69,20 @@ public class ExcerciseIfElse extends AppCompatActivity implements View.OnClickLi
             public boolean onNavigationItemSelected(MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.play_menu:
-                        intent = new Intent(ExcerciseIfElse.this, PlayMenu.class);
+                        intent = new Intent(ExerciseIfElse.this, PlayMenu.class);
                         startActivity(intent);
                         break;
                     case R.id.theory_menu:
-                        intent = new Intent(ExcerciseIfElse.this, TheoryMenu.class);
+                        intent = new Intent(ExerciseIfElse.this, TheoryMenu.class);
                         startActivity(intent);
                         break;
                     case R.id.setting_menu:
-                        intent = new Intent(ExcerciseIfElse.this, SettingsMenu.class);
+                        intent = new Intent(ExerciseIfElse.this, SettingsMenu.class);
                         startActivity(intent);
                         break;
                     case R.id.moveToTheory:
                         finish();
-                        intent = new Intent(ExcerciseIfElse.this, LogicAndConditions.class);
+                        intent = new Intent(ExerciseIfElse.this, LogicAndConditions.class);
                         startActivity(intent);
                         break;
                     case R.id.credits:

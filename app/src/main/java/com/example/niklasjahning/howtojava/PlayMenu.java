@@ -138,18 +138,35 @@ public class PlayMenu extends AppCompatActivity implements View.OnClickListener 
                 break;
             case R.id.play_lektion_4: i = new Intent(PlayMenu.this, ExerciseClassesAndObjects2.class);
                 break;
-            case R.id.play_lektion_5: i = new Intent(PlayMenu.this, ExerciseExeptions.class);
+            case R.id.play_lektion_5: i = new Intent(PlayMenu.this, ExerciseOperators.class);
                 break;
-            case R.id.play_lektion_6: i = new Intent(PlayMenu.this, ExerciseArray.class);
+            case R.id.play_lektion_6: i = new Intent(PlayMenu.this, ExerciseIfElse.class);
                 break;
-            case R.id.play_lektion_7: i = new Intent(PlayMenu.this,ExerciseForMethods1.class);
+            case R.id.play_lektion_7: i = new Intent(PlayMenu.this,ExerciseArray.class);
                 break;
-            case R.id.play_lektion_8: i = new Intent(PlayMenu.this, ProgrammingExerciseForMethods.class);
+            case R.id.play_lektion_8: i = new Intent(PlayMenu.this, ExerciseOperators.class);
                 break;
-            case R.id.play_lektion_9: i = new Intent(PlayMenu.this, ExerciseKonstruktoren.class);
+            case R.id.play_lektion_9: i = new Intent(PlayMenu.this, ExerciseOperators.class);
                 break;
-            case R.id.play_lektion_10: i = new Intent(PlayMenu.this, ExerciseVererbung.class);
+            case R.id.play_lektion_10: i = new Intent(PlayMenu.this, ExerciseKonstruktoren.class);
                 break;
+            case R.id.play_lektion_11: i = new Intent(PlayMenu.this, ExerciseForMethods1.class);
+                break;
+            case R.id.play_lektion_12: i = new Intent(PlayMenu.this, ProgrammingExerciseForMethods.class);
+                break;
+            case R.id.play_lektion_13: i = new Intent(PlayMenu.this, ExerciseVererbung.class);
+                break;
+            case R.id.play_lektion_14: i = new Intent(PlayMenu.this, ExerciseInterfaces.class);
+                break;
+            case R.id.play_lektion_15: i = new Intent(PlayMenu.this, ExerciseEvents.class);
+                break;
+            case R.id.play_lektion_16: i = new Intent(PlayMenu.this, ExerciseTryCatchPhrase.class);
+                break;
+            case R.id.play_lektion_17: i = new Intent(PlayMenu.this, ExerciseExeptions.class);
+                break;
+            case R.id.play_lektion_18: i = new Intent(PlayMenu.this, ExerciseBufferedReader.class);
+                break;
+
         }
         startActivity(i);
     }
